@@ -136,3 +136,13 @@ details {
     margin-bottom: 0.5rem;
   }
 }
+
+// Ilustrações dentro do texto: centralizadas e sem ocupar a página toda.
+.ilustracao {
+  text-align: center;
+
+  img {
+    width: 100%;
+    max-width: 420px;
+  }
+}

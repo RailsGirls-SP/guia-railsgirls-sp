@@ -12,6 +12,7 @@ mermaid:
   version: "12.1.0"
 
 # Boxes de destaque. Uso: uma linha com {: .dica } antes do parágrafo.
+# pensando: a forma de pensar de quem programa, além da técnica.
 callouts:
   dica:
     title: Dica
@@ -22,6 +23,9 @@ callouts:
   ia:
     title: E se fosse com IA?
     color: purple
+  pensando:
+    title: Pensando como quem programa
+    color: blue
 
 footer_content: >-
   Material de Rails Girls São Paulo, licenciado sob

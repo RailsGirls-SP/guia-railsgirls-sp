@@ -1,11 +1,11 @@
 ---
-title: "Ver todos os recados"
+title: "Como ver todos os recados?"
 parent: Mural de recados
 grand_parent: Projetos
 nav_order: 4
 ---
 
-# Ver todos os recados
+# Como ver todos os recados?
 
 ## O desafio
 TODO: já existem recados guardados. Como eles aparecem no mural?
@@ -55,7 +55,7 @@ TODO (opcional): uma mudança que causa erro de propósito e como ler a mensagem
 ## E se fosse com IA?
 TODO (opcional): transformar o plano do "Pense antes" num pedido para a IA e conferir o resultado contra as regras do plano.
 
-## Pontos-chave
+## Não esqueça
 TODO: 3–5 bullets.
 
 ## Teste-se

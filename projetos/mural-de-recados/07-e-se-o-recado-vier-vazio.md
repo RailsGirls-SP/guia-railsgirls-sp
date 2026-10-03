@@ -56,7 +56,7 @@ TODO (opcional): uma mudança que causa erro de propósito e como ler a mensagem
 {: .ia }
 TODO: o código gerado aceita um recado vazio; quem decide que isso é um erro? Comparar o código gerado com a lista de casos do "Pense antes".
 
-## Pontos-chave
+## Não esqueça
 TODO: 3–5 bullets.
 
 ## Teste-se

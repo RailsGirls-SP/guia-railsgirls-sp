@@ -55,7 +55,7 @@ TODO (opcional): uma mudança que causa erro de propósito e como ler a mensagem
 ## E se fosse com IA?
 TODO (opcional): transformar o plano do "Pense antes" num pedido para a IA e conferir o resultado contra as regras do plano.
 
-## Pontos-chave
+## Não esqueça
 TODO: 3–5 bullets.
 
 ## Teste-se

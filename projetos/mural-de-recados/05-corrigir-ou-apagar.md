@@ -1,11 +1,11 @@
 ---
-title: "Errei! Corrigir ou apagar"
+title: "Errei! Como corrigir ou apagar?"
 parent: Mural de recados
 grand_parent: Projetos
 nav_order: 6
 ---
 
-# Errei! Corrigir ou apagar
+# Errei! Como corrigir ou apagar?
 
 ## O desafio
 TODO: alguém escreveu um recado com erro de digitação, ou se arrependeu. E agora?
@@ -55,7 +55,7 @@ TODO (opcional): uma mudança que causa erro de propósito e como ler a mensagem
 ## E se fosse com IA?
 TODO (opcional): transformar o plano do "Pense antes" num pedido para a IA e conferir o resultado contra as regras do plano.
 
-## Pontos-chave
+## Não esqueça
 TODO: 3–5 bullets.
 
 ## Teste-se

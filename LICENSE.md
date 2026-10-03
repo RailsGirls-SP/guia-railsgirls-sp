@@ -11,4 +11,6 @@ Você pode copiar, redistribuir e adaptar este material, desde que:
 - **NãoComercial**: não use o material para fins comerciais.
 - **CompartilhaIgual**: se adaptar o material, distribua suas contribuições sob esta mesma licença.
 
+As ilustrações em `assets/images/` que vêm do [unDraw](https://undraw.co/) (por exemplo, `mural-fisico.svg`) não são de nossa autoria e seguem a [licença do unDraw](https://undraw.co/license).
+
 Texto legal completo: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.pt
