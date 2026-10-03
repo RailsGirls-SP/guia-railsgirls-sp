@@ -107,4 +107,4 @@ No topo aparece **Bem-vindo(a) ao GitHub**, seguido do seu nome de usuária, e, 
 
 </details>
 
-Pronto, a sua conta está criada! Por enquanto, você não precisa clicar em mais nada nessa página: o seu primeiro repositório vai ser criado no capítulo [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar.md %}).
+Pronto, a sua conta está criada! Por enquanto, você não precisa clicar em mais nada nessa página: o seu primeiro repositório vai ser criado no capítulo [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/index.md %}).

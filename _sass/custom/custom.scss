@@ -146,3 +146,20 @@ details {
     max-width: 420px;
   }
 }
+
+// Passos do "Mão na massa": um bloco por passo, com o título à vista.
+details.passo {
+  padding: 0.75rem 1.25rem;
+  border-color: #e0dcd8;
+  background-color: #fff;
+
+  summary {
+    font-family: "Baloo 2", system-ui, sans-serif;
+    font-size: 1.25rem;
+    color: #490606;
+  }
+
+  &[open] {
+    padding-bottom: 1.25rem;
+  }
+}

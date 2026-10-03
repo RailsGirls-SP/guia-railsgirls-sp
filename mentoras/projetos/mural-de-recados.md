@@ -54,7 +54,7 @@ Referências (em inglês):
 
 ## 01. Por onde começar?
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar.md %}) · Código de referência: tag `passo-01`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/index.md %}) · Código de referência: tag `passo-01`.
 
 - TODO: perguntas para fazer durante o "Pense antes"
 - TODO: confusões comuns neste capítulo
@@ -81,6 +81,29 @@ Só aprofunde se a pergunta aparecer. Para quem está começando, "o servidor re
 ### O primeiro commit com "Stage All Changes"
 
 No passo 6, o capítulo usa **Stage All Changes**, que coloca todos os arquivos alterados no commit de uma vez. É o jeito mais simples para começar, mas nem sempre é o ideal: num projeto real, às vezes vale escolher só alguns arquivos para cada commit. Se o grupo tiver curiosidade, é um bom assunto para conversar.
+
+### O ❌ vermelho e os pull requests automáticos
+
+Depois do Sync Changes (passos 6 e 7), a página do repositório no GitHub pode mostrar três coisas que a participante não fez:
+
+- **Um ❌ vermelho ao lado do commit.** O `rails new` cria o arquivo `.github/workflows/ci.yml`, e a cada push o **GitHub Actions** roda verificações automáticas (testes, análise de segurança e estilo do código). O ❌ quer dizer que alguma delas falhou. Não é erro da participante e não impede o app de funcionar.
+- **"Pull requests" com um número e várias branches.** O `rails new` também cria `.github/dependabot.yml`. O **Dependabot**, um robô do GitHub, confere se saíram versões novas das bibliotecas do app e, para cada uma, cria uma branch e abre um pull request propondo a atualização. Nada muda no app se ninguém clicar em **Merge**.
+
+Como explicar: são ferramentas que projetos reais usam para manter a qualidade e as bibliotecas em dia, e o Rails já deixa tudo preparado. Neste projeto, a gente não vai usar nenhuma delas (veja [Sem testes automatizados por enquanto](#sem-testes-automatizados-por-enquanto)). A participante pode ignorar ou fechar os pull requests na aba **Pull requests**.
+
+Se a organização preferir que nada disso apareça, o `rails new . --skip-ci` não cria esses dois arquivos.
+
+### O botão "Make Public" da porta 3000
+
+No passo 5, o aviso da porta 3000 mostra dois botões: **Open in Browser** e **Make Public**. Só o primeiro é necessário. Se alguém perguntar sobre o segundo:
+
+- **O codespace em si nunca fica público.** Editor, arquivos e terminal são sempre só da dona da conta.
+- **O que fica público é o endereço do app** (`…-3000.app.github.dev`). Com a porta pública, qualquer pessoa com o link abre o app, sem login. Com a porta privada, que é o padrão, só a dona da conta abre.
+- **O app roda em modo de desenvolvimento,** que não foi feito para ficar exposto: as páginas de erro mostram detalhes do código, e qualquer pessoa com o link pode postar, editar e apagar recados.
+- **Só funciona com o codespace ligado,** então não serve para colocar o app no ar. Para isso, existe o capítulo 08.
+- **Quem abre o app gasta a cota do Codespaces** de quem é dona do codespace.
+
+Oriente a deixar a porta **privada**. Se uma participante quiser mostrar o mural para alguém na sala, pode deixar pública por alguns minutos e voltar para privada depois: na aba **Ports**, clique com o botão direito na porta 3000 e escolha **Port Visibility** → **Private**.
 
 ### Erro "Blocked hosts"
 

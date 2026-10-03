@@ -29,7 +29,7 @@ TODO: decisão pendente: no plano gratuito do Render o disco não é permanente 
 
 TODO
 
-TODO: em cada passo, um "Preveja" antes de rodar e um "Confira" logo depois.
+TODO: em cada passo, um "Dê um palpite" antes de rodar e um "Confira" logo depois.
 
 ## Entenda
 TODO: explicação do conceito, sem jargão desnecessário; o termo técnico aparece aqui (e linka o glossário).

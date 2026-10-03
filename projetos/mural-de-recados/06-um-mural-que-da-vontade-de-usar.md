@@ -29,7 +29,7 @@ TODO: telas, dados e regras que a gente planejou para este desafio.
 ## Mão na massa
 TODO
 
-TODO: em cada passo, um "Preveja" antes de rodar e um "Confira" logo depois.
+TODO: em cada passo, um "Dê um palpite" antes de rodar e um "Confira" logo depois.
 
 ## Entenda
 TODO: explicação do conceito, sem jargão desnecessário; o termo técnico aparece aqui (e linka o glossário).
