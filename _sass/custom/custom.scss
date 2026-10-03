@@ -1,0 +1,119 @@
+h1,
+h2,
+h3,
+.site-title {
+  font-family: "Baloo 2", system-ui, sans-serif;
+  font-weight: 700;
+}
+
+// Logo centralizado; a altura total continua 60px para alinhar com a busca.
+.site-title {
+  justify-content: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.site-title:hover {
+  background-image: none;
+  opacity: 0.9;
+}
+
+.site-button {
+  color: #fff;
+}
+
+.site-button:hover {
+  background-image: none;
+}
+
+.site-title img {
+  height: 44px;
+  width: auto;
+}
+
+.btn,
+.search-input {
+  border-radius: 40px;
+}
+
+code.highlighter-rouge,
+div.highlighter-rouge {
+  border-radius: 8px;
+}
+
+// Menu lateral sobre o vermelho do logo: textos em branco.
+$sidebar-link: #fff;
+$sidebar-link-child: rgba(255, 255, 255, 0.8);
+$sidebar-hover: rgba(255, 255, 255, 0.12);
+
+.side-bar {
+  .nav-list .nav-list-item {
+    .nav-list-link,
+    .nav-list-expander {
+      color: $sidebar-link;
+    }
+
+    > .nav-list .nav-list-item {
+      .nav-list-link,
+      .nav-list-expander {
+        color: $sidebar-link-child;
+      }
+    }
+
+    .nav-list-link:hover,
+    .nav-list-link.active,
+    > .nav-list .nav-list-item .nav-list-link:hover,
+    > .nav-list .nav-list-item .nav-list-link.active {
+      color: $sidebar-link;
+      background-image: none;
+      background-color: $sidebar-hover;
+    }
+
+    .nav-list-expander:hover {
+      background-image: none;
+      background-color: $sidebar-hover;
+    }
+  }
+
+  // Recuo dos submenus dentro do link (e não na lista), para o destaque
+  // do hover ocupar a largura toda em todos os níveis.
+  .nav-list .nav-list-item > .nav-list {
+    padding-left: 0;
+  }
+
+  // Cada nível recua 0.75rem a partir do recuo base do tema
+  // (1rem no celular, 2rem a partir de 50rem de largura).
+  .nav-list .nav-list .nav-list-link {
+    padding-left: 1.75rem;
+  }
+
+  .nav-list .nav-list .nav-list .nav-list-link {
+    padding-left: 2.5rem;
+  }
+
+  .nav-list .nav-list .nav-list .nav-list .nav-list-link {
+    padding-left: 3.25rem;
+  }
+
+  @media (min-width: 50rem) {
+    .nav-list .nav-list .nav-list-link {
+      padding-left: 2.75rem;
+    }
+
+    .nav-list .nav-list .nav-list .nav-list-link {
+      padding-left: 3.5rem;
+    }
+
+    .nav-list .nav-list .nav-list .nav-list .nav-list-link {
+      padding-left: 4.25rem;
+    }
+  }
+
+  .site-footer {
+    color: $sidebar-link-child;
+
+    a {
+      color: $sidebar-link;
+    }
+  }
+}

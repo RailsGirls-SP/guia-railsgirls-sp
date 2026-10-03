@@ -1,0 +1,44 @@
+title: Rails Girls São Paulo
+description: Guia do workshop Rails Girls São Paulo
+remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-remote-theme
+search_enabled: true
+lang: pt-BR
+color_scheme: railsgirls
+
+# Boxes de destaque. Uso: uma linha com {: .dica } antes do parágrafo.
+callouts:
+  dica:
+    title: Dica
+    color: green
+  atencao:
+    title: Atenção
+    color: red
+  ia:
+    title: E a IA nisso?
+    color: purple
+
+footer_content: >-
+  Material de Rails Girls São Paulo, licenciado sob
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br">CC BY-NC-SA 4.0</a>.
+  Uso livre e gratuito com atribuição; uso comercial proibido.
+
+exclude:
+  - README.md
+  - LICENSE.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+# Silencia avisos do Sass vindos do tema ao rodar localmente.
+sass:
+  quiet_deps: true
+  silence_deprecations: [import]
+
+# O GitHub Pages aplica este layout sozinho; localmente precisa ser explícito.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
