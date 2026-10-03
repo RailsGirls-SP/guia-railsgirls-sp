@@ -10,6 +10,14 @@ nav_order: 1
 - TODO: como usar as tags `passo-NN` do repositório do app
 - TODO: como conduzir o "Pense antes de programar": dar tempo, perguntar em vez de responder, só abrir "o nosso plano" depois
 
+## Sem testes automatizados por enquanto
+
+Neste primeiro projeto, não incentive as participantes a escrever testes automatizados. Testes são importantes, mas aqui o foco é outro: entender o caminho de um pedido, planejar antes de programar e chegar num app que funciona dentro do dia. Escrever testes ao mesmo tempo dobra o que elas precisam aprender de uma vez.
+
+- O `rails new` cria uma pasta `test` com arquivos de exemplo. Se alguém perguntar, explique em uma frase: são programas que conferem sozinhos se o app funciona; a gente vai deixar para depois.
+- Neste projeto, a conferência é manual: as seções **Confira** e **Quebre de propósito** de cada capítulo.
+- Se uma participante já tiver experiência e terminar antes, testes podem virar um desafio extra.
+
 ## 00. Planejando o mural
 
 [Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/00-planejando-o-mural.md %})
@@ -44,9 +52,9 @@ Referências (em inglês):
 - [Technical Debt Quadrant](https://martinfowler.com/bliki/TechnicalDebtQuadrant.html), de Martin Fowler: dívida deliberada ou acidental, prudente ou imprudente.
 - [The WyCash Portfolio Management System](http://c2.com/doc/oopsla92.html), de Ward Cunningham (1992): onde a metáfora apareceu pela primeira vez.
 
-## 01. Como começar o projeto?
+## 01. Por onde começar?
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/01-como-comecar-o-projeto.md %}) · Código de referência: tag `passo-01`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar.md %}) · Código de referência: tag `passo-01`.
 
 - TODO: perguntas para fazer durante o "Pense antes"
 - TODO: confusões comuns neste capítulo
@@ -70,12 +78,22 @@ Na analogia do restaurante usada no capítulo:
 
 Só aprofunde se a pergunta aparecer. Para quem está começando, "o servidor recebe o pedido e devolve a página" é suficiente neste capítulo.
 
+### O primeiro commit com "Stage All Changes"
+
+No passo 6, o capítulo usa **Stage All Changes**, que coloca todos os arquivos alterados no commit de uma vez. É o jeito mais simples para começar, mas nem sempre é o ideal: num projeto real, às vezes vale escolher só alguns arquivos para cada commit. Se o grupo tiver curiosidade, é um bom assunto para conversar.
+
 ### Erro "Blocked hosts"
 
 Em modo de desenvolvimento, o Rails só aceita pedidos de endereços conhecidos, e o endereço do codespace (`*.app.github.dev`) não está na lista. Para liberar, abra `config/environments/development.rb` e acrescente, antes do último `end`:
 
 ```ruby
 config.hosts << ".app.github.dev"
+```
+
+Na Imersão 2025, a gente usou uma expressão regular, que tem o mesmo efeito:
+
+```ruby
+config.hosts << /.*\.app\.github\.dev/
 ```
 
 Depois, desligue o servidor (Ctrl+C) e ligue de novo com `bin/rails server`.
@@ -102,6 +120,20 @@ TODO: se o repositório-modelo já liberar esse endereço (por exemplo, com a va
 
 - TODO: perguntas para fazer durante o "Pense antes"
 - TODO: confusões comuns neste capítulo
+
+### Erro ao enviar o formulário no Codespaces
+
+No Codespaces, o navegador acessa o app por um endereço `https://…app.github.dev`, mas o Rails recebe o pedido como se viesse de outro endereço. Ao enviar um formulário, a proteção contra envio de formulários de outros sites pode bloquear o pedido, com um erro como `ActionController::InvalidAuthenticityToken` ou "HTTP Origin header didn't match request.base_url".
+
+Na Imersão 2025, a solução foi acrescentar esta linha em `config/environments/development.rb`, antes do último `end`:
+
+```ruby
+config.action_controller.forgery_protection_origin_check = false
+```
+
+Ela desliga só a conferência do endereço de origem, e só em desenvolvimento. Depois, desligue o servidor (Ctrl+C) e ligue de novo.
+
+TODO: decidir se essa linha entra num passo do capítulo 01 ou 04, para ninguém esbarrar no erro, e confirmar se ainda é necessária com a versão atual do Rails e do Codespaces.
 
 ## 05. Errei! Como corrigir ou apagar?
 

@@ -127,7 +127,7 @@ Cada capítulo daqui pra frente resolve um pedaço deste plano:
 
 | Do plano | Capítulo |
 |---|---|
-| Um lugar para o mural existir | [Como começar o projeto?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-como-comecar-o-projeto.md %}) |
+| Um lugar para o mural existir | [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar.md %}) |
 | As informações de um recado | [Onde os recados ficam guardados?]({{ site.baseurl }}{% link projetos/mural-de-recados/02-onde-os-recados-ficam-guardados.md %}) |
 | Ver todos os recados | [Como ver todos os recados?]({{ site.baseurl }}{% link projetos/mural-de-recados/03-ver-todos-os-recados.md %}) |
 | Postar um recado | [Como postar um recado?]({{ site.baseurl }}{% link projetos/mural-de-recados/04-postar-um-recado.md %}) |
