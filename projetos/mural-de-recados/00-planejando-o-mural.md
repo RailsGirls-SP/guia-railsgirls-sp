@@ -19,6 +19,9 @@ Numa parede, cada pessoa pegaria um post-it, escreveria a mensagem, assinaria e 
 ![Uma pessoa colando um papel num mural onde já existem outros recados]({{ '/assets/images/mural-fisico.svg' | relative_url }})
 {: .ilustracao }
 
+Ilustração: [unDraw](https://undraw.co/)
+{: .fs-2 .text-center }
+
 {: .pensando }
 Antes de escrever qualquer linha de código, quem programa faz duas coisas: **entende o problema** e **planeja a solução**. É isso que você vai fazer agora.
 
