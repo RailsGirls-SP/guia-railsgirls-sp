@@ -100,7 +100,7 @@ Em vez da página do Rails, aparece uma página de erro: não tem ninguém do ou
 
 Não. Tudo aqui é feito com cliques e com poucos comandos (`ruby -v`, `rails -v`, `rails new .` e `bin/rails server`). Uma IA não deixaria nada mais rápido e ainda poderia atrapalhar: sugerir comandos de outro sistema, criar arquivos que você não pediu ou pular justamente os passos que mostram como o app funciona.
 
-O codespace tem um painel de chat com IA, à direita. Se quiser usar, trate a IA como uma tutora, não como alguém que faz por você:
+O codespace tem um painel de chat com IA, à direita. Se quiser usar, trate a IA como uma tutora, não como alguém que faz por você (veja como começar a conversa em [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %})):
 
 - **Peça explicações.** Por exemplo: "O que faz o comando `rails new .`?" ou "O que quer dizer esta mensagem de erro?".
 - **Peça para ela te guiar,** um passo de cada vez, e faça cada passo você mesma.

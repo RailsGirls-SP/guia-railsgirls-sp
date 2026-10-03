@@ -19,6 +19,16 @@ Neste primeiro projeto, não incentive as participantes a escrever testes automa
 - Neste projeto, a conferência é manual: as seções **Confira** e **Quebre de propósito** de cada capítulo.
 - Se uma participante já tiver experiência e terminar antes, testes podem virar um desafio extra.
 
+## Sem scaffold
+
+Neste projeto, não use o `bin/rails generate scaffold`, nem o `scaffold_controller`, e não incentive as participantes a usar. Cada parte do app (model, rotas, controller e views) é construída à mão, um capítulo de cada vez.
+
+- **Entender cada peça.** O scaffold cria dezenas de arquivos de uma vez. Funciona, mas a participante não vê como cada parte se liga à outra, que é justamente o que o projeto quer ensinar.
+- **Etapas pequenas, como no MVP.** Construir uma peça por capítulo segue a mesma ideia do skate ao carro: o app funciona ao fim de cada etapa, e dá para conferir o que mudou.
+- **O mesmo vale para a IA.** Pedir o app inteiro de uma vez, para um gerador ou para uma IA, é o oposto do que o guia ensina.
+
+Se uma participante já conhece o scaffold e perguntar, explique que ele existe e é útil no dia a dia, mas que aqui o objetivo é ver cada peça nascer. Fica como desafio para depois do projeto: gerar um scaffold e comparar com o que ela escreveu à mão.
+
 ## Notas por capítulo
 
 Cada capítulo tem a sua página de notas, com o mesmo número do capítulo. Elas aparecem no menu, abaixo desta página.

@@ -10,6 +10,8 @@ nav_order: 2
 <details class="passo" markdown="1" open>
 <summary>Por dentro do app</summary>
 
+TODO: completar a analogia da assistente do capítulo 02: quando você pede um recado (`Message.first`, ou cada recado da lista), a assistente te entrega aquele recado, com todas as informações dele, e você lê a autora com `.author` e a mensagem com `.content`.
+
 TODO: explicação do conceito, sem jargão desnecessário; o termo técnico aparece aqui (e linka o glossário).
 
 Você está aqui: este é o caminho que um pedido percorre dentro do app.

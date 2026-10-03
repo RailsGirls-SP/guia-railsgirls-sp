@@ -23,13 +23,6 @@ TODO: último passo: guardar o progresso com um commit e o Sync Changes.
 
 TODO: os 2–3 erros mais prováveis deste passo e como resolver.
 
-<details markdown="1">
-<summary>Código completo deste passo</summary>
-
-TODO: conteúdo de cada arquivo alterado neste capítulo.
-
-</details>
-
 Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo.md %}).
 
 ## Terminou?

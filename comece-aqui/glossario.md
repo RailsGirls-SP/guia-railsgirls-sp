@@ -1,7 +1,7 @@
 ---
 title: Glossário
 parent: Comece aqui
-nav_order: 4
+nav_order: 5
 ---
 
 # Glossário
@@ -168,7 +168,7 @@ Ele organiza o app em partes com papéis bem definidos ([rota](#rota), [controll
 <details class="termo" id="rota" markdown="1">
 <summary>Rota</summary>
 
-A **rota** liga um endereço a uma parte do código. Quando o navegador pede `/recados`, é a rota que diz qual [controller](#controller) vai cuidar desse pedido.
+A **rota** liga um endereço a uma parte do código. Quando o navegador pede `/messages` (a lista de recados), é a rota que diz qual [controller](#controller) vai cuidar desse pedido.
 
 Funciona como um mapa de endereços do app. As rotas ficam todas num arquivo só, o `config/routes.rb`.
 
@@ -181,7 +181,7 @@ O **controller** é a parte do app que recebe o pedido e decide o que fazer com 
 
 Pense numa chef de cozinha: ela recebe o pedido, pega os ingredientes certos e manda montar o prato. Ela mesma não guarda os ingredientes nem decora o prato, mas coordena tudo.
 
-No app Mural de recados, o controller dos recados se chama `RecadosController`.
+No app Mural de recados, o controller dos recados se chama `MessagesController`.
 
 </details>
 
@@ -190,7 +190,7 @@ No app Mural de recados, o controller dos recados se chama `RecadosController`.
 
 O **model** é a parte do app que representa as informações e as regras sobre elas. É ele que conversa com o [banco de dados](#banco-de-dados) para guardar e buscar dados.
 
-No app Mural de recados, o model `Recado` sabe que um recado tem autora e mensagem. As regras também ficam nele, como "um recado não pode ser vazio".
+No app Mural de recados, o model `Message` (o recado) sabe que um recado tem `author` (autora) e `content` (a mensagem). As regras também ficam nele, como "um recado não pode ser vazio".
 
 </details>
 
@@ -215,7 +215,9 @@ Ela recebe as informações do [controller](#controller) e só cuida da apresent
 
 O **banco de dados** é onde o app guarda as informações para que elas não sumam quando alguém fecha o navegador. No app Mural de recados, é onde ficam os recados.
 
-Ele funciona como uma planilha bem organizada: cada tipo de informação ganha uma **tabela**, cada recado é uma **linha** e cada informação do recado, como autora e mensagem, é uma **coluna**.
+Dá para pensar nele como uma planilha: cada tipo de informação ganha uma **tabela**, cada recado é uma **linha** e cada informação do recado, como autora e mensagem, é uma **coluna**.
+
+Mas o banco de dados é bem mais esperto que uma planilha. É como ter várias planilhas interligadas: uma tabela pode apontar para as linhas de outra. Por exemplo, uma tabela de respostas pode dizer a qual recado cada resposta pertence. O banco também encontra informações rapidinho, mesmo entre milhões de linhas, deixa várias pessoas usarem ao mesmo tempo sem uma atrapalhar a outra e segue regras que impedem dados errados, como uma linha sem informação obrigatória.
 
 O app Mural de recados usa o **SQLite**, um banco de dados que fica num único arquivo dentro do projeto e que o Rails já deixa configurado.
 
@@ -315,10 +317,10 @@ Uma **variável** é um nome que guarda um valor, para você usar esse valor dep
 Pense numa caixa com uma etiqueta: a etiqueta é o nome, e o que está dentro é o valor. Em Ruby:
 
 ```ruby
-autora = "Ana"
+author = "Ana"
 ```
 
-Daqui em diante, `autora` quer dizer `"Ana"`. E dá para trocar o conteúdo da caixa: se depois você escrever `autora = "Bia"`, a mesma etiqueta passa a guardar outro valor.
+Daqui em diante, `author` (autora) quer dizer `"Ana"`. E dá para trocar o conteúdo da caixa: se depois você escrever `author = "Bia"`, a mesma etiqueta passa a guardar outro valor.
 
 </details>
 

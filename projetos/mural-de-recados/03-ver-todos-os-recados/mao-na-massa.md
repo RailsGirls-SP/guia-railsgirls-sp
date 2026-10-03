@@ -9,7 +9,7 @@ nav_order: 1
 
 Travou em algum passo? Veja [Travou?](#travou), no fim da página.
 
-TODO: decisão pendente: usar `rails generate scaffold` (e depois explorar o código gerado) ou escrever model, controller e views à mão, parte por parte.
+TODO: escrever rotas, controller e views à mão, sem scaffold (decidido).
 
 TODO: em cada passo, um "Dê um palpite" antes de rodar e um "Confira" logo depois.
 
@@ -20,13 +20,6 @@ TODO: último passo: guardar o progresso com um commit e o Sync Changes.
 ## Travou?
 
 TODO: os 2–3 erros mais prováveis deste passo e como resolver.
-
-<details markdown="1">
-<summary>Código completo deste passo</summary>
-
-TODO: conteúdo de cada arquivo alterado neste capítulo.
-
-</details>
 
 Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/03-ver-todos-os-recados.md %}).
 
