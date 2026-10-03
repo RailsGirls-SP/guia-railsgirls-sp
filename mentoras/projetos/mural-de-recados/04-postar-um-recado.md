@@ -7,7 +7,7 @@ nav_order: 5
 
 # 04. Como postar um recado?
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/04-postar-um-recado.md %}) · Código de referência: tag `passo-04`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/04-postar-um-recado/index.md %}) · Código de referência: tag `passo-04`.
 
 - TODO: perguntas para fazer durante o "Pense antes"
 - TODO: confusões comuns neste capítulo

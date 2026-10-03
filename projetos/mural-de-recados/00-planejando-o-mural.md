@@ -128,13 +128,13 @@ Cada capítulo daqui pra frente resolve um pedaço deste plano:
 | Do plano | Capítulo |
 |---|---|
 | Um lugar para o mural de recados existir | [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/index.md %}) |
-| As informações de um recado | [Onde os recados ficam guardados?]({{ site.baseurl }}{% link projetos/mural-de-recados/02-onde-os-recados-ficam-guardados.md %}) |
-| Ver todos os recados | [Como ver todos os recados?]({{ site.baseurl }}{% link projetos/mural-de-recados/03-ver-todos-os-recados.md %}) |
-| Postar um recado | [Como postar um recado?]({{ site.baseurl }}{% link projetos/mural-de-recados/04-postar-um-recado.md %}) |
-| Corrigir e apagar | [Errei! Como corrigir ou apagar?]({{ site.baseurl }}{% link projetos/mural-de-recados/05-corrigir-ou-apagar.md %}) |
-| O visual dos cartões | [Como fazer um mural de recados que dá vontade de usar?]({{ site.baseurl }}{% link projetos/mural-de-recados/06-um-mural-que-da-vontade-de-usar.md %}) |
-| O que pode dar errado | [E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio.md %}) |
-| Outras pessoas usando o mural de recados | [Como mostrar o mural de recados para o mundo?]({{ site.baseurl }}{% link projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo.md %}) |
+| As informações de um recado | [Como guardar os recados?]({{ site.baseurl }}{% link projetos/mural-de-recados/02-como-guardar-os-recados/index.md %}) |
+| Ver todos os recados | [Como ver todos os recados?]({{ site.baseurl }}{% link projetos/mural-de-recados/03-ver-todos-os-recados/index.md %}) |
+| Postar um recado | [Como postar um recado?]({{ site.baseurl }}{% link projetos/mural-de-recados/04-postar-um-recado/index.md %}) |
+| Corrigir e apagar | [Errei! Como corrigir ou apagar?]({{ site.baseurl }}{% link projetos/mural-de-recados/05-corrigir-ou-apagar/index.md %}) |
+| O visual dos cartões | [Como fazer um mural de recados que dá vontade de usar?]({{ site.baseurl }}{% link projetos/mural-de-recados/06-um-mural-que-da-vontade-de-usar/index.md %}) |
+| O que pode dar errado | [E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %}) |
+| Outras pessoas usando o mural de recados | [Como mostrar o mural de recados para o mundo?]({{ site.baseurl }}{% link projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo/index.md %}) |
 
 As quatro ações do plano (postar, ver, corrigir e apagar) aparecem em quase todo sistema que guarda informações: uma rede social, uma loja, uma agenda. Quem programa chama esse conjunto de **CRUD**, das iniciais em inglês de criar, ler, atualizar e apagar. Veja no [glossário]({{ site.baseurl }}{% link comece-aqui/glossario.md %}).
 

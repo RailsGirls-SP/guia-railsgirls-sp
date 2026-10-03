@@ -7,7 +7,7 @@ nav_order: 8
 
 # 07. E se alguém mandar um recado vazio?
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio.md %}) · Código de referência: tag `passo-07`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %}) · Código de referência: tag `passo-07`.
 
 - TODO: perguntas para fazer durante o "Pense antes"
 - TODO: confusões comuns neste capítulo

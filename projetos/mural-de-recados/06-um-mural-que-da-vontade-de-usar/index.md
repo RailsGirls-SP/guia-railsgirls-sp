@@ -3,6 +3,7 @@ title: "Como fazer um mural de recados que dá vontade de usar?"
 parent: Mural de recados
 grand_parent: Projetos
 nav_order: 7
+has_children: true
 ---
 
 # Como fazer um mural de recados que dá vontade de usar?
@@ -27,43 +28,9 @@ TODO: telas, dados e regras que a gente planejou para este desafio.
 </details>
 
 ## Mão na massa
-TODO
 
-TODO: em cada passo, um "Dê um palpite" antes de rodar e um "Confira" logo depois.
+Agora é com você: siga os passos em [Mão na massa]({{ site.baseurl }}{% link projetos/mural-de-recados/06-um-mural-que-da-vontade-de-usar/mao-na-massa.md %}). Quando terminar, siga para [O que aconteceu?]({{ site.baseurl }}{% link projetos/mural-de-recados/06-um-mural-que-da-vontade-de-usar/o-que-aconteceu.md %}).
 
-## Entenda
-TODO: explicação do conceito, sem jargão desnecessário; o termo técnico aparece aqui (e linka o glossário).
+## O que aconteceu?
 
-### Não existem perguntas bobas
-TODO: 2–3 perguntas e respostas curtas.
-
-## Quebre de propósito
-TODO (opcional): uma mudança que causa erro de propósito e como ler a mensagem.
-
-## E se fosse com IA?
-TODO (opcional): transformar o plano do "Pense antes" num pedido para a IA e conferir o resultado contra as regras do plano.
-
-## Não esqueça
-TODO: 3–5 bullets.
-
-## Quiz
-TODO: 2–3 perguntas.
-
-<details markdown="1">
-<summary>Ver respostas</summary>
-
-TODO
-
-</details>
-
-## Travou?
-TODO: os 2–3 erros mais prováveis deste passo e como resolver.
-
-<details markdown="1">
-<summary>Código completo deste passo</summary>
-
-TODO: conteúdo de cada arquivo alterado neste capítulo.
-
-</details>
-
-Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/06-um-mural-que-da-vontade-de-usar.md %}).
+Terminou os passos? Em [O que aconteceu?]({{ site.baseurl }}{% link projetos/mural-de-recados/06-um-mural-que-da-vontade-de-usar/o-que-aconteceu.md %}) você entende cada passo, quebra o app de propósito, vê se precisa de IA e responde um quiz.
