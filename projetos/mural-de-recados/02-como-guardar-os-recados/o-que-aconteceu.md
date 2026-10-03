@@ -14,7 +14,7 @@ Neste capítulo, três peças trabalharam juntas:
 
 - O **[model]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#model)** `Message` (no arquivo `app/models/message.rb`) é quem representa um recado dentro do app. Ele parece vazio, mas herda do Rails tudo o que precisa para guardar, buscar e apagar recados. Foi ele que você usou no console, com `Message.create` e `Message.count`.
 - A **[migration]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#migration)** é a instrução para criar a tabela. Ela só descreve a mudança; quem aplica é o `bin/rails db:migrate`.
-- O **[banco de dados]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#banco-de-dados)** é onde os recados ficam guardados de verdade. No app Mural de recados, ele é um arquivo só, `storage/development.sqlite3`, que o Rails gerencia por você.
+- O **[banco de dados]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#banco-de-dados)** é onde os recados ficam guardados de verdade. No app Mural de recados, ele é um arquivo só, `storage/development.sqlite3`, que o Rails gerencia por você. Em muitos apps que estão no ar, o banco de dados fica num programa separado, às vezes até num computador só para ele, como o PostgreSQL ou o MySQL. Para aprender e para começar um projeto, o SQLite funciona muito bem, e o jeito de usar o model é praticamente o mesmo nos dois casos.
 
 **Por que precisamos dos dois?** Pense na planilha de recados:
 
@@ -41,7 +41,7 @@ flowchart LR
   class Model,Banco aqui
 ```
 
-Neste capítulo, você construiu as duas peças da direita: o model e a tabela no banco de dados. O navegador ainda não chega nelas: isso vem nos próximos capítulos.
+Neste capítulo, você construiu as duas peças destacadas no diagrama: o model e a tabela no banco de dados. O navegador ainda não chega nelas: isso vem nos próximos capítulos.
 
 </details>
 
@@ -92,6 +92,9 @@ O Rails também usa esse número para lembrar o que já rodou: ele anota no pró
 <summary>Onde está o recado da Ana agora?</summary>
 
 Numa linha da tabela `messages`, dentro do arquivo `storage/development.sqlite3`. Esse arquivo não vai para o GitHub (o `.gitignore` do Rails deixa ele de fora), então o recado existe só no seu codespace.
+
+{: .atencao }
+Não apague nem edite o arquivo `storage/development.sqlite3`. Ele não é um arquivo de texto: abrir e salvar pelo editor pode estragar o banco de dados, e apagar faz todos os recados sumirem. Para mexer nos recados, use o console ou, a partir dos próximos capítulos, o próprio app.
 
 </details>
 

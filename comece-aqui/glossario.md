@@ -69,7 +69,18 @@ Por que quem programa usa tanto o terminal?
 
 Quando o terminal termina uma tarefa e está pronto para o próximo comando, ele mostra uma linha terminando em `$`. No codespace, o terminal fica na parte de baixo da tela e dá ordens para o computador na nuvem, não para o seu.
 
-Também é chamado de **linha de comando**, **console** ou **shell**. Veja os comandos mais usados em [Terminal básico]({{ site.baseurl }}{% link comece-aqui/terminal-basico.md %}).
+Também é chamado de **linha de comando** ou **shell**. Veja os comandos mais usados em [Terminal básico]({{ site.baseurl }}{% link comece-aqui/terminal-basico.md %}).
+
+</details>
+
+<details class="termo" id="console" markdown="1">
+<summary>Console</summary>
+
+Neste guia, **console** quase sempre quer dizer o **console do Rails**: um jeito de conversar com o seu app escrevendo código [Ruby](#ruby), sem passar pelo navegador. Você abre com o comando `bin/rails console`, dentro do [terminal](#terminal).
+
+O terminal entende comandos do computador, como `bin/rails server`. Já o console do Rails entende Ruby e conhece o seu app: dá para escrever `Message.count` e ver na hora quantos recados existem. Para sair do console e voltar ao terminal, digite `exit`. Você usa o console pela primeira vez em [Como guardar os recados?]({{ site.baseurl }}{% link projetos/mural-de-recados/02-como-guardar-os-recados/mao-na-massa.md %}).
+
+Fora deste guia, a palavra "console" também pode aparecer com outros sentidos, como sinônimo de terminal ou como o painel de ferramentas do navegador.
 
 </details>
 

@@ -36,6 +36,25 @@ Se alguém perguntar por que os recados sumiram num codespace novo, é isso: o c
 
 Isso também vale para o capítulo 08: no plano gratuito do Render, o disco também não é permanente, e o SQLite perde os dados a cada deploy (decisão ainda pendente no capítulo).
 
+## SQLite, MySQL e PostgreSQL
+
+{: .atencao }
+Isto é contexto para as mentoras. **Não precisa explicar para as participantes agora**: só se alguém perguntar.
+
+O app usa o **SQLite**, que é o padrão do Rails. Ele funciona diferente de bancos como o **MySQL** e o **PostgreSQL**:
+
+| | SQLite | MySQL e PostgreSQL |
+|---|---|---|
+| **Onde fica** | Num único arquivo dentro do projeto (`storage/development.sqlite3`) | Num programa separado, o servidor do banco de dados, que o app acessa pela rede |
+| **Instalação** | Nenhuma: já vem com o Rails | Precisa instalar e configurar o servidor do banco, usuário e senha |
+| **Bom para** | Aprender, desenvolver e apps pequenos ou médios | Apps com muitos acessos ao mesmo tempo, vários servidores usando o mesmo banco e recursos avançados |
+
+No dia a dia do Rails, a diferença quase não aparece: o Active Record (a parte do Rails por trás dos models) gera os comandos certos para cada banco, e o código do app praticamente não muda. Quem escolhe o banco é o arquivo `config/database.yml`.
+
+O SQLite não é só "banco de brinquedo": desde o Rails 8, ele também é uma opção recomendada para colocar apps em produção. Mesmo assim, PostgreSQL e MySQL continuam muito comuns em empresas.
+
+Esse assunto volta no capítulo 08: em alguns serviços de hospedagem, como o plano gratuito do Render, o disco não é permanente, e por isso pode ser preciso usar um PostgreSQL em produção (decisão ainda pendente).
+
 ## A analogia da planilha e da assistente
 
 O capítulo compara a migration com montar uma planilha e o model com uma assistente especialista que só cuida dessa planilha. É só uma comparação didática, para separar estrutura (migration) de dados (model). Não é uma descrição exata de como o Rails funciona.
