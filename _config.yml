@@ -7,6 +7,10 @@ search_enabled: true
 lang: pt-BR
 color_scheme: railsgirls
 
+# Diagramas em blocos ```mermaid, desenhados no navegador.
+mermaid:
+  version: "12.1.0"
+
 # Boxes de destaque. Uso: uma linha com {: .dica } antes do parágrafo.
 callouts:
   dica:

@@ -7,6 +7,19 @@ nav_order: 2
 
 # O model Recado
 
+## Você está aqui
+
+```mermaid
+flowchart LR
+  Navegador --> Rota --> Controller
+  Controller <--> Model
+  Model <--> Banco[(Banco de dados)]
+  Controller --> View --> Navegador
+
+  classDef aqui fill:#73121b,stroke:#73121b,color:#fff
+  class Model aqui
+```
+
 ## O que vamos fazer
 TODO: objetivo do capítulo em 2–3 frases.
 
