@@ -11,6 +11,8 @@ Travou em algum passo? Veja [Travou?](#travou), no fim da página.
 
 TODO: escrever rotas, controller e views à mão, sem scaffold (decidido).
 
+TODO: o capítulo 03 usa a rota simples `get "messages", to: "messages#index"`. Quando aparecerem as rotas para postar (e, no capítulo 05, corrigir e apagar), apresentar o `resources :messages` como o atalho que cria todas essas rotas de uma vez, trocando as linhas soltas por ele.
+
 TODO: em cada passo, um "Dê um palpite" antes de rodar e um "Confira" logo depois.
 
 TODO: cada passo num bloco que abre ao clicar (`<details class="passo" markdown="1">`), como em Por onde começar?. O passo 1 começa aberto, e cada passo termina com "Terminou? Abra o passo …".

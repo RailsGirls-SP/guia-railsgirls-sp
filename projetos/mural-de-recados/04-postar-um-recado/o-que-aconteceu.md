@@ -12,7 +12,7 @@ nav_order: 2
 
 TODO: explicação do conceito, sem jargão desnecessário; o termo técnico aparece aqui (e linka o glossário).
 
-Você está aqui: este é o caminho que um pedido percorre dentro do app.
+Você está aqui: este é o caminho que uma requisição percorre dentro do app.
 
 ```mermaid
 flowchart LR

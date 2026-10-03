@@ -21,7 +21,7 @@ Neste primeiro projeto, não incentive as participantes a escrever testes automa
 
 ## Sem scaffold
 
-Neste projeto, não use o `bin/rails generate scaffold`, nem o `scaffold_controller`, e não incentive as participantes a usar. Cada parte do app (model, rotas, controller e views) é construída à mão, um capítulo de cada vez.
+Neste projeto, não use o `bin/rails generate scaffold`, nem o `scaffold_controller`, e não incentive as participantes a usar. Cada parte do app (model, rotas, controller e views) aparece num capítulo próprio. Geradores pequenos, como `generate model` e `generate controller`, podem ser usados, mas a participante revisa e ajusta o que eles criaram: no capítulo 03, por exemplo, ela apaga a rota que o gerador acrescentou e reescreve a view.
 
 - **Entender cada peça.** O scaffold cria dezenas de arquivos de uma vez. Funciona, mas a participante não vê como cada parte se liga à outra, que é justamente o que o projeto quer ensinar.
 - **Etapas pequenas, como no MVP.** Construir uma peça por capítulo segue a mesma ideia do skate ao carro: o app funciona ao fim de cada etapa, e dá para conferir o que mudou.

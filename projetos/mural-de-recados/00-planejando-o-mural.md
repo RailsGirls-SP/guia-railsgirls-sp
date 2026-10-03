@@ -132,7 +132,7 @@ Cada capítulo daqui pra frente resolve um pedaço deste plano:
 | Ver todos os recados | [Como ver todos os recados?]({{ site.baseurl }}{% link projetos/mural-de-recados/03-ver-todos-os-recados/index.md %}) |
 | Postar um recado | [Como postar um recado?]({{ site.baseurl }}{% link projetos/mural-de-recados/04-postar-um-recado/index.md %}) |
 | Corrigir e apagar | [Errei! Como corrigir ou apagar?]({{ site.baseurl }}{% link projetos/mural-de-recados/05-corrigir-ou-apagar/index.md %}) |
-| O visual dos cartões | [Como fazer um mural de recados que dá vontade de usar?]({{ site.baseurl }}{% link projetos/mural-de-recados/06-um-mural-que-da-vontade-de-usar/index.md %}) |
+| O visual dos cartões | [Como deixar o mural de recados mais bonito?]({{ site.baseurl }}{% link projetos/mural-de-recados/06-como-deixar-o-mural-mais-bonito/index.md %}) |
 | O que pode dar errado | [E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %}) |
 | Outras pessoas usando o mural de recados | [Como mostrar o mural de recados para o mundo?]({{ site.baseurl }}{% link projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo/index.md %}) |
 

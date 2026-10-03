@@ -60,7 +60,7 @@ Oriente a deixar a porta **privada**. Se uma participante quiser mostrar o mural
 
 ## Erro "Blocked hosts"
 
-Em modo de desenvolvimento, o Rails só aceita pedidos de endereços conhecidos, e o endereço do codespace (`*.app.github.dev`) não está na lista. Para liberar, abra `config/environments/development.rb` e acrescente, antes do último `end`:
+Em modo de desenvolvimento, o Rails só aceita requisições de endereços conhecidos, e o endereço do codespace (`*.app.github.dev`) não está na lista. Para liberar, abra `config/environments/development.rb` e acrescente, antes do último `end`:
 
 ```ruby
 config.hosts << ".app.github.dev"

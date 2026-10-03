@@ -12,7 +12,7 @@ nav_order: 2
 
 TODO: explicação do conceito, sem jargão desnecessário; o termo técnico aparece aqui (e linka o glossário).
 
-Você está aqui: este é o caminho que um pedido percorre dentro do app.
+Você está aqui: este é o caminho que uma requisição percorre dentro do app.
 
 ```mermaid
 flowchart LR
@@ -80,4 +80,4 @@ TODO (opcional): links e vídeos para quem quiser ir além.
 
 ## E agora?
 
-Próximo desafio: [Como fazer um mural de recados que dá vontade de usar?]({{ site.baseurl }}{% link projetos/mural-de-recados/06-um-mural-que-da-vontade-de-usar/index.md %})
+Próximo desafio: [Como deixar o mural de recados mais bonito?]({{ site.baseurl }}{% link projetos/mural-de-recados/06-como-deixar-o-mural-mais-bonito/index.md %})

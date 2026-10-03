@@ -28,15 +28,68 @@ Ele pede as páginas para o [servidor](#servidor) e mostra o resultado na tela. 
 
 </details>
 
+<details class="termo" id="requisicao" markdown="1">
+<summary>Requisição (request)</summary>
+
+Uma **requisição** (em inglês, *request*) é o pedido que o [navegador](#navegador) faz ao app: "me mostra a página `/messages`", "guarda este recado novo". Toda vez que você abre um endereço, clica num link ou envia um formulário, o navegador manda uma requisição.
+
+O app recebe a requisição, decide o que fazer e devolve uma **resposta** (em inglês, *response*): normalmente, uma página pronta. No Rails, quem recebe a requisição é a [rota](#rota), que manda para o [controller](#controller) certo.
+
+</details>
+
 <details class="termo" id="servidor" markdown="1">
 <summary>Servidor</summary>
 
 A palavra **servidor** tem dois sentidos:
 
-- **O programa** que fica esperando pedidos do [navegador](#navegador) e devolve as páginas. No Rails, é o que liga quando você roda `bin/rails server` (um programa chamado Puma).
+- **O programa** que fica esperando [requisições](#requisicao) do [navegador](#navegador) e devolve as páginas. No Rails, é o que liga quando você roda `bin/rails server` (um programa chamado Puma).
 - **O computador** onde esse programa roda, que fica ligado o tempo todo para o site estar no ar. "Colocar um site num servidor" quer dizer deixá-lo num computador desses.
 
 Neste guia, "o servidor" quase sempre quer dizer o programa.
+
+</details>
+
+<details class="termo" id="html" markdown="1">
+<summary>HTML</summary>
+
+**HTML** é a língua em que as páginas da web são escritas. Ele diz **o que** tem na página: um título, um parágrafo, uma imagem, um botão, um formulário.
+
+Cada parte da página fica entre marcações chamadas **tags**, como `<h1>` para um título e `<p>` para um parágrafo:
+
+```html
+<h1>Mural de recados</h1>
+<p>Adorei o workshop!</p>
+```
+
+O [navegador](#navegador) lê o HTML e mostra a página. No Rails, as [views](#view) são arquivos HTML com pedaços de Ruby misturados (os arquivos `.html.erb`).
+
+</details>
+
+<details class="termo" id="css" markdown="1">
+<summary>CSS</summary>
+
+**CSS** é a língua que diz **como** a página aparece: cores, tamanhos, fontes, espaços e a posição de cada coisa na tela.
+
+Se o [HTML](#html) é o conteúdo da página, o CSS é a decoração. Por exemplo, esta regra deixa todos os títulos `<h1>` vermelhos:
+
+```css
+h1 {
+  color: red;
+}
+```
+
+Muitas vezes, em vez de escrever todo o CSS do zero, usa-se uma biblioteca pronta, com estilos para botões, cartões e formulários.
+
+</details>
+
+<details class="termo" id="javascript" markdown="1">
+<summary>JavaScript</summary>
+
+**JavaScript** (muitas vezes abreviado como **JS**) é a [linguagem de programação](#linguagem-de-programacao) que roda dentro do [navegador](#navegador). Ela deixa a página interativa sem precisar carregar outra página: abrir um menu, mostrar uma mensagem quando você clica, conferir um formulário enquanto você digita.
+
+Resumindo os três: o [HTML](#html) diz o que tem na página, o [CSS](#css) diz como ela aparece, e o JavaScript diz o que ela faz quando você interage. O [Ruby](#ruby) roda no [servidor](#servidor); o JavaScript roda no navegador.
+
+Apesar do nome parecido, JavaScript não tem nada a ver com Java, que é outra linguagem.
 
 </details>
 
@@ -161,7 +214,7 @@ Ele pode ficar no seu computador e também num site como o GitHub, onde outras p
 
 Um **framework** é um conjunto de ferramentas e regras prontas para resolver problemas que quase todo projeto tem, para você se concentrar no que é só do seu.
 
-Em vez de construir do zero como o app recebe pedidos, guarda dados e monta páginas, você usa o que o framework já traz e segue o jeito de organizar que ele propõe. É como cozinhar numa cozinha já equipada, em vez de começar construindo o fogão.
+Em vez de construir do zero como o app recebe requisições, guarda dados e monta páginas, você usa o que o framework já traz e segue o jeito de organizar que ele propõe. É como cozinhar numa cozinha já equipada, em vez de começar construindo o fogão.
 
 O [Rails](#rails) é um framework.
 
@@ -179,7 +232,7 @@ Ele organiza o app em partes com papéis bem definidos ([rota](#rota), [controll
 <details class="termo" id="rota" markdown="1">
 <summary>Rota</summary>
 
-A **rota** liga um endereço a uma parte do código. Quando o navegador pede `/messages` (a lista de recados), é a rota que diz qual [controller](#controller) vai cuidar desse pedido.
+A **rota** liga um endereço a uma parte do código. Quando o navegador pede `/messages` (a lista de recados), é a rota que diz qual [controller](#controller) vai cuidar dessa [requisição](#requisicao).
 
 Funciona como um mapa de endereços do app. As rotas ficam todas num arquivo só, o `config/routes.rb`.
 
@@ -188,11 +241,32 @@ Funciona como um mapa de endereços do app. As rotas ficam todas num arquivo só
 <details class="termo" id="controller" markdown="1">
 <summary>Controller</summary>
 
-O **controller** é a parte do app que recebe o pedido e decide o que fazer com ele. Por exemplo: buscar os recados no [model](#model) e escolher qual [view](#view) vai mostrar a resposta.
+O **controller** é a parte do app que recebe a [requisição](#requisicao) do navegador, depois que a [rota](#rota) encaminhou, e decide o que fazer com ela. É ele que junta os dados com a parte visual do app: por exemplo, busca os recados no [model](#model) e entrega para a [view](#view), que monta a página.
 
 Pense numa chef de cozinha: ela recebe o pedido, pega os ingredientes certos e manda montar o prato. Ela mesma não guarda os ingredientes nem decora o prato, mas coordena tudo.
 
 No app Mural de recados, o controller dos recados se chama `MessagesController`.
+
+</details>
+
+<details class="termo" id="acao" markdown="1">
+<summary>Ação (action)</summary>
+
+Uma **ação** (em inglês, *action*) é cada coisa que um [controller](#controller) sabe fazer. Por exemplo, a ação `index` do `MessagesController` mostra a lista de recados.
+
+No Rails, as ações têm nomes em inglês que seguem uma convenção. Estas são as mais comuns:
+
+| Ação | Tradução | O que faz | No Mural de recados |
+|---|---|---|---|
+| `index` | índice, lista | mostra a lista de itens | ver todos os recados |
+| `show` | mostrar | mostra um item só | ver um recado |
+| `new` | novo | mostra o formulário para criar um item | abrir o formulário de recado |
+| `create` | criar | guarda o item novo | postar o recado |
+| `edit` | editar | mostra o formulário para mudar um item | abrir um recado para corrigir |
+| `update` | atualizar | guarda as mudanças | salvar a correção |
+| `destroy` | destruir, apagar | apaga o item | apagar um recado |
+
+Juntas, essas ações formam o [CRUD](#crud): criar (`new` e `create`), ler (`index` e `show`), atualizar (`edit` e `update`) e apagar (`destroy`).
 
 </details>
 
@@ -332,6 +406,19 @@ author = "Ana"
 ```
 
 Daqui em diante, `author` (autora) quer dizer `"Ana"`. E dá para trocar o conteúdo da caixa: se depois você escrever `author = "Bia"`, a mesma etiqueta passa a guardar outro valor.
+
+</details>
+
+<details class="termo" id="bug" markdown="1">
+<summary>Bug</summary>
+
+Um **bug** (em inglês, "inseto"; pronuncia-se *bâg*) é um defeito num programa: algo que faz o programa se comportar diferente do que deveria. Por exemplo, um mural de recados que mostra a autora no lugar da mensagem.
+
+Uma mensagem de erro e um bug não são a mesma coisa. A mensagem de erro é o programa avisando que algo deu errado, e costuma ajudar a achar o problema. Já um bug pode acontecer sem nenhum aviso: o programa funciona, só que do jeito errado.
+
+Procurar e corrigir bugs se chama **depurar** (em inglês, *debug*). Todo mundo que programa passa boa parte do tempo fazendo isso: encontrar bugs faz parte do trabalho, e não quer dizer que você é ruim nisso.
+
+Uma curiosidade: em 1947, a equipe da cientista da computação Grace Hopper encontrou uma mariposa presa dentro de um computador, o Mark II, e colou o inseto no caderno de anotações como "o primeiro caso de um bug de verdade". A palavra já era usada para defeitos, mas a história ficou famosa.
 
 </details>
 

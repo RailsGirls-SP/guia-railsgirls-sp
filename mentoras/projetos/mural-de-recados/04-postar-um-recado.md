@@ -14,7 +14,7 @@ nav_order: 5
 
 ## Erro ao enviar o formulário no Codespaces
 
-No Codespaces, o navegador acessa o app por um endereço `https://…app.github.dev`, mas o Rails recebe o pedido como se viesse de outro endereço. Ao enviar um formulário, a proteção contra envio de formulários de outros sites pode bloquear o pedido, com um erro como `ActionController::InvalidAuthenticityToken` ou "HTTP Origin header didn't match request.base_url".
+No Codespaces, o navegador acessa o app por um endereço `https://…app.github.dev`, mas o Rails recebe a requisição como se viesse de outro endereço. Ao enviar um formulário, a proteção contra envio de formulários de outros sites pode bloquear o pedido, com um erro como `ActionController::InvalidAuthenticityToken` ou "HTTP Origin header didn't match request.base_url".
 
 Na Imersão 2025, a solução foi acrescentar esta linha em `config/environments/development.rb`, antes do último `end`:
 

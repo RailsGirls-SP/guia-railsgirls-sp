@@ -28,7 +28,7 @@ São trabalhos diferentes: um prepara o lugar, o outro trabalha com o que está 
 
 O Rails liga o model à tabela pelo nome: o model `Message`, no singular e com letra maiúscula, conversa com a tabela `messages`, no plural e em minúsculas. Você não precisou configurar nada: é uma **convenção** do Rails.
 
-Você está aqui: este é o caminho que um pedido percorre dentro do app.
+Você está aqui: este é o caminho que uma requisição percorre dentro do app.
 
 ```mermaid
 flowchart LR

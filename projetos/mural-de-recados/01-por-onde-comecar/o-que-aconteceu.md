@@ -24,7 +24,7 @@ O **servidor** é um programa que fica esperando o navegador pedir uma página e
 
 O endereço da aba que abriu termina em `app.github.dev`: é o endereço do seu app dentro do codespace. Por enquanto, só você consegue abrir.
 
-Você está aqui: este é o caminho que um pedido percorre dentro do app.
+Você está aqui: este é o caminho que uma requisição percorre dentro do app.
 
 ```mermaid
 flowchart LR

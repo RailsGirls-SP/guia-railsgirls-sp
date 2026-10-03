@@ -1,6 +1,6 @@
 ---
 title: Mão na massa
-parent: "Como fazer um mural de recados que dá vontade de usar?"
+parent: "Como deixar o mural de recados mais bonito?"
 grand_parent: Mural de recados
 nav_order: 1
 ---
@@ -21,8 +21,8 @@ TODO: último passo: guardar o progresso com um commit e o Sync Changes.
 
 TODO: os 2–3 erros mais prováveis deste passo e como resolver.
 
-Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/06-um-mural-que-da-vontade-de-usar.md %}).
+Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/06-como-deixar-o-mural-mais-bonito.md %}).
 
 ## Terminou?
 
-Siga para [O que aconteceu?]({{ site.baseurl }}{% link projetos/mural-de-recados/06-um-mural-que-da-vontade-de-usar/o-que-aconteceu.md %}) e entenda cada passo.
+Siga para [O que aconteceu?]({{ site.baseurl }}{% link projetos/mural-de-recados/06-como-deixar-o-mural-mais-bonito/o-que-aconteceu.md %}) e entenda cada passo.
