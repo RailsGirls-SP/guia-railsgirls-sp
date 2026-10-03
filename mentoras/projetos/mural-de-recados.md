@@ -8,57 +8,74 @@ nav_order: 1
 # Notas do Mural de recados
 
 - TODO: como usar as tags `passo-NN` do repositório do app
+- TODO: como conduzir o "Pense antes de programar": dar tempo, perguntar em vez de responder, só abrir "o nosso plano" depois
 
-## 01. Criando o app
+## 00. Planejando o mural
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/01-criando-o-app.md %}) · Código de referência: tag `passo-01`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/00-planejando-o-mural.md %})
 
-- TODO: pontos de atenção
+- TODO: perguntas para fazer durante o "Pense antes"
+- TODO: confusões comuns neste capítulo
 
-## 02. O model Recado
+## 01. Um lugar para o projeto
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/02-o-model-recado.md %}) · Código de referência: tag `passo-02`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/01-um-lugar-para-o-projeto.md %}) · Código de referência: tag `passo-01`.
 
-- TODO: pontos de atenção
+- TODO: perguntas para fazer durante o "Pense antes"
+- TODO: confusões comuns neste capítulo
 
-## 03. Listando recados
+## 02. Onde os recados ficam guardados?
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/03-listando-recados.md %}) · Código de referência: tag `passo-03`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/02-onde-os-recados-ficam-guardados.md %}) · Código de referência: tag `passo-02`.
 
-- TODO: pontos de atenção
+- TODO: perguntas para fazer durante o "Pense antes"
+- TODO: confusões comuns neste capítulo
 
-## 04. Criando recados
+## 03. Ver todos os recados
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/04-criando-recados.md %}) · Código de referência: tag `passo-04`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/03-ver-todos-os-recados.md %}) · Código de referência: tag `passo-03`.
 
-- TODO: pontos de atenção
+- TODO: perguntas para fazer durante o "Pense antes"
+- TODO: confusões comuns neste capítulo
 
-## 05. Editando e apagando
+## 04. Deixar um recado
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/05-editando-e-apagando.md %}) · Código de referência: tag `passo-05`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/04-deixar-um-recado.md %}) · Código de referência: tag `passo-04`.
 
-- TODO: pontos de atenção
+- TODO: perguntas para fazer durante o "Pense antes"
+- TODO: confusões comuns neste capítulo
 
-## 06. Deixando bonito
+## 05. Errei! Corrigir ou apagar
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/06-deixando-bonito.md %}) · Código de referência: tag `passo-06`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/05-corrigir-ou-apagar.md %}) · Código de referência: tag `passo-05`.
 
-- TODO: pontos de atenção
+- TODO: perguntas para fazer durante o "Pense antes"
+- TODO: confusões comuns neste capítulo
 
-## 07. Validações
+## 06. Um mural que dá vontade de usar
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/07-validacoes.md %}) · Código de referência: tag `passo-07`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/06-um-mural-que-da-vontade-de-usar.md %}) · Código de referência: tag `passo-06`.
 
-- TODO: pontos de atenção
+- TODO: perguntas para fazer durante o "Pense antes"
+- TODO: confusões comuns neste capítulo
 
-## 08. Publicando
+## 07. E se alguém mandar um recado vazio?
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/08-publicando.md %}) · Código de referência: tag `passo-08`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio.md %}) · Código de referência: tag `passo-07`.
 
-- TODO: pontos de atenção
+- TODO: perguntas para fazer durante o "Pense antes"
+- TODO: confusões comuns neste capítulo
 
-## Desafios
+## 08. Mostrar para o mundo
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/desafios.md %})
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/08-mostrar-para-o-mundo.md %}) · Código de referência: tag `passo-08`.
 
-- TODO: pontos de atenção
+- TODO: perguntas para fazer durante o "Pense antes"
+- TODO: confusões comuns neste capítulo
+
+## Desafios extras
+
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/desafios-extras.md %})
+
+- TODO: perguntas para fazer durante o "Pense antes"
+- TODO: confusões comuns neste capítulo
