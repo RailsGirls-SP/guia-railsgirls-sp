@@ -265,6 +265,6 @@ Neste capítulo, todo o código foi criado pelo `rails new`. Não tem nada para 
 
 </details>
 
-<!-- TODO: decisão pendente: fazer o primeiro commit no fim deste capítulo? (ver comece-aqui/git-basico.md) -->
+<!-- TODO: adicionar o commit do fim do capítulo (decidido: um commit no fim de cada capítulo; ver comece-aqui/git-basico.md) -->
 
 Mentoras: código de referência na tag `passo-01` do repositório do app.
