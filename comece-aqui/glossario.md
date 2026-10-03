@@ -17,6 +17,7 @@ nav_order: 4
 - TODO: alucinação (IA)
 - TODO: contexto (IA)
 - TODO: variável
+- TODO: navegador: o programa que você usa para abrir sites, como Chrome, Firefox, Safari e Edge
 - TODO: terminal
 - TODO: Git
 - TODO: commit

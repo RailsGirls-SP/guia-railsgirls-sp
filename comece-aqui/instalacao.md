@@ -11,3 +11,4 @@ nav_order: 1
 - TODO: editor
 - TODO: verificação da instalação
 - TODO: passo a passo no GitHub Codespaces
+- TODO: como criar uma conta no GitHub

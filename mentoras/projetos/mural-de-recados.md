@@ -51,6 +51,37 @@ Referências (em inglês):
 - TODO: perguntas para fazer durante o "Pense antes"
 - TODO: confusões comuns neste capítulo
 
+### Quem responde ao pedido: o Puma ou o Rails?
+
+O capítulo simplifica e diz que "o servidor" atende os pedidos. Se alguém perguntar quem responde, são dois programas trabalhando juntos:
+
+- **O Puma** é o servidor que liga quando você roda `bin/rails server`. Ele vem instalado em todo app Rails novo, mas é um programa separado. Ele recebe o pedido do navegador e devolve a página pronta, sem saber nada sobre recados.
+- **O Rails, junto com o código do app,** decide o que responder: olha o endereço pedido, escolhe qual parte do código cuida daquilo (rota → controller), busca os recados no banco e monta a página (view).
+
+Na analogia do restaurante usada no capítulo:
+
+| No restaurante | No app |
+|---|---|
+| A atendente, que leva o pedido e traz o prato | O navegador |
+| O balcão, que recebe o pedido e entrega o prato | O Puma |
+| A cozinha equipada | O Rails |
+| A receita | O código do app |
+| A cozinheira, que segue a receita | O Ruby |
+
+Só aprofunde se a pergunta aparecer. Para quem está começando, "o servidor recebe o pedido e devolve a página" é suficiente neste capítulo.
+
+### Erro "Blocked hosts"
+
+Em modo de desenvolvimento, o Rails só aceita pedidos de endereços conhecidos, e o endereço do codespace (`*.app.github.dev`) não está na lista. Para liberar, abra `config/environments/development.rb` e acrescente, antes do último `end`:
+
+```ruby
+config.hosts << ".app.github.dev"
+```
+
+Depois, desligue o servidor (Ctrl+C) e ligue de novo com `bin/rails server`.
+
+TODO: se o repositório-modelo já liberar esse endereço (por exemplo, com a variável de ambiente `RAILS_DEVELOPMENT_HOSTS`), este erro não deve aparecer. Confirmar ao testar o modelo.
+
 ## 02. Onde os recados ficam guardados?
 
 [Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/02-onde-os-recados-ficam-guardados.md %}) · Código de referência: tag `passo-02`.
