@@ -1,14 +1,14 @@
 ---
-title: "Como fazer um mural que dá vontade de usar?"
+title: "Como fazer um mural de recados que dá vontade de usar?"
 parent: Mural de recados
 grand_parent: Projetos
 nav_order: 7
 ---
 
-# Como fazer um mural que dá vontade de usar?
+# Como fazer um mural de recados que dá vontade de usar?
 
 ## O desafio
-TODO: o mural funciona, mas ainda não parece um mural. Como deixar os recados com cara de cards coloridos, cada um na cor escolhida por quem escreveu? (A cor é uma informação nova: este capítulo ensina a acrescentar um campo ao que já existe.)
+TODO: o app Mural de recados funciona, mas ainda não parece um mural de recados de verdade. Como deixar os recados com cara de cards coloridos, cada um na cor escolhida por quem escreveu? (A cor é uma informação nova: este capítulo ensina a acrescentar um campo ao que já existe.)
 
 ## Pense antes de programar
 TODO: 5–10 minutos, no papel. Não existe resposta errada.
@@ -46,7 +46,7 @@ TODO (opcional): transformar o plano do "Pense antes" num pedido para a IA e con
 ## Não esqueça
 TODO: 3–5 bullets.
 
-## Teste-se
+## Quiz
 TODO: 2–3 perguntas.
 
 <details markdown="1">
@@ -66,4 +66,4 @@ TODO: conteúdo de cada arquivo alterado neste capítulo.
 
 </details>
 
-Mentoras: código de referência na tag `passo-06` do repositório do app.
+Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/06-um-mural-que-da-vontade-de-usar.md %}).

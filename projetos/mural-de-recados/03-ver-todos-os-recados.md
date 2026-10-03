@@ -8,7 +8,7 @@ nav_order: 4
 # Como ver todos os recados?
 
 ## O desafio
-TODO: já existem recados guardados. Como eles aparecem no mural?
+TODO: já existem recados guardados. Como eles aparecem no mural de recados?
 
 ## Pense antes de programar
 TODO: 5–10 minutos, no papel. Não existe resposta errada.
@@ -58,7 +58,7 @@ TODO (opcional): transformar o plano do "Pense antes" num pedido para a IA e con
 ## Não esqueça
 TODO: 3–5 bullets.
 
-## Teste-se
+## Quiz
 TODO: 2–3 perguntas.
 
 <details markdown="1">
@@ -78,4 +78,4 @@ TODO: conteúdo de cada arquivo alterado neste capítulo.
 
 </details>
 
-Mentoras: código de referência na tag `passo-03` do repositório do app.
+Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/03-ver-todos-os-recados.md %}).

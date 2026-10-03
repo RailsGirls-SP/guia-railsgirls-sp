@@ -163,3 +163,43 @@ details.passo {
     padding-bottom: 1.25rem;
   }
 }
+
+// Perguntas e respostas (Não existem perguntas bobas): uma por bloco.
+details.pergunta {
+  margin: 0.5rem 0;
+  border-color: #e0dcd8;
+  background-color: #fff;
+
+  summary {
+    color: #2b2b2b;
+  }
+}
+
+// Glossário: um bloco por termo e busca dentro da página.
+details.termo {
+  margin: 0.5rem 0;
+  border-color: #e0dcd8;
+  background-color: #fff;
+
+  summary {
+    color: #490606;
+  }
+}
+
+.busca-glossario {
+  margin: 1rem 0 1.5rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #e0dcd8;
+    border-radius: 12px;
+  }
+}

@@ -58,7 +58,7 @@ TODO (opcional): transformar o plano do "Pense antes" num pedido para a IA e con
 ## Não esqueça
 TODO: 3–5 bullets.
 
-## Teste-se
+## Quiz
 TODO: 2–3 perguntas.
 
 <details markdown="1">
@@ -78,4 +78,4 @@ TODO: conteúdo de cada arquivo alterado neste capítulo.
 
 </details>
 
-Mentoras: código de referência na tag `passo-02` do repositório do app.
+Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/02-onde-os-recados-ficam-guardados.md %}).

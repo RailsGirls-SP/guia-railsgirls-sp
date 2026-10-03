@@ -1,19 +1,19 @@
 ---
-title: "Como mostrar o mural para o mundo?"
+title: "Como mostrar o mural de recados para o mundo?"
 parent: Mural de recados
 grand_parent: Projetos
 nav_order: 9
 ---
 
-# Como mostrar o mural para o mundo?
+# Como mostrar o mural de recados para o mundo?
 
 ## O desafio
-TODO: o mural só funciona no seu computador. Como outras pessoas podem acessar?
+TODO: o app Mural de recados só funciona no seu computador. Como outras pessoas podem acessar?
 
 ## Pense antes de programar
 TODO: 5–10 minutos, no papel. Não existe resposta errada.
 
-- O que muda quando outras pessoas acessam o mural pela internet?
+- O que muda quando outras pessoas acessam o app Mural de recados pela internet?
 - Os recados precisam continuar lá amanhã? E daqui a um mês?
 
 ## Compare com o nosso plano
@@ -46,7 +46,7 @@ TODO (opcional): transformar o plano do "Pense antes" num pedido para a IA e con
 ## Não esqueça
 TODO: 3–5 bullets.
 
-## Teste-se
+## Quiz
 TODO: 2–3 perguntas.
 
 <details markdown="1">
@@ -66,4 +66,4 @@ TODO: conteúdo de cada arquivo alterado neste capítulo.
 
 </details>
 
-Mentoras: código de referência na tag `passo-08` do repositório do app.
+Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo.md %}).

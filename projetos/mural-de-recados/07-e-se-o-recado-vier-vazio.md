@@ -59,7 +59,7 @@ TODO: o código gerado aceita um recado vazio; quem decide que isso é um erro? 
 ## Não esqueça
 TODO: 3–5 bullets.
 
-## Teste-se
+## Quiz
 TODO: 2–3 perguntas.
 
 <details markdown="1">
@@ -79,4 +79,4 @@ TODO: conteúdo de cada arquivo alterado neste capítulo.
 
 </details>
 
-Mentoras: código de referência na tag `passo-07` do repositório do app.
+Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/07-e-se-o-recado-vier-vazio.md %}).

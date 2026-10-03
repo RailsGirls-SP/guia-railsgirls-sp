@@ -13,7 +13,7 @@ Tempo: uns 30 minutos.
 
 ## O desafio
 
-Você já tem um plano para o mural, mas ele ainda está no papel. Como ele vira um site que você abre no navegador e usa de verdade?
+Você já tem um plano para o mural de recados, mas ele ainda está no papel. Como ele vira um site que você abre no navegador e usa de verdade?
 
 Um site começa como **texto**: arquivos com instruções escritas numa linguagem de programação. É parecido com uma receita: sozinha, ela não faz nada; alguém precisa ler e seguir cada passo.
 
@@ -44,7 +44,7 @@ sequenceDiagram
   R->>R: a cozinheira (Ruby) segue a receita e monta a página
   R-->>S: entrega a página pronta
   S-->>N: devolve a página
-  N-->>Voce: mostra o mural com o recado novo
+  N-->>Voce: mostra o mural de recados com o recado novo
 ```
 
 Este diagrama é uma versão simplificada. O servidor já vem junto com o Rails: quando você cria um app Rails, ele vem pronto para usar. E, nos próximos capítulos, você vai descobrir o que acontece dentro da cozinha.
@@ -69,7 +69,7 @@ Para o app funcionar, a gente precisa de quatro coisas:
 |---|---|---|
 | Os arquivos com o código | Dizem o que o app deve fazer | Num **repositório** no GitHub |
 | Um computador que entende Ruby | Lê e executa o código | No seu computador, no **GitHub Codespaces** ou em outro computador na internet |
-| Um lugar para os dados | Guarda as informações do app, como os recados do nosso mural | Num **banco de dados** (aparece no próximo capítulo) |
+| Um lugar para os dados | Guarda as informações do app Mural de recados, como os recados | Num **banco de dados** (aparece no próximo capítulo) |
 | Um programa que cuida da conversa com o navegador | Recebe o que o navegador pede e devolve as páginas | No mesmo computador que roda o Ruby e o Rails: ele já vem pronto quando você cria o app |
 
 Quando você abre um site na internet, o código dele não está no seu computador: está num computador em outro lugar, que manda as páginas para você. Com o app Mural de recados vai ser igual, só que o "outro lugar", por enquanto, é o seu codespace.
@@ -84,4 +84,4 @@ Agora é com você: siga os passos em [Mão na massa]({{ site.baseurl }}{% link 
 
 ## O que aconteceu?
 
-Terminou os passos? Em [O que aconteceu?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/o-que-aconteceu.md %}) você entende cada passo, quebra o app de propósito, vê o que muda quando a IA gera código e se testa.
+Terminou os passos? Em [O que aconteceu?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/o-que-aconteceu.md %}) você entende cada passo, quebra o app de propósito, vê o que muda quando a IA gera código e responde um quiz.

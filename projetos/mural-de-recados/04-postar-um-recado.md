@@ -14,7 +14,7 @@ TODO: uma pessoa quer escrever um recado novo. Como ela faz isso?
 TODO: 5–10 minutos, no papel. Não existe resposta errada.
 
 - Que campos o formulário precisa ter? Volte ao seu plano.
-- O formulário fica na mesma tela do mural ou numa tela separada?
+- O formulário fica na mesma tela do mural de recados ou numa tela separada?
 - O que acontece na tela depois que ela envia o recado?
 
 ## Compare com o nosso plano
@@ -58,7 +58,7 @@ TODO (opcional): transformar o plano do "Pense antes" num pedido para a IA e con
 ## Não esqueça
 TODO: 3–5 bullets.
 
-## Teste-se
+## Quiz
 TODO: 2–3 perguntas.
 
 <details markdown="1">
@@ -78,4 +78,4 @@ TODO: conteúdo de cada arquivo alterado neste capítulo.
 
 </details>
 
-Mentoras: código de referência na tag `passo-04` do repositório do app.
+Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/04-postar-um-recado.md %}).

@@ -13,7 +13,7 @@ TODO: alguém escreveu um recado com erro de digitação, ou se arrependeu. E ag
 ## Pense antes de programar
 TODO: 5–10 minutos, no papel. Não existe resposta errada.
 
-- Como o mural sabe qual recado você quer corrigir ou apagar?
+- Como o app Mural de recados sabe qual recado você quer corrigir ou apagar?
 - Onde ficam os botões de editar e apagar? Desenhe no card.
 - E se a pessoa clicar em apagar sem querer?
 
@@ -58,7 +58,7 @@ TODO (opcional): transformar o plano do "Pense antes" num pedido para a IA e con
 ## Não esqueça
 TODO: 3–5 bullets.
 
-## Teste-se
+## Quiz
 TODO: 2–3 perguntas.
 
 <details markdown="1">
@@ -78,4 +78,4 @@ TODO: conteúdo de cada arquivo alterado neste capítulo.
 
 </details>
 
-Mentoras: código de referência na tag `passo-05` do repositório do app.
+Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/05-corrigir-ou-apagar.md %}).

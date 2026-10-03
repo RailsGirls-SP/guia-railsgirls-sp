@@ -7,7 +7,8 @@ nav_order: 2
 
 # O que aconteceu?
 
-## O que o `rails new` fez
+<details class="passo" markdown="1" open>
+<summary>Por dentro do app</summary>
 
 O **Rails** é um **framework**: um conjunto de ferramentas que já resolve o que quase todo site precisa, para você se concentrar no que é só do seu projeto. O `rails new` montou a estrutura inteira de um site em segundos.
 
@@ -19,13 +20,11 @@ Das muitas pastas criadas, três importam agora:
 
 O resto existe, funciona e pode ficar quieto por enquanto.
 
-## O que é o servidor
-
 O **servidor** é um programa que fica esperando o navegador pedir uma página e responde com ela. Enquanto ele está ligado, o terminal fica ocupado com ele. Se o servidor desligar, ninguém consegue abrir o app.
 
 O endereço da aba que abriu termina em `app.github.dev`: é o endereço do seu app dentro do codespace. Por enquanto, só você consegue abrir.
 
-## Você está aqui
+Você está aqui: este é o caminho que um pedido percorre dentro do app.
 
 ```mermaid
 flowchart LR
@@ -37,25 +36,55 @@ flowchart LR
 
 Todas as peças desse caminho já existem no seu app, mas ainda estão vazias. Nos próximos capítulos, você vai preencher uma por uma. Veja o que cada palavra quer dizer no [glossário]({{ site.baseurl }}{% link comece-aqui/glossario.md %}).
 
-## Para saber mais
+</details>
 
-Vídeos do Rails Girls São Paulo 2025:
+<details class="passo" markdown="1">
+<summary>Não existem perguntas bobas</summary>
 
-- [Introdução a Ruby](https://www.youtube.com/watch?v=hkSSRm8SQDU), com Isadora Silva.
-- [Introdução a Ruby on Rails](https://www.youtube.com/watch?v=6vSvbInY0Bc), com Beatriz Mitre.
+<details class="pergunta" markdown="1">
+<summary>Preciso deixar o terminal do servidor aberto?</summary>
 
-## Não existem perguntas bobas
-
-**Preciso deixar o terminal do servidor aberto?**
 Sim, enquanto quiser ver o app. Para digitar outros comandos, abra um terminal novo pelo botão **+** do terminal.
 
-**O codespace fica ligado para sempre?**
-Não. Ele desliga sozinho depois de um tempo sem uso, mas os seus arquivos ficam guardados. Para voltar, abra [github.com/codespaces](https://github.com/codespaces), clique no seu codespace e ligue o servidor de novo.
+</details>
 
-**Os arquivos estão no meu computador?**
+<details class="pergunta" markdown="1">
+<summary>Então um site fica com o terminal aberto, rodando o servidor?</summary>
+
+Não exatamente. Os sites que você usa no dia a dia ficam num [servidor]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#servidor), um computador que fica ligado o tempo todo. Lá, o programa do servidor é ligado sozinho quando o computador liga e volta a funcionar se cair, sem ninguém com um terminal aberto. O terminal do codespace é para quando você está construindo o app: você liga o servidor para testar e desliga quando termina. No capítulo [Como mostrar o mural de recados para o mundo?]({{ site.baseurl }}{% link projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo.md %}), você vai colocar o seu app num servidor desses.
+
+</details>
+
+<details class="pergunta" markdown="1">
+<summary>É assim que roda uma aplicação de verdade?</summary>
+
+Quase. Um app costuma rodar em pelo menos dois **ambientes**:
+
+- **Desenvolvimento** (*development*): onde você constrói e testa, como no seu codespace. Aqui, o Rails mostra detalhes quando algo dá errado e percebe sozinho quando você muda o código, para você ver o resultado na hora.
+- **Produção** (*production*): a versão que as pessoas usam de verdade, num servidor. Aqui, o app é configurado para ser mais rápido e mais seguro, esconde os detalhes dos erros e guarda os dados reais.
+
+O código é o mesmo, o que muda é a configuração. Quando você ligou o servidor, o terminal avisou em qual ambiente ele estava: `application starting in development`.
+
+</details>
+
+<details class="pergunta" markdown="1">
+<summary>O codespace fica ligado para sempre?</summary>
+
+Não. Ele desliga sozinho depois de um tempo sem uso, mas os seus arquivos ficam guardados. Veja como voltar em [Travou?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/mao-na-massa.md %}#travou), no fim de Mão na massa.
+
+</details>
+
+<details class="pergunta" markdown="1">
+<summary>Os arquivos estão no meu computador?</summary>
+
 Quando você usa o codespace, não: eles ficam na nuvem. Por isso você pode continuar de outro computador, é só entrar na sua conta do GitHub.
 
-## Quebre de propósito
+</details>
+
+</details>
+
+<details class="passo" markdown="1">
+<summary>Quebre de propósito</summary>
 
 1. Clique no terminal onde o servidor está rodando e aperte **Ctrl+C**. O servidor desliga e o terminal volta para o lugar de digitar.
 2. Volte para a aba do app e recarregue a página.
@@ -64,10 +93,21 @@ Quando você usa o codespace, não: eles ficam na nuvem. Por isso você pode con
 
 Em vez da página do Rails, aparece uma página de erro: não tem ninguém do outro lado para responder. Ligue o servidor de novo com `bin/rails server`, recarregue a aba e tudo volta.
 
-## E se fosse com IA?
+</details>
 
-<details markdown="1">
-<summary>Abrir</summary>
+<details class="passo" markdown="1">
+<summary>Preciso de IA para este capítulo?</summary>
+
+Não. Tudo aqui é feito com cliques e com poucos comandos (`ruby -v`, `rails -v`, `rails new .` e `bin/rails server`). Uma IA não deixaria nada mais rápido e ainda poderia atrapalhar: sugerir comandos de outro sistema, criar arquivos que você não pediu ou pular justamente os passos que mostram como o app funciona.
+
+O codespace tem um painel de chat com IA, à direita. Se quiser usar, trate a IA como uma tutora, não como alguém que faz por você:
+
+- **Peça explicações.** Por exemplo: "O que faz o comando `rails new .`?" ou "O que quer dizer esta mensagem de erro?".
+- **Peça para ela te guiar,** um passo de cada vez, e faça cada passo você mesma.
+- **Nunca rode um comando que você não entendeu.** Se a IA sugerir um comando, pergunte o que ele faz antes de rodar.
+- **Não deixe a IA rodar comandos ou mudar arquivos sozinha.** Você precisa saber o que mudou no seu app, e por quê.
+
+**A IA e o `rails new`**
 
 O `rails new` também gera código: dezenas de arquivos com um único comando. Mas ele é **previsível**: o mesmo comando sempre gera os mesmos arquivos, do jeito que o Rails recomenda.
 
@@ -77,7 +117,8 @@ Saber o que as ferramentas do Rails já fazem sozinhas evita pedir para a IA uma
 
 </details>
 
-## Não esqueça
+<details class="passo" markdown="1">
+<summary>Não esqueça</summary>
 
 - Um site precisa de arquivos com código, um computador que rode esse código e um servidor que entregue as páginas.
 - O **repositório** guarda os arquivos; o **codespace** é o computador na nuvem onde você trabalha.
@@ -85,7 +126,10 @@ Saber o que as ferramentas do Rails já fazem sozinhas evita pedir para a IA uma
 - O app só abre enquanto o servidor estiver ligado.
 - Um **commit** guarda como o projeto está agora; o **Sync Changes** manda esse registro para o GitHub.
 
-## Teste-se
+</details>
+
+<details class="passo" markdown="1">
+<summary>Quiz</summary>
 
 1. O que acontece com o app se você desligar o servidor?
 2. Em qual pasta vai ficar a maior parte do código do app?
@@ -100,40 +144,17 @@ Saber o que as ferramentas do Rails já fazem sozinhas evita pedir para a IA uma
 
 </details>
 
-## Travou?
-
-**O terminal diz `rails: command not found`.**
-O codespace ainda está instalando o Rails. Espere o terminal parar de mostrar mensagens e tente de novo. Se o erro continuar, peça ajuda.
-
-**O aviso da porta 3000 não apareceu, ou você fechou sem querer.**
-No painel de baixo, abra a aba **Ports**, encontre a porta 3000 e clique no ícone de globo, na coluna **Forwarded Address**, para abrir no navegador.
-
-![Aba Ports com a porta 3000 e o ícone de globo destacado na coluna Forwarded Address]({{ '/assets/images/mural-de-recados/01/aba-ports.png' | relative_url }})
-
-**A página mostra o erro "Blocked hosts".**
-O Rails bloqueou o endereço do codespace. Peça ajuda a uma mentora ou veja a solução nas notas das mentoras.
-
-**O codespace desligou ou você fechou a aba.**
-Abra [github.com/codespaces](https://github.com/codespaces) e clique no seu codespace. Quando ele abrir, ligue o servidor de novo com `bin/rails server`.
-
-![Página Your codespaces do GitHub com um codespace na lista]({{ '/assets/images/mural-de-recados/01/github-codespaces-lista.png' | relative_url }})
-
-O codespace também aparece na página do repositório, no botão **Code**, aba **Codespaces**:
-
-![Botão Code aberto na aba Codespaces, com um codespace ativo destacado]({{ '/assets/images/mural-de-recados/01/repositorio-codespace-ativo.png' | relative_url }})
-
-**Fechou sem dar Sync das mudanças?**
-Calma: nada se perdeu. Os seus arquivos e o seu commit continuam guardados no codespace. Abra o codespace de novo (veja o item anterior) e, no painel **Source Control**, clique em **Sync Changes**. Se você ainda não tinha feito o commit, faça os passos do commit antes.
-
-
-<details markdown="1">
-<summary>Código completo deste passo</summary>
-
-Neste capítulo, todo o código foi criado pelo `rails new`. Não tem nada para copiar.
-
 </details>
 
-Mentoras: código de referência na tag `passo-01` do repositório do app.
+<details class="passo" markdown="1">
+<summary>Para saber mais</summary>
+
+Vídeos do Rails Girls São Paulo 2025:
+
+- [Introdução a Ruby](https://www.youtube.com/watch?v=hkSSRm8SQDU), com Isadora Silva.
+- [Introdução a Ruby on Rails](https://www.youtube.com/watch?v=6vSvbInY0Bc), com Beatriz Mitre.
+
+</details>
 
 ## E agora?
 

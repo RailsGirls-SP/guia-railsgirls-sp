@@ -9,4 +9,4 @@ has_children: true
 
 Notas de mentoria de cada projeto, organizadas por capítulo.
 
-- [Mural de recados]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados.md %})
+- [Mural de recados]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/index.md %})

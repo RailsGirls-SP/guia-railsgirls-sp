@@ -9,6 +9,7 @@ nav_order: 1
 
 Você vai precisar de uma conta no GitHub. Se ainda não tem, veja [Criando uma conta no GitHub]({{ site.baseurl }}{% link comece-aqui/conta-no-github.md %}).
 
+Travou em algum passo? Veja [Travou?](#travou), no fim da página.
 
 <details class="passo" markdown="1" open>
 <summary>1. Crie o seu repositório</summary>
@@ -197,6 +198,61 @@ Agora o seu código não está só no codespace: ele também está guardado no s
 ![Página do repositório mural-de-recados no GitHub com a lista de pastas e arquivos do app destacada, quase todos com a mensagem Cria o app Mural de recados]({{ '/assets/images/mural-de-recados/01/commit-github.png' | relative_url }})
 
 </details>
+
+## Travou?
+
+Abra o problema que aconteceu com você:
+
+<details class="pergunta" markdown="1">
+<summary>O terminal diz <code>rails: command not found</code></summary>
+
+O codespace ainda está instalando o Rails. Espere o terminal parar de mostrar mensagens e tente de novo. Se o erro continuar, peça ajuda.
+
+</details>
+
+<details class="pergunta" markdown="1">
+<summary>O aviso da porta 3000 não apareceu, ou você fechou sem querer</summary>
+
+No painel de baixo, abra a aba **Ports** e procure a linha **App (3000)**. As outras portas da lista são do próprio editor e podem ser ignoradas. Passe o mouse sobre o endereço da coluna **Forwarded Address** e clique no ícone de globo que aparece, para abrir o app no navegador.
+
+![Aba Ports com três portas: 1 marca a aba Ports e 2 marca a linha App (3000), com o endereço na coluna Forwarded Address]({{ '/assets/images/mural-de-recados/01/aba-ports.png' | relative_url }})
+
+</details>
+
+<details class="pergunta" markdown="1">
+<summary>A página mostra o erro "Blocked hosts"</summary>
+
+O Rails bloqueou o endereço do codespace. Peça ajuda a uma mentora ou veja a solução nas [notas das mentoras]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/01-por-onde-comecar.md %}#erro-blocked-hosts).
+
+</details>
+
+<details class="pergunta" markdown="1">
+<summary>O codespace desligou ou você fechou a aba</summary>
+
+1. Abra a página do seu repositório no GitHub e clique no botão verde **Code**.
+2. Escolha a aba **Codespaces**.
+3. Clique no seu codespace. O GitHub dá a ele um nome aleatório, como *literate invention*.
+
+![Página do repositório com o menu do botão Code aberto: 1 marca o botão Code, 2 marca a aba Codespaces e 3 marca o codespace literate invention, com o status Active]({{ '/assets/images/mural-de-recados/01/repositorio-codespace-ativo.png' | relative_url }})
+
+Quando ele abrir, ligue o servidor de novo com `bin/rails server`.
+
+Também dá para encontrar todos os seus codespaces em [github.com/codespaces](https://github.com/codespaces). Clique no seu codespace, na lista de baixo:
+
+![Página Your codespaces do GitHub com o codespace literate invention, do repositório mural-de-recados, destacado na lista de baixo]({{ '/assets/images/mural-de-recados/01/github-codespaces-lista.png' | relative_url }})
+
+Não clique em **New codespace** nem em **Use this template**: eles criam outro codespace, vazio, sem o seu app.
+
+</details>
+
+<details class="pergunta" markdown="1">
+<summary>Fechou sem dar Sync das mudanças?</summary>
+
+Calma: nada se perdeu. Os seus arquivos e o seu commit continuam guardados no codespace. Abra o codespace de novo (veja "O codespace desligou ou você fechou a aba") e, no painel **Source Control**, clique em **Sync Changes**. Se você ainda não tinha feito o commit, faça os passos do commit antes.
+
+</details>
+
+Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/01-por-onde-comecar.md %}).
 
 ## Terminou?
 
