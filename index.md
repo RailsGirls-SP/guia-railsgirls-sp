@@ -30,7 +30,7 @@ O menu ao lado tem cinco partes:
 | Parte | O que tem lá |
 |---|---|
 | [Por que aprender a programar?]({{ site.baseurl }}{% link por-que-aprender-a-programar.md %}) | Por que aprender a programar quando a IA já escreve código, e por que os termos ficam em inglês. |
-| [Comece aqui]({{ site.baseurl }}{% link comece-aqui/index.md %}) | O que você precisa antes do projeto: a conta no GitHub, o básico do terminal e do Git, como usar a IA como tutora e o glossário. |
+| [Comece aqui]({{ site.baseurl }}{% link comece-aqui/index.md %}) | O básico de Ruby, Rails e Git, e páginas para consultar quando precisar, como o glossário. Para começar, você só precisa de uma conta no GitHub. |
 | [Projetos]({{ site.baseurl }}{% link projetos/index.md %}) | O projeto do workshop, o [Mural de recados]({{ site.baseurl }}{% link projetos/mural-de-recados/index.md %}), capítulo por capítulo. |
 | [Guia para mentoria]({{ site.baseurl }}{% link mentoras/index.md %}) | Tudo para quem vai mentorar. |
 | [Extras]({{ site.baseurl }}{% link bonus/index.md %}) | Conteúdo extra para depois do workshop, como programar no seu próprio computador. |
@@ -39,6 +39,8 @@ Encontrou uma palavra nova? O [glossário]({{ site.baseurl }}{% link comece-aqui
 
 ## Por onde começar
 
-1. Crie a sua conta no GitHub, se ainda não tiver: [Criando uma conta no GitHub]({{ site.baseurl }}{% link comece-aqui/conta-no-github.md %}).
-2. Separe papel e caneta.
-3. Comece o projeto pelo [Mural de recados]({{ site.baseurl }}{% link projetos/mural-de-recados/index.md %}). 🚀
+1. Crie a sua conta no GitHub, se ainda não tiver: [Criando uma conta no GitHub]({{ site.baseurl }}{% link comece-aqui/conta-no-github.md %}). Dá para fazer no próprio dia do workshop.
+2. Se quiser, leia o básico de [Ruby, Rails e Git]({{ site.baseurl }}{% link comece-aqui/ruby-rails-e-git.md %}). Leva uns 10 minutos.
+3. Separe papel e caneta e comece o projeto pelo [Mural de recados]({{ site.baseurl }}{% link projetos/mural-de-recados/index.md %}). 🚀
+
+Não precisa ler o resto do guia antes. Ele é para consultar: o projeto explica cada coisa na hora em que ela aparece.
