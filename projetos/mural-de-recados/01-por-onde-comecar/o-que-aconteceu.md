@@ -51,7 +51,7 @@ Sim, enquanto quiser ver o app. Para digitar outros comandos, abra um terminal n
 <details class="pergunta" markdown="1">
 <summary>Então um site fica com o terminal aberto, rodando o servidor?</summary>
 
-Não exatamente. Os sites que você usa no dia a dia ficam num [servidor]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#servidor), um computador que fica ligado o tempo todo. Lá, o programa do servidor é ligado sozinho quando o computador liga e volta a funcionar se cair, sem ninguém com um terminal aberto. O terminal do codespace é para quando você está construindo o app: você liga o servidor para testar e desliga quando termina. No capítulo [Como mostrar o mural de recados para o mundo?]({{ site.baseurl }}{% link projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo/index.md %}), você vai colocar o seu app num servidor desses.
+Não exatamente. Os sites que você usa no dia a dia ficam num [servidor]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#servidor), um computador que fica ligado o tempo todo. Lá, o programa do servidor é ligado sozinho quando o computador liga e volta a funcionar se cair, sem ninguém com um terminal aberto. O terminal do codespace é para quando você está construindo o app: você liga o servidor para testar e desliga quando termina. No capítulo [Como mostrar o mural de recados para o mundo?]({{ site.baseurl }}{% link projetos/mural-de-recados/09-como-mostrar-o-mural-para-o-mundo/index.md %}), você vai colocar o seu app num servidor desses.
 
 </details>
 

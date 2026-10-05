@@ -11,36 +11,25 @@ nav_order: 7
 
 ## Perguntas para o "Pense antes"
 
-- "Se a pessoa pudesse escolher qualquer cor, o que poderia dar errado?" Leva à lista fechada e à leitura do texto (contraste).
-- "Os recados antigos foram postados antes da cor existir. Com qual cor eles ficam?" Leva ao `default`.
-- "O que muda no app: a aparência, os dados ou os dois?" Ajuda a separar as duas partes do capítulo.
-
-## A cor que some, de propósito
-
-No passo 6, a participante escolhe **Rosa** e o recado é guardado amarelo. Isso é **de propósito**: o `message_params` ainda não tem a `:color`.
-
-{: .atencao }
-Não corrija o `message_params` antes da hora. O passo leva a participante a investigar: primeiro o console (`Message.last.color`), depois a linha `Parameters` no terminal do servidor, e só então o controller. É a primeira vez que um bug aparece **sem mensagem de erro**, e o caminho da investigação é o que mais importa.
-
-Se ela não achar a linha `Parameters`, ajude a encontrar o terminal do servidor na lista de terminais, à direita do painel.
+- "Como é um post-it de verdade? O que faz ele parecer um papel colado na parede?" Leva à cor de fundo e à sombra.
+- "Num celular, os cartões cabem lado a lado?" Leva à grade que se ajusta à largura da tela.
+- "O que muda nos dados para os recados ficarem bonitos?" Nada: é o ponto do capítulo, só a aparência muda.
 
 ## Confusões comuns
 
-- **Rodar a migration antes de revisar.** Se ela rodou sem o `default`, os recados antigos ficam com a cor vazia (e o `null: false` não foi aplicado). Desfaça com `bin/rails db:rollback`, corrija e rode de novo.
-- **Esquecer o campo da cor no `edit.html.erb`.** O formulário foi copiado no capítulo 05, então são dois lugares.
-- **A classe com espaço errado.** `card card-<%= message.color %>`: um espaço entre as duas classes e nenhum entre `card-` e o `<%=`.
 - **O ponto no CSS.** No CSS, a classe começa com ponto (`.card`); na view, não (`class="card"`).
 - **O navegador guarda o CSS antigo.** Recarregar com Cmd+Shift+R (Mac) ou Ctrl+Shift+R resolve.
+- **Chave sem fechar.** Um `}` faltando faz os blocos seguintes pararem de funcionar, sem erro nenhum.
+- **Apagar o `<% end %>` sem querer** ao trocar a parte dos recados na view. Aí aparece um erro de sintaxe na página.
 - **Inspecionar.** Vale mostrar o **Inspecionar** do navegador: ela vê as classes de cada cartão e pode mudar o CSS ao vivo para testar, sem medo de quebrar o arquivo.
 
-## Sobre os valores da cor
+## Bulma ou CSS à mão
 
-A cor é guardada em inglês (`yellow`, `pink`, `blue`, `green`), seguindo a regra de nomes de código em inglês, e mostrada em português na caixa de escolha. Ainda não existe validação: um formulário modificado poderia mandar outra cor. Isso fica para o capítulo 07, se der tempo (`validates :color, inclusion: { in: [...] }`).
+O brief original previa o visual com Bulma via CDN. Hoje o capítulo usa CSS escrito à mão, para a participante ver que uma classe é só um nome e que o CSS dá a aparência. Essa decisão ainda está em aberto.
 
 ## Ir além com o CSS
 
 Se sobrar tempo, sugestões para ela brincar sozinha no `application.css`:
 
-- Girar os cartões um pouquinho, como post-its: `.card:nth-child(odd) { rotate: -1deg; }` e `.card:nth-child(even) { rotate: 1deg; }`.
+- Girar os cartões um pouquinho, como post-its: já está no "Para ir além" do capítulo.
 - Trocar a fonte por uma do [Google Fonts](https://fonts.google.com/).
-- Criar uma cor nova: um valor novo na caixa de escolha e um bloco novo no CSS (sem migration, porque a coluna já existe).

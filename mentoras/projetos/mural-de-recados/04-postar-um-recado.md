@@ -9,8 +9,30 @@ nav_order: 5
 
 [Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/04-postar-um-recado/index.md %}) · Código de referência: tag `passo-04`.
 
-- TODO: perguntas para fazer durante o "Pense antes"
-- TODO: confusões comuns neste capítulo
+## Perguntas para o "Pense antes"
+
+- "Onde você procuraria o lugar para escrever o seu recado?" Leva ao formulário em cima do mural de recados, como no plano.
+- "Depois de clicar no botão, o que você espera ver?" Prepara a ideia de voltar para o mural de recados (o `redirect_to`).
+- "E se alguém clicar sem escrever nada?" Não precisa responder agora: é o gancho para o capítulo do recado vazio.
+
+## O caminho dos erros
+
+Como nos capítulos 03 e 05, os erros aparecem de propósito, na ordem do caminho da requisição:
+
+1. Enviar o formulário com a rota antiga (`get "messages"`): **Routing Error**, `No route matches [POST] "/messages"`. **Falta a rota para o `POST`.**
+2. Com o `resources :messages, only: [ :index, :create ]`: **Unknown action**, `The action 'create' could not be found`. **Falta a ação.**
+3. Com a ação `create`: o recado aparece. Comemore! 🎉
+
+O formulário aparece antes de existir a rota do `POST` porque a rota antiga (`get "messages"`) já cria o nome `messages_path`, que o `form_with` usa para montar o endereço do formulário. O erro só aparece ao enviar.
+
+## Confusões comuns
+
+- **`@message` e `@messages`.** Uma letra de diferença: `@message` é o recado em branco do formulário, `@messages` é a lista. Trocar um pelo outro dá erros confusos, como `Passed nil to the :model argument`.
+- **Esquecer o `=` no `<%= form_with`.** Sem o `=`, o formulário não aparece, e não aparece erro nenhum.
+- **Ações depois do `private`.** O `def create` escrito depois do `private` não é uma ação, e o erro é o mesmo de quando ela não existe.
+- **Não reiniciar o servidor depois do passo 4.** O `config/environments/development.rb` só é lido quando o servidor liga.
+- **O recado vazio do passo 8.** É de propósito: o Rails aceita, porque ninguém disse que é proibido. Não adiante a solução; ela é o capítulo do recado vazio.
+- **O `params.expect`.** Quem conhece versões antigas do Rails pode esperar `params.require(:message).permit(:author, :content)`. O `params.expect` é a forma nova (Rails 8), e faz a mesma coisa com uma checagem a mais do formato do que chegou.
 
 ## Erro ao enviar o formulário no Codespaces
 
@@ -24,4 +46,4 @@ config.action_controller.forgery_protection_origin_check = false
 
 Ela desliga só a conferência do endereço de origem, e só em desenvolvimento. Depois, desligue o servidor (Ctrl+C) e ligue de novo.
 
-TODO: decidir se essa linha entra num passo do capítulo 01 ou 04, para ninguém esbarrar no erro, e confirmar se ainda é necessária com a versão atual do Rails e do Codespaces.
+Decisão: a linha entra no passo 4 do capítulo 04, antes do primeiro formulário. TODO: confirmar no Codespaces se ela ainda é necessária com o Rails 8.1, e se a linha `config.hosts << /.*\.app\.github\.dev/` da Imersão 2025 faz falta (o template já libera o endereço pela variável `RAILS_DEVELOPMENT_HOSTS`).

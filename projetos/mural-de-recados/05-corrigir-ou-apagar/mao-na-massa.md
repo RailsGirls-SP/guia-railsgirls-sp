@@ -7,12 +7,6 @@ nav_order: 1
 
 # Mão na massa
 
-<!-- TODO: este capítulo supõe que o capítulo 04 termina com:
-  - config/routes.rb: resources :messages, only: [ :index, :create ] e root "messages#index"
-  - MessagesController: index (com @message = Message.new), create (Message.create(message_params) e redirect_to root_path) e o método privado message_params com params.expect(message: [ :author, :content ])
-  - app/views/messages/index.html.erb: o formulário (form_with model: @message, rótulos "Seu nome" e "Recado", botão "Postar recado") em cima dos cartões
-  Conferir quando o capítulo 04 estiver escrito. -->
-
 Travou em algum passo? Veja [Travou?](#travou), no fim da página.
 
 Neste capítulo, os erros voltam a aparecer no navegador, como em [Como ver todos os recados?]({{ site.baseurl }}{% link projetos/mural-de-recados/03-ver-todos-os-recados/mao-na-massa.md %}). Leia cada um com calma: eles mostram a próxima peça que falta.

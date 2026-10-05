@@ -76,7 +76,7 @@ Não. Se o recado 3 for apagado, o próximo recado vai ser o 4, 5 ou o que vier 
 
 O `@` serve para passar uma informação do controller para a view. O `edit` mostra uma view com o formulário, então precisa do `@message`. O `destroy` não mostra view nenhuma: ele apaga o recado e manda o navegador de volta para a página principal.
 
-O `update` também usa `@message`. Por enquanto, não faria diferença, mas no capítulo 07 ele vai precisar mostrar o formulário de novo quando o recado vier vazio.
+O `update` também usa `@message`. Por enquanto, não faria diferença, mas no capítulo 08 ele vai precisar mostrar o formulário de novo quando o recado vier vazio.
 
 </details>
 

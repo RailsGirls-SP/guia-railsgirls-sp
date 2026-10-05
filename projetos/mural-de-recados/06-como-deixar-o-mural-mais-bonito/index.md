@@ -8,70 +8,41 @@ has_children: true
 
 # 06. Como deixar o mural de recados mais bonito?
 
-Tempo: uns 45 minutos.
+Tempo: uns 30 minutos.
 {: .fs-5 }
 
 ## O desafio
 
 O app Mural de recados já faz tudo que o plano pede: postar, ver, corrigir e apagar. Mas ainda não parece um mural de recados de verdade: os recados aparecem como texto, um embaixo do outro.
 
-Num mural de verdade, cada recado é um post-it colorido, e quem escreve escolhe a cor. O desafio agora é deixar os recados com cara de cartões coloridos, cada um na cor que a autora escolheu.
+Num mural de verdade, cada recado é um post-it colado na parede. O desafio agora é deixar os recados com cara de post-it, lado a lado.
 
-Repare que são dois problemas diferentes: a **aparência** dos cartões e uma **informação nova**, a cor, que o recado ainda não tem.
+Neste capítulo, a mudança é **só visual**: nenhum recado guardado muda, e nenhuma informação nova aparece.
 
 ## Pense antes de programar
 
 Reserve uns 5 minutos. Não existe resposta errada.
 
-- Desenhe um cartão de recado. Onde fica a autora? E a mensagem? E os botões?
-- Que cores a pessoa pode escolher? Qualquer cor ou uma lista pequena?
-- A cor é uma informação nova. Onde ela fica guardada? O que precisa mudar na planilha de recados?
-- Os recados que já existem não têm cor. Com qual cor eles ficam?
+- Volte ao desenho da tela principal que você fez em [Planejando o app]({{ site.baseurl }}{% link projetos/mural-de-recados/00-planejando-o-mural.md %}). Como fica cada cartão de recado? Onde ficam a mensagem, a autora e os botões?
 - Como os cartões se organizam na tela: um embaixo do outro, ou lado a lado, em grade?
+- E numa tela de celular, que é mais estreita?
+- Qual é o mínimo que precisa mudar para o mural de recados já parecer um mural de recados?
 
 ## Compare com o nosso plano
 
 <details markdown="1">
 <summary>Abrir o nosso plano</summary>
 
-O formulário ganha um campo para escolher a cor, e os cartões ficam lado a lado, em grade:
+No fim deste capítulo, quem abrir o app vai ver isto:
 
-<!-- TODO: acessibilidade: esconder o rascunho do leitor de tela (aria-hidden) e dar uma descrição em texto da tela com os cartões coloridos. -->
-```
-┌────────────────────────────────────────────────┐
-│  Mural de recados                              │
-│                                                │
-│  Seu nome:  [__________________]               │
-│  Recado:    [__________________]               │
-│             [__________________]               │
-│  Cor:       [ Amarelo        ▾ ]               │
-│             ( Postar recado )                  │
-│                                                │
-│  ┌────────────┐ ┌────────────┐ ┌────────────┐  │
-│  │ (rosa)     │ │ (azul)     │ │ (amarelo)  │  │
-│  │ Obrigada,  │ │ Meu 1º app │ │ Meu        │  │
-│  │ mentoras!  │ │ em Rails!  │ │ primeiro   │  │
-│  │ — Duda     │ │ — Carla    │ │ recado!    │  │
-│  │            │ │            │ │ — Ana      │  │
-│  │ Editar     │ │ Editar     │ │ Editar     │  │
-│  │ (Apagar)   │ │ (Apagar)   │ │ (Apagar)   │  │
-│  └────────────┘ └────────────┘ └────────────┘  │
-│                                                │
-└────────────────────────────────────────────────┘
-```
+![Mural de recados com fundo bege, o formulário com os campos Seu nome e Recado e o botão Postar recado e, embaixo, quatro cartões amarelos lado a lado, cada um com a mensagem, a autora em itálico, o link Editar e o botão Apagar]({{ '/assets/images/mural-de-recados/06/mural-post-it.png' | relative_url }})
+{: .ilustracao }
 
-**As informações de um recado** ganham uma linha nova:
-
-| Informação | Exemplo | Tipo |
-|---|---|---|
-| Autora | Bia | texto curto |
-| Mensagem | Adorei o workshop! | texto longo |
-| Cor | Rosa | escolha entre algumas opções |
-
-- **As cores:** uma lista pequena, que combina com o resto da página: amarelo, rosa, azul e verde. Uma lista fechada também garante que o texto fique fácil de ler em qualquer cartão.
-- **Os recados antigos:** ficam amarelos, a cor clássica do post-it. Todo recado novo também começa amarelo, até alguém escolher outra cor.
+- **Os cartões:** cada recado vira um cartão amarelo, como um post-it, com um pouco de sombra, como um papel colado na parede.
+- **Dentro do cartão:** a mensagem, a autora em itálico e, embaixo, o **Editar** e o **Apagar** lado a lado.
 - **A grade:** os cartões ficam lado a lado e descem para a linha de baixo quando não cabem mais. Numa tela de celular, cabe um por linha.
-- **A página de correção** também ganha o campo da cor, para dar para trocar a cor depois.
+- **A página:** um fundo cor de papel, e o formulário com cada rótulo em cima do seu campo.
+- **O mínimo:** todos os cartões da mesma cor. Cada pessoa escolher a cor do seu recado fica para o [próximo capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/07-como-escolher-a-cor-do-recado/index.md %}).
 
 </details>
 

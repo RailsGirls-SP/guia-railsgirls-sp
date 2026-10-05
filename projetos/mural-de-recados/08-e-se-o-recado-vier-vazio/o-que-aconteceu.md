@@ -1,6 +1,6 @@
 ---
 title: "O que aconteceu?"
-parent: "07. E se alguém mandar um recado vazio?"
+parent: "08. E se alguém mandar um recado vazio?"
 grand_parent: Mural de recados
 nav_order: 2
 ---
@@ -81,4 +81,4 @@ TODO (opcional): links e vídeos para quem quiser ir além.
 
 ## E agora?
 
-Próximo desafio: [Como mostrar o mural de recados para o mundo?]({{ site.baseurl }}{% link projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo/index.md %})
+Próximo desafio: [Como mostrar o mural de recados para o mundo?]({{ site.baseurl }}{% link projetos/mural-de-recados/09-como-mostrar-o-mural-para-o-mundo/index.md %})

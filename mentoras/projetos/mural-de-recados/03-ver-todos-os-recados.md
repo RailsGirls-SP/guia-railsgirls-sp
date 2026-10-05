@@ -103,7 +103,7 @@ Contexto só para as mentoras. **Não precisa levar isso para as participantes**
 
 | Peça | Responsabilidade | No Mural de recados |
 |---|---|---|
-| **Model** | os dados e as regras sobre eles | `Message`: o que um recado tem, como guardar e buscar, e (no capítulo 07) o que é um recado válido |
+| **Model** | os dados e as regras sobre eles | `Message`: o que um recado tem, como guardar e buscar, e (no capítulo 08) o que é um recado válido |
 | **View** | a apresentação | `app/views/messages/index.html.erb`: como os recados aparecem na tela |
 | **Controller** | recebe a requisição e coordena model e view | `MessagesController#index`: busca os recados e entrega para a view |
 
@@ -111,13 +111,13 @@ Contexto só para as mentoras. **Não precisa levar isso para as participantes**
 
 **No Rails.** O MVC aparece nos nomes das pastas: `app/models`, `app/views` e `app/controllers`. Mas o Rails tem mais peças em volta, que o guia apresenta aos poucos: as **rotas** (`config/routes.rb`), que vêm antes do controller; os **layouts**, que envolvem todas as views; os **helpers**; e as **migrations**, que mudam o banco de dados, mas não fazem parte do MVC em si. Se uma participante perguntar "e a rota, é o quê no MVC?", a resposta honesta é: nenhuma das três; ela é a porta de entrada que escolhe o controller.
 
-**Por que separar.** O argumento do capítulo é o mesmo que se usa no dia a dia: mudar a aparência sem mexer nos dados, usar os mesmos dados em telas diferentes e saber onde procurar cada problema. O capítulo 06 é a prova prática: os cartões mudam por completo, e o model quase não muda.
+**Por que separar.** O argumento do capítulo é o mesmo que se usa no dia a dia: mudar a aparência sem mexer nos dados, usar os mesmos dados em telas diferentes e saber onde procurar cada problema. O capítulo 06 é a prova prática: os cartões mudam por completo, e o model não muda nada.
 
 **Dicas para conversar sobre isso:**
 
 - Fique nas três responsabilidades e nos arquivos do Mural de recados. Termos como "camada", "arquitetura" ou "separação de responsabilidades" não ajudam quem está começando.
 - O guia usa analogias diferentes em lugares diferentes: a planilha e a assistente para o model (capítulo 02) e a cozinha no glossário (o controller como chef, a view como a montagem do prato). Elas se completam, mas não force uma analogia única para as três peças.
-- Uma regra comum na comunidade Rails é "controller magro, model gordo": as regras ficam no model, e o controller só coordena. Não precisa falar disso agora, mas é o que o guia segue quando, no capítulo 07, a regra "recado não pode ser vazio" vai para o model.
+- Uma regra comum na comunidade Rails é "controller magro, model gordo": as regras ficam no model, e o controller só coordena. Não precisa falar disso agora, mas é o que o guia segue quando, no capítulo 08, a regra "recado não pode ser vazio" vai para o model.
 
 ## A página de erro no Codespaces
 
