@@ -224,7 +224,7 @@ Confira, nesta ordem:
 <details class="pergunta" markdown="1">
 <summary>Aparece um erro na página depois de mudar a view</summary>
 
-Confira se o `<% end %>` do `each` e o `<% end %>` do formulário continuam lá, e se não sobrou nenhum pedaço do código antigo. Compare o arquivo inteiro com o código dos passos 3 e 4. Na dúvida, peça ajuda para uma mentora. 💜
+Confira se o `<% end %>` do `each` e o `<% end %>` do formulário continuam lá, e se não sobrou nenhum pedaço do código antigo. Compare o arquivo inteiro com o código dos passos 3 e 4. Na dúvida, peça ajuda para alguém da mentoria. 💜
 
 </details>
 
@@ -242,7 +242,7 @@ Falta o `data-theme="light"` na linha do `<html>`, no `app/views/layouts/applica
 
 </details>
 
-Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/06-como-deixar-o-mural-mais-bonito.md %}).
+Mentoria: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/06-como-deixar-o-mural-mais-bonito.md %}).
 
 ## Terminou?
 

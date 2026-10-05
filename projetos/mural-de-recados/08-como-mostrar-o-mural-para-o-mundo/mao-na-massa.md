@@ -11,7 +11,7 @@ nav_order: 1
 
 Travou em algum passo? Veja [Travou?](#travou), no fim da página.
 
-Neste capítulo, você vai sair do codespace: a maior parte dos passos acontece no site do **Render**. Os botões e as telas do Render podem mudar um pouco com o tempo. Se algo estiver diferente, procure o nome mais parecido ou peça ajuda para uma mentora.
+Neste capítulo, você vai sair do codespace: a maior parte dos passos acontece no site do **Render**. Os botões e as telas do Render podem mudar um pouco com o tempo. Se algo estiver diferente, procure o nome mais parecido ou peça ajuda para alguém da mentoria.
 
 <details class="passo" markdown="1" open>
 <summary>1. Prepare o app para o banco de dados do Render</summary>
@@ -325,11 +325,11 @@ No plano gratuito, o app "dorme" depois de uns 15 minutos sem ninguém abrir. A 
 <details class="pergunta" markdown="1">
 <summary>O deploy falhou e eu não entendi a mensagem</summary>
 
-Leia as últimas linhas das mensagens do deploy: o erro costuma estar lá, como no terminal. Copie a mensagem e peça ajuda para uma mentora. 💜 Você também pode pedir para uma IA explicar a mensagem, como em [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}).
+Leia as últimas linhas das mensagens do deploy: o erro costuma estar lá, como no terminal. Copie a mensagem e peça ajuda para alguém da mentoria. 💜 Você também pode pedir para uma IA explicar a mensagem, como em [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}).
 
 </details>
 
-Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo.md %}).
+Mentoria: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo.md %}).
 
 ## Terminou?
 

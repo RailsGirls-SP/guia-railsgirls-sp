@@ -1,25 +1,25 @@
 ---
-title: Guia para mentoras
+title: Guia para mentoria
 nav_order: 5
 has_children: true
 ---
 
-# Guia para mentoras
+# Guia para mentoria
 
 Obrigada por mentorar no Rails Girls São Paulo! 💜 Esta parte do guia é para você: como acompanhar as participantes, o roteiro do dia e notas de cada capítulo do projeto.
 
-As participantes seguem o guia sozinhas, no próprio ritmo. O seu papel não é dar aula: é ajudar quando alguém travar, fazer boas perguntas e lembrar que errar faz parte.
+As participantes seguem o guia por conta própria, no próprio ritmo. O seu papel não é dar aula: é ajudar quando alguém travar, fazer boas perguntas e lembrar que errar faz parte.
 
 ## Postura de mentoria
 
-- **Não pegue o teclado.** Mesmo quando for mais rápido. Quem digita aprende; quem assiste esquece. Se precisar mostrar algo, aponte na tela e deixe ela fazer.
-- **Pergunte antes de responder.** "O que você acha que aconteceu?", "O que a mensagem de erro diz?", "O que você esperava ver?". Muitas vezes, a resposta aparece enquanto ela explica.
-- **Leia os erros junto.** As telas de erro fazem parte do guia, e várias aparecem de propósito. Em vez de corrigir, pergunte "o que está faltando?". Quando aparecer um erro novo, comemore: quer dizer que ela avançou.
+- **Não pegue o teclado.** Mesmo quando for mais rápido. Quem digita aprende; quem assiste esquece. Se precisar mostrar algo, aponte na tela e deixe a pessoa fazer.
+- **Pergunte antes de responder.** "O que você acha que aconteceu?", "O que a mensagem de erro diz?", "O que você esperava ver?". Muitas vezes, a resposta aparece durante a explicação.
+- **Leia os erros junto.** As telas de erro fazem parte do guia, e várias aparecem de propósito. Em vez de corrigir, pergunte "o que está faltando?". Quando aparecer um erro novo, comemore: quer dizer que houve avanço.
 - **Não existe pergunta boba.** Responda com calma, sem "isso é fácil" nem "é só…". Para quem está começando, nada é óbvio.
 - **Use as palavras do guia.** Os comandos por extenso (`bin/rails server`, e não `rails s`) e os termos técnicos (model, controller, migration), com a tradução quando ajudar. Veja [Comandos por extenso]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/index.md %}#comandos-por-extenso).
 - **Siga o guia, mesmo que você faria diferente.** O guia evita de propósito o scaffold, os testes automatizados e outros caminhos comuns no dia a dia. As notas de cada capítulo explicam o porquê. Se tiver uma sugestão, anote e mande para a organização depois.
 - **Respeite o ritmo de cada uma.** Ninguém precisa terminar todos os capítulos. Quem para no meio já sai com um app que funciona.
-- **IA como tutora, não como autora.** Se ela quiser usar uma IA, incentive pedir explicações, e não o código pronto. Veja [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}).
+- **IA como tutora, não como autora.** Se a pessoa quiser usar uma IA, incentive pedir explicações, e não o código pronto. Veja [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}).
 
 ## Roteiro do dia
 
@@ -38,7 +38,7 @@ Algumas dicas para o dia:
 
 - **A meta é a etapa 🛴 (capítulo 05).** Os capítulos 06 e 07 são para quem andar mais rápido, e o 08 (publicar no Render) é opcional. Os desafios extras são para quem terminar tudo.
 - **O "O que aconteceu?" pode ficar para casa.** No dia, vale fazer o Mão na massa e ler o "Não esqueça" de cada capítulo.
-- **Fique de olho em quem está travada há muito tempo.** Mais de 10 minutos no mesmo passo é sinal para chegar perto, sem esperar ela pedir.
+- **Fique de olho em quem está parada no mesmo passo há muito tempo.** Mais de 10 minutos no mesmo passo é sinal para chegar perto, sem esperar pedirem ajuda.
 - **No encerramento, todo mural de recados conta.** Quem chegou ao capítulo 03 também tem um app que funciona. Celebre o caminho, não só o ponto de chegada.
 
 ## Nesta parte

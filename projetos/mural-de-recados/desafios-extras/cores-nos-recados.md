@@ -31,7 +31,7 @@ Cada recado ganha uma **cor**, escolhida por quem escreveu, numa lista pequena: 
 
 No código, os nomes ficam em inglês: a coluna se chama `color`, e as cores, `yellow`, `pink`, `blue` e `green`. Na tela, aparecem em português.
 
-Tente resolver sozinha antes de abrir as dicas. Abra uma de cada vez, só se precisar.
+Tente resolver sem ajuda antes de abrir as dicas. Abra uma de cada vez, só se precisar.
 
 <details markdown="1">
 <summary>Dica 1: a coluna nova</summary>

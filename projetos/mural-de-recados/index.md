@@ -24,7 +24,7 @@ O mural de recados cresce aos poucos, um capítulo de cada vez. Cada capítulo c
 4. **Mão na massa:** os passos, um de cada vez. Em cada passo, você dá um palpite antes de rodar e confere o resultado depois.
 5. **O que aconteceu?:** a explicação do que você fez, perguntas e respostas, um quiz e, se quiser, um jeito de quebrar o app de propósito para aprender a ler os erros.
 
-Travou em algum passo? Todo Mão na massa tem, no fim, uma parte **Travou?** com os problemas mais comuns. E as mentoras estão aí para ajudar. 💜
+Travou em algum passo? Todo Mão na massa tem, no fim, uma parte **Travou?** com os problemas mais comuns. E a equipe de mentoria está aí para ajudar. 💜
 
 ## O que você vai construir
 

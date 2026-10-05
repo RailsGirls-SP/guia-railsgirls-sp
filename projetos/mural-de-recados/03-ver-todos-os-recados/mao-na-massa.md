@@ -424,7 +424,7 @@ Confira se você **salvou** o arquivo: no editor, um arquivo com mudanças não 
 <details class="pergunta" markdown="1">
 <summary>Errei o nome no <code>generate controller</code></summary>
 
-Desfaça o que o comando criou com `bin/rails destroy controller` seguido do nome que você usou (por exemplo, `bin/rails destroy controller Mesages index`) e gere de novo com o nome certo: `Messages`, no plural, com M maiúsculo. Na dúvida, peça ajuda para uma mentora. 💜
+Desfaça o que o comando criou com `bin/rails destroy controller` seguido do nome que você usou (por exemplo, `bin/rails destroy controller Mesages index`) e gere de novo com o nome certo: `Messages`, no plural, com M maiúsculo. Na dúvida, peça ajuda para alguém da mentoria. 💜
 
 </details>
 
@@ -454,11 +454,11 @@ Algum nome está escrito errado na view. Confira se é `message.content` e `mess
 
 Depois do passo 8, isso é esperado: você apagou os recados de propósito, e a página mostra o convite. No próximo capítulo, você vai postar recados novos pelo navegador.
 
-Se os recados sumiram **antes** do passo 8, talvez o seu banco de dados esteja vazio, por exemplo se você criou um codespace novo. Crie um recado pelo console (`bin/rails console` e `Message.create(author: "Ana", content: "Oi!")`) e recarregue a página. Na dúvida, peça ajuda para uma mentora. 💜
+Se os recados sumiram **antes** do passo 8, talvez o seu banco de dados esteja vazio, por exemplo se você criou um codespace novo. Crie um recado pelo console (`bin/rails console` e `Message.create(author: "Ana", content: "Oi!")`) e recarregue a página. Na dúvida, peça ajuda para alguém da mentoria. 💜
 
 </details>
 
-Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/03-ver-todos-os-recados.md %}).
+Mentoria: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/03-ver-todos-os-recados.md %}).
 
 ## Terminou?
 

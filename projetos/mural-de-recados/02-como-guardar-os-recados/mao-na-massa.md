@@ -250,7 +250,7 @@ bin/rails destroy model Message
 
 Se você **já** rodou a migration, desfaça ela antes, com `bin/rails db:rollback`, e depois rode o `destroy`.
 
-Na dúvida, peça ajuda para uma mentora. 💜
+Na dúvida, peça ajuda para alguém da mentoria. 💜
 
 </details>
 
@@ -282,7 +282,7 @@ Você ainda está dentro do console, que só entende Ruby. Digite `exit` para vo
 
 </details>
 
-Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/02-como-guardar-os-recados.md %}).
+Mentoria: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/02-como-guardar-os-recados.md %}).
 
 ## Terminou?
 

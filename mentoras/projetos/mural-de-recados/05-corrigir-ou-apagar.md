@@ -24,7 +24,7 @@ Como no capítulo 03, os erros aparecem de propósito e seguem o caminho da requ
 3. Com a ação: **No view template for interactive request**. **Falta a view.**
 4. Clicar em **Salvar**: **Routing Error**, `No route matches [PATCH]`, e depois **Unknown action**, `The action 'update' could not be found`.
 
-No passo 8, a participante é convidada a prever os dois erros do `update` antes de ver. Se ela acertar, vale comemorar: é o sinal de que entendeu o caminho. No passo 9 (apagar), rota, ação e botão entram de uma vez.
+No passo 8, a participante é convidada a prever os dois erros do `update` antes de ver. Se a pessoa acertar, vale comemorar: é o sinal de que entendeu o caminho. No passo 9 (apagar), rota, ação e botão entram de uma vez.
 
 ## Confusões comuns
 
@@ -32,8 +32,8 @@ No passo 8, a participante é convidada a prever os dois erros do `update` antes
 - **Onde colocar as ações.** As ações novas ficam **antes** do `private`. Depois dele, o Rails não encontra a ação, e o erro é o mesmo de quando ela não existe.
 - **O `@`.** O `edit` e o `update` usam `@message`; o `destroy` usa `message`, sem `@`. A diferença está explicada no "O que aconteceu?".
 - **A confirmação não aparece.** Normalmente é a sintaxe das chaves em `form: { data: { turbo_confirm: "..." } }`, ou a página guardada no navegador (Cmd+Shift+R).
-- **O formulário copiado.** Alguém pode perguntar se dá para não repetir o formulário. Dá, com uma *partial*, mas a gente deixou de fora de propósito. Se ela tiver tempo e curiosidade, é um bom desafio.
+- **O formulário copiado.** Alguém pode perguntar se dá para não repetir o formulário. Dá, com uma *partial*, mas a gente deixou de fora de propósito. Se houver tempo e curiosidade, é um bom desafio.
 
 ## Por que não usamos `status: :see_other`
 
-O scaffold do Rails usa `redirect_to ..., status: :see_other` no `destroy`. Ele é necessário quando a requisição sai do navegador como `DELETE` de verdade, por exemplo num link com `data-turbo-method="delete"`. O `button_to` manda um `POST` com `_method=delete`, e o redirecionamento comum funciona. Por isso, o guia deixa o `status` de fora. Se ela trocar o botão por um link, ele passa a ser necessário.
+O scaffold do Rails usa `redirect_to ..., status: :see_other` no `destroy`. Ele é necessário quando a requisição sai do navegador como `DELETE` de verdade, por exemplo num link com `data-turbo-method="delete"`. O `button_to` manda um `POST` com `_method=delete`, e o redirecionamento comum funciona. Por isso, o guia deixa o `status` de fora. Se a pessoa trocar o botão por um link, ele passa a ser necessário.

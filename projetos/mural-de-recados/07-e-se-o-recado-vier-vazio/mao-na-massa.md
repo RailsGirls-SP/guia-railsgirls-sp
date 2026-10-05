@@ -353,11 +353,11 @@ Falta o `message:` na regra, no model. Confira se cada `validates` está igual a
 <details class="pergunta" markdown="1">
 <summary>Aparece um erro de sintaxe depois de mudar o controller</summary>
 
-Confira se cada `if` tem o seu `end`, e se cada `def` também. Na ação `create`, são dois `end` no fim: um do `if` e um do `def`. Compare com o código do passo 5. Na dúvida, peça ajuda para uma mentora. 💜
+Confira se cada `if` tem o seu `end`, e se cada `def` também. Na ação `create`, são dois `end` no fim: um do `if` e um do `def`. Compare com o código do passo 5. Na dúvida, peça ajuda para alguém da mentoria. 💜
 
 </details>
 
-Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/07-e-se-o-recado-vier-vazio.md %}).
+Mentoria: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/07-e-se-o-recado-vier-vazio.md %}).
 
 ## Terminou?
 

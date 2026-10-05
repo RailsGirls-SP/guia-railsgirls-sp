@@ -377,11 +377,11 @@ Confira se a linha do botão está igual à do passo 10, com `form: { data: { tu
 <details class="pergunta" markdown="1">
 <summary>Aparece <code>InvalidAuthenticityToken</code> ao salvar ou apagar</summary>
 
-É o mesmo erro de formulário do Codespaces do capítulo 04. Peça ajuda para uma mentora. 💜
+É o mesmo erro de formulário do Codespaces do capítulo 04. Peça ajuda para alguém da mentoria. 💜
 
 </details>
 
-Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/05-corrigir-ou-apagar.md %}).
+Mentoria: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/05-corrigir-ou-apagar.md %}).
 
 ## Terminou?
 

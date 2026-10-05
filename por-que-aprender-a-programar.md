@@ -17,7 +17,7 @@ No projeto Mural de recados, você vai fazer cada uma destas coisas. Nenhuma del
 - **Decidir quais informações guardar.** Um recado tem quem escreveu e a mensagem. E a cor? E a data? Quem programa chama isso de **modelar os dados**, e é uma escolha sua.
 - **Prever o que pode dar errado.** E se alguém mandar um recado vazio? E uma mensagem enorme? O código gerado por uma IA costuma funcionar e aceitar um recado vazio. Quem decide que isso é um erro é você, como no capítulo [E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %}).
 - **Ler e conferir o código.** Geradores e IAs economizam digitação, mas às vezes criam coisas que você não pediu. No capítulo [Como ver todos os recados?]({{ site.baseurl }}{% link projetos/mural-de-recados/03-ver-todos-os-recados/index.md %}), você apaga uma rota que o gerador criou sem precisar.
-- **Entender os erros.** Quando algo quebra, a mensagem de erro diz o que falta. Saber ler essa mensagem é o que te deixa resolver sozinha, com ou sem IA.
+- **Entender os erros.** Quando algo quebra, a mensagem de erro diz o que falta. Saber ler essa mensagem é o que te deixa resolver por conta própria, com ou sem IA.
 
 ## Pedir em etapas pequenas
 

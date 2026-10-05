@@ -12,7 +12,7 @@ Tempo: uns 20 minutos. Você só vai precisar de papel e caneta.
 
 ## O desafio
 
-Imagine o fim do workshop. Todo mundo quer deixar uma mensagem: um agradecimento para a mentora, um "consegui!" depois do primeiro app, um oi para quem vem na próxima edição.
+Imagine o fim do workshop. Todo mundo quer deixar uma mensagem: um agradecimento para a equipe de mentoria, um "consegui!" depois do primeiro app, um oi para quem vem na próxima edição.
 
 Numa parede, cada pessoa pegaria um post-it, escreveria a mensagem, assinaria e colaria. O seu desafio hoje é construir esse **mural de recados**, só que na web: cada recado aparece como um cartão e qualquer pessoa pode deixar o seu.
 

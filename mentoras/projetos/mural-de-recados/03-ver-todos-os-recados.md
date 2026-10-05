@@ -18,7 +18,7 @@ nav_order: 4
 ## Telas de erro de propósito
 
 {: .atencao }
-As telas de erro deste capítulo aparecem **de propósito**. Não pule os passos que geram erro, não corrija por ela e não tranquilize dizendo "é só um erro, ignora": o objetivo é justamente ler o erro.
+As telas de erro deste capítulo aparecem **de propósito**. Não pule os passos que geram erro, não corrija no lugar da pessoa e não tranquilize dizendo "é só um erro, ignora": o objetivo é justamente ler o erro.
 
 O capítulo começa pelo navegador e segue o caminho da requisição, uma peça de cada vez:
 
@@ -46,7 +46,7 @@ Para quem está começando, uma tela de erro parece fracasso. Comemorar cada err
 - **O `Message.destroy_all` do passo 8.** É de propósito: a participante apaga os recados para ver a página vazia e o convite. Os recados voltam no capítulo 04, postados pelo navegador. Se alguém ficar triste de perder o recado da Ana, lembre que ele pode ser postado de novo pelo formulário.
 
   {: .atencao }
-  > O `destroy_all` apaga tudo e **não tem como desfazer**. Aqui não tem risco: é o banco de dados de desenvolvimento, com recados de teste. Mas vale um cuidado ao mostrar o comando: confira que a participante está no console do codespace dela, e não num app de verdade. Se surgir a conversa, explique que, num app no ar, um comando assim apagaria os dados de todas as pessoas que usam o app, e que por isso quem programa evita rodar comandos que apagam dados no banco de produção, ou faz isso com muito cuidado e com cópia de segurança.
+  > O `destroy_all` apaga tudo e **não tem como desfazer**. Aqui não tem risco: é o banco de dados de desenvolvimento, com recados de teste. Mas vale um cuidado ao mostrar o comando: confira que a participante está no console do próprio codespace, e não num app de verdade. Se surgir a conversa, explique que, num app no ar, um comando assim apagaria os dados de todas as pessoas que usam o app, e que por isso quem programa evita rodar comandos que apagam dados no banco de produção, ou faz isso com muito cuidado e com cópia de segurança.
 - **Mural de recados vazio num codespace novo.** O banco de dados não vai para o GitHub (veja as notas do capítulo 02). Basta criar um recado pelo console.
 
 ## Por que o passo 8 usa só `if`, sem `else`
@@ -77,7 +77,7 @@ Com `else` também funcionaria:
 <% end %>
 ```
 
-O guia prefere a primeira forma porque a participante só **acrescenta** três linhas, sem mexer no código que já funciona, e aprende um conceito novo (`if`) de cada vez. Se ela perguntar "e se tiver recados?", é uma boa hora para mostrar o que o `each` faz com uma lista vazia.
+O guia prefere a primeira forma porque a participante só **acrescenta** três linhas, sem mexer no código que já funciona, e aprende um conceito novo (`if`) de cada vez. Se a pessoa perguntar "e se tiver recados?", é uma boa hora para mostrar o que o `each` faz com uma lista vazia.
 
 ## Por que a rota do gerador é diferente da do guia
 
@@ -97,7 +97,7 @@ Quem aprendeu Rails há mais tempo pode lembrar da rota do gerador com aspas sim
 ## MVC
 
 {: .atencao }
-Contexto só para as mentoras. **Não precisa levar isso para as participantes**: o nome MVC não aparece no capítulo. O "Por dentro do app" só explica por que a view fica separada do model ("Por que separar a view do model?"). Se alguém se interessar, ótimo, mas não é objetivo do dia.
+Contexto só para a mentoria. **Não precisa levar isso para as participantes**: o nome MVC não aparece no capítulo. O "Por dentro do app" só explica por que a view fica separada do model ("Por que separar a view do model?"). Se alguém se interessar, ótimo, mas não é objetivo do dia.
 
 **O que é.** MVC (*Model-View-Controller*) é um padrão de arquitetura que divide o app em três responsabilidades:
 

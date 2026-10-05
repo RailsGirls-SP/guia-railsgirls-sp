@@ -17,7 +17,7 @@ nav_order: 8
 
 ## O fio do capítulo
 
-Este é o capítulo-gancho do guia para o tema de engenharia e IA: **o código funciona e aceita um recado vazio; quem decide que isso é um erro é quem programa**. Vale reforçar em voz alta quando o aviso aparecer pela primeira vez: a regra só existe porque ela escreveu.
+Este é o capítulo-gancho do guia para o tema de engenharia e IA: **o código funciona e aceita um recado vazio; quem decide que isso é um erro é quem programa**. Vale reforçar em voz alta quando o aviso aparecer pela primeira vez: a regra só existe porque a pessoa escreveu.
 
 Os passos seguem um problema de cada vez, e cada um aparece na tela antes de ser resolvido:
 

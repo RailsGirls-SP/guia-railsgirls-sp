@@ -16,11 +16,11 @@ nav_order: 1
 - "Escreveu errado. E agora?" Leva às ações de corrigir e apagar.
 - "Alguém com pressa clicou em postar sem escrever nada. O que acontece?" Leva à tabela "O que pode dar errado".
 
-Dê tempo de verdade: 10 a 15 minutos, em silêncio, antes de qualquer resposta. Pergunte mais do que responde. E só abra "o nosso plano" depois que a participante tiver o dela.
+Dê tempo de verdade: 10 a 15 minutos, em silêncio, antes de qualquer resposta. Pergunte mais do que responde. E só abra "o nosso plano" depois que a participante tiver o próprio plano.
 
 ## Confusões comuns
 
-- **Achar que existe uma resposta certa.** O plano dela não precisa ser igual ao nosso. O valor está em comparar e entender o motivo de cada diferença.
+- **Achar que existe uma resposta certa.** O plano da pessoa não precisa ser igual ao nosso. O valor está em comparar e entender o motivo de cada diferença.
 - **Desenhar demais.** Cores, fontes, ícones e logos não são o foco. Caixas, campos e botões bastam.
 - **Pensar no código cedo demais.** Se aparecerem palavras como "tabela" ou "banco de dados", ótimo, mas o capítulo é sobre o problema e as pessoas, não sobre o Rails.
 - **Querer resolver tudo.** Veja "Foco no MVP", abaixo.

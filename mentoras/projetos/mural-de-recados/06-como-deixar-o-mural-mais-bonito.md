@@ -20,15 +20,15 @@ nav_order: 7
 - **A linha do Bulma fora do lugar.** O `<link>` precisa ficar dentro do `<head>` do layout, antes da linha do `stylesheet_link_tag`. Assim, o `application.css`, que entra no desafio extra das cores, é lido depois do Bulma e consegue mudar as cores dos cartões.
 - **Esquecer o `data-theme="light"`.** Quem usa o computador no modo escuro vê o mural de recados escuro, diferente dos prints do guia.
 - **A vírgula antes do `class:`.** Em `form.text_field :author, class: "input"`, sem a vírgula aparece um erro de sintaxe.
-- **Sobras do código antigo.** Os passos 3 e 4 trocam pedaços grandes da view. É comum sobrar um `<% end %>` a mais ou faltar um. Peça para ela comparar o arquivo inteiro com o guia.
+- **Sobras do código antigo.** Os passos 3 e 4 trocam pedaços grandes da view. É comum sobrar um `<% end %>` a mais ou faltar um. Peça para comparar o arquivo inteiro com o guia.
 - **`</div>` faltando.** Não dá erro, mas bagunça a página. O editor ajuda: ao clicar numa `<div>`, ele destaca o `</div>` correspondente.
 - **Sem internet, sem Bulma.** O endereço do `<link>` é de uma **CDN** (*Content Delivery Network*, rede de entrega de conteúdo): um serviço, aqui o jsDelivr, que guarda arquivos públicos como o Bulma em servidores pelo mundo e entrega o mais próximo de quem pede. Por isso não é preciso instalar nada, mas o navegador precisa de internet para buscar o arquivo. Se a rede do evento cair, a página volta a ser só texto, mas o app continua funcionando. O guia não usa a palavra "CDN" com as participantes: para elas, a linha do `<link>` só "busca os estilos do Bulma na internet".
-- **Inspecionar.** Vale mostrar o **Inspecionar** do navegador: ela vê as classes de cada cartão e pode testar outras classes ao vivo, sem medo de quebrar o arquivo.
+- **Inspecionar.** Vale mostrar o **Inspecionar** do navegador: dá para ver as classes de cada cartão e pode testar outras classes ao vivo, sem medo de quebrar o arquivo.
 
 ## Por que Bulma, e não Tailwind
 
 {: .atencao }
-Só para as mentoras. **Não precisa explicar isso para as participantes**: para elas, o guia só diz que o Bulma é um conjunto de estilos prontos.
+Só para a mentoria. **Não precisa explicar isso para as participantes**: para elas, o guia só diz que o Bulma é um conjunto de estilos prontos.
 
 O objetivo do capítulo é deixar o mural de recados bonito no fim do dia, com o mínimo de informação nova. O Bulma ganhou por isso:
 
@@ -45,7 +45,7 @@ Também ficou de fora o **Bootstrap**: ele é parecido com o Bulma nos nomes de 
 
 ## Ir além com o Bulma
 
-Se sobrar tempo, sugestões para ela brincar sozinha, com a [documentação do Bulma](https://bulma.io/documentation/) aberta:
+Se sobrar tempo, sugestões para brincar sem ajuda, com a [documentação do Bulma](https://bulma.io/documentation/) aberta:
 
 - Trocar a cor do botão **Postar recado** (`is-link`, `is-info`, `is-success`, `is-warning`).
 - Colocar um cabeçalho com o componente `hero`, com título e subtítulo.

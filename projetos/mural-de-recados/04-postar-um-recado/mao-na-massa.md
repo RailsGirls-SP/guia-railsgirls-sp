@@ -298,7 +298,7 @@ O formulário não recebeu o recado em branco. Confira se o controller tem a lin
 <details class="pergunta" markdown="1">
 <summary>Aparece <code>InvalidAuthenticityToken</code> ou <code>HTTP Origin header didn't match</code></summary>
 
-É a proteção de formulários do passo 4. Confira se a linha `config.action_controller.forgery_protection_origin_check = false` está no `config/environments/development.rb`, antes do último `end`, e se você **reiniciou o servidor** depois de salvar (Ctrl+C e `bin/rails server`). Se continuar, peça ajuda para uma mentora. 💜
+É a proteção de formulários do passo 4. Confira se a linha `config.action_controller.forgery_protection_origin_check = false` está no `config/environments/development.rb`, antes do último `end`, e se você **reiniciou o servidor** depois de salvar (Ctrl+C e `bin/rails server`). Se continuar, peça ajuda para alguém da mentoria. 💜
 
 </details>
 
@@ -323,7 +323,7 @@ Recarregue a página: se o recado aparecer, ele foi guardado, mas o navegador n�
 
 </details>
 
-Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/04-postar-um-recado.md %}).
+Mentoria: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/04-postar-um-recado.md %}).
 
 ## Terminou?
 

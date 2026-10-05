@@ -7,9 +7,9 @@ nav_order: 1
 
 Boas-vindas ao guia do **Rails Girls São Paulo**! 💜
 
-O Rails Girls é um workshop de um dia para mulheres que querem dar os primeiros passos em programação. Em São Paulo, a gente constrói junto um app de verdade, usando [Ruby on Rails]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#rails), e o guia acompanha cada passo, no workshop e depois dele.
+O Rails Girls é um workshop gratuito, de um dia, para mulheres, pessoas trans e pessoas não-binárias que querem dar os primeiros passos em programação. Em um workshop presencial, sediado na cidade de São Paulo, a gente constrói junto um app de verdade, usando [Ruby on Rails]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#rails), e o guia acompanha cada passo, no workshop e depois dele.
 
-![Uma pessoa colando um papel num mural onde já existem outros recados]({{ '/assets/images/mural-fisico.svg' | relative_url }})
+![Uma pessoa conversando com outra pessoa na frente de um computador]({{ '/assets/images/pair-programming.svg' | relative_url }})
 {: .ilustracao }
 
 Ilustração: [unDraw](https://undraw.co/)
@@ -17,9 +17,9 @@ Ilustração: [unDraw](https://undraw.co/)
 
 ## Para quem é este guia
 
-**Para participantes.** Você não precisa saber nada de programação. O guia explica cada passo e cada termo, e você pode seguir no seu ritmo: no dia do workshop, com as mentoras por perto, ou sozinha, em casa, quando quiser.
+**Para participantes.** Você não precisa saber nada de programação. O guia explica cada passo e cada termo, e você pode seguir no seu ritmo: no dia do workshop, com a equipe de mentoria por perto, ou por conta própria, em casa, quando quiser.
 
-**Para mentoras.** O [Guia para mentoras]({{ site.baseurl }}{% link mentoras/index.md %}) tem a postura de mentoria, o roteiro do dia, os erros mais comuns e notas para cada capítulo do projeto.
+**Para quem mentora.** O [Guia para mentoria]({{ site.baseurl }}{% link mentoras/index.md %}) tem a postura de mentoria, o roteiro do dia, os erros mais comuns e notas para cada capítulo do projeto.
 
 ## Como navegar pelo guia
 
@@ -30,7 +30,7 @@ O menu ao lado tem quatro partes:
 | [Por que aprender a programar?]({{ site.baseurl }}{% link por-que-aprender-a-programar.md %}) | Por que aprender a programar quando a IA já escreve código, e por que os termos ficam em inglês. |
 | [Comece aqui]({{ site.baseurl }}{% link comece-aqui/index.md %}) | O que você precisa antes do projeto: a conta no GitHub, o básico do terminal e do Git, como usar a IA como tutora e o glossário. |
 | [Projetos]({{ site.baseurl }}{% link projetos/index.md %}) | O projeto do workshop, o [Mural de recados]({{ site.baseurl }}{% link projetos/mural-de-recados/index.md %}), capítulo por capítulo. |
-| [Guia para mentoras]({{ site.baseurl }}{% link mentoras/index.md %}) | Tudo para quem vai mentorar. |
+| [Guia para mentoria]({{ site.baseurl }}{% link mentoras/index.md %}) | Tudo para quem vai mentorar. |
 
 Encontrou uma palavra nova? O [glossário]({{ site.baseurl }}{% link comece-aqui/glossario.md %}) explica cada termo, e a busca, no topo da página, acha qualquer assunto do guia.
 

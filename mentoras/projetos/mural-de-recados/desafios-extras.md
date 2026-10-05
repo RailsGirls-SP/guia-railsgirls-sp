@@ -13,8 +13,8 @@ Os desafios são para quem termina antes. Não precisa garantir que todo mundo c
 
 ## Como conduzir
 
-- **Deixe ela escolher.** A ordem da página vai do mais fácil ao mais difícil, mas a participante pode começar pelo que achar mais divertido. A exceção é o "Filtrar recados por cor", que depende do "Cores nos recados".
-- **As dicas são uma escada.** Antes de abrir a próxima dica, pergunte o que ela já tentou. Muitas vezes, falta pouco.
+- **Deixe a pessoa escolher.** A ordem da página vai do mais fácil ao mais difícil, mas a participante pode começar pelo que achar mais divertido. A exceção é o "Filtrar recados por cor", que depende do "Cores nos recados".
+- **As dicas são uma escada.** Antes de abrir a próxima dica, pergunte o que já foi tentado. Muitas vezes, falta pouco.
 - **Commit antes de começar cada desafio.** Se der errado, dá para voltar ao mural de recados que funcionava.
 
 ## Data dos recados
@@ -34,12 +34,12 @@ Na dica 3, a participante escolhe **Rosa** e o recado é guardado amarelo. Isso 
 {: .atencao }
 Não corrija o `message_params` antes da hora. Deixe a participante investigar: primeiro o console (`Message.last.color`), depois a linha `Parameters` no terminal do servidor, e só então o controller. É a primeira vez que um bug aparece **sem mensagem de erro**, e o caminho da investigação é o que mais importa.
 
-Se ela não achar a linha `Parameters`, ajude a encontrar o terminal do servidor na lista de terminais, à direita do painel.
+Se a pessoa não achar a linha `Parameters`, ajude a encontrar o terminal do servidor na lista de terminais, à direita do painel.
 
 
 ### Confusões comuns
 
-- **Rodar a migration antes de revisar.** Se ela rodou sem o `default`, os recados antigos ficam com a cor vazia (e o `null: false` não foi aplicado). Desfaça com `bin/rails db:rollback`, corrija e rode de novo.
+- **Rodar a migration antes de revisar.** Se a migration rodou sem o `default`, os recados antigos ficam com a cor vazia (e o `null: false` não foi aplicado). Desfaça com `bin/rails db:rollback`, corrija e rode de novo.
 - **Esquecer o campo da cor no `edit.html.erb`.** O formulário foi copiado no capítulo 05, então são dois lugares.
 - **A classe com espaço errado.** `card card-<%= message.color %>`: um espaço entre as duas classes e nenhum entre `card-` e o `<%=`.
 - **Esquecer de tirar o `has-background-warning-light`.** É a classe do Bulma que deixa todos os cartões amarelos, e ela ganha das cores da participante (as classes de cor do Bulma usam `!important`). Se tudo continuar amarelo, é ela.
@@ -54,7 +54,7 @@ A cor é guardada em inglês (`yellow`, `pink`, `blue`, `green`), seguindo a reg
 
 ## Filtrar recados por cor
 
-Este desafio não tem dicas de propósito: é para a participante planejar e resolver sozinha. Ajude com perguntas, e não com o código. Uma solução possível, só para consulta:
+Este desafio não tem dicas de propósito: é para a participante planejar e resolver por conta própria. Ajude com perguntas, e não com o código. Uma solução possível, só para consulta:
 
 ```ruby
 # app/controllers/messages_controller.rb, na ação index
@@ -79,16 +79,16 @@ Este desafio não tem dicas de propósito: é para a participante planejar e res
 ## Curtidas
 
 - **Perguntas para o "Pense antes":** "O número de curtidas é texto ou número?" e "Um recado novo tem quantas curtidas?" (leva ao `default: 0`).
-- **Confusões comuns:** esquecer o `default: 0` na migration, e aí os recados antigos mostram o ❤️ sem número; e a rota `member`, que é nova. Vale mostrar o `bin/rails routes` para ela ver a rota `like_message`.
+- **Confusões comuns:** esquecer o `default: 0` na migration, e aí os recados antigos mostram o ❤️ sem número; e a rota `member`, que é nova. Vale mostrar o `bin/rails routes` para mostrar a rota `like_message`.
 
 ## Como avançar com o projeto
 
 {: .atencao }
-Só para as mentoras. Use esta lista para conversar com quem terminou tudo e quer continuar, no dia ou depois do workshop. **Não precisa apresentar para todas as participantes.**
+Só para a mentoria. Use esta lista para conversar com quem terminou tudo e quer continuar, no dia ou depois do workshop. **Não precisa apresentar para todas as participantes.**
 
 Cada ideia abaixo é um passo maior que os desafios extras, e quase todas trazem um conceito novo do Rails. Vale seguir o mesmo jeito do guia: começar pelo problema, planejar no papel e construir em etapas pequenas.
 
-| Ideia | O problema | O que ela aprende |
+| Ideia | O problema | O que se aprende |
 |---|---|---|
 | **Respostas aos recados** | "Quero responder ao recado da Bia." | Um segundo model (`Reply`) ligado ao `Message`: o primeiro relacionamento entre tabelas (`belongs_to` e `has_many`) e rotas aninhadas. É o caminho natural da versão 2 do projeto. |
 | **Vários murais** | "Quero um mural de recados para cada turma, ou para cada evento." | Um model `Board` (mural) com muitos recados. Relacionamento entre tabelas e endereços como `/boards/3/messages`. |
@@ -100,7 +100,7 @@ Cada ideia abaixo é um passo maior que os desafios extras, e quase todas trazem
 
 Algumas dicas:
 
-- **Uma ideia por vez.** Antes de começar, peça para ela escrever o plano: que telas mudam, que informações são novas, que regras entram. É o mesmo "Pense antes de programar" dos capítulos.
+- **Uma ideia por vez.** Antes de começar, peça para escrever o plano: que telas mudam, que informações são novas, que regras entram. É o mesmo "Pense antes de programar" dos capítulos.
 - **Respostas ou vários murais primeiro.** Os dois ensinam relacionamento entre tabelas, que é a base de quase todo app de verdade, e não dependem de nada além do que o projeto já tem.
 - **Contas de usuária são o maior passo.** Envolvem segurança, sessões e mudam várias partes do app de uma vez. Vale fazer com calma, de preferência depois de uma das ideias acima.
 - **Commit antes de cada ideia.** Se a mudança der errado, dá para voltar ao mural de recados que funcionava.

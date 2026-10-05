@@ -19,7 +19,7 @@ Um **repositório** é uma pasta no GitHub que guarda todos os arquivos de um pr
 1. Abra o modelo: [github.com/RailsGirls-SP/codespaces-rails](https://github.com/RailsGirls-SP/codespaces-rails).
 2. Clique no botão **Use this template** e depois em **Create a new repository**.
 3. Em **Repository name**, escreva `mural-de-recados`.
-4. Em **Choose visibility**, escolha **Public**. Assim, as mentoras conseguem ver o seu código pelo link, e o seu app fica no seu perfil do GitHub. Você pode mudar isso depois, se quiser.
+4. Em **Choose visibility**, escolha **Public**. Assim, a equipe de mentoria consegue ver o seu código pelo link, e o seu app fica no seu perfil do GitHub. Você pode mudar isso depois, se quiser.
 5. Clique em **Create repository**.
 
 ![Formulário Create a new repository com o modelo RailsGirls-SP/codespaces-rails selecionado, o nome mural-de-recados em Repository name, Public em Choose visibility e o botão Create repository]({{ '/assets/images/mural-de-recados/01/criar-repositorio-template.png' | relative_url }})
@@ -222,7 +222,7 @@ No painel de baixo, abra a aba **Ports** e procure a linha **App (3000)**. As ou
 <details class="pergunta" markdown="1">
 <summary>A página mostra o erro "Blocked hosts"</summary>
 
-O Rails bloqueou o endereço do codespace. Peça ajuda a uma mentora ou veja a solução nas [notas das mentoras]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/01-por-onde-comecar.md %}#erro-blocked-hosts).
+O Rails bloqueou o endereço do codespace. Peça ajuda para alguém da mentoria ou veja a solução nas [notas para a mentoria]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/01-por-onde-comecar.md %}#erro-blocked-hosts).
 
 </details>
 
@@ -252,7 +252,7 @@ Calma: nada se perdeu. Os seus arquivos e o seu commit continuam guardados no co
 
 </details>
 
-Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/01-por-onde-comecar.md %}).
+Mentoria: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/01-por-onde-comecar.md %}).
 
 ## Terminou?
 

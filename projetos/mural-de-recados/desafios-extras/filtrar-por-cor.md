@@ -27,6 +27,6 @@ Desta vez, não tem dicas: só o problema. Use o que você aprendeu nos capítul
 
 - Passar uma informação pelo endereço, como `/?color=pink`, e ler essa informação no controller com o `params`.
 - Buscar só alguns recados no banco de dados, com uma condição.
-- Planejar e resolver um problema sozinha, do começo ao fim.
+- Planejar e resolver um problema por conta própria, do começo ao fim.
 
-Se travar, peça ajuda para uma mentora ou leia [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}) e peça uma explicação, e não a resposta pronta. Uma palavra que ajuda a procurar na documentação do Rails: `where`.
+Se travar, peça ajuda para alguém da mentoria ou leia [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}) e peça uma explicação, e não a resposta pronta. Uma palavra que ajuda a procurar na documentação do Rails: `where`.

@@ -11,7 +11,7 @@ nav_order: 3
 
 ## Perguntas para o "Pense antes"
 
-- "Se a gente fechar o navegador, onde o recado fica?" Deixe a pessoa chegar sozinha na ideia de um lugar que guarda informações.
+- "Se a gente fechar o navegador, onde o recado fica?" Deixe a pessoa chegar por conta própria na ideia de um lugar que guarda informações.
 - "Como você anotaria vários recados numa planilha?" A planilha é a ponte para a ideia de tabela, linha e coluna.
 - "A autora e a mensagem são do mesmo tipo?" Leva à diferença entre `string` e `text`.
 
@@ -39,7 +39,7 @@ Isso também vale para o capítulo 08: no plano gratuito do Render, o disco tamb
 ## SQLite, MySQL e PostgreSQL
 
 {: .atencao }
-Isto é contexto para as mentoras. **Não precisa explicar para as participantes agora**: só se alguém perguntar.
+Isto é contexto para a mentoria. **Não precisa explicar para as participantes agora**: só se alguém perguntar.
 
 O app usa o **SQLite**, que é o padrão do Rails. Ele funciona diferente de bancos como o **MySQL** e o **PostgreSQL**:
 
@@ -58,7 +58,7 @@ Esse assunto volta no capítulo 08: em alguns serviços de hospedagem, como o pl
 ## Onde o Rails anota as migrations que já rodaram
 
 {: .atencao }
-Curiosidade só para as mentoras. **Não precisa mostrar para as participantes.**
+Curiosidade só para a mentoria. **Não precisa mostrar para as participantes.**
 
 A pergunta "Por que o nome da migration começa com data e hora?" diz que o Rails anota no banco de dados as migrations que já rodou. Essa anotação fica numa tabela que o próprio Rails cria, a `schema_migrations`. Ela tem uma coluna só, `version`, com o número (a data e a hora) de cada migration aplicada. Quando você roda `bin/rails db:migrate`, o Rails compara os arquivos de `db/migrate` com essa tabela e aplica só os que faltam.
 
@@ -89,7 +89,7 @@ O número da última migration também aparece no começo do `db/schema.rb`, em 
 ## As convenções do Rails são flexíveis
 
 {: .atencao }
-Curiosidade só para as mentoras. **Não precisa falar para as participantes**: para elas, o importante agora é seguir a convenção.
+Curiosidade só para a mentoria. **Não precisa falar para as participantes**: para elas, o importante agora é seguir a convenção.
 
 O capítulo diz que o Rails cria sozinho as colunas `id`, `created_at` e `updated_at`. É o comportamento padrão, mas dá para mudar. O Rails tem convenções, mas não obriga ninguém a segui-las:
 
@@ -128,7 +128,7 @@ O ponto em que ela não funciona é a diferença entre **classe** e **objeto**: 
 
 - Não introduza os termos "classe" e "objeto" se ninguém perguntar.
 - No capítulo 03, a analogia ganha um complemento: a assistente "te entrega aquele recado, com todas as informações dele".
-- Se alguém perceber a diferença sozinha, ótimo: confirme e diga que esses nomes vão aparecer com mais calma depois.
+- Se alguém perceber a diferença sem ajuda, ótimo: confirme e diga que esses nomes vão aparecer com mais calma depois.
 
 ## Por que `generate model`
 

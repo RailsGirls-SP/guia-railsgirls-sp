@@ -8,7 +8,7 @@ has_children: true
 
 # Desafios extras
 
-Terminou o projeto antes do tempo? Aqui estão desafios para continuar. Cada um começa pelo problema, e as dicas ficam escondidas: tente primeiro sozinha.
+Terminou o projeto antes do tempo? Aqui estão desafios para continuar. Cada um começa pelo problema, e as dicas ficam escondidas: tente primeiro sem ajuda.
 
 ## Os desafios
 

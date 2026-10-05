@@ -1,6 +1,6 @@
 ---
 title: Erros comuns
-parent: Guia para mentoras
+parent: Guia para mentoria
 nav_order: 1
 ---
 
@@ -51,7 +51,7 @@ Os problemas que mais aparecem durante o projeto Mural de recados, e como resolv
 
 ## Quando nada disso resolve
 
-- **Leia a mensagem de erro inteira, junto com ela.** A primeira linha costuma dizer o que aconteceu, e o nome do arquivo e o número da linha dizem onde.
+- **Leia a mensagem de erro inteira, junto com a pessoa.** A primeira linha costuma dizer o que aconteceu, e o nome do arquivo e o número da linha dizem onde.
 - **Compare com o código do guia,** linha por linha. A maioria dos erros é uma letra, um `end` ou um `@`.
 - **Volte para o último commit** se a confusão ficou grande. No painel **Source Control**, dá para descartar as mudanças de um arquivo e começar o passo de novo.
-- **Chame outra mentora.** Dois pares de olhos acham mais rápido, e a participante vê que pedir ajuda é normal, mesmo para quem já programa.
+- **Chame outra pessoa da mentoria.** Dois pares de olhos acham mais rápido, e a participante vê que pedir ajuda é normal, mesmo para quem já programa.

@@ -29,7 +29,7 @@ Num mural de recados cheio, dá vontade de saber quando cada recado foi postado.
 - Mudar o formato de uma data.
 - Mudar uma configuração do app.
 
-Tente resolver sozinha antes de abrir as dicas. Abra uma de cada vez, só se precisar.
+Tente resolver sem ajuda antes de abrir as dicas. Abra uma de cada vez, só se precisar.
 
 <details markdown="1">
 <summary>Dica 1: a data já existe</summary>

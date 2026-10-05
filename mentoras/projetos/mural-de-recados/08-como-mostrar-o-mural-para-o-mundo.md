@@ -51,4 +51,4 @@ O app no ar é público: qualquer pessoa com o endereço consegue abrir. Vale co
 | **Proteção de formulários (CSRF)** | O `forgery_protection_origin_check = false` do capítulo 04 está só no `development.rb`. Em produção, a proteção está completa. | Nada. |
 | **HTTPS** | O Render serve o app com HTTPS. | Nada. |
 | **Acesso do Render ao GitHub** | O Render pede permissão para ler repositórios. | Sugira dar acesso só ao repositório do mural de recados (**Only select repositories**). |
-| **Dados apagados depois de 30 dias** | O banco de dados gratuito expira. | Avise a participante, para ela não estranhar quando os recados sumirem. |
+| **Dados apagados depois de 30 dias** | O banco de dados gratuito expira. | Avise a participante, para não estranhar quando os recados sumirem. |

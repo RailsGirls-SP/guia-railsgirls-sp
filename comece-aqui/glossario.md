@@ -117,7 +117,7 @@ Por que quem programa usa tanto o terminal?
 
 - **Muitas ferramentas só existem nele.** O Rails, por exemplo, não tem botões: você usa por comandos.
 - **Um comando faz o trabalho de muitos cliques.** O `rails new` cria dezenas de arquivos de uma vez.
-- **Comandos são fáceis de repetir e compartilhar.** Uma mentora pode te mandar o comando exato, e você copia e cola. Com cliques, ela teria que descrever cada passo.
+- **Comandos são fáceis de repetir e compartilhar.** Alguém da equipe de mentoria pode te mandar o comando exato, e você copia e cola. Com cliques, seria preciso descrever cada passo.
 - **Funciona em computadores sem tela,** como os servidores na internet que deixam os sites no ar.
 
 Quando o terminal termina uma tarefa e está pronto para o próximo comando, ele mostra uma linha terminando em `$`. No codespace, o terminal fica na parte de baixo da tela e dá ordens para o computador na nuvem, não para o seu.
@@ -547,7 +547,7 @@ Existem muitas ferramentas que usam IA para ajudar a programar. Elas mudam rápi
 
 Quando uma ferramenta pode mudar arquivos e rodar comandos sozinha, ela está trabalhando como **agente**. É poderoso, mas você precisa conferir o que ela fez, porque o código continua sendo responsabilidade de quem programa.
 
-Neste guia, a recomendação é usar qualquer uma delas como uma tutora, e não como alguém que faz por você: peça explicações, faça cada passo você mesma e nunca rode um comando que você não entendeu. Veja um exemplo na seção "Preciso de IA para este capítulo?" de [O que aconteceu?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/o-que-aconteceu.md %}).
+Neste guia, a recomendação é usar qualquer uma delas como uma tutora, e não como alguém que faz por você: peça explicações, faça você cada passo e nunca rode um comando que você não entendeu. Veja um exemplo na seção "Preciso de IA para este capítulo?" de [O que aconteceu?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/o-que-aconteceu.md %}).
 
 </details>
 

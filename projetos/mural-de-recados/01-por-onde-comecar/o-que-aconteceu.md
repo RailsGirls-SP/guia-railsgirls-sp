@@ -103,7 +103,7 @@ Não. Tudo aqui é feito com cliques e com poucos comandos (`ruby -v`, `rails -v
 O codespace tem um painel de chat com IA, à direita. Se quiser usar, trate a IA como uma tutora, não como alguém que faz por você (veja como começar a conversa em [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %})):
 
 - **Peça explicações.** Por exemplo: "O que faz o comando `rails new .`?" ou "O que quer dizer esta mensagem de erro?".
-- **Peça para ela te guiar,** um passo de cada vez, e faça cada passo você mesma.
+- **Peça para ela te guiar,** um passo de cada vez, e faça você cada passo.
 - **Nunca rode um comando que você não entendeu.** Se a IA sugerir um comando, pergunte o que ele faz antes de rodar.
 - **Não deixe a IA rodar comandos ou mudar arquivos sozinha.** Você precisa saber o que mudou no seu app, e por quê.
 
