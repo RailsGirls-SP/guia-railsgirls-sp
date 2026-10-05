@@ -53,7 +53,7 @@ No passo 5, o aviso da porta 3000 mostra dois botões: **Open in Browser** e **M
 - **O codespace em si nunca fica público.** Editor, arquivos e terminal são sempre só da dona da conta.
 - **O que fica público é o endereço do app** (`…-3000.app.github.dev`). Com a porta pública, qualquer pessoa com o link abre o app, sem login. Com a porta privada, que é o padrão, só a dona da conta abre.
 - **O app roda em modo de desenvolvimento,** que não foi feito para ficar exposto: as páginas de erro mostram detalhes do código, e qualquer pessoa com o link pode postar, editar e apagar recados.
-- **Só funciona com o codespace ligado,** então não serve para colocar o app no ar. Para isso, existe o capítulo 09.
+- **Só funciona com o codespace ligado,** então não serve para colocar o app no ar. Para isso, existe o capítulo 08.
 - **Quem abre o app gasta a cota do Codespaces** de quem é dona do codespace.
 
 Oriente a deixar a porta **privada**. Se uma participante quiser mostrar o mural de recados para alguém na sala, pode deixar pública por alguns minutos e voltar para privada depois: na aba **Ports**, clique com o botão direito na porta 3000 e escolha **Port Visibility** → **Private**.

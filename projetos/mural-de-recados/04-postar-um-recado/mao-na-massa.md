@@ -242,7 +242,7 @@ Teste: deixe os dois campos vazios e clique em **Postar recado**.
 
 **Confira:** nenhum erro aparece, e o mural de recados ganha um recado vazio: só um travessão (—), sem mensagem e sem autora.
 
-Você já tinha visto isso no "Quebre de propósito" de [Como guardar os recados?]({{ site.baseurl }}{% link projetos/mural-de-recados/02-como-guardar-os-recados/o-que-aconteceu.md %}): o Rails guarda o recado porque ninguém disse a ele que um recado vazio é proibido. Decidir isso é trabalho de quem programa, e é o assunto do capítulo [E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/08-e-se-o-recado-vier-vazio/index.md %}).
+Você já tinha visto isso no "Quebre de propósito" de [Como guardar os recados?]({{ site.baseurl }}{% link projetos/mural-de-recados/02-como-guardar-os-recados/o-que-aconteceu.md %}): o Rails guarda o recado porque ninguém disse a ele que um recado vazio é proibido. Decidir isso é trabalho de quem programa, e é o assunto do capítulo [E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %}).
 
 Por enquanto, apague o recado vazio pelo console. No terminal novo:
 

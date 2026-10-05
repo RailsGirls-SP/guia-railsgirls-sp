@@ -140,7 +140,7 @@ O console mostra algo parecido com isto:
 #<Message:0x... id: 2, author: nil, content: nil, created_at: "2026-10-03 12:10:00", updated_at: "2026-10-03 12:10:00">
 ```
 
-O [`nil`]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#nil) quer dizer "nada": o recado tem número e data, mas não tem autora nem mensagem. O Rails guardou um recado vazio, porque ninguém disse a ele que isso é proibido. Guarde essa observação: ela é o assunto do capítulo [E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/08-e-se-o-recado-vier-vazio/index.md %}).
+O [`nil`]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#nil) quer dizer "nada": o recado tem número e data, mas não tem autora nem mensagem. O Rails guardou um recado vazio, porque ninguém disse a ele que isso é proibido. Guarde essa observação: ela é o assunto do capítulo [E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %}).
 
 Para apagar esse recado vazio, digite:
 

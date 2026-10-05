@@ -1,12 +1,12 @@
 ---
-title: "08. E se alguém mandar um recado vazio?"
+title: "07. E se alguém mandar um recado vazio?"
 parent: Mural de recados
 grand_parent: Projetos
-nav_order: 9
+nav_order: 8
 has_children: true
 ---
 
-# 08. E se alguém mandar um recado vazio?
+# 07. E se alguém mandar um recado vazio?
 
 ## O desafio
 TODO: alguém clicou em enviar sem escrever nada, e apareceu um card vazio no mural. Isso deveria ser permitido?
@@ -28,8 +28,8 @@ TODO: telas, dados e regras que a gente planejou para este desafio.
 
 ## Mão na massa
 
-Agora é com você: siga os passos em [Mão na massa]({{ site.baseurl }}{% link projetos/mural-de-recados/08-e-se-o-recado-vier-vazio/mao-na-massa.md %}). Quando terminar, siga para [O que aconteceu?]({{ site.baseurl }}{% link projetos/mural-de-recados/08-e-se-o-recado-vier-vazio/o-que-aconteceu.md %}).
+Agora é com você: siga os passos em [Mão na massa]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/mao-na-massa.md %}). Quando terminar, siga para [O que aconteceu?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/o-que-aconteceu.md %}).
 
 ## O que aconteceu?
 
-Terminou os passos? Em [O que aconteceu?]({{ site.baseurl }}{% link projetos/mural-de-recados/08-e-se-o-recado-vier-vazio/o-que-aconteceu.md %}) você entende cada passo, quebra o app de propósito, vê se precisa de IA e responde um quiz.
+Terminou os passos? Em [O que aconteceu?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/o-que-aconteceu.md %}) você entende cada passo, quebra o app de propósito, vê se precisa de IA e responde um quiz.

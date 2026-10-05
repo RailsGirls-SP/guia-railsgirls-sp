@@ -1,6 +1,6 @@
 ---
 title: "O que aconteceu?"
-parent: "08. E se alguém mandar um recado vazio?"
+parent: "08. Como mostrar o mural de recados para o mundo?"
 grand_parent: Mural de recados
 nav_order: 2
 ---
@@ -11,19 +11,6 @@ nav_order: 2
 <summary>Por dentro do app</summary>
 
 TODO: explicação do conceito, sem jargão desnecessário; o termo técnico aparece aqui (e linka o glossário).
-
-Você está aqui: este é o caminho que uma requisição percorre dentro do app.
-
-```mermaid
-flowchart LR
-  Navegador --> Rota --> Controller
-  Controller <--> Model
-  Model <--> Banco[(Banco de dados)]
-  Controller --> View --> Navegador
-
-  classDef aqui fill:#73121b,stroke:#f2b8be,stroke-width:2px,color:#fff
-  class Model aqui
-```
 
 </details>
 
@@ -46,8 +33,7 @@ TODO (opcional): uma mudança que causa erro de propósito e como ler a mensagem
 <details class="passo" markdown="1">
 <summary>Preciso de IA para este capítulo?</summary>
 
-{: .ia }
-TODO: o código gerado aceita um recado vazio; quem decide que isso é um erro? Comparar o código gerado com a lista de casos do "Pense antes".
+TODO (opcional): transformar o plano do "Pense antes" num pedido para a IA e conferir o resultado contra as regras do plano.
 
 </details>
 
@@ -81,4 +67,4 @@ TODO (opcional): links e vídeos para quem quiser ir além.
 
 ## E agora?
 
-Próximo desafio: [Como mostrar o mural de recados para o mundo?]({{ site.baseurl }}{% link projetos/mural-de-recados/09-como-mostrar-o-mural-para-o-mundo/index.md %})
+Próximo: [Desafios extras]({{ site.baseurl }}{% link projetos/mural-de-recados/desafios-extras/index.md %})

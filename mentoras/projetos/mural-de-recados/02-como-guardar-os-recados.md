@@ -22,7 +22,7 @@ nav_order: 3
 - **Ficar "preso" no console.** Quem tenta rodar `bin/rails ...` dentro do console recebe erro de Ruby. O `exit` volta para o terminal.
 - **`Message` com m minúsculo** no console dá `NameError`.
 - **Nomes em inglês.** Se alguém estranhar `Message`, `author` e `content`, lembre que o código segue o costume do inglês, e o guia traz a tradução de cada nome.
-- **O recado vazio do "Quebre de propósito".** É de propósito: o Rails aceita, porque ninguém disse que é proibido. Não adiante a solução; ela é o capítulo 08.
+- **O recado vazio do "Quebre de propósito".** É de propósito: o Rails aceita, porque ninguém disse que é proibido. Não adiante a solução; ela é o capítulo 07.
 
 ## Onde os recados ficam guardados no Codespaces
 
@@ -34,7 +34,7 @@ O banco de dados é o **SQLite**, que fica num único arquivo: `storage/developm
 
 Se alguém perguntar por que os recados sumiram num codespace novo, é isso: o código veio do GitHub, mas o banco começa vazio. Basta rodar `bin/rails db:migrate` para criar a tabela de novo e postar novos recados.
 
-Isso também vale para o capítulo 09: no plano gratuito do Render, o disco também não é permanente, e o SQLite perde os dados a cada deploy (decisão ainda pendente no capítulo).
+Isso também vale para o capítulo 08: no plano gratuito do Render, o disco também não é permanente, e o SQLite perde os dados a cada deploy (decisão ainda pendente no capítulo).
 
 ## SQLite, MySQL e PostgreSQL
 
@@ -53,7 +53,7 @@ No dia a dia do Rails, a diferença quase não aparece: o Active Record (a parte
 
 O SQLite não é só "banco de brinquedo": desde o Rails 8, ele também é uma opção recomendada para colocar apps em produção. Mesmo assim, PostgreSQL e MySQL continuam muito comuns em empresas.
 
-Esse assunto volta no capítulo 09: em alguns serviços de hospedagem, como o plano gratuito do Render, o disco não é permanente, e por isso pode ser preciso usar um PostgreSQL em produção (decisão ainda pendente).
+Esse assunto volta no capítulo 08: em alguns serviços de hospedagem, como o plano gratuito do Render, o disco não é permanente, e por isso pode ser preciso usar um PostgreSQL em produção (decisão ainda pendente).
 
 ## Onde o Rails anota as migrations que já rodaram
 

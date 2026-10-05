@@ -1,6 +1,6 @@
 ---
 title: Mão na massa
-parent: "09. Como mostrar o mural de recados para o mundo?"
+parent: "08. Como mostrar o mural de recados para o mundo?"
 grand_parent: Mural de recados
 nav_order: 1
 ---
@@ -23,8 +23,8 @@ TODO: último passo: guardar o progresso com um commit e o Sync Changes.
 
 TODO: os 2–3 erros mais prováveis deste passo e como resolver.
 
-Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/09-como-mostrar-o-mural-para-o-mundo.md %}).
+Mentoras: veja as [notas deste capítulo]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo.md %}).
 
 ## Terminou?
 
-Siga para [O que aconteceu?]({{ site.baseurl }}{% link projetos/mural-de-recados/09-como-mostrar-o-mural-para-o-mundo/o-que-aconteceu.md %}) e entenda cada passo.
+Siga para [O que aconteceu?]({{ site.baseurl }}{% link projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo/o-que-aconteceu.md %}) e entenda cada passo.

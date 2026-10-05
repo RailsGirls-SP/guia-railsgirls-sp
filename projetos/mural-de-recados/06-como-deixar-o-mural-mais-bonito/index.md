@@ -8,7 +8,7 @@ has_children: true
 
 # 06. Como deixar o mural de recados mais bonito?
 
-Tempo: uns 30 minutos.
+Tempo: uns 25 minutos.
 {: .fs-5 }
 
 ## O desafio
@@ -35,14 +35,14 @@ Reserve uns 5 minutos. Não existe resposta errada.
 
 No fim deste capítulo, quem abrir o app vai ver isto:
 
-![Mural de recados com fundo bege, o formulário com os campos Seu nome e Recado e o botão Postar recado e, embaixo, quatro cartões amarelos lado a lado, cada um com a mensagem, a autora em itálico, o link Editar e o botão Apagar]({{ '/assets/images/mural-de-recados/06/mural-post-it.png' | relative_url }})
+![Mural de recados com o título em destaque, o formulário numa caixa branca com os campos Seu nome e Recado e o botão verde Postar recado e, embaixo, quatro cartões amarelos lado a lado, cada um com a mensagem, a autora em itálico e os botões Editar e Apagar]({{ '/assets/images/mural-de-recados/06/mural-post-it.png' | relative_url }})
 {: .ilustracao }
 
-- **Os cartões:** cada recado vira um cartão amarelo, como um post-it, com um pouco de sombra, como um papel colado na parede.
-- **Dentro do cartão:** a mensagem, a autora em itálico e, embaixo, o **Editar** e o **Apagar** lado a lado.
-- **A grade:** os cartões ficam lado a lado e descem para a linha de baixo quando não cabem mais. Numa tela de celular, cabe um por linha.
-- **A página:** um fundo cor de papel, e o formulário com cada rótulo em cima do seu campo.
-- **O mínimo:** todos os cartões da mesma cor. Cada pessoa escolher a cor do seu recado fica para o [próximo capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/07-como-escolher-a-cor-do-recado/index.md %}).
+- **Os cartões:** cada recado vira um cartão amarelo, como um post-it, com cantos arredondados e um pouco de sombra.
+- **Dentro do cartão:** a mensagem, a autora em itálico e, embaixo, os botões **Editar** e **Apagar**, este em vermelho.
+- **A grade:** os cartões ficam lado a lado, quatro por linha. Numa tela de celular, cabe um por linha.
+- **O formulário:** numa caixa branca, com os campos arrumados e um botão colorido.
+- **O mínimo:** todos os cartões da mesma cor. Quem terminar antes pode deixar cada pessoa escolher a cor do seu recado, no desafio [Cores nos recados]({{ site.baseurl }}{% link projetos/mural-de-recados/desafios-extras/cores-nos-recados.md %}).
 
 </details>
 

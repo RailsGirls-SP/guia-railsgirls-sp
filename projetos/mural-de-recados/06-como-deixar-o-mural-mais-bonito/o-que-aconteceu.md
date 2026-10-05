@@ -10,10 +10,10 @@ nav_order: 2
 <details class="passo" markdown="1" open>
 <summary>Por dentro do app</summary>
 
-Neste capítulo, só a aparência mudou. Você mexeu em dois arquivos:
+Neste capítulo, só a aparência mudou. Você mexeu em três arquivos, todos de view:
 
-1. A **view**, `app/views/messages/index.html.erb`, ganhou classes que dizem o que é cada parte da página: o mural de recados, o cartão, a autora e as ações.
-2. O **CSS**, `app/assets/stylesheets/application.css`, usou essas classes para dizer como cada parte aparece: a cor, a sombra, a grade.
+1. O **layout**, `app/views/layouts/application.html.erb`, que é a moldura de todas as páginas: ele passou a trazer o Bulma.
+2. A view do mural de recados, `index.html.erb`, e a da correção, `edit.html.erb`: elas ganharam classes, que dizem ao Bulma o que é cada parte da página.
 
 Você está aqui: este é o caminho que uma requisição percorre dentro do app.
 
@@ -32,13 +32,13 @@ flowchart LR
 
 Em vermelho escuro, as peças deste capítulo; em rosa claro, as que você já conhece dos capítulos anteriores.
 
-#### HTML diz o que é; CSS diz como aparece
+#### Estilos prontos
 
-A view monta a página em [HTML]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#html), e as classes dizem o que é cada parte. O [CSS]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#css) usa essas classes para dizer como cada parte aparece. Por isso, no passo 2, nada mudou na tela: os nomes estavam lá, mas ninguém tinha dito o que fazer com eles.
+O **Bulma** é uma biblioteca de [CSS]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#css): um conjunto de estilos que outra pessoa já escreveu e deixou pronto para usar. Você não escreveu nenhum estilo: só deu nomes às partes da página, com as classes, e o Bulma já sabia como mostrar um `button`, um `card` ou uma `box`.
 
-#### Um arquivo de estilo para o app todo
+#### O layout, a moldura de todas as páginas
 
-O `application.css` vale para todas as páginas do app. Por isso, a página de correção também ficou com o fundo cor de papel e o formulário arrumado, sem você mexer na view dela.
+Cada view monta só o miolo da página. O resto, como o título da aba e os estilos, vem do layout, que envolve todas as views. Por isso bastou uma linha no layout para o Bulma valer no app inteiro.
 
 #### A separação valeu a pena
 
@@ -50,35 +50,30 @@ No [capítulo 03]({{ site.baseurl }}{% link projetos/mural-de-recados/03-ver-tod
 <summary>Não existem perguntas bobas</summary>
 
 <details class="pergunta" markdown="1">
-<summary>O que é o #fff3a3?</summary>
+<summary>Preciso decorar as classes do Bulma?</summary>
 
-É um jeito de escrever cores no CSS, chamado **hexadecimal**. Os seis caracteres dizem quanto de vermelho, verde e azul a cor tem, de `00` (nada) a `ff` (o máximo). `#ffffff` é branco, `#000000` é preto. Ninguém decora: quem programa escolhe a cor num seletor de cores e copia o código.
-
-</details>
-
-<details class="pergunta" markdown="1">
-<summary>Por que o nome da classe é em inglês?</summary>
-
-Pelo mesmo motivo dos outros nomes do código: é o costume de quem programa, e deixa o seu código parecido com os exemplos que você vai encontrar. O que aparece na tela continua em português.
+Não. Ninguém decora: quem programa consulta a [documentação do Bulma](https://bulma.io/documentation/), em inglês, sempre que precisa. Lá tem exemplos de cada parte, como botões, cartões e formulários, prontos para copiar.
 
 </details>
 
 <details class="pergunta" markdown="1">
-<summary>Dá para deixar mais bonito? <span class="label label-purple">Para ir além</span></summary>
+<summary>Usar uma biblioteca pronta não é trapaça?</summary>
 
-Dá, e o CSS tem muitas outras propriedades. Por exemplo, para girar os cartões um pouquinho, como post-its colados de qualquer jeito, acrescente no fim do `application.css`:
+Não. Quase todo app usa código que outras pessoas escreveram, e o próprio Rails é um exemplo disso. Escolher uma boa ferramenta e saber usar é parte do trabalho de quem programa. Aprender a escrever CSS do zero continua útil, e você pode fazer isso com calma depois do workshop.
 
-```css
-.card:nth-child(odd) {
-  rotate: -1deg;
-}
+</details>
 
-.card:nth-child(even) {
-  rotate: 1deg;
-}
-```
+<details class="pergunta" markdown="1">
+<summary>Dá para mudar as cores e o jeito dos botões? <span class="label label-purple">Para ir além</span></summary>
 
-O `nth-child(odd)` escolhe os cartões ímpares, e o `nth-child(even)`, os pares. Teste, mude os números e veja o que acontece.
+Dá. Troque o `is-primary` do botão **Postar recado** por `is-link`, `is-info`, `is-success` ou `is-warning`, salve e recarregue para ver a diferença. A documentação do Bulma mostra todas as opções na página de [botões](https://bulma.io/documentation/elements/button/).
+
+</details>
+
+<details class="pergunta" markdown="1">
+<summary>O Bulma vem da internet? <span class="label label-purple">Para ir além</span></summary>
+
+Vem. A linha do `<link>` busca os estilos do Bulma num site na internet, e é por isso que você não precisou instalar nada. Sem internet, o app continua funcionando, mas fica sem os estilos.
 
 </details>
 
@@ -87,57 +82,59 @@ O `nth-child(odd)` escolhe os cartões ímpares, e o `nth-child(even)`, os pares
 <details class="passo" markdown="1">
 <summary>Quebre de propósito <span class="label label-blue">Opcional</span></summary>
 
-No `application.css`, troque `.card` por `.cartao`. Salve e recarregue a página.
+No `app/views/layouts/application.html.erb`, coloque `<!--` antes e `-->` depois da linha do Bulma, para ela virar um comentário:
 
-**Dê um palpite:** o que acontece com os cartões?
+```erb
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"> -->
+```
 
-Eles perdem o fundo amarelo, a sombra e o espaço por dentro. Nenhum erro aparece. O CSS procura partes com a classe `cartao`, e nenhuma tem esse nome: os cartões têm a classe `card`.
+Salve e recarregue a página.
 
-Repare: um erro de CSS não mostra mensagem nenhuma, ele só faz a página ficar diferente do esperado. Para descobrir, você compara o nome na view com o nome no CSS. Clicar com o botão direito e escolher **Inspecionar** ajuda.
+**Dê um palpite:** o que acontece com o mural de recados?
 
-Volte para `.card`, salve e recarregue: os cartões voltam.
+Ele volta a ser só texto, um recado embaixo do outro. Nenhum erro aparece: as classes continuam lá, mas ninguém diz ao navegador o que fazer com elas.
+
+Tire o `<!--` e o `-->`, salve e recarregue: o mural de recados volta a ficar bonito.
 
 </details>
 
 <details class="passo" markdown="1">
 <summary>Preciso de IA para este capítulo?</summary>
 
-Para o CSS, uma IA pode ajudar bastante: existem muitas propriedades, e é fácil esquecer o nome de cada uma. Mas, de novo, o pedido funciona melhor com o seu plano:
+Não precisa. Mas, para deixar o visual do seu jeito, uma IA pode ajudar a achar as classes certas. O pedido funciona melhor com o seu plano:
 
-> No meu app Rails, cada recado aparece numa `div` com a classe `card`, dentro de uma `div` com a classe `mural`. Escreva CSS puro, sem nenhuma biblioteca, para os cartões parecerem post-its amarelos, lado a lado em grade, com um por linha no celular.
+> No meu app Rails, já uso o Bulma 1.0, com uma linha `<link>` no layout. Cada recado aparece num `card` dentro de `columns is-multiline`. Como eu deixo o título do mural de recados maior e com uma cor diferente, usando só classes do Bulma?
 
 Confira o resultado:
 
-- Ele usa as **suas** classes, ou inventou outras? Se inventou, você vai ter que mudar a view também.
-- É CSS puro, ou ele sugeriu instalar alguma coisa, como Bootstrap ou Tailwind? Isso pode ficar para depois.
-- Diminua a janela: os cartões descem para a linha de baixo?
-- O texto fica fácil de ler em cima do fundo do cartão?
+- Ele usa classes do Bulma, ou sugeriu outra biblioteca, como Bootstrap ou Tailwind? Elas têm nomes de classes diferentes e não funcionam juntas com o Bulma.
+- Ele pediu para instalar alguma coisa? Com a linha do `<link>`, não precisa.
+- As classes que ele sugeriu existem na [documentação do Bulma](https://bulma.io/documentation/)?
 
 </details>
 
 <details class="passo" markdown="1">
 <summary>Não esqueça</summary>
 
-- A view diz o que é cada parte da página, com classes; o CSS diz como cada parte aparece.
-- No CSS, o nome da classe começa com ponto: `.card`.
-- O `application.css` vale para todas as páginas do app.
-- Um erro de CSS não mostra mensagem: compare os nomes na view e no CSS.
+- O Bulma é um conjunto de estilos prontos: você dá nomes às partes da página, com classes, e ele cuida da aparência.
+- O layout é a moldura de todas as páginas: o que entra nele vale para o app inteiro.
+- Neste capítulo, só a view mudou. Nenhum recado guardado mudou.
 
 </details>
 
 <details class="passo" markdown="1">
 <summary>Quiz</summary>
 
-1. Você quer que a autora apareça em negrito, e não em itálico. Em qual arquivo você mexe?
-2. Na view, um cartão tem `class="card"`, mas no CSS está escrito `.cards`. O que acontece?
+1. Você quer que o botão **Postar recado** fique azul. Em qual arquivo você mexe?
+2. Por que bastou uma linha no layout para o Bulma valer também na página de correção?
 3. Neste capítulo, algum recado guardado no banco de dados mudou?
 
 <details markdown="1">
 <summary>Ver respostas</summary>
 
-1. No `application.css`, no bloco `.author`.
-2. O cartão fica sem o estilo, e nenhum erro aparece: os nomes precisam ser iguais.
-3. Não. Só a aparência mudou: a view e o CSS.
+1. No `app/views/messages/index.html.erb`, trocando a classe do botão, por exemplo de `is-primary` para `is-link`.
+2. Porque o layout envolve todas as views do app.
+3. Não. Só a aparência mudou.
 
 </details>
 
@@ -146,13 +143,13 @@ Confira o resultado:
 <details class="passo" markdown="1">
 <summary>Para saber mais</summary>
 
-Em inglês, na MDN, um dos melhores sites sobre a web:
-
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS): a referência de todas as propriedades.
-- [CSS grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout): como funciona a grade.
+- [Documentação do Bulma](https://bulma.io/documentation/), em inglês: todas as classes, com exemplos.
+- [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS), na MDN: para quem quiser aprender a escrever estilos do zero.
 
 </details>
 
 ## E agora?
 
-O mural de recados já tem cara de mural, mas todos os post-its são da mesma cor. Próximo desafio: [Como escolher a cor do recado?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-como-escolher-a-cor-do-recado/index.md %})
+O mural de recados está bonito, mas ainda aceita qualquer coisa: até um recado sem mensagem. Próximo desafio: [E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %})
+
+Terminou antes e quer mais? No desafio extra [Cores nos recados]({{ site.baseurl }}{% link projetos/mural-de-recados/desafios-extras/cores-nos-recados.md %}), cada pessoa escolhe a cor do seu post-it.

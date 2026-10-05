@@ -110,8 +110,8 @@ Para corrigir um recado, uma segunda tela mostra o mesmo formulário, já preenc
 
 | O problema | O que a gente faz |
 |---|---|
-| Um recado sem mensagem, ou sem o nome de quem escreveu | resolve no capítulo 08 |
-| Uma mensagem enorme, que não cabe no cartão | resolve no capítulo 08 |
+| Um recado sem mensagem, ou sem o nome de quem escreveu | resolve no capítulo 07 |
+| Uma mensagem enorme, que não cabe no cartão | resolve no capítulo 07 |
 | Apagar um recado sem querer | resolve no capítulo 05 |
 | Alguém apagar o recado de outra pessoa | aceita por enquanto |
 
@@ -133,9 +133,8 @@ Cada capítulo daqui pra frente resolve um pedaço deste plano:
 | Postar um recado | [Como postar um recado?]({{ site.baseurl }}{% link projetos/mural-de-recados/04-postar-um-recado/index.md %}) |
 | Corrigir e apagar | [Errei! Como corrigir ou apagar?]({{ site.baseurl }}{% link projetos/mural-de-recados/05-corrigir-ou-apagar/index.md %}) |
 | O visual dos cartões | [Como deixar o mural de recados mais bonito?]({{ site.baseurl }}{% link projetos/mural-de-recados/06-como-deixar-o-mural-mais-bonito/index.md %}) |
-| A cor de cada recado | [Como escolher a cor do recado?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-como-escolher-a-cor-do-recado/index.md %}) |
-| O que pode dar errado | [E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/08-e-se-o-recado-vier-vazio/index.md %}) |
-| Outras pessoas usando o mural de recados | [Como mostrar o mural de recados para o mundo?]({{ site.baseurl }}{% link projetos/mural-de-recados/09-como-mostrar-o-mural-para-o-mundo/index.md %}) |
+| O que pode dar errado | [E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %}) |
+| Outras pessoas usando o mural de recados | [Como mostrar o mural de recados para o mundo?]({{ site.baseurl }}{% link projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo/index.md %}) |
 
 As quatro ações do plano (postar, ver, corrigir e apagar) aparecem em quase todo sistema que guarda informações: uma rede social, uma loja, uma agenda. Quem programa chama esse conjunto de **CRUD**, das iniciais em inglês de criar, ler, atualizar e apagar. Veja no [glossário]({{ site.baseurl }}{% link comece-aqui/glossario.md %}).
 
@@ -147,9 +146,9 @@ A gente não vai construir o mural de recados inteiro de uma vez. Ele cresce em 
 |---|---|---|
 | 🛹 | Postar e ver recados | 01 a 04 |
 | 🛴 | Corrigir e apagar recados | 05 |
-| 🚲 | Cartões com cara de post-it, cada um na cor escolhida por quem escreveu | 06 e 07 |
-| 🏍️ | Não aceitar recado vazio | 08 |
-| 🚗 | No ar, para qualquer pessoa usar | 09 |
+| 🚲 | Cartões com cara de post-it | 06 |
+| 🏍️ | Não aceitar recado vazio | 07 |
+| 🚗 | No ar, para qualquer pessoa usar | 08 |
 
 Se o tempo acabar no meio do caminho, você não fica com metade de um mural de recados: fica com um mural de recados que funciona, só que mais simples.
 

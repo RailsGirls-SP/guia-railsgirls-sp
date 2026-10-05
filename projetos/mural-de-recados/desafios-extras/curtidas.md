@@ -1,40 +1,31 @@
 ---
-title: "Desafios extras"
-parent: Mural de recados
-grand_parent: Projetos
-nav_order: 11
+title: "Curtidas ❤️"
+parent: Desafios extras
+grand_parent: Mural de recados
+nav_order: 2
 ---
 
-# Desafios extras
+# Curtidas ❤️
 
-Terminou o projeto antes do tempo? Aqui estão desafios para continuar. Cada um começa pelo problema, e as dicas ficam escondidas: tente primeiro sozinha.
-
-TODO: ordenar os desafios do mais fácil ao mais difícil.
-
-- TODO: desafio com dica (ex.: mostrar a data de cada recado)
-- TODO: desafio só com o problema (ex.: filtrar recados por cor)
-
-## Curtidas ❤️
-
-### O desafio
+## O desafio
 
 Cada recado ganha um botão **Curtir**. Toda vez que alguém clica, o número de curtidas daquele recado aumenta em 1, e o número aparece no cartão: ❤️ 3.
 
 Não precisa saber **quem** curtiu, só **quantas** curtidas cada recado tem.
 
-### Pense antes de programar
+## Pense antes de programar
 
 - Onde o número de curtidas fica guardado? Que tipo de informação ele é: texto ou número?
 - Um recado que acabou de ser postado tem quantas curtidas?
 - O que acontece, passo a passo, quando alguém clica em **Curtir**?
 
-### Você vai praticar
+## Você vai praticar
 
 - Acrescentar uma coluna a uma tabela que já existe, com uma [migration]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#migration) nova.
 - Fazer contas com números inteiros.
+- Criar um botão que muda um dado no banco de dados.
 
 No código, os nomes ficam em inglês: a coluna das curtidas se chama `likes`, e a ação de curtir, `like`.
-- Criar um botão que muda um dado no banco de dados.
 
 Tente resolver sozinha antes de abrir as dicas. Abra uma de cada vez, só se precisar.
 
@@ -76,10 +67,10 @@ O `increment!` soma 1 e já guarda no banco de dados. Rode duas vezes e veja o n
 <details markdown="1">
 <summary>Dica 3: a rota e o controller</summary>
 
-O clique no botão precisa de uma [rota]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#rota) nova para o recado. Em `config/routes.rb`, dentro de `resources :messages`:
+O clique no botão precisa de uma [rota]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#rota) nova para o recado. Em `config/routes.rb`, acrescente um `do ... end` à linha do `resources :messages`:
 
 ```ruby
-resources :messages do
+resources :messages, only: [ :index, :create, :edit, :update, :destroy ] do
   member do
     post :like
   end
@@ -92,7 +83,7 @@ E uma ação nova no `MessagesController`:
 def like
   message = Message.find(params[:id])
   message.increment!(:likes)
-  redirect_to messages_path
+  redirect_to root_path
 end
 ```
 
@@ -101,20 +92,19 @@ end
 <details markdown="1">
 <summary>Dica 4: o botão</summary>
 
-No cartão de cada recado, na view, use o `button_to`:
+No cartão de cada recado, na view, junto com os botões **Editar** e **Apagar**, use o `button_to`:
 
 ```erb
-<%= button_to "❤️ #{message.likes}", like_message_path(message) %>
+<%= button_to "❤️ #{message.likes}", like_message_path(message), class: "button is-small" %>
 ```
 
 O botão mostra o número de curtidas e, ao ser clicado, chama a ação `like` (curtir).
 
 </details>
 
-### Indo além
+## Indo além
 
 - Faça o botão mostrar só ❤️ enquanto o recado não tem curtidas, e ❤️ 1, ❤️ 2… depois disso.
 - Mostre no topo do mural de recados o total de curtidas de todos os recados somados. Dica: `Message.sum(:likes)`.
 - Ordene os recados do mais curtido para o menos curtido.
 
-<!-- TODO: conferir os nomes da rota, do controller e da view (MessagesController, messages_path) quando os capítulos 03 a 05 estiverem escritos. -->

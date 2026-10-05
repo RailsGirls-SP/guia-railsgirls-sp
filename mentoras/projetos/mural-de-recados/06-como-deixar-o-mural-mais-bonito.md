@@ -17,19 +17,37 @@ nav_order: 7
 
 ## Confusões comuns
 
-- **O ponto no CSS.** No CSS, a classe começa com ponto (`.card`); na view, não (`class="card"`).
-- **O navegador guarda o CSS antigo.** Recarregar com Cmd+Shift+R (Mac) ou Ctrl+Shift+R resolve.
-- **Chave sem fechar.** Um `}` faltando faz os blocos seguintes pararem de funcionar, sem erro nenhum.
-- **Apagar o `<% end %>` sem querer** ao trocar a parte dos recados na view. Aí aparece um erro de sintaxe na página.
-- **Inspecionar.** Vale mostrar o **Inspecionar** do navegador: ela vê as classes de cada cartão e pode mudar o CSS ao vivo para testar, sem medo de quebrar o arquivo.
+- **A linha do Bulma fora do lugar.** O `<link>` precisa ficar dentro do `<head>` do layout, antes da linha do `stylesheet_link_tag`. Assim, o `application.css`, que entra no desafio extra das cores, é lido depois do Bulma e consegue mudar as cores dos cartões.
+- **Esquecer o `data-theme="light"`.** Quem usa o computador no modo escuro vê o mural de recados escuro, diferente dos prints do guia.
+- **A vírgula antes do `class:`.** Em `form.text_field :author, class: "input"`, sem a vírgula aparece um erro de sintaxe.
+- **Sobras do código antigo.** Os passos 3 e 4 trocam pedaços grandes da view. É comum sobrar um `<% end %>` a mais ou faltar um. Peça para ela comparar o arquivo inteiro com o guia.
+- **`</div>` faltando.** Não dá erro, mas bagunça a página. O editor ajuda: ao clicar numa `<div>`, ele destaca o `</div>` correspondente.
+- **Sem internet, sem Bulma.** O endereço do `<link>` é de uma **CDN** (*Content Delivery Network*, rede de entrega de conteúdo): um serviço, aqui o jsDelivr, que guarda arquivos públicos como o Bulma em servidores pelo mundo e entrega o mais próximo de quem pede. Por isso não é preciso instalar nada, mas o navegador precisa de internet para buscar o arquivo. Se a rede do evento cair, a página volta a ser só texto, mas o app continua funcionando. O guia não usa a palavra "CDN" com as participantes: para elas, a linha do `<link>` só "busca os estilos do Bulma na internet".
+- **Inspecionar.** Vale mostrar o **Inspecionar** do navegador: ela vê as classes de cada cartão e pode testar outras classes ao vivo, sem medo de quebrar o arquivo.
 
-## Bulma ou CSS à mão
+## Por que Bulma, e não Tailwind
 
-O brief original previa o visual com Bulma via CDN. Hoje o capítulo usa CSS escrito à mão, para a participante ver que uma classe é só um nome e que o CSS dá a aparência. Essa decisão ainda está em aberto.
+{: .atencao }
+Só para as mentoras. **Não precisa explicar isso para as participantes**: para elas, o guia só diz que o Bulma é um conjunto de estilos prontos.
 
-## Ir além com o CSS
+O objetivo do capítulo é deixar o mural de recados bonito no fim do dia, com o mínimo de informação nova. O Bulma ganhou por isso:
 
-Se sobrar tempo, sugestões para ela brincar sozinha no `application.css`:
+| | Bulma | Tailwind |
+|---|---|---|
+| **Instalação** | Uma linha no layout, pela CDN. Nada para instalar. | No Rails, usa a gem `tailwindcss-rails`, um passo de build e o `bin/dev` no lugar do `bin/rails server`. Mais uma peça para dar errado no Codespaces. |
+| **Nomes das classes** | Nomes de componentes, que se leem quase como palavras: `card`, `button`, `box`, `title`. | Classes utilitárias, uma para cada detalhe: `p-4 bg-yellow-100 rounded shadow`. Cada elemento ganha uma lista longa. |
+| **Para quem está começando** | O HTML continua fácil de ler, e a participante entende o que cada classe faz pelo nome. | Exige saber CSS para entender o que cada classe faz, e a view fica cheia de classes. |
+| **JavaScript** | Nenhum: só CSS. | Nenhum também, mas o build roda em paralelo. |
 
-- Girar os cartões um pouquinho, como post-its: já está no "Para ir além" do capítulo.
-- Trocar a fonte por uma do [Google Fonts](https://fonts.google.com/).
+O Tailwind é muito usado no mercado, e o próprio Rails oferece a opção `--css tailwind` no `rails new`. Para quem quiser continuar depois do workshop, é um bom próximo passo, junto com aprender a escrever CSS do zero.
+
+Também ficou de fora o **Bootstrap**: ele é parecido com o Bulma nos nomes de componentes, mas alguns componentes dependem de JavaScript, e o visual padrão é mais reconhecível como "cara de Bootstrap".
+
+## Ir além com o Bulma
+
+Se sobrar tempo, sugestões para ela brincar sozinha, com a [documentação do Bulma](https://bulma.io/documentation/) aberta:
+
+- Trocar a cor do botão **Postar recado** (`is-link`, `is-info`, `is-success`, `is-warning`).
+- Colocar um cabeçalho com o componente `hero`, com título e subtítulo.
+- Mostrar o número de recados com uma `tag`, por exemplo "4 recados" (`@messages.count`).
+- Girar os cartões um pouquinho, como post-its, com CSS próprio no `application.css`: `.card { rotate: -1deg; }`.
