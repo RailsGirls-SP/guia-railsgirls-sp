@@ -1,6 +1,6 @@
 ---
 title: "O que aconteceu?"
-parent: Por onde começar?
+parent: "01. Por onde começar?"
 grand_parent: Mural de recados
 nav_order: 2
 ---

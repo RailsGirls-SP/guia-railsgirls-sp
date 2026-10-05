@@ -1,6 +1,6 @@
 ---
 title: "O que aconteceu?"
-parent: "Como postar um recado?"
+parent: "04. Como postar um recado?"
 grand_parent: Mural de recados
 nav_order: 2
 ---

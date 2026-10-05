@@ -1,6 +1,6 @@
 ---
 title: Mão na massa
-parent: "Errei! Como corrigir ou apagar?"
+parent: "05. Errei! Como corrigir ou apagar?"
 grand_parent: Mural de recados
 nav_order: 1
 ---

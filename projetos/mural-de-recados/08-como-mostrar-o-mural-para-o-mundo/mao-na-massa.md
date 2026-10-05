@@ -1,6 +1,6 @@
 ---
 title: Mão na massa
-parent: "Como mostrar o mural de recados para o mundo?"
+parent: "08. Como mostrar o mural de recados para o mundo?"
 grand_parent: Mural de recados
 nav_order: 1
 ---

@@ -1,12 +1,12 @@
 ---
-title: "Como guardar os recados?"
+title: "02. Como guardar os recados?"
 parent: Mural de recados
 grand_parent: Projetos
 nav_order: 3
 has_children: true
 ---
 
-# Como guardar os recados?
+# 02. Como guardar os recados?
 
 Tempo: uns 30 minutos.
 {: .fs-5 }

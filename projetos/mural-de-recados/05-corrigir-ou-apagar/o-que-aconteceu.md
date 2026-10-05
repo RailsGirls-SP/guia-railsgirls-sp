@@ -1,6 +1,6 @@
 ---
 title: "O que aconteceu?"
-parent: "Errei! Como corrigir ou apagar?"
+parent: "05. Errei! Como corrigir ou apagar?"
 grand_parent: Mural de recados
 nav_order: 2
 ---

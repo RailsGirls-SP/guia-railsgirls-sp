@@ -1,6 +1,6 @@
 ---
 title: "O que aconteceu?"
-parent: "Como ver todos os recados?"
+parent: "03. Como ver todos os recados?"
 grand_parent: Mural de recados
 nav_order: 2
 ---

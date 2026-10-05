@@ -1,12 +1,12 @@
 ---
-title: "E se alguém mandar um recado vazio?"
+title: "07. E se alguém mandar um recado vazio?"
 parent: Mural de recados
 grand_parent: Projetos
 nav_order: 8
 has_children: true
 ---
 
-# E se alguém mandar um recado vazio?
+# 07. E se alguém mandar um recado vazio?
 
 ## O desafio
 TODO: alguém clicou em enviar sem escrever nada, e apareceu um card vazio no mural. Isso deveria ser permitido?

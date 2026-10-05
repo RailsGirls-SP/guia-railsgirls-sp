@@ -1,12 +1,12 @@
 ---
-title: "Como mostrar o mural de recados para o mundo?"
+title: "08. Como mostrar o mural de recados para o mundo?"
 parent: Mural de recados
 grand_parent: Projetos
 nav_order: 9
 has_children: true
 ---
 
-# Como mostrar o mural de recados para o mundo?
+# 08. Como mostrar o mural de recados para o mundo?
 
 ## O desafio
 TODO: o app Mural de recados só funciona no seu computador. Como outras pessoas podem acessar?

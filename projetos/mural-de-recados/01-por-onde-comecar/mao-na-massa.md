@@ -1,6 +1,6 @@
 ---
 title: Mão na massa
-parent: Por onde começar?
+parent: "01. Por onde começar?"
 grand_parent: Mural de recados
 nav_order: 1
 ---

@@ -1,12 +1,12 @@
 ---
-title: "Como postar um recado?"
+title: "04. Como postar um recado?"
 parent: Mural de recados
 grand_parent: Projetos
 nav_order: 5
 has_children: true
 ---
 
-# Como postar um recado?
+# 04. Como postar um recado?
 
 ## O desafio
 TODO: uma pessoa quer escrever um recado novo. Como ela faz isso?

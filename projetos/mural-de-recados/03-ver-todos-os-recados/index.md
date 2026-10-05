@@ -1,12 +1,12 @@
 ---
-title: "Como ver todos os recados?"
+title: "03. Como ver todos os recados?"
 parent: Mural de recados
 grand_parent: Projetos
 nav_order: 4
 has_children: true
 ---
 
-# Como ver todos os recados?
+# 03. Como ver todos os recados?
 
 Tempo: uns 40 minutos.
 {: .fs-5 }

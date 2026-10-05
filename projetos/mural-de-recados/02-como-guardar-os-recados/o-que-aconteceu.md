@@ -1,6 +1,6 @@
 ---
 title: "O que aconteceu?"
-parent: "Como guardar os recados?"
+parent: "02. Como guardar os recados?"
 grand_parent: Mural de recados
 nav_order: 2
 ---

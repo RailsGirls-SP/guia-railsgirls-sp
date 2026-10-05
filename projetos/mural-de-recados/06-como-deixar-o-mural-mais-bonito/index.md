@@ -1,12 +1,12 @@
 ---
-title: "Como deixar o mural de recados mais bonito?"
+title: "06. Como deixar o mural de recados mais bonito?"
 parent: Mural de recados
 grand_parent: Projetos
 nav_order: 7
 has_children: true
 ---
 
-# Como deixar o mural de recados mais bonito?
+# 06. Como deixar o mural de recados mais bonito?
 
 Tempo: uns 45 minutos.
 {: .fs-5 }

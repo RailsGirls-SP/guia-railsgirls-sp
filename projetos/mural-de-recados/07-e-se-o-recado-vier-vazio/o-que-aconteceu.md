@@ -1,6 +1,6 @@
 ---
 title: "O que aconteceu?"
-parent: "E se alguém mandar um recado vazio?"
+parent: "07. E se alguém mandar um recado vazio?"
 grand_parent: Mural de recados
 nav_order: 2
 ---

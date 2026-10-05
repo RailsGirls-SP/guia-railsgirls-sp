@@ -1,11 +1,11 @@
 ---
-title: "Planejando o app"
+title: "00. Planejando o app"
 parent: Mural de recados
 grand_parent: Projetos
 nav_order: 1
 ---
 
-# Planejando o app
+# 00. Planejando o app
 
 Tempo: uns 20 minutos. Você só vai precisar de papel e caneta.
 {: .fs-5 }

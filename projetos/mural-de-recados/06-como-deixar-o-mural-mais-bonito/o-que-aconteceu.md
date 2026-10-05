@@ -1,6 +1,6 @@
 ---
 title: "O que aconteceu?"
-parent: "Como deixar o mural de recados mais bonito?"
+parent: "06. Como deixar o mural de recados mais bonito?"
 grand_parent: Mural de recados
 nav_order: 2
 ---
