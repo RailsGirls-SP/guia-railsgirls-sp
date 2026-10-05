@@ -1,6 +1,6 @@
 ---
 title: Notas dos projetos
-parent: Mentoras
+parent: Guia para mentoras
 nav_order: 2
 has_children: true
 ---

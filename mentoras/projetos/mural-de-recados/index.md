@@ -1,7 +1,7 @@
 ---
 title: Notas do Mural de recados
 parent: Notas dos projetos
-grand_parent: Mentoras
+grand_parent: Guia para mentoras
 nav_order: 1
 has_children: true
 ---

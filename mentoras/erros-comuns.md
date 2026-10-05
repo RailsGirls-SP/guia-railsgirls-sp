@@ -1,6 +1,6 @@
 ---
 title: Erros comuns
-parent: Mentoras
+parent: Guia para mentoras
 nav_order: 1
 ---
 
