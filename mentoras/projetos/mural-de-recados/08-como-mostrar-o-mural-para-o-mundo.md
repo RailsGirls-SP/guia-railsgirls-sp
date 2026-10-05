@@ -20,6 +20,8 @@ Este capítulo é **opcional** e ainda **não foi testado num deploy de verdade*
 
 ## Confusões comuns
 
+- **A janelinha da palavra-chave.** O usuário é sempre `mural`; a senha é a `ACCESS_PASSWORD`. É comum digitar a palavra-chave no campo do usuário. A janelinha é do navegador, então o texto aparece no idioma dele.
+
 - **Esquecer o commit e o Sync Changes do passo 3.** O Render só enxerga o que está no GitHub.
 - **Esquecer o `chmod +x`.** O deploy falha com `Permission denied` no `render-build.sh`.
 - **Copiar a URL errada do banco de dados.** É o **Internal Database URL**, não o External.
@@ -41,8 +43,9 @@ O app no ar é público: qualquer pessoa com o endereço consegue abrir. Vale co
 | Tema | Situação | O que fazer |
 |---|---|---|
 | **Segredos** (`config/master.key` e `DATABASE_URL`) | O guia manda colar só no Render. O `master.key` já fica fora do Git pelo `.gitignore` do Rails. | Confira que a participante não colou a chave em nenhum outro lugar (chat, IA, print, commit). Se vazar, apague e recrie o banco de dados e gere uma chave nova (`bin/rails credentials:edit` com outra chave). |
-| **Qualquer pessoa pode postar, corrigir e apagar** | Decisão do plano do capítulo 00: aceito para um mural de recados de workshop. | Sugira compartilhar o endereço só com o pessoal do workshop. Contas de usuária ficam em "Como avançar com o projeto", nos desafios extras. |
-| **Conteúdo ofensivo ou spam** | Não há moderação nem limite de envios. | Se acontecer, a própria participante apaga pelo botão **Apagar**. Ir além: o Rails 8 tem `rate_limit` no controller, por exemplo `rate_limit to: 10, within: 1.minute, only: :create`. |
+| **Robôs e curiosos** | O passo 3 protege o app inteiro com uma palavra-chave (`http_basic_authenticate_with`, usuário `mural`, senha na variável `ACCESS_PASSWORD` do Render). Sem a variável, como no codespace, a proteção fica desligada. | Lembre que a palavra-chave é compartilhada: não pode ser uma senha pessoal. O `/up` (verificação de saúde do Render) continua aberto, porque não passa pelo `ApplicationController`. |
+| **Quem tem a palavra-chave pode postar, corrigir e apagar** | Decisão do plano do capítulo 00: aceito para um mural de recados de workshop. | Sugira compartilhar o endereço e a palavra-chave só com o pessoal do workshop. Contas de usuária ficam em "Como avançar com o projeto", nos desafios extras. |
+| **Conteúdo ofensivo ou spam** | A palavra-chave segura os robôs, mas não há moderação nem limite de envios para quem tem a palavra. | Se acontecer, a própria participante apaga pelo botão **Apagar**. Ir além: o Rails 8 tem `rate_limit` no controller, por exemplo `rate_limit to: 10, within: 1.minute, only: :create`. |
 | **Dados pessoais** | Os recados ficam públicos. | Oriente a não postar e-mail, telefone, endereço nem sobrenome completo de ninguém nos recados. |
 | **Código malicioso nos recados** (como `<script>`) | Protegido: o `<%= %>` do ERB escapa o HTML, e o texto aparece como texto. | Nada. Se alguém testar, é uma boa demonstração de por que o Rails escapa o conteúdo por padrão. |
 | **Proteção de formulários (CSRF)** | O `forgery_protection_origin_check = false` do capítulo 04 está só no `development.rb`. Em produção, a proteção está completa. | Nada. |

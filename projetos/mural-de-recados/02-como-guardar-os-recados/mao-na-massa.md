@@ -73,8 +73,6 @@ O comando criou quatro arquivos:
 
 Sobre o palpite: `string` é um texto curto, como um nome; `text` é um texto longo, como uma mensagem.
 
-<!-- TODO: captura do terminal depois do generate -->
-
 Terminou? Abra o passo **3. Revise a migration**
 
 </details>
@@ -134,8 +132,6 @@ bin/rails db:migrate
 
 A tabela `messages` foi criada. Repare também no arquivo `db/schema.rb`: ele mostra como o banco de dados está agora, com a tabela nova.
 
-<!-- TODO: captura do terminal depois do db:migrate -->
-
 Terminou? Abra o passo **5. Guarde um recado pelo console**
 
 </details>
@@ -177,8 +173,6 @@ Message.count
 > | 1 | Ana | Meu primeiro recado! | (agora) |
 >
 > Você só disse a autora e a mensagem: o `id` e as datas ela preencheu sozinha. E o `Message.count` pediu para ela contar quantas linhas a planilha tem.
-
-<!-- TODO: captura do console depois do create e do count -->
 
 Terminou? Abra o passo **6. Feche e abra o console de novo**
 

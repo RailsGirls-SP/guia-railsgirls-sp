@@ -48,6 +48,7 @@ flowchart LR
 - **De onde vem o código:** do seu repositório no GitHub, o mesmo que recebe os seus commits desde o capítulo 01. Cada vez que você faz um commit e um **Sync Changes**, o Render atualiza o app no ar sozinho.
 - **Os recados:** o app no ar tem o seu próprio banco de dados, no Render. Ele começa vazio: os recados de teste do seu codespace ficam só no codespace.
 - **O plano gratuito:** o app fica no ar de graça, com dois combinados. Se ninguém abrir o mural de recados por uns 15 minutos, ele "dorme", e a próxima pessoa espera cerca de um minuto para ele acordar. E o banco de dados gratuito dura 30 dias: depois disso, os recados do mural de recados no ar são apagados.
+- **A palavra-chave:** para robôs não encherem o mural de recados de propaganda, o app pede uma palavra-chave antes de abrir. Quem é do workshop recebe a palavra-chave e entra.
 - **O mínimo:** um endereço que funciona. Um endereço com nome próprio, como `mural.seunome.com`, fica de fora.
 
 </details>

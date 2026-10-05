@@ -73,8 +73,6 @@ Na aba do app, acrescente `/messages/3/edit` no fim do endereço, depois do `.ap
 
 **Confira:** a página de erro **Routing Error**, com a mensagem `No route matches [GET] "/messages/3/edit"`. Não existe uma rota para esse endereço.
 
-<!-- TODO: captura da página de erro No route matches /messages/3/edit -->
-
 Terminou? Abra o passo **4. Resolva o erro: crie a rota**
 
 </details>
@@ -107,8 +105,6 @@ Terminou? Abra o passo **5. Ah não! Um novo erro!**
 
 **Confira:** aparece a página **Unknown action** (ação desconhecida), com a mensagem `The action 'edit' could not be found for MessagesController`: a ação `edit` não foi encontrada no `MessagesController`.
 
-<!-- TODO: captura da página de erro Unknown action -->
-
 A rota fez a parte dela e mandou a requisição para o controller. Mas o controller não tem nenhuma ação chamada `edit`.
 
 Abra o `app/controllers/messages_controller.rb`. Logo antes da linha `private`, acrescente:
@@ -135,8 +131,6 @@ Terminou? Abra o passo **6. Mais um erro: falta a view**
 <summary>6. Mais um erro: falta a view</summary>
 
 **Confira:** aparece a página **No view template for interactive request**, com a mensagem `MessagesController#edit is missing a template for request formats: text/html`. Quer dizer: a ação `edit` não tem uma view para mostrar.
-
-<!-- TODO: captura da página de erro No view template -->
 
 Leia o resto da mensagem: o próprio Rails diz onde ele procurou a view, em `app/views/messages/edit.html.erb`.
 
@@ -212,8 +206,6 @@ Abra a correção do recado da Bia, troque `worksop` por `workshop` e clique em 
 **Dê um palpite:** o que vai acontecer?
 
 **Confira:** aparece a página de erro **Routing Error**, com a mensagem `No route matches [PATCH] "/messages/3"`. O `PATCH` é o tipo de requisição que o navegador usa para **atualizar** alguma coisa, e não existe rota para isso ainda.
-
-<!-- TODO: captura da página de erro No route matches PATCH -->
 
 **Dê um palpite:** pelo que você viu nos passos 4 e 5, o que falta? E depois, qual vai ser o próximo erro?
 

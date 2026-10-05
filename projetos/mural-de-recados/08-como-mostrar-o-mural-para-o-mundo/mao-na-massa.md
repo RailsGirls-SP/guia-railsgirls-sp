@@ -69,12 +69,48 @@ chmod +x bin/render-build.sh
 
 Esse comando não mostra nenhuma mensagem quando dá certo.
 
-Terminou? Abra o passo **3. Guarde e envie para o GitHub**
+Terminou? Abra o passo **3. Proteja o mural de recados com uma palavra-chave**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>3. Guarde e envie para o GitHub</summary>
+<summary>3. Proteja o mural de recados com uma palavra-chave</summary>
+
+No ar, qualquer pessoa com o endereço consegue abrir o mural de recados, inclusive **robôs** que vasculham a internet procurando formulários abertos para encher de propaganda. Para evitar isso, o mural de recados vai pedir uma palavra-chave antes de abrir. Quem é do workshop recebe a palavra-chave e entra; os robôs ficam de fora.
+
+Abra o arquivo `app/controllers/application_controller.rb`. Ele é o controller "pai" de todos os outros: o que você escreve nele vale para o app inteiro. Logo abaixo da primeira linha, a do `class`, acrescente:
+
+```ruby
+  if ENV["ACCESS_PASSWORD"].present?
+    http_basic_authenticate_with name: "mural", password: ENV["ACCESS_PASSWORD"]
+  end
+```
+
+O começo do arquivo fica assim:
+
+```ruby
+class ApplicationController < ActionController::Base
+  if ENV["ACCESS_PASSWORD"].present?
+    http_basic_authenticate_with name: "mural", password: ENV["ACCESS_PASSWORD"]
+  end
+```
+
+Salve o arquivo.
+
+- `http_basic_authenticate_with` faz o navegador pedir um usuário e uma senha antes de abrir qualquer página do app. O usuário é sempre `mural`, e a senha é a palavra-chave.
+- `ENV["ACCESS_PASSWORD"]` é uma **variável de ambiente**: um valor que fica guardado fora do código, no lugar onde o app roda. Assim, a palavra-chave não vai para o GitHub. Você vai escolher a palavra-chave no Render, no passo 7.
+- O `if ... present?` só liga a proteção quando a variável existe. No seu codespace ela não existe, então nada muda enquanto você programa.
+
+**Dê um palpite:** recarregue o app no codespace. Ele vai pedir a palavra-chave?
+
+**Confira:** não pede. O mural de recados abre normalmente, porque no codespace a variável `ACCESS_PASSWORD` não existe.
+
+Terminou? Abra o passo **4. Guarde e envie para o GitHub**
+
+</details>
+
+<details class="passo" markdown="1">
+<summary>4. Guarde e envie para o GitHub</summary>
 
 O Render vai buscar o código no seu repositório do GitHub. Então, as mudanças precisam estar lá.
 
@@ -86,12 +122,12 @@ Guarde o seu progresso com um [commit]({{ site.baseurl }}{% link comece-aqui/glo
 
 **Confira:** em **Graph**, o commit `Prepara o app para o Render` aparece com a etiqueta **main** e o ícone de nuvem.
 
-Terminou? Abra o passo **4. Crie a sua conta no Render**
+Terminou? Abra o passo **5. Crie a sua conta no Render**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>4. Crie a sua conta no Render</summary>
+<summary>5. Crie a sua conta no Render</summary>
 
 Numa aba nova do navegador, abra [render.com](https://render.com) e clique em **Get Started** (ou **Sign Up**). Escolha entrar com o **GitHub**, a mesma conta que você usa no codespace.
 
@@ -101,12 +137,12 @@ O GitHub vai perguntar se o Render pode acessar a sua conta. Leia com calma e au
 
 <!-- TODO: captura do painel do Render vazio -->
 
-Terminou? Abra o passo **5. Crie o banco de dados**
+Terminou? Abra o passo **6. Crie o banco de dados**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>5. Crie o banco de dados</summary>
+<summary>6. Crie o banco de dados</summary>
 
 No painel do Render, clique em **New** (ou **+ New**) e escolha **Postgres**. Preencha:
 
@@ -125,12 +161,12 @@ Na página do banco de dados, procure a parte **Connections** e copie o endereç
 {: .atencao }
 O **Internal Database URL** tem a senha do seu banco de dados. Não cole esse endereço em nenhum outro lugar além do Render.
 
-Terminou? Abra o passo **6. Crie o app no Render**
+Terminou? Abra o passo **7. Crie o app no Render**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>6. Crie o app no Render</summary>
+<summary>7. Crie o app no Render</summary>
 
 No painel do Render, clique em **New** e escolha **Web Service**. Escolha o **GitHub** e, na lista, o repositório do seu mural de recados. Se ele não aparecer, clique em **Configure account** e dê acesso a esse repositório.
 
@@ -144,12 +180,15 @@ Preencha:
 - **Start Command:** `bin/rails server`
 - **Instance Type:** **Free**
 
-Ainda na mesma página, procure **Environment Variables** (variáveis de ambiente) e acrescente duas:
+Ainda na mesma página, procure **Environment Variables** (variáveis de ambiente) e acrescente três:
 
 | Name | Value |
 |---|---|
-| `DATABASE_URL` | o **Internal Database URL** que você copiou no passo 5 |
+| `DATABASE_URL` | o **Internal Database URL** que você copiou no passo 6 |
 | `RAILS_MASTER_KEY` | o conteúdo do arquivo `config/master.key` |
+| `ACCESS_PASSWORD` | a palavra-chave do seu mural de recados, que você escolhe agora |
+
+Para a `ACCESS_PASSWORD`, escolha uma palavra-chave fácil de passar para o pessoal do workshop, como `pao-de-queijo`. Ela vai ser compartilhada com outras pessoas, então **não use uma senha sua de verdade**.
 
 Para pegar o `RAILS_MASTER_KEY`, volte para o codespace, abra o arquivo `config/master.key` no Explorer e copie a linha que está nele (uma sequência de letras e números).
 
@@ -160,12 +199,12 @@ Clique em **Deploy Web Service** (ou **Create Web Service**).
 
 <!-- TODO: captura do formulário do Web Service preenchido -->
 
-Terminou? Abra o passo **7. Espere o primeiro deploy**
+Terminou? Abra o passo **8. Espere o primeiro deploy**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>7. Espere o primeiro deploy</summary>
+<summary>8. Espere o primeiro deploy</summary>
 
 O Render começa o **deploy**: busca o seu código no GitHub, roda a receita do `bin/render-build.sh` e liga o app. Na tela, aparecem as mensagens do processo, parecidas com as do terminal.
 
@@ -177,29 +216,31 @@ O primeiro deploy demora alguns minutos. Enquanto espera, procure nas mensagens 
 
 <!-- TODO: captura das mensagens do deploy com "Your service is live" -->
 
-Terminou? Abra o passo **8. Abra o seu mural de recados no ar**
+Terminou? Abra o passo **9. Abra o seu mural de recados no ar**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>8. Abra o seu mural de recados no ar</summary>
+<summary>9. Abra o seu mural de recados no ar</summary>
 
 No topo da página do app no Render, tem um endereço parecido com `https://mural-de-recados.onrender.com`. Clique nele.
+
+O navegador abre uma janelinha pedindo um usuário e uma senha. Digite `mural` no usuário e, na senha, a palavra-chave que você escolheu no passo 7.
 
 **Confira:** aparece o seu mural de recados, com o formulário e o convite **Ainda não tem nenhum recado. Que tal postar o primeiro?**. Os recados do seu codespace não vieram: o app no ar tem o seu próprio banco de dados.
 
 Poste o primeiro recado do mural de recados no ar. 🎉
 
-Agora abra o mesmo endereço no seu celular, ou mande para alguém do workshop: qualquer pessoa pode abrir e deixar um recado.
+Agora abra o mesmo endereço no seu celular, ou mande para alguém do workshop, junto com a palavra-chave: quem souber a palavra-chave pode abrir e deixar um recado.
 
 <!-- TODO: captura do mural de recados no ar, no celular -->
 
-Terminou? Abra o passo **9. Mude e veja mudar no ar**
+Terminou? Abra o passo **10. Mude e veja mudar no ar**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>9. Mude e veja mudar no ar</summary>
+<summary>10. Mude e veja mudar no ar</summary>
 
 Daqui para a frente, cada mudança que você envia para o GitHub vai para o ar sozinha.
 
@@ -215,12 +256,12 @@ Salve, faça um commit com a mensagem `Muda o título do mural` e clique em **Sy
 
 **Confira:** no painel do Render, um novo deploy começa sozinho. Quando ele terminar, recarregue o endereço do app: o título novo aparece no mural de recados no ar.
 
-Terminou? Abra o passo **10. Desligue o servidor e o codespace**
+Terminou? Abra o passo **11. Desligue o servidor e o codespace**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>10. Desligue o servidor e o codespace</summary>
+<summary>11. Desligue o servidor e o codespace</summary>
 
 O seu mural de recados agora roda no Render. O servidor do codespace só é preciso enquanto você programa, então dá para desligar tudo.
 
@@ -264,6 +305,13 @@ Confira, no Render, a variável `DATABASE_URL` do app: ela precisa ser o **Inter
 <summary>Aparece um erro com <code>master key</code> ou <code>credentials</code></summary>
 
 A variável `RAILS_MASTER_KEY` está faltando ou com o valor errado. Copie de novo o conteúdo do `config/master.key` do codespace, sem espaços nem linhas a mais, e cole no Render.
+
+</details>
+
+<details class="pergunta" markdown="1">
+<summary>A janelinha da palavra-chave não aceita a senha</summary>
+
+Confira se você digitou `mural` no usuário, e não a palavra-chave. A senha é exatamente o que está na variável `ACCESS_PASSWORD`, no Render, com as mesmas letras maiúsculas e minúsculas. Se mudar a variável, o Render reinicia o app sozinho.
 
 </details>
 

@@ -49,8 +49,6 @@ Aperte **Enter**.
 
 Calma: esse erro é esperado! Leia a mensagem: o Rails está dizendo que não existe nenhuma **rota** (*route*) para o endereço `/messages`. Ele não sabe o que fazer com essa **[requisição]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#requisicao)**, que é o nome do pedido que o navegador faz ao app (em inglês, *request*). Deixe essa aba aberta: você vai recarregar essa página várias vezes.
 
-<!-- TODO: captura da página de erro No route matches -->
-
 Agora, abra o passo **3. Resolva o erro: crie a rota**
 
 </details>
@@ -78,8 +76,6 @@ Essa linha quer dizer: "quando alguém pedir (`get`) o endereço `messages`, man
 
 E por que `index`? Em inglês, *index* quer dizer índice, uma lista. No Rails, `index` é o nome que normalmente se usa para a parte que mostra uma lista de coisas. Como o mural de recados é uma lista de recados, escolhemos esse nome.
 
-<!-- TODO: captura do routes.rb editado -->
-
 **Dê um palpite:** você criou a placa (a rota), mas ainda não criou o controller para onde ela aponta. O que você acha que vai acontecer quando o navegador pedir o `/messages` de novo?
 
 Volte para a aba do app, que está no endereço `/messages`, e recarregue a página.
@@ -92,8 +88,6 @@ Recarregou a página e viu o novo erro? Agora, abra o passo **4. Ah não! Um nov
 <summary>4. Ah não! Um novo erro!</summary>
 
 **Confira:** aparece um erro diferente! Progresso! Agora a página de erro tem o título **ActionDispatch::MissingController in MessagesController#index** e a mensagem `uninitialized constant MessagesController`.
-
-<!-- TODO: captura da página de erro uninitialized constant MessagesController -->
 
 Compare com o erro anterior: antes, o Rails não tinha rota. Agora ele segue a placa até o `MessagesController`… e não encontra, porque ele ainda não existe.
 
@@ -172,8 +166,6 @@ flowchart LR
 
 O caminho agora está completo: o navegador pede o endereço, a rota manda para o controller, e o controller usa a view para montar a página que volta para o navegador. Agora falta mostrar os recados: a página ainda tem só o texto de exemplo do Rails.
 
-<!-- TODO: captura do terminal depois do generate e da página Messages#index -->
-
 Terminou? Abra o passo **6. Mostre os recados**
 
 </details>
@@ -227,8 +219,6 @@ Salve o arquivo.
 **Dê um palpite:** recarregue a página `/messages`. O que vai aparecer?
 
 **Confira:** o título **Mural de recados** e, embaixo, o recado da Ana que você criou pelo console no capítulo anterior. 🎉
-
-<!-- TODO: captura do controller, da view e da página com o recado da Ana -->
 
 Terminou? Abra o passo **7. Os mais novos primeiro**
 
@@ -312,8 +302,6 @@ Recarregue a página do app.
 
 **Confira:** aparece só o título **Mural de recados**, e mais nada. Fica parecendo que a página quebrou, e quem chegar no app não vai saber o que fazer.
 
-<!-- TODO: captura da página só com o título -->
-
 Vamos mostrar um convite quando o mural de recados estiver vazio. No arquivo `app/views/messages/index.html.erb`, logo abaixo do título, acrescente:
 
 ```erb
@@ -330,8 +318,6 @@ Salve o arquivo.
 **Dê um palpite:** recarregue a página. O que aparece agora?
 
 **Confira:** embaixo do título, aparece o convite **Ainda não tem nenhum recado. Que tal postar o primeiro?**.
-
-<!-- TODO: captura da página com o convite -->
 
 Terminou? Abra o passo **9. Arrume a rota**
 

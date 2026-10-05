@@ -15,7 +15,7 @@ Agora o seu app existe em dois lugares:
 | | No seu codespace | No Render |
 |---|---|---|
 | **Para quê** | Programar e testar | Qualquer pessoa usar |
-| **Quem abre** | Só você | Quem tiver o endereço |
+| **Quem abre** | Só você | Quem tiver o endereço e a palavra-chave |
 | **Banco de dados** | SQLite, um arquivo (`storage/development.sqlite3`) | PostgreSQL, um serviço separado |
 | **Os recados** | Os seus testes | Os recados de verdade |
 
@@ -44,7 +44,7 @@ Em vermelho escuro, a peça que mudou neste capítulo; em rosa claro, as que voc
 
 #### Segredos ficam fora do código
 
-O `DATABASE_URL` (com a senha do banco de dados) e o `RAILS_MASTER_KEY` (a chave secreta do app) não estão no seu código nem no GitHub: eles foram colados direto no Render, como **variáveis de ambiente**. Assim, mesmo que alguém veja o seu repositório, não consegue entrar no seu banco de dados.
+O `DATABASE_URL` (com a senha do banco de dados), o `RAILS_MASTER_KEY` (a chave secreta do app) e a `ACCESS_PASSWORD` (a palavra-chave do mural de recados) não estão no seu código nem no GitHub: eles foram colados direto no Render, como **variáveis de ambiente**. Assim, mesmo que alguém veja o seu repositório, não consegue entrar no seu banco de dados.
 
 #### Seus commits contam a história
 
@@ -72,7 +72,7 @@ No plano gratuito do Render, o banco de dados dura 30 dias: depois disso, ele é
 <details class="pergunta" markdown="1">
 <summary>Qualquer pessoa pode apagar os recados do meu mural?</summary>
 
-Pode. É a decisão que a gente tomou lá no [planejamento]({{ site.baseurl }}{% link projetos/mural-de-recados/00-planejando-o-mural.md %}): para um mural de recados do workshop, aceitar esse risco é razoável. Num app de verdade, aberto para qualquer pessoa, valeria ter contas e regras de quem pode fazer o quê. Isso fica para um próximo projeto.
+Qualquer pessoa que tenha a palavra-chave, sim. A palavra-chave segura os robôs e quem achar o link por acaso, mas todo mundo usa a mesma, então o app não sabe quem é quem. Foi a decisão que a gente tomou lá no [planejamento]({{ site.baseurl }}{% link projetos/mural-de-recados/00-planejando-o-mural.md %}): para um mural de recados do workshop, aceitar esse risco é razoável. Num app de verdade, aberto para qualquer pessoa, valeria ter contas e regras de quem pode fazer o quê. Isso fica para um próximo projeto.
 
 </details>
 

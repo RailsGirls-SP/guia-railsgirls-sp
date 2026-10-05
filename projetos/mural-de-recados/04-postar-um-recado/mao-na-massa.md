@@ -143,8 +143,6 @@ Clique em **Postar recado**.
 
 **Confira:** ainda não! Aparece a página de erro **Routing Error**, com a mensagem `No route matches [POST] "/messages"`.
 
-<!-- TODO: captura da página de erro No route matches POST -->
-
 Repare no `POST`. Até agora, o navegador só fazia requisições do tipo `GET`, que servem para **pedir** uma página. Para **enviar** um formulário, ele usa o `POST`. E a rota que você criou no capítulo anterior só recebe `GET`.
 
 Viu o erro? Agora, abra o passo **6. Resolva o erro: crie a rota**
@@ -181,8 +179,6 @@ Viu o novo erro? Agora, abra o passo **7. Ah não! Um novo erro!**
 <summary>7. Ah não! Um novo erro!</summary>
 
 **Confira:** aparece um erro diferente! Progresso! Agora é a página **Unknown action**, com a mensagem `The action 'create' could not be found for MessagesController`.
-
-<!-- TODO: captura da página de erro Unknown action create -->
 
 A rota mandou o formulário para a ação `create` do `MessagesController`, mas o controller ainda não sabe fazer `create`.
 
