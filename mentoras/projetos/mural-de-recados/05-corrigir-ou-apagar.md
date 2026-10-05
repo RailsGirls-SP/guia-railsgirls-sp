@@ -19,10 +19,10 @@ nav_order: 6
 
 Como no capítulo 03, os erros aparecem de propósito e seguem o caminho da requisição:
 
-1. `/messages/3/edit`: `No route matches`. **Falta a rota.**
+1. `/messages/3/edit`: **Routing Error**, `No route matches`. **Falta a rota.**
 2. Com `:edit` no `only`: **Unknown action**, `The action 'edit' could not be found`. **Falta a ação.**
 3. Com a ação: **No view template for interactive request**. **Falta a view.**
-4. Clicar em **Salvar**: `No route matches [PATCH]`, e depois `The action 'update' could not be found`.
+4. Clicar em **Salvar**: **Routing Error**, `No route matches [PATCH]`, e depois **Unknown action**, `The action 'update' could not be found`.
 
 No passo 8, a participante é convidada a prever os dois erros do `update` antes de ver. Se ela acertar, vale comemorar: é o sinal de que entendeu o caminho. No passo 9 (apagar), rota, ação e botão entram de uma vez.
 

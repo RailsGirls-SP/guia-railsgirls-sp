@@ -28,6 +28,8 @@ config.action_controller.forgery_protection_origin_check = false
 
 Observação: o template codespaces-rails já libera o endereço do Codespaces pela variável RAILS_DEVELOPMENT_HOSTS, então a linha do config.hosts talvez não seja necessária. Ver também as notas para mentoras deste capítulo (Erro ao enviar o formulário no Codespaces). -->
 
+TODO: o capítulo 03 termina com o mural de recados vazio (o passo 8 apaga os recados com Message.destroy_all para mostrar o convite). O primeiro recado deste capítulo é postado pelo formulário.
+
 TODO: em cada passo, um "Dê um palpite" antes de rodar e um "Confira" logo depois.
 
 TODO: cada passo num bloco que abre ao clicar (`<details class="passo" markdown="1">`), como em Por onde começar?. O passo 1 começa aberto, e cada passo termina com "Terminou? Abra o passo …".

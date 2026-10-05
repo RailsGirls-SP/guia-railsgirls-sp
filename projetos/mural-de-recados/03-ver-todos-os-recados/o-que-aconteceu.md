@@ -14,7 +14,7 @@ Quando alguém abre o app, a requisição passa por três peças deste capítulo
 
 1. A **[rota]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#rota)**, em `config/routes.rb`, recebe o endereço (`/messages` ou a página principal, `/`) e diz: "isso é com o `MessagesController`, ação `index`".
 2. O **[controller]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#controller)**, em `app/controllers/messages_controller.rb`, pede os recados ao model (`Message.order(created_at: :desc)`) e guarda a lista em `@messages`.
-3. A **[view]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#view)**, em `app/views/messages/index.html.erb`, recebe a `@messages` e monta a página, repetindo o cartão para cada recado.
+3. A **[view]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#view)**, em `app/views/messages/index.html.erb`, recebe a `@messages` e monta a página, repetindo o mesmo trecho (a mensagem e a autora) para cada recado.
 
 Você está aqui: este é o caminho que uma requisição percorre dentro do app.
 
@@ -26,26 +26,40 @@ flowchart LR
   Controller --> View --> Navegador
 
   classDef aqui fill:#73121b,stroke:#f2b8be,stroke-width:2px,color:#fff
+  classDef visto fill:#fbe3e5,stroke:#c98b91,color:#490606
   class Rota,Controller,View aqui
+  class Model,Banco visto
 ```
+
+Em vermelho escuro, as peças deste capítulo; em rosa claro, as que você já conhece dos capítulos anteriores.
 
 Agora o caminho está completo: a requisição sai do navegador, passa pela rota, pelo controller, pelo model e pelo banco de dados, e volta como uma página montada pela view.
 
-**A assistente, de novo.** No capítulo anterior, o model `Message` era uma assistente especialista que cuida da planilha de recados. Aqui, o controller pediu para ela "todos os recados, dos mais novos para os mais antigos", e ela entregou a lista. Na view, cada `message` da lista é um recado, com todas as informações dele: por isso dá para escrever `message.content` e `message.author`.
+#### O model, de novo
 
-**Por que separar a view do model?** O model cuida dos dados e das regras: quais informações um recado tem e como guardar, buscar e apagar. A view cuida só da aparência: como o recado aparece na tela. Mantendo os dois separados:
+No capítulo anterior, você viu que o model `Message` cuida dos recados guardados no banco de dados (lembra da comparação com uma assistente que cuida de uma "planilha"?). Aqui, o controller fez um pedido ao model: "todos os recados, dos mais novos para os mais antigos". E o model buscou no banco de dados e entregou a lista. Na view, cada `message` da lista é um recado, com todas as informações dele: por isso dá para escrever `message.content` e `message.author`.
 
-- **Dá para mudar a aparência sem mexer nos dados.** Trocar o visual dos cartões não muda nada no model nem nos recados guardados.
-- **Os mesmos dados servem para telas diferentes.** A lista de recados, a página de um recado só ou até um app de celular podem usar o mesmo model, cada um com a sua view.
+#### Por que separar a view do model?
+
+O model cuida dos dados e das regras: quais informações um recado tem e como guardar, buscar e apagar. A view cuida só da aparência: como o recado aparece na tela. Mantendo os dois separados:
+
+- **Dá para mudar a aparência sem mexer nos dados.** Trocar o visual dos recados não muda nada no model nem nos recados guardados.
+- **Os mesmos dados e as mesmas regras servem para telas diferentes.** Uma regra escrita uma vez no model, como "todo recado precisa ter autora", vale para todas as views que mostram ou recebem recados.
 - **Cada arquivo fica pequeno e fácil de achar.** Problema de aparência? Olhe a view. Problema com os dados? Olhe o model.
 
-E o controller fica no meio, juntando os dois. Esse jeito de dividir o app em **M**odel, **V**iew e **C**ontroller tem nome: **MVC**. Ele é usado no Rails e em muitos outros frameworks.
+E o controller fica no meio, juntando os dois. Dividir o app assim deixa tudo mais fácil de organizar, e essa divisão não é invenção do Rails: muitos outros [frameworks]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#framework), em outras linguagens, seguem a mesma ideia. Aprendendo aqui, você vai reconhecer essa organização em outros lugares.
 
-**Geradores ajudam, mas você revisa.** O `bin/rails generate controller` criou o controller e a view de uma vez, mas também acrescentou uma rota que a gente não queria, e você apagou. Geradores (e IAs) economizam digitação, mas quem decide o que fica no código é você.
+#### Geradores ajudam, mas você revisa
 
-**Os nomes se encaixam.** Você não precisou dizer ao Rails onde está cada arquivo: ele encontra pelos nomes. A rota `messages#index` leva ao `MessagesController`, ação `index`, que mostra a view `app/views/messages/index.html.erb`. É mais uma convenção do Rails.
+O `bin/rails generate controller` criou o controller e a view de uma vez, mas também acrescentou uma rota que a gente não queria, e você apagou. Geradores (e IAs) economizam digitação, mas quem decide o que fica no código é você.
 
-**Seguir os erros.** Cada erro deste capítulo dizia exatamente o que faltava, na mesma ordem do caminho da requisição: primeiro não havia rota para `/messages`; depois a rota existia, mas o controller não. Quem programa passa muito tempo lendo mensagens de erro, e isso não quer dizer que algo deu errado: quer dizer que o próximo passo está escrito na tela.
+#### Os nomes se encaixam
+
+Você não precisou dizer ao Rails onde está cada arquivo: ele encontra pelos nomes. A rota `messages#index` leva ao `MessagesController`, ação `index`, que mostra a view `app/views/messages/index.html.erb`. É mais uma convenção do Rails.
+
+#### Seguir os erros
+
+Cada erro deste capítulo dizia exatamente o que faltava, na mesma ordem do caminho da requisição: primeiro não havia rota para `/messages`; depois a rota existia, mas o controller não. Quem programa passa muito tempo lendo mensagens de erro, e isso não quer dizer que algo deu errado: quer dizer que o próximo passo está escrito na tela.
 
 </details>
 
@@ -69,47 +83,83 @@ O gerador não sabe que você já tinha criado a rota no passo 3, então ele acr
 <details class="pergunta" markdown="1">
 <summary>Por que o controller é MessagesController, no plural, e o model é Message, no singular?</summary>
 
-O model representa **um** recado. O controller cuida de **todos** os recados: listar, postar, corrigir e apagar. Por isso, a convenção do Rails é model no singular e controller no plural.
+O model representa **um** recado. O controller cuida de **todos** os recados: listar, postar, corrigir e apagar. Por isso, a [convenção]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#convencao) do Rails é model no singular e controller no plural.
+
+E é seguindo essa convenção que o Rails acha tudo sozinho: a rota `messages#index` leva ao `MessagesController`, que fica no arquivo `app/controllers/messages_controller.rb` e mostra as views da pasta `app/views/messages`. Você não precisou dizer onde está cada arquivo. Com um nome diferente, como `MessageController`, o Rails não encontraria o controller, e apareceria um erro.
 
 </details>
 
 <details class="pergunta" markdown="1">
-<summary>O que é o .html.erb no nome da view?</summary>
+<summary>O que é o .html.erb no nome da view? <span class="label label-purple">Para ir além</span></summary>
 
 Quer dizer que o arquivo é uma página HTML (`.html`) com pedaços de Ruby misturados, que o ERB (`.erb`, de *Embedded Ruby*, Ruby embutido) executa antes de mandar a página para o navegador.
 
 </details>
 
 <details class="pergunta" markdown="1">
-<summary>O que faz o each?</summary>
+<summary>O que faz o each? <span class="label label-purple">Para ir além</span></summary>
 
-Repete um trecho de código para cada item de uma lista. Com dois recados, o cartão aparece duas vezes; com dez, dez vezes. Você escreve o cartão uma vez só.
+Em inglês, *each* quer dizer "cada". Ele repete um trecho de código para cada item de uma lista. Com dois recados, o trecho com a mensagem e a autora aparece duas vezes; com dez, dez vezes. Você escreve esse trecho uma vez só.
 
 </details>
 
 <details class="pergunta" markdown="1">
-<summary>Para onde foi a página de boas-vindas do Rails?</summary>
+<summary>Por que ordenar por created_at, e não por updated_at? <span class="label label-purple">Para ir além</span></summary>
+
+As duas colunas guardam datas, mas de momentos diferentes:
+
+- `created_at` é quando o recado foi **criado**, e nunca muda.
+- `updated_at` é quando o recado foi **alterado** pela última vez, e muda a cada correção.
+
+Por enquanto, os recados ainda não podem ser corrigidos, então as duas datas são iguais. Mas, no capítulo 05, quando der para corrigir um recado, ordenar por `updated_at` faria um recado antigo pular para o topo só porque alguém corrigiu uma letra, como se fosse novo. Com o `created_at`, cada recado fica no lugar de quando foi postado.
+
+Ordenar por `updated_at` também pode fazer sentido em outros apps, por exemplo para mostrar primeiro o que mudou há pouco. É uma decisão de quem planeja o app.
+
+</details>
+
+<details class="pergunta" markdown="1">
+<summary>Para onde foi a página de boas-vindas do Rails? <span class="label label-purple">Para ir além</span></summary>
 
 Ela só aparece enquanto o app não tem uma página principal. Quando você criou a rota `root`, o endereço `/` passou a mostrar o mural de recados.
+
+A página de boas-vindas não foi apagada: ela nem está nos arquivos do seu app. Ela vem de dentro do próprio Rails, que só a mostra quando falta a página principal. Se você apagar a linha do `root`, ela volta a aparecer.
 
 </details>
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>Quebre de propósito</summary>
+<summary>Quebre de propósito <span class="label label-blue">Opcional</span></summary>
 
-Abra a view `app/views/messages/index.html.erb` e troque `message.content` por `message.texto`. Salve e recarregue a página.
+Este teste precisa de pelo menos um recado no mural de recados. Como você apagou todos no passo 8, crie um pelo console (`bin/rails console`):
+
+```ruby
+Message.create(author: "Ana", content: "Oi!")
+```
+
+Saia do console com `exit`. Depois, abra a view `app/views/messages/index.html.erb` e troque `message.content` por `message.texto`. Salve e recarregue a página.
 
 **Dê um palpite:** o que vai acontecer?
 
-Aparece um erro parecido com `undefined method 'texto'`. Leia com calma: o Rails está dizendo que o recado não tem nenhuma informação chamada `texto`. Ele só conhece as colunas que a migration criou: `author` e `content`.
+Aparece a página de erro **NoMethodError in Messages#index**, com uma mensagem parecida com `undefined method 'texto'`. Leia com calma: o Rails está dizendo que o recado não tem nenhuma informação chamada `texto`. Ele só conhece as colunas que a migration criou: `author` e `content`.
+
+Antes de quebrar outra coisa, desfaça essa mudança: volte `message.texto` para `message.content`, salve e recarregue. O recado volta a aparecer.
 
 Agora tire o `@` de `@messages` na view (fica só `messages.each`). Salve e recarregue.
 
-Aparece um erro dizendo que `messages` não existe (`undefined local variable or method`). Sem o `@`, a view não enxerga a lista que o controller preparou.
+**Dê um palpite:** e agora, o que vai acontecer?
 
-Desfaça as duas mudanças (volte para `message.content` e `@messages`), salve e recarregue: o mural de recados volta a aparecer.
+Aparece a página de erro **NameError in Messages#index**, com uma mensagem dizendo que `messages` não existe (`undefined local variable or method`). Sem o `@`, a view não enxerga a lista que o controller preparou.
+
+Desfaça essa mudança também: volte para `@messages`, salve e recarregue. O mural de recados volta a aparecer.
+
+Por último, tire o `=` de `<%= message.content %>` (fica `<% message.content %>`). Salve e recarregue.
+
+**Dê um palpite:** vai aparecer um erro?
+
+Não aparece erro nenhum! A autora continua na página, mas a mensagem some. Sem o `=`, o Ruby ainda lê a mensagem do recado, mas não coloca o resultado na página. Esse tipo de problema é traiçoeiro: nada avisa que tem algo errado, e você só percebe olhando a página com atenção.
+
+Volte o `=` (fica `<%= message.content %>`), salve e recarregue: a mensagem aparece de novo.
 
 </details>
 
@@ -127,10 +177,10 @@ Cuidado: se você pedir para uma IA "fazer a lista de recados", é comum ela sug
 <details class="passo" markdown="1">
 <summary>Não esqueça</summary>
 
-- A **rota** liga um endereço ao controller; o `root` define a página principal.
-- O **controller** busca os dados com o model e passa para a view com `@`.
-- A **view** monta a página: `<%= %>` mostra algo na tela, e `<% %>` só executa.
-- O `each` repete um trecho para cada item de uma lista.
+- Quando alguém abre o app, a requisição passa pela **rota**, pelo **controller** e pela **view**, nessa ordem.
+- A **rota** diz qual controller cuida de cada endereço.
+- O **controller** pede os recados ao **model** e entrega para a view.
+- A **view** monta a página que aparece no navegador.
 - Uma mensagem de erro é uma pista: ela costuma dizer exatamente o que falta.
 
 </details>
@@ -138,16 +188,16 @@ Cuidado: se você pedir para uma IA "fazer a lista de recados", é comum ela sug
 <details class="passo" markdown="1">
 <summary>Quiz</summary>
 
-1. Em que ordem a requisição passa pela rota, pela view e pelo controller?
-2. Você esqueceu o `@` em `@messages` no controller, mas escreveu certinho na view. O que acontece?
-3. Qual é a diferença entre `<%= message.author %>` e `<% message.author %>`?
+1. Quando alguém abre o mural de recados no navegador, por quais peças do app a requisição passa, e em que ordem?
+2. Você quer mudar o jeito como os recados aparecem na página. Em qual peça você mexe: na rota, no controller ou na view?
+3. Você abriu um endereço novo e apareceu o erro `No route matches`. O que está faltando?
 
 <details markdown="1">
 <summary>Ver respostas</summary>
 
-1. Rota, depois controller, depois view.
-2. A view não recebe a lista, e aparece um erro como `undefined method 'each' for nil`: para a view, `@messages` está vazia.
-3. Com o `=`, a autora aparece na página. Sem o `=`, o código é executado, mas nada aparece.
+1. Primeiro pela rota, depois pelo controller, que pede os recados ao model (e o model busca no banco de dados), e por último pela view, que monta a página.
+2. Na view: é ela que monta a página.
+3. A rota: nenhuma rota diz para onde vai esse endereço.
 
 </details>
 

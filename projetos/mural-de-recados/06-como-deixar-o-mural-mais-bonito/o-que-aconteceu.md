@@ -28,8 +28,12 @@ flowchart LR
   Controller --> View --> Navegador
 
   classDef aqui fill:#73121b,stroke:#f2b8be,stroke-width:2px,color:#fff
+  classDef visto fill:#fbe3e5,stroke:#c98b91,color:#490606
   class Controller,Banco,View aqui
+  class Rota,Model visto
 ```
+
+Em vermelho escuro, as peças deste capítulo; em rosa claro, as que você já conhece dos capítulos anteriores.
 
 **Uma migration nova, e não a antiga editada.** A migration do capítulo 02 já foi aplicada: a tabela já existe. Para mudar a tabela, a gente cria outra migration, que diz só o que mudou. As migrations ficam guardadas em ordem, como um histórico de tudo que aconteceu com o banco de dados.
 
@@ -82,7 +86,7 @@ Hoje, o app guardaria, e o cartão ficaria sem cor, porque não existe CSS para 
 </details>
 
 <details class="passo" markdown="1">
-<summary>Quebre de propósito</summary>
+<summary>Quebre de propósito <span class="label label-blue">Opcional</span></summary>
 
 No `application.css`, troque `.card-pink` por `.card-rosa`. Salve e recarregue a página.
 

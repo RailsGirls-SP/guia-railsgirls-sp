@@ -37,7 +37,7 @@ TODO: cada pergunta num bloco `<details class="pergunta" markdown="1">`.
 </details>
 
 <details class="passo" markdown="1">
-<summary>Quebre de propósito</summary>
+<summary>Quebre de propósito <span class="label label-blue">Opcional</span></summary>
 
 TODO (opcional): uma mudança que causa erro de propósito e como ler a mensagem.
 

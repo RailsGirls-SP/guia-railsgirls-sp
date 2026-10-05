@@ -23,7 +23,8 @@ Reserve uns 5 minutos. Não existe resposta errada.
 
 Neste capítulo, a gente só vai **mostrar** os recados que já existem. Postar um recado novo fica para o próximo capítulo, então não precisa pensar em formulário agora.
 
-- Desenhe a tela do mural de recados. O que aparece em cada cartão?
+- Volte ao desenho da tela principal que você fez em [Planejando o app]({{ site.baseurl }}{% link projetos/mural-de-recados/00-planejando-o-mural.md %}). Por enquanto, olhe só para os cartões: o que aparece em cada um?
+- Qual é o mínimo que essa tela precisa mostrar para já ser útil para quem abre o app? O que pode ficar para depois?
 - Em que ordem os recados aparecem? Os mais novos primeiro?
 - O que a tela mostra quando ainda não existe nenhum recado?
 
@@ -32,44 +33,15 @@ Neste capítulo, a gente só vai **mostrar** os recados que já existem. Postar 
 <details markdown="1">
 <summary>Abrir o nosso plano</summary>
 
-Com recados, o mais novo aparece primeiro:
+No fim deste capítulo, quem abrir o app vai ver isto:
 
-<!-- TODO: acessibilidade: esconder o rascunho do leitor de tela (aria-hidden) e dar uma descrição em texto da tela com recados. -->
-```
-┌────────────────────────────────────────────────┐
-│  Mural de recados                              │
-│                                                │
-│  ┌──────────────────────────────┐              │
-│  │ Adorei o workshop!           │              │
-│  │ — Bia                        │              │
-│  └──────────────────────────────┘              │
-│  ┌──────────────────────────────┐              │
-│  │ Meu primeiro recado!         │              │
-│  │ — Ana                        │              │
-│  └──────────────────────────────┘              │
-│                                                │
-└────────────────────────────────────────────────┘
-```
-
-Sem nenhum recado, aparece um convite:
-
-<!-- TODO: acessibilidade: esconder o rascunho do leitor de tela (aria-hidden) e dar uma descrição em texto da tela vazia. -->
-```
-┌────────────────────────────────────────────────┐
-│  Mural de recados                              │
-│                                                │
-│  Ainda não tem nenhum recado.                  │
-│  Que tal postar o primeiro?                    │
-│                                                │
-└────────────────────────────────────────────────┘
-```
+![Página com o título Mural de recados e, embaixo, dois recados: primeiro "Adorei o workshop!", da Bia, e depois "Meu primeiro recado!", da Ana]({{ '/assets/images/mural-de-recados/03/resultado-final.png' | relative_url }})
+{: .ilustracao }
 
 - **Onde fica:** o mural de recados é a página principal do app. Quem abrir o endereço do app cai direto nele.
-- **Cada cartão** mostra a mensagem e, embaixo, o nome de quem escreveu.
-- **A ordem:** os recados mais novos aparecem primeiro, como numa rede social.
+- **A ordem:** os recados mais novos aparecem primeiro, como numa rede social. Por isso a Bia, que postou depois, aparece em cima.
 - **Sem recados:** em vez de uma página vazia, aparece um convite: "Ainda não tem nenhum recado. Que tal postar o primeiro?".
-
-Por enquanto, a página só **mostra** os recados. O formulário para postar fica para o próximo capítulo.
+- **O mínimo:** cada recado mostra só a mensagem e quem escreveu. Ainda sem cartões coloridos, sem formulário e sem botões: isso vem nos próximos capítulos.
 
 </details>
 

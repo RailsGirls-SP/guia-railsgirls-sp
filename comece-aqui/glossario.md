@@ -409,6 +409,35 @@ O [Rails](#rails) é escrito em Ruby, e o código do seu app também. Na analogi
 
 </details>
 
+<details class="termo" id="indentacao" markdown="1">
+<summary>Indentação</summary>
+
+**Indentação** é o espaço no começo de uma linha de código. Ela mostra o que está **dentro** do quê, como os recuos de uma lista dentro de outra.
+
+Veja o controller do app Mural de recados:
+
+```ruby
+class MessagesController < ApplicationController
+  def index
+    @messages = Message.all
+  end
+end
+```
+
+O `def index` tem dois espaços porque está dentro do `class`. A linha do `@messages` tem quatro porque está dentro do `def index`. E cada `end` fica alinhado com o começo do bloco que ele fecha.
+
+**Por que é importante:**
+
+- **Fica mais fácil de ler.** Batendo o olho, você vê onde cada bloco começa e termina.
+- **Ajuda a achar erros.** Um `end` esquecido ou sobrando fica visível quando a indentação está certa. Com tudo grudado na margem, é quase impossível de perceber.
+- **É o combinado de quem programa.** Em Ruby, o costume é usar dois espaços por nível. Seguindo o costume, o seu código fica parecido com os exemplos que você vai encontrar.
+
+No Ruby, a indentação não muda o que o programa faz: ela serve para as pessoas que leem o código. Em outras linguagens, como o Python, ela faz parte das regras, e uma indentação errada quebra o programa.
+
+O editor ajuda: ao apertar **Enter** dentro de um bloco, ele já coloca os espaços da próxima linha. Para recuar ou desfazer o recuo de várias linhas, selecione as linhas e aperte **Tab** ou **Shift+Tab**.
+
+</details>
+
 <details class="termo" id="variavel" markdown="1">
 <summary>Variável</summary>
 

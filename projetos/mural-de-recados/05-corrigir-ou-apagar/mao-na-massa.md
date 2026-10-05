@@ -217,7 +217,7 @@ Abra a correção do recado da Bia, troque `worksop` por `workshop` e clique em 
 
 **Dê um palpite:** o que vai acontecer?
 
-**Confira:** aparece o erro `No route matches [PATCH] "/messages/3"`. O `PATCH` é o tipo de requisição que o navegador usa para **atualizar** alguma coisa, e não existe rota para isso ainda.
+**Confira:** aparece a página de erro **Routing Error**, com a mensagem `No route matches [PATCH] "/messages/3"`. O `PATCH` é o tipo de requisição que o navegador usa para **atualizar** alguma coisa, e não existe rota para isso ainda.
 
 <!-- TODO: captura da página de erro No route matches PATCH -->
 
@@ -231,7 +231,7 @@ No `config/routes.rb`, acrescente a ação `update` (atualizar), a que guarda a 
 
 Salve, volte para a página de correção e clique em **Salvar** de novo.
 
-**Confira:** o erro agora é `The action 'update' could not be found for MessagesController`. Acertou? Falta a ação.
+**Confira:** agora aparece a página **Unknown action**, com a mensagem `The action 'update' could not be found for MessagesController`. Acertou? Falta a ação.
 
 No `app/controllers/messages_controller.rb`, logo depois do `edit` e antes do `private`, acrescente:
 

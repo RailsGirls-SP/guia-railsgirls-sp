@@ -84,7 +84,7 @@ Quando você usa o codespace, não: eles ficam na nuvem. Por isso você pode con
 </details>
 
 <details class="passo" markdown="1">
-<summary>Quebre de propósito</summary>
+<summary>Quebre de propósito <span class="label label-blue">Opcional</span></summary>
 
 1. Clique no terminal onde o servidor está rodando e aperte **Ctrl+C**. O servidor desliga e o terminal volta para o lugar de digitar.
 2. Volte para a aba do app e recarregue a página.

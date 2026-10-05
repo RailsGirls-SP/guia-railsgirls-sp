@@ -108,7 +108,7 @@ Não. Em muitos apps que estão no ar, o banco de dados fica num programa separa
 </details>
 
 <details class="passo" markdown="1">
-<summary>Quebre de propósito</summary>
+<summary>Quebre de propósito <span class="label label-blue">Opcional</span></summary>
 
 Abra o console de novo com `bin/rails console` e tente guardar um recado com uma informação que não existe:
 

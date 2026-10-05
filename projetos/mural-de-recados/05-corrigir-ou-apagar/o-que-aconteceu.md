@@ -41,10 +41,14 @@ flowchart LR
   Controller --> View --> Navegador
 
   classDef aqui fill:#73121b,stroke:#f2b8be,stroke-width:2px,color:#fff
+  classDef visto fill:#fbe3e5,stroke:#c98b91,color:#490606
   class Rota,Controller,View aqui
+  class Model,Banco visto
 ```
 
-**A assistente, de novo.** O model `Message` continua sendo a assistente que cuida da planilha de recados. Neste capítulo, o controller pediu a ela: "me traga o recado número 3" (`find`), "troque o que está escrito nele" (`update`) e "risque essa linha da planilha" (`destroy`).
+Em vermelho escuro, as peças deste capítulo; em rosa claro, as que você já conhece dos capítulos anteriores.
+
+**O model, de novo.** O model `Message` continua cuidando dos recados guardados no banco de dados (a assistente da "planilha", lembra?). Neste capítulo, o controller pediu ao model: "me traga o recado número 3" (`find`), "troque o que está escrito nele" (`update`) e "apague esse recado do banco de dados" (`destroy`).
 
 **O CRUD está completo.** Com este capítulo, o mural de recados faz as quatro ações do [CRUD]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#crud): criar (postar), ler (ver), atualizar (corrigir) e apagar. Quase todo sistema que guarda informações faz essas quatro coisas, e agora você sabe como elas funcionam por dentro.
 
@@ -100,7 +104,7 @@ Tem: o Rails permite separar um pedaço de view num arquivo próprio, chamado *p
 </details>
 
 <details class="passo" markdown="1">
-<summary>Quebre de propósito</summary>
+<summary>Quebre de propósito <span class="label label-blue">Opcional</span></summary>
 
 Na barra de endereço, abra `/messages/999/edit` (ou outro número que não seja de nenhum recado).
 
@@ -112,7 +116,7 @@ Agora tire o `:destroy` da lista do `only`, em `config/routes.rb`, salve e recar
 
 **Dê um palpite:** clique em **Apagar** num recado e depois em **OK**. O que acontece?
 
-Aparece o erro `No route matches [DELETE] "/messages/3"`. O botão existe e manda a requisição, mas nenhuma rota recebe o verbo `DELETE` para esse endereço. Repare: o endereço `/messages/3` ainda existe, para o `PATCH` do `update`. O que falta é a rota para **apagar**.
+Aparece a página de erro **Routing Error**, com a mensagem `No route matches [DELETE] "/messages/3"`. O botão existe e manda a requisição, mas nenhuma rota recebe o verbo `DELETE` para esse endereço. Repare: o endereço `/messages/3` ainda existe, para o `PATCH` do `update`. O que falta é a rota para **apagar**.
 
 Coloque o `:destroy` de volta, salve e recarregue: o mural de recados volta ao normal.
 

@@ -29,6 +29,16 @@ Neste projeto, não use o `bin/rails generate scaffold`, nem o `scaffold_control
 
 Se uma participante já conhece o scaffold e perguntar, explique que ele existe e é útil no dia a dia, mas que aqui o objetivo é ver cada peça nascer. Fica como desafio para depois do projeto: gerar um scaffold e comparar com o que ela escreveu à mão.
 
+## Comandos por extenso
+
+Ao ajudar uma participante, use os comandos completos, do mesmo jeito que estão no guia: `bin/rails server`, e não `rails s`; `bin/rails console`, e não `rails c`; `bin/rails generate`, e não `rails g`.
+
+- **O nome ajuda a lembrar o que cada comando faz.** "server" liga o servidor, "console" abre o console, "generate" gera arquivos. `s`, `c` e `g` não dizem nada para quem está começando.
+- **Fica igual ao guia.** Se a mentora digita uma coisa e o guia mostra outra, a participante fica na dúvida sobre qual está certo.
+- **O mesmo vale para os termos.** Prefira "o controller", "a migration" e "o model" a apelidos ou abreviações.
+
+Se alguém descobrir os atalhos sozinha, tudo bem: confirme que funcionam e que são só abreviações dos comandos completos.
+
 ## Notas por capítulo
 
 Cada capítulo tem a sua página de notas, com o mesmo número do capítulo. Elas aparecem no menu, abaixo desta página.

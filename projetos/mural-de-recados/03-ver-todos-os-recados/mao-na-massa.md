@@ -51,7 +51,7 @@ Calma: esse erro é esperado! Leia a mensagem: o Rails está dizendo que não ex
 
 <!-- TODO: captura da página de erro No route matches -->
 
-Terminou? Abra o passo **3. Resolva o erro: crie a rota**
+Agora, abra o passo **3. Resolva o erro: crie a rota**
 
 </details>
 
@@ -66,7 +66,7 @@ Uma **[rota]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#rota)** liga 
 Ilustração: [unDraw](https://undraw.co/)
 {: .fs-2 .text-center }
 
-No Explorer, abra o arquivo `config/routes.rb`. Ele tem várias linhas começando com `#`: são comentários, que o Rails ignora. Logo antes do último `end`, acrescente esta linha:
+No Explorer, abra o arquivo `config/routes.rb`. Ele tem várias linhas começando com `#`: são comentários, que o Rails ignora. Logo antes do último `end`, acrescente esta linha, **sem** o `#` na frente (com o `#`, ela vira comentário e o Rails ignora):
 
 ```ruby
   get "messages", to: "messages#index"
@@ -80,18 +80,18 @@ E por que `index`? Em inglês, *index* quer dizer índice, uma lista. No Rails, 
 
 <!-- TODO: captura do routes.rb editado -->
 
-**Dê um palpite:** você criou a placa, mas ainda não criou o controller para onde ela aponta. O que você acha que vai acontecer quando o navegador pedir o `/messages` de novo?
+**Dê um palpite:** você criou a placa (a rota), mas ainda não criou o controller para onde ela aponta. O que você acha que vai acontecer quando o navegador pedir o `/messages` de novo?
 
 Volte para a aba do app, que está no endereço `/messages`, e recarregue a página.
 
-Terminou? Abra o passo **4. Ah não! Um novo erro!**
+Recarregou a página e viu o novo erro? Agora, abra o passo **4. Ah não! Um novo erro!**
 
 </details>
 
 <details class="passo" markdown="1">
 <summary>4. Ah não! Um novo erro!</summary>
 
-**Confira:** aparece um erro diferente! Agora a mensagem é `uninitialized constant MessagesController`.
+**Confira:** aparece um erro diferente! Progresso! Agora a página de erro tem o título **ActionDispatch::MissingController in MessagesController#index** e a mensagem `uninitialized constant MessagesController`.
 
 <!-- TODO: captura da página de erro uninitialized constant MessagesController -->
 
@@ -106,7 +106,7 @@ flowchart LR
   class C faltando
 ```
 
-Esse "ali" para onde a placa aponta é um **[controller]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#controller)** (controlador, em português): a parte do app que recebe a requisição do navegador, depois que a rota encaminhou, e decide o que fazer com ela. É ele que junta os dados com a parte visual do app: no mural de recados, ele busca os recados e entrega para a página que mostra esses recados. Cada coisa que um controller sabe fazer se chama **[ação]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#acao)** (em inglês, *action*), e a `index`, como você viu na rota, é a que mostra a lista. Veja as outras ações no [glossário]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#acao).
+A placa (a rota) aponta para um **[controller]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#controller)** (controlador, em português): a parte do app que recebe a requisição do navegador, depois que a rota encaminhou, e decide o que fazer com ela. É ele que junta os dados com a parte visual do app: no mural de recados, ele busca os recados e entrega para a página que mostra esses recados. Cada coisa que um controller sabe fazer se chama **[ação]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#acao)** (em inglês, *action*), e a `index`, como você viu na rota, é a que mostra a lista. Veja as outras ações no [glossário]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#acao).
 
 ```mermaid
 flowchart LR
@@ -147,13 +147,14 @@ invoke  test_unit
 create    test/controllers/messages_controller_test.rb
 invoke  helper
 create    app/helpers/messages_helper.rb
+invoke    test_unit
 ```
 
 O comando criou:
 
 - `app/controllers/messages_controller.rb`: o **controller**, com a ação `index` ainda vazia.
 - `app/views/messages/index.html.erb`: a **[view]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#view)** (visão, em português), a página que a ação `index` mostra.
-- uma **rota** a mais no `config/routes.rb` (o `route` da lista): você vai arrumar isso no próximo passo.
+- uma **rota** a mais no `config/routes.rb` (o `route` da lista): você vai arrumar isso mais para a frente, no passo 9.
 - `app/helpers/messages_helper.rb`: um lugar para funções de ajuda das views. A gente não vai usar agora.
 - `test/controllers/messages_controller_test.rb`: um arquivo de testes, que a gente também vai pular por enquanto.
 
@@ -169,50 +170,16 @@ flowchart LR
   V -->|página pronta| N
 ```
 
-O caminho agora está completo: o navegador pede o endereço, a rota manda para o controller, e o controller usa a view para montar a página que volta para o navegador.
+O caminho agora está completo: o navegador pede o endereço, a rota manda para o controller, e o controller usa a view para montar a página que volta para o navegador. Agora falta mostrar os recados: a página ainda tem só o texto de exemplo do Rails.
 
 <!-- TODO: captura do terminal depois do generate e da página Messages#index -->
 
-Terminou? Abra o passo **6. Arrume a rota**
+Terminou? Abra o passo **6. Mostre os recados**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>6. Arrume a rota</summary>
-
-Abra de novo o `config/routes.rb`. Logo no começo, o `generate` acrescentou uma linha:
-
-```ruby
-  get "messages/index"
-```
-
-**Dê um palpite:** o que essa linha faz?
-
-Vamos descobrir. Ela cria o endereço `/messages/index`. Na barra de endereço, troque o `/messages` do fim por `/messages/index` e aperte **Enter**.
-
-**Confira:** aparece a mesma página **Messages#index**. Ou seja, agora existem dois endereços para a mesma página. Compare as duas rotas:
-
-```ruby
-  get "messages/index"                    # a do gerador
-  get "messages", to: "messages#index"     # a sua, do passo 3
-```
-
-As duas levam ao mesmo lugar, mas a do gerador cria um endereço repetido e com um nome estranho.
-
-Apague a linha `get "messages/index"` e salve o arquivo.
-
-**Dê um palpite:** e agora, o que acontece com o endereço `/messages/index`?
-
-**Confira:** recarregue a página. Aparece o erro **Routing Error**, com a mensagem `No route matches [GET] "/messages/index"`: não existe mais uma rota para esse endereço. Volte para `/messages`: ele continua funcionando.
-
-Geradores ajudam, mas nem sempre fazem exatamente o que você precisa: revisar o que eles criaram faz parte do trabalho.
-
-Terminou? Abra o passo **7. Mostre os recados**
-
-</details>
-
-<details class="passo" markdown="1">
-<summary>7. Mostre os recados</summary>
+<summary>6. Mostre os recados</summary>
 
 Agora vamos trocar o texto de exemplo pelos recados de verdade.
 
@@ -263,12 +230,12 @@ Salve o arquivo.
 
 <!-- TODO: captura do controller, da view e da página com o recado da Ana -->
 
-Terminou? Abra o passo **8. Os mais novos primeiro**
+Terminou? Abra o passo **7. Os mais novos primeiro**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>8. Os mais novos primeiro</summary>
+<summary>7. Os mais novos primeiro</summary>
 
 Vamos postar mais um recado, pelo console, para ver a ordem. No terminal novo:
 
@@ -280,7 +247,13 @@ bin/rails console
 Message.create(author: "Bia", content: "Adorei o workshop!")
 ```
 
-Saia do console com `exit` e recarregue a página.
+Agora saia do console. Digite:
+
+```
+exit
+```
+
+Depois, recarregue a página do app.
 
 **Dê um palpite:** o recado da Bia aparece antes ou depois do recado da Ana?
 
@@ -300,18 +273,48 @@ Salve e recarregue a página.
 
 **Confira:** agora o recado da Bia aparece primeiro.
 
-Terminou? Abra o passo **9. E quando não tem nenhum recado?**
+Terminou? Abra o passo **8. E quando não tem nenhum recado?**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>9. E quando não tem nenhum recado?</summary>
+<summary>8. E quando não tem nenhum recado?</summary>
 
 **Dê um palpite:** se não existisse nenhum recado, o que a página mostraria?
 
-Só o título, e mais nada. Fica parecendo que a página quebrou. Vamos mostrar um convite quando o mural de recados estiver vazio.
+Vamos descobrir. Para isso, você vai apagar os recados que criou pelo console. Não tem problema: no próximo capítulo, você vai postar recados novos, desta vez pelo navegador.
 
-No arquivo `app/views/messages/index.html.erb`, logo abaixo do título, acrescente:
+No terminal novo, abra o console:
+
+```
+bin/rails console
+```
+
+E apague todos os recados:
+
+```ruby
+Message.destroy_all
+```
+
+O `destroy_all` apaga **todos** os recados de uma vez. Confira que não sobrou nenhum:
+
+```ruby
+Message.count
+```
+
+O console responde `0`. Agora saia do console. Digite:
+
+```
+exit
+```
+
+Recarregue a página do app.
+
+**Confira:** aparece só o título **Mural de recados**, e mais nada. Fica parecendo que a página quebrou, e quem chegar no app não vai saber o que fazer.
+
+<!-- TODO: captura da página só com o título -->
+
+Vamos mostrar um convite quando o mural de recados estiver vazio. No arquivo `app/views/messages/index.html.erb`, logo abaixo do título, acrescente:
 
 ```erb
 <% if @messages.empty? %>
@@ -324,13 +327,47 @@ Salve o arquivo.
 - `if` quer dizer "se": o trecho de dentro só aparece **se** a condição for verdadeira.
 - `@messages.empty?` pergunta se a lista de recados está vazia.
 
-Para conferir, você precisaria de um mural de recados vazio. Não apague os seus recados: em vez disso, abra o console e veja a pergunta funcionando:
+**Dê um palpite:** recarregue a página. O que aparece agora?
+
+**Confira:** embaixo do título, aparece o convite **Ainda não tem nenhum recado. Que tal postar o primeiro?**.
+
+<!-- TODO: captura da página com o convite -->
+
+Terminou? Abra o passo **9. Arrume a rota**
+
+</details>
+
+<details class="passo" markdown="1">
+<summary>9. Arrume a rota</summary>
+
+O mural de recados já funciona. Antes de terminar, falta arrumar uma coisa que ficou para trás no passo 5. Abra de novo o `config/routes.rb`. Logo no começo, o `generate` acrescentou uma linha:
 
 ```ruby
-Message.none.empty?
+  get "messages/index"
 ```
 
-**Confira:** o console responde `true` (verdadeiro): uma lista sem recados está vazia. E na página, que tem recados, o convite **não** aparece.
+**Dê um palpite:** o que essa linha faz?
+
+Vamos descobrir. Ela cria o endereço `/messages/index`. Na barra de endereço, troque o `/messages` do fim por `/messages/index` e aperte **Enter**.
+
+**Confira:** aparece o mesmo mural de recados. Ou seja, agora existem dois endereços para a mesma página. Compare as duas rotas:
+
+```ruby
+  get "messages/index"                    # a do gerador
+  get "messages", to: "messages#index"     # a sua, do passo 3
+```
+
+As duas levam ao mesmo lugar, mas a do gerador cria um endereço repetido e com um nome estranho.
+
+**Por que apagar?** Dois endereços para a mesma página deixam o app mais confuso: quem lê o código fica na dúvida sobre qual é o certo, e quem usa o app pode acabar com links diferentes para a mesma coisa. Vamos ficar só com a sua rota, que leva ao endereço que a gente escolheu: `/messages`.
+
+Apague a linha `get "messages/index"` e salve o arquivo.
+
+**Dê um palpite:** e agora, o que acontece com o endereço `/messages/index`?
+
+**Confira:** recarregue a página. Aparece o erro **Routing Error**, com a mensagem `No route matches [GET] "/messages/index"`: não existe mais uma rota para esse endereço. Volte para `/messages`: ele continua funcionando.
+
+Geradores ajudam, mas nem sempre fazem exatamente o que você precisa: revisar o que eles criaram faz parte do trabalho.
 
 Terminou? Abra o passo **10. Mural de recados na página principal**
 
@@ -408,7 +445,7 @@ Desfaça o que o comando criou com `bin/rails destroy controller` seguido do nom
 <details class="pergunta" markdown="1">
 <summary>A página ainda mostra <strong>Messages#index</strong></summary>
 
-A view ainda tem o texto de exemplo. Confira se você apagou esse texto e salvou o `app/views/messages/index.html.erb` com o código do passo 7.
+A view ainda tem o texto de exemplo. Confira se você apagou esse texto e salvou o `app/views/messages/index.html.erb` com o código do passo 6.
 
 </details>
 
@@ -429,7 +466,9 @@ Algum nome está escrito errado na view. Confira se é `message.content` e `mess
 <details class="pergunta" markdown="1">
 <summary>A página aparece, mas sem nenhum recado</summary>
 
-Talvez o seu banco de dados esteja vazio, por exemplo se você criou um codespace novo. Crie um recado pelo console (`bin/rails console` e `Message.create(author: "Ana", content: "Oi!")`) e recarregue a página. Na dúvida, peça ajuda para uma mentora. 💜
+Depois do passo 8, isso é esperado: você apagou os recados de propósito, e a página mostra o convite. No próximo capítulo, você vai postar recados novos pelo navegador.
+
+Se os recados sumiram **antes** do passo 8, talvez o seu banco de dados esteja vazio, por exemplo se você criou um codespace novo. Crie um recado pelo console (`bin/rails console` e `Message.create(author: "Ana", content: "Oi!")`) e recarregue a página. Na dúvida, peça ajuda para uma mentora. 💜
 
 </details>
 
