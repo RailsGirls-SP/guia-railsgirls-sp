@@ -114,7 +114,7 @@ Volte para `presence: { message: "Escreva o seu nome." }`, salve e poste de novo
 
 Este capítulo é o melhor exemplo do porquê de pensar antes de pedir.
 
-Se você pedir para uma IA "fazer um mural de recados em Rails", o código gerado provavelmente vai funcionar e aceitar recados vazios, como o seu aceitava até agora. Ou então vai ter regras que a IA inventou, que podem não ser as que você queria. **Quem decide que um recado vazio é um erro é você**, e a IA só sabe disso se você disser.
+Se você pedir para uma IA "fazer um mural de recados em Rails", o código gerado pode aceitar recados vazios, como o seu aceitava até agora, ou pode vir com regras que a IA escolheu sozinha, que podem não ser as que você queria. Depende da ferramenta e do pedido. **Quem decide que um recado vazio é um erro é você**, e a IA só sabe disso se você disser.
 
 Com o plano, o pedido fica assim:
 

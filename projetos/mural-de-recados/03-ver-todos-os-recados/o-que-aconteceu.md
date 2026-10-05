@@ -53,6 +53,8 @@ E o controller fica no meio, juntando os dois. Dividir o app assim deixa tudo ma
 
 O `bin/rails generate controller` criou o controller e a view de uma vez, mas também acrescentou uma rota que a gente não queria, e você apagou. Geradores (e IAs) economizam digitação, mas quem decide o que fica no código é você.
 
+Tirar o que não faz falta é um hábito de quem programa. Cada linha a mais no código é mais uma coisa para ler, entender e manter funcionando, e um código menor é mais fácil de mudar depois. Essa ideia tem até um nome em inglês: **KISS**, de *keep it simple*, algo como "mantenha simples". No mural de recados, a rota que sobrou não quebrava nada, mas deixava um endereço a mais que ninguém usava.
+
 #### Os nomes se encaixam
 
 Você não precisou dizer ao Rails onde está cada arquivo: ele encontra pelos nomes. A rota `messages#index` leva ao `MessagesController`, ação `index`, que mostra a view `app/views/messages/index.html.erb`. É mais uma convenção do Rails.

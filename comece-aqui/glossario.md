@@ -302,6 +302,15 @@ No app Mural de recados, o model `Message` (o recado) sabe que um recado tem `au
 
 </details>
 
+<details class="termo" id="validacao" markdown="1">
+<summary>Validação</summary>
+
+Uma **validação** é uma regra que diz se uma informação pode ser guardada. Por exemplo: "um recado precisa ter o nome de quem escreveu" ou "a mensagem pode ter no máximo 280 caracteres". Se a regra não for cumprida, o app recusa a informação e avisa o que falta.
+
+No Rails, as validações ficam no [model](#model), com o `validates`. Você escreve as primeiras no capítulo [E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %}).
+
+</details>
+
 <details class="termo" id="view" markdown="1">
 <summary>View</summary>
 
@@ -328,6 +337,15 @@ Dá para pensar nele como uma planilha: cada tipo de informação ganha uma **ta
 Mas o banco de dados é bem mais esperto que uma planilha. É como ter várias planilhas interligadas: uma tabela pode apontar para as linhas de outra. Por exemplo, uma tabela de respostas pode dizer a qual recado cada resposta pertence. O banco também encontra informações rapidinho, mesmo entre milhões de linhas, deixa várias pessoas usarem ao mesmo tempo sem uma atrapalhar a outra e segue regras que impedem dados errados, como uma linha sem informação obrigatória.
 
 O app Mural de recados usa o **SQLite**, um banco de dados que fica num único arquivo dentro do projeto e que o Rails já deixa configurado.
+
+</details>
+
+<details class="termo" id="persistencia" markdown="1">
+<summary>Persistência de dados</summary>
+
+**Persistência** é a capacidade de um app guardar as informações de um jeito que elas continuem existindo depois que ele é fechado ou reiniciado. Quando um recado fica no mural de recados mesmo depois que a pessoa fecha o navegador, ou no dia seguinte, os dados estão **persistidos**.
+
+No Rails, quem cuida disso é o [model](#model), que guarda e busca as informações no [banco de dados](#banco-de-dados).
 
 </details>
 
