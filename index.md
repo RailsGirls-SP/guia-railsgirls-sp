@@ -25,7 +25,7 @@ Ilustração: [unDraw](https://undraw.co/)
 
 ## Como navegar pelo guia
 
-O menu ao lado tem quatro partes:
+O menu ao lado tem cinco partes:
 
 | Parte | O que tem lá |
 |---|---|
@@ -33,6 +33,7 @@ O menu ao lado tem quatro partes:
 | [Comece aqui]({{ site.baseurl }}{% link comece-aqui/index.md %}) | O que você precisa antes do projeto: a conta no GitHub, o básico do terminal e do Git, como usar a IA como tutora e o glossário. |
 | [Projetos]({{ site.baseurl }}{% link projetos/index.md %}) | O projeto do workshop, o [Mural de recados]({{ site.baseurl }}{% link projetos/mural-de-recados/index.md %}), capítulo por capítulo. |
 | [Guia para mentoria]({{ site.baseurl }}{% link mentoras/index.md %}) | Tudo para quem vai mentorar. |
+| [Extras]({{ site.baseurl }}{% link bonus/index.md %}) | Conteúdo extra para depois do workshop, como programar no seu próprio computador. |
 
 Encontrou uma palavra nova? O [glossário]({{ site.baseurl }}{% link comece-aqui/glossario.md %}) explica cada termo, e a busca, no topo da página, acha qualquer assunto do guia.
 

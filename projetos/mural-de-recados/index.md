@@ -51,7 +51,7 @@ Não precisa terminar tudo hoje. Cada pessoa vai num ritmo diferente, e está tu
 ## Antes de começar
 
 - **Uma conta no GitHub.** Se ainda não tem, veja [Criando uma conta no GitHub]({{ site.baseurl }}{% link comece-aqui/conta-no-github.md %}).
-- **Um navegador**, como o Chrome, o Firefox ou o Edge. O projeto roda no **GitHub Codespaces**, um computador na nuvem que já vem com tudo instalado. Prefere usar o seu próprio computador? Veja [Instalação]({{ site.baseurl }}{% link comece-aqui/instalacao.md %}).
+- **Um navegador**, como o Chrome, o Firefox ou o Edge. O projeto roda no **GitHub Codespaces**, um computador na nuvem que já vem com tudo instalado. Quer usar o seu próprio computador? Fica nos Extras, para depois do workshop: veja [No seu computador]({{ site.baseurl }}{% link bonus/no-seu-computador.md %}).
 - **Papel e caneta**, para o "Pense antes de programar".
 
 Os termos novos têm um link para o [glossário]({{ site.baseurl }}{% link comece-aqui/glossario.md %}), com a explicação de cada um. Não precisa decorar nada.
