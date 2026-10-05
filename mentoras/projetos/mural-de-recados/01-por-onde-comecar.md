@@ -7,7 +7,7 @@ nav_order: 2
 
 # 01. Por onde começar?
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/index.md %}) · Código de referência: tag `passo-01`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/index.md %}) <!-- TODO: quando as tags existirem, voltar com \" · Código de referência: tag `passo-01`\", com link para a tag no repositório RailsGirls-SP/mural-de-recados. -->
 
 ## Perguntas para o "Pense antes"
 

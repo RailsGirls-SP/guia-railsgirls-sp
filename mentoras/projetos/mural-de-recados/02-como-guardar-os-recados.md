@@ -7,7 +7,7 @@ nav_order: 3
 
 # 02. Como guardar os recados?
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/02-como-guardar-os-recados/index.md %}) · Código de referência: tag `passo-02`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/02-como-guardar-os-recados/index.md %}) <!-- TODO: quando as tags existirem, voltar com \" · Código de referência: tag `passo-02`\", com link para a tag no repositório RailsGirls-SP/mural-de-recados. -->
 
 ## Perguntas para o "Pense antes"
 

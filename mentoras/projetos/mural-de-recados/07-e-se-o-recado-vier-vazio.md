@@ -7,7 +7,7 @@ nav_order: 8
 
 # 07. E se alguém mandar um recado vazio?
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %}) · Código de referência: tag `passo-07`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %}) <!-- TODO: quando as tags existirem, voltar com \" · Código de referência: tag `passo-07`\", com link para a tag no repositório RailsGirls-SP/mural-de-recados. -->
 
 ## Perguntas para o "Pense antes"
 

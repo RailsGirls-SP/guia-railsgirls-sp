@@ -7,7 +7,7 @@ nav_order: 9
 
 # 08. Como mostrar o mural de recados para o mundo?
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo/index.md %}) · Código de referência: tag `passo-08`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo/index.md %}) <!-- TODO: quando as tags existirem, voltar com \" · Código de referência: tag `passo-08`\", com link para a tag no repositório RailsGirls-SP/mural-de-recados. -->
 
 {: .atencao }
 Este capítulo é **opcional** e ainda **não foi testado num deploy de verdade** (veja o TODO no Mão na massa). Antes do workshop, alguém da organização precisa fazer o capítulo inteiro, do zero, com uma conta nova no Render.

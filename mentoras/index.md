@@ -21,6 +21,26 @@ As participantes seguem o guia por conta própria, no próprio ritmo. O seu pape
 - **Respeite o ritmo de cada uma.** Ninguém precisa terminar todos os capítulos. Quem para no meio já sai com um app que funciona.
 - **IA como tutora, não como autora.** Se a pessoa quiser usar uma IA, incentive pedir explicações, e não o código pronto. Veja [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}).
 
+## Formatos de grupo
+
+O projeto Mural de recados é uma sequência: cada capítulo depende do anterior, e todos mexem nos mesmos arquivos. Por isso, não dá para dividir o projeto entre as pessoas de um grupo, cada uma fazendo uma parte.
+
+**O formato recomendado é: cada pessoa constrói o próprio app, no próprio codespace e no próprio ritmo, em grupos pequenos de 3 ou 4 pessoas com alguém da mentoria.** Assim, cada pessoa sai do workshop com o seu repositório e pode continuar em casa. O guia foi escrito para esse formato: os commits, o deploy e o "cada pessoa no seu ritmo".
+
+Dentro desse formato, vale usar momentos em grupo:
+
+- **Capítulo 00 em grupo.** O planejamento fica ainda melhor em conversa: o grupo discute as telas, as informações e o que pode dar errado, cada pessoa no seu papel.
+- **Erros em grupo.** Quando alguém travar num erro, o grupo para e lê a mensagem junto, por uns 5 minutos. Depois, cada pessoa volta para o seu app.
+- **Comemorações em grupo.** Quando o primeiro recado aparecer na tela de alguém, vale mostrar para o grupo.
+
+| Formato | Quando usar | Cuidados |
+|---|---|---|
+| **Cada pessoa no seu app** | Sempre que possível. É o padrão do workshop. | Ritmos diferentes no mesmo grupo: quem andar mais rápido pode ajudar a ler os erros de quem travou, sem pegar o teclado. |
+| **Pair programming** (dupla num app só) | Quando duas pessoas preferirem fazer juntas, ou para alguém sem computador. | Uma pessoa digita e a outra guia, e as duas trocam a cada capítulo. Só uma sai com o app no próprio repositório. |
+| **Mob programming** (o grupo todo num app só) | Plano B, quando vários computadores derem problema ou o grupo pedir. | Quem digita troca a cada 10 ou 15 minutos (use um cronômetro). Quem digita só escreve o que o grupo decidir em voz alta. Garanta que todo mundo passe pelo teclado, inclusive as pessoas mais tímidas. |
+
+No pair e no mob, o app fica no repositório de uma pessoa só. Quem não ficou com ele pode refazer o projeto em casa, seguindo o guia, e vai ser bem mais rápido da segunda vez.
+
 ## Roteiro do dia
 
 O workshop dura um dia, com cerca de **4h30 de mão na massa**. O resto do tempo é da abertura, do almoço, dos intervalos e do encerramento.

@@ -7,7 +7,7 @@ nav_order: 7
 
 # 06. Como deixar o mural de recados mais bonito?
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/06-como-deixar-o-mural-mais-bonito/index.md %}) · Código de referência: tag `passo-06`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/06-como-deixar-o-mural-mais-bonito/index.md %}) <!-- TODO: quando as tags existirem, voltar com \" · Código de referência: tag `passo-06`\", com link para a tag no repositório RailsGirls-SP/mural-de-recados. -->
 
 ## Perguntas para o "Pense antes"
 

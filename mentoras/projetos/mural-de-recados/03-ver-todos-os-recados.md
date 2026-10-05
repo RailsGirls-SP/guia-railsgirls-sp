@@ -7,7 +7,7 @@ nav_order: 4
 
 # 03. Como ver todos os recados?
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/03-ver-todos-os-recados/index.md %}) · Código de referência: tag `passo-03`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/03-ver-todos-os-recados/index.md %}) <!-- TODO: quando as tags existirem, voltar com \" · Código de referência: tag `passo-03`\", com link para a tag no repositório RailsGirls-SP/mural-de-recados. -->
 
 ## Perguntas para o "Pense antes"
 

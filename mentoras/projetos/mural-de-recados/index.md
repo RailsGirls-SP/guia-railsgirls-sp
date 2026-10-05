@@ -8,7 +8,7 @@ has_children: true
 
 # Notas do Mural de recados
 
-- TODO: como usar as tags `passo-NN` do repositório do app
+<!-- TODO: explicar como usar as tags `passo-NN` do repositório de referência (RailsGirls-SP/mural-de-recados), quando elas existirem. -->
 
 ## Como conduzir o "Pense antes de programar"
 

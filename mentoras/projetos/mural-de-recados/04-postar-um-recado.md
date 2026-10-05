@@ -7,7 +7,7 @@ nav_order: 5
 
 # 04. Como postar um recado?
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/04-postar-um-recado/index.md %}) · Código de referência: tag `passo-04`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/04-postar-um-recado/index.md %}) <!-- TODO: quando as tags existirem, voltar com \" · Código de referência: tag `passo-04`\", com link para a tag no repositório RailsGirls-SP/mural-de-recados. -->
 
 ## Perguntas para o "Pense antes"
 

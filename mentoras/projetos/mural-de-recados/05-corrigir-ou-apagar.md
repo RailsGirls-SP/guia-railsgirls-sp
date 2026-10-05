@@ -7,7 +7,7 @@ nav_order: 6
 
 # 05. Errei! Como corrigir ou apagar?
 
-[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/05-corrigir-ou-apagar/index.md %}) · Código de referência: tag `passo-05`.
+[Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/05-corrigir-ou-apagar/index.md %}) <!-- TODO: quando as tags existirem, voltar com \" · Código de referência: tag `passo-05`\", com link para a tag no repositório RailsGirls-SP/mural-de-recados. -->
 
 ## Perguntas para o "Pense antes"
 
