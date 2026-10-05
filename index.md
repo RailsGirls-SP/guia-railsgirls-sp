@@ -21,6 +21,8 @@ Ilustração: [unDraw](https://undraw.co/)
 
 **Para quem mentora.** O [Guia para mentoria]({{ site.baseurl }}{% link mentoras/index.md %}) tem a postura de mentoria, o roteiro do dia, os erros mais comuns e notas para cada capítulo do projeto.
 
+**Para qualquer pessoa que queira aprender.** O workshop é para mulheres, pessoas trans e pessoas não-binárias, mas este guia é aberto: qualquer pessoa pode seguir os capítulos por conta própria, de graça. E, se ele te ajudar, compartilhe com mais gente. 💜
+
 ## Como navegar pelo guia
 
 O menu ao lado tem quatro partes:
