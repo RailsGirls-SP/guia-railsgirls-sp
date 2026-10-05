@@ -6,9 +6,19 @@ has_children: true
 
 # Projetos
 
-- TODO: lista de projetos do workshop
-  - [Mural de recados](mural-de-recados/)
-- TODO: como escolher um projeto
+Aqui você aprende a programar construindo um app de verdade, do começo ao fim. Cada projeto é dividido em capítulos curtos, e cada capítulo começa por um problema: primeiro você planeja, depois programa.
+
+## Os projetos
+
+| Projeto | O que você constrói | Para quem |
+|---|---|---|
+| [Mural de recados]({{ site.baseurl }}{% link projetos/mural-de-recados/index.md %}) | Um mural de recados na web, onde qualquer pessoa deixa um recado, que aparece como um post-it. Dá para postar, ver, corrigir e apagar. | Quem nunca programou. É o projeto do workshop. |
+
+Novos projetos vão aparecer aqui, cada um um pouco mais avançado que o anterior.
+
+## Por onde começar
+
+Se é a sua primeira vez, comece pelo [Mural de recados]({{ site.baseurl }}{% link projetos/mural-de-recados/index.md %}). Ele não pede nenhum conhecimento de programação e apresenta, um capítulo de cada vez, as peças que quase todo app Rails tem. Antes, confira se você já tem o que precisa em [Comece aqui]({{ site.baseurl }}{% link comece-aqui/index.md %}).
 
 ## Como os projetos crescem
 
