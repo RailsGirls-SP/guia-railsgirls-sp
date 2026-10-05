@@ -173,11 +173,13 @@ O GitHub usa o [Git](#git) por baixo, mas os dois não são a mesma coisa: o Git
 <details class="termo" id="commit" markdown="1">
 <summary>git commit</summary>
 
-Um **commit** é um registro de como o projeto está num certo momento, com uma mensagem dizendo o que mudou. Por exemplo: `Cria o app Mural de recados`.
+Um **commit** (em inglês, pronuncia-se mais ou menos *co-MIT*, com a força no fim) é um registro de como o projeto está num certo momento, com uma mensagem dizendo o que mudou. Por exemplo: `Cria o app Mural de recados`.
 
 Pense num álbum de fotos do projeto: cada commit é uma foto, com uma legenda. Se algo der errado depois, dá para olhar as fotos antigas e voltar para uma delas.
 
 Um commit fica primeiro só no computador onde você está trabalhando. No terminal, o comando para criar um commit é `git commit`. Para ele chegar ao GitHub, é preciso fazer um [`git push`](#push-e-pull).
+
+No Brasil, muita gente fala *CÔ-mit*, e todo mundo entende do mesmo jeito.
 
 </details>
 
