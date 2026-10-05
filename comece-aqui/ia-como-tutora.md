@@ -14,7 +14,7 @@ A IA responde melhor quando sabe com quem está falando e o que você espera del
 
 ```
 Você é uma tutora de programação paciente. Eu sou iniciante e nunca programei antes.
-Estou aprendendo Ruby on Rails com o guia da Rails Girls São Paulo
+Estou aprendendo Ruby on Rails com o guia do Rails Girls São Paulo
 (https://railsgirls-sp.github.io/guia-railsgirls-sp/), fazendo um app de mural de recados.
 
 Quando eu fizer uma pergunta:

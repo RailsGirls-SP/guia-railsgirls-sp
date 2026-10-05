@@ -14,7 +14,7 @@ Travou em algum passo? Veja [Travou?](#travou), no fim da página.
 <details class="passo" markdown="1" open>
 <summary>1. Crie o seu repositório</summary>
 
-Um **repositório** é uma pasta no GitHub que guarda todos os arquivos de um projeto. A Rails Girls SP preparou um modelo de repositório que deixa o seu codespace pronto, com o Ruby e o Rails instalados. Ele ainda não tem o app: você vai criar o app no passo 4.
+Um **repositório** é uma pasta no GitHub que guarda todos os arquivos de um projeto. O Rails Girls SP preparou um modelo de repositório que deixa o seu codespace pronto, com o Ruby e o Rails instalados. Ele ainda não tem o app: você vai criar o app no passo 4.
 
 1. Abra o modelo: [github.com/RailsGirls-SP/codespaces-rails](https://github.com/RailsGirls-SP/codespaces-rails).
 2. Clique no botão **Use this template** e depois em **Create a new repository**.
@@ -50,7 +50,7 @@ Na primeira vez, o codespace leva alguns minutos para ficar pronto: ele está in
 
 ![Codespace abrindo no navegador, com o terminal ainda vazio e o aviso Setting up remote connection: Building codespace no canto inferior direito]({{ '/assets/images/mural-de-recados/01/codespace-carregando.png' | relative_url }})
 
-Pode aparecer a pergunta **Do you trust the authors of the files in this folder?** (Você confia em quem criou os arquivos desta pasta?). Os arquivos vieram do modelo da Rails Girls SP, então clique em **Trust Folder & Continue**.
+Pode aparecer a pergunta **Do you trust the authors of the files in this folder?** (Você confia em quem criou os arquivos desta pasta?). Os arquivos vieram do modelo do Rails Girls SP, então clique em **Trust Folder & Continue**.
 
 ![Janela Do you trust the authors of the files in this folder? com os botões Manage, Cancel e Trust Folder & Continue, este último destacado]({{ '/assets/images/mural-de-recados/01/codespace-confiar.png' | relative_url }})
 

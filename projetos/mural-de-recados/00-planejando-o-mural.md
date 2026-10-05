@@ -148,7 +148,7 @@ A gente não vai construir o mural de recados inteiro de uma vez. Ele cresce em 
 | 🛴 | Corrigir e apagar recados | 05 |
 | 🚲 | Cartões com cara de post-it | 06 |
 | 🏍️ | Não aceitar recado vazio | 07 |
-| 🚗 | No ar, para qualquer pessoa usar | 08 |
+| 🚗 | No ar, para qualquer pessoa usar | 08 (opcional) |
 
 Se o tempo acabar no meio do caminho, você não fica com metade de um mural de recados: fica com um mural de recados que funciona, só que mais simples.
 

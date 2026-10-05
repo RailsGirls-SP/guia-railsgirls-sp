@@ -198,7 +198,7 @@ No terminal, os comandos são `git push` e `git pull`. No painel Source Control,
 
 Um **repositório** é a pasta de um projeto junto com todo o histórico dele, ou seja, todos os [commits](#commit).
 
-Ele pode ficar no seu computador e também num site como o GitHub, onde outras pessoas podem ver o código e ajudar. No Mural de recados, o seu repositório se chama `mural-de-recados` e foi criado a partir de um modelo da Rails Girls SP.
+Ele pode ficar no seu computador e também num site como o GitHub, onde outras pessoas podem ver o código e ajudar. No Mural de recados, o seu repositório se chama `mural-de-recados` e foi criado a partir de um modelo do Rails Girls SP.
 
 </details>
 

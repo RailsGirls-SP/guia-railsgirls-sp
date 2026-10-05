@@ -7,7 +7,7 @@ Este material está licenciado sob a
 
 Você pode copiar, redistribuir e adaptar este material, desde que:
 
-- **Atribuição**: dê o crédito a Rails Girls São Paulo, inclua um link para a licença e indique se fez alterações.
+- **Atribuição**: dê o crédito ao Rails Girls São Paulo, inclua um link para a licença e indique se fez alterações.
 - **NãoComercial**: não use o material para fins comerciais.
 - **CompartilhaIgual**: se adaptar o material, distribua suas contribuições sob esta mesma licença.
 
