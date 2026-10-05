@@ -33,7 +33,8 @@ Reserve uns 5 minutos. Não existe resposta errada.
 
 Cada cartão ganha um link **Editar** e um botão **Apagar**:
 
-<!-- TODO: acessibilidade: esconder o rascunho do leitor de tela (aria-hidden) e dar uma descrição em texto do cartão com os botões. -->
+<div aria-hidden="true" markdown="1">
+
 ```
 ┌──────────────────────────────┐
 │ Adorei o worksop!            │
@@ -43,9 +44,15 @@ Cada cartão ganha um link **Editar** e um botão **Apagar**:
 └──────────────────────────────┘
 ```
 
+</div>
+
+Descrição do cartão: a mensagem "Adorei o worksop!", o nome Bia e, embaixo, o link Editar e o botão Apagar.
+{: .sr-only }
+
 O **Editar** abre uma página só para corrigir aquele recado, com o formulário já preenchido:
 
-<!-- TODO: acessibilidade: esconder o rascunho do leitor de tela (aria-hidden) e dar uma descrição em texto da tela de correção. -->
+<div aria-hidden="true" markdown="1">
+
 ```
 ┌────────────────────────────────────────────────┐
 │  Corrigir recado                               │
@@ -59,9 +66,15 @@ O **Editar** abre uma página só para corrigir aquele recado, com o formulário
 └────────────────────────────────────────────────┘
 ```
 
+</div>
+
+Descrição da tela de correção: o título Corrigir recado, o formulário com os campos Seu nome e Recado já preenchidos com Bia e "Adorei o worksop!", o botão Salvar e, embaixo, o link Voltar.
+{: .sr-only }
+
 O **Apagar** pergunta antes de apagar:
 
-<!-- TODO: acessibilidade: esconder o rascunho do leitor de tela (aria-hidden) e dar uma descrição em texto da pergunta de confirmação. -->
+<div aria-hidden="true" markdown="1">
+
 ```
 ┌────────────────────────────────────┐
 │  Quer mesmo apagar este recado?    │
@@ -69,6 +82,11 @@ O **Apagar** pergunta antes de apagar:
 │         ( Cancelar )  ( OK )       │
 └────────────────────────────────────┘
 ```
+
+</div>
+
+Descrição da pergunta de confirmação: uma janela com a pergunta "Quer mesmo apagar este recado?" e os botões Cancelar e OK.
+{: .sr-only }
 
 - **Qual recado:** cada recado tem um número só dele, o `id`, que o Rails criou sozinho. É por ele que o app sabe qual recado corrigir ou apagar.
 - **Corrigir** tem duas partes: abrir o formulário preenchido e, depois, salvar a correção.

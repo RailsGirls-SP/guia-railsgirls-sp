@@ -9,8 +9,22 @@ nav_order: 1
 
 [Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/00-planejando-o-mural.md %})
 
-- TODO: perguntas para fazer durante o "Pense antes"
-- TODO: confusões comuns neste capítulo
+## Perguntas para o "Pense antes"
+
+- "Você chega no mural de recados pela primeira vez. O que você vê? Onde clica?" Ajuda a desenhar as telas a partir de quem usa, e não do código.
+- "Pense num post-it de verdade: o que está escrito nele?" Leva às informações do recado: quem escreveu e a mensagem.
+- "Escreveu errado. E agora?" Leva às ações de corrigir e apagar.
+- "Alguém com pressa clicou em postar sem escrever nada. O que acontece?" Leva à tabela "O que pode dar errado".
+
+Dê tempo de verdade: 10 a 15 minutos, em silêncio, antes de qualquer resposta. Pergunte mais do que responde. E só abra "o nosso plano" depois que a participante tiver o dela.
+
+## Confusões comuns
+
+- **Achar que existe uma resposta certa.** O plano dela não precisa ser igual ao nosso. O valor está em comparar e entender o motivo de cada diferença.
+- **Desenhar demais.** Cores, fontes, ícones e logos não são o foco. Caixas, campos e botões bastam.
+- **Pensar no código cedo demais.** Se aparecerem palavras como "tabela" ou "banco de dados", ótimo, mas o capítulo é sobre o problema e as pessoas, não sobre o Rails.
+- **Querer resolver tudo.** Veja "Foco no MVP", abaixo.
+- **"Não sei desenhar."** Ninguém precisa. Retângulos com nomes dentro são um ótimo desenho de tela.
 
 ## Foco no MVP
 

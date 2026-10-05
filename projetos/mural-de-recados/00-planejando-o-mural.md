@@ -55,7 +55,8 @@ Só abra depois de fazer o seu. Se o seu plano for diferente, tudo bem: compare 
 
 A tela principal tem tudo junto: o formulário para postar um recado em cima e o mural de recados com os cartões embaixo. Cada cartão tem botões para editar e apagar:
 
-<!-- TODO: acessibilidade: esconder o rascunho do leitor de tela (aria-hidden) e dar uma descrição em texto da tela principal. -->
+<div aria-hidden="true" markdown="1">
+
 ```
 ┌────────────────────────────────────────────────┐
 │  Mural de recados                              │
@@ -77,9 +78,15 @@ A tela principal tem tudo junto: o formulário para postar um recado em cima e o
 └────────────────────────────────────────────────┘
 ```
 
+</div>
+
+Descrição da tela principal: no topo, o título Mural de recados. Embaixo, o formulário com os campos Seu nome e Recado e o botão Postar recado. Mais abaixo, três cartões lado a lado, cada um com uma mensagem, o nome de quem escreveu (Ana, Bia e Carla) e os links editar e apagar.
+{: .sr-only }
+
 Para corrigir um recado, uma segunda tela mostra o mesmo formulário, já preenchido com o recado escolhido:
 
-<!-- TODO: acessibilidade: esconder o rascunho do leitor de tela (aria-hidden) e dar uma descrição em texto da tela de correção. -->
+<div aria-hidden="true" markdown="1">
+
 ```
 ┌────────────────────────────────────────────────┐
 │  Corrigir recado                               │
@@ -91,6 +98,11 @@ Para corrigir um recado, uma segunda tela mostra o mesmo formulário, já preenc
 │                                                │
 └────────────────────────────────────────────────┘
 ```
+
+</div>
+
+Descrição da tela de correção: o título Corrigir recado, o formulário com os campos Seu nome e Recado já preenchidos com o recado da Bia, com o erro de digitação "Adorei o worksop", o botão Salvar e o link voltar.
+{: .sr-only }
 
 ### As informações de um recado
 

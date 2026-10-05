@@ -2,7 +2,7 @@
 title: "Curtidas ❤️"
 parent: Desafios extras
 grand_parent: Mural de recados
-nav_order: 2
+nav_order: 4
 ---
 
 # Curtidas ❤️

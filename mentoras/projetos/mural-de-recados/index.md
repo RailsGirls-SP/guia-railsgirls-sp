@@ -9,7 +9,17 @@ has_children: true
 # Notas do Mural de recados
 
 - TODO: como usar as tags `passo-NN` do repositório do app
-- TODO: como conduzir o "Pense antes de programar": dar tempo, perguntar em vez de responder, só abrir "o nosso plano" depois
+
+## Como conduzir o "Pense antes de programar"
+
+Todo capítulo começa com alguns minutos de planejamento, antes de qualquer código. É a parte mais fácil de pular, e uma das mais importantes: é onde a participante treina pensar no problema antes da solução, que é o que continua valendo com ou sem IA.
+
+- **Dê tempo de verdade.** O guia sugere uns 5 minutos (10 a 15 no capítulo 00). Combine o tempo e respeite, mesmo que pareça silêncio demais.
+- **Pergunte em vez de responder.** Cada página de notas tem algumas perguntas para o "Pense antes". Use para destravar, não para dar a resposta.
+- **Não existe resposta errada.** O plano dela não precisa ser igual ao nosso. Valorize o que ela pensou, mesmo que seja diferente.
+- **Só abra "o nosso plano" depois.** A comparação é a parte em que mais se aprende: "por que o nosso plano é diferente do seu?".
+- **Papel e caneta.** Desenhar à mão tira a pressão de "fazer bonito" e deixa o pensamento mais solto.
+- **Se ela quiser pular,** tudo bem fazer um "Pense antes" curto, em voz alta, com uma ou duas perguntas. Melhor curto do que nenhum.
 
 ## Sem testes automatizados por enquanto
 

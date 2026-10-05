@@ -9,8 +9,19 @@ nav_order: 10
 
 [Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/desafios-extras/index.md %})
 
-- TODO: perguntas para fazer durante o "Pense antes"
-- TODO: confusões comuns neste capítulo
+Os desafios são para quem termina antes. Não precisa garantir que todo mundo chegue neles.
+
+## Como conduzir
+
+- **Deixe ela escolher.** A ordem da página vai do mais fácil ao mais difícil, mas a participante pode começar pelo que achar mais divertido. A exceção é o "Filtrar recados por cor", que depende do "Cores nos recados".
+- **As dicas são uma escada.** Antes de abrir a próxima dica, pergunte o que ela já tentou. Muitas vezes, falta pouco.
+- **Commit antes de começar cada desafio.** Se der errado, dá para voltar ao mural de recados que funcionava.
+
+## Data dos recados
+
+- **Perguntas para o "Pense antes":** "Precisa de coluna nova?" (não: o `created_at` já existe) e "Que horas são no relógio do app?" (prepara o fuso horário).
+- **Confusões comuns:** a hora 3 horas adiantada (é o UTC; a dica 3 resolve) e esquecer de reiniciar o servidor depois de mudar o `config/application.rb`.
+- **Ir além:** o `time_ago_in_words` ("há 5 minutos") aparece em inglês sem traduzir o app. É um bom gancho para a gem `rails-i18n`, mas é bastante coisa nova.
 
 ## Cores nos recados
 
@@ -40,6 +51,35 @@ Se ela não achar a linha `Parameters`, ajude a encontrar o terminal do servidor
 
 A cor é guardada em inglês (`yellow`, `pink`, `blue`, `green`), seguindo a regra de nomes de código em inglês, e mostrada em português na caixa de escolha. Ainda não existe validação: um formulário modificado poderia mandar outra cor. Isso fica para o capítulo 07, se der tempo (`validates :color, inclusion: { in: [...] }`).
 
+
+## Filtrar recados por cor
+
+Este desafio não tem dicas de propósito: é para a participante planejar e resolver sozinha. Ajude com perguntas, e não com o código. Uma solução possível, só para consulta:
+
+```ruby
+# app/controllers/messages_controller.rb, na ação index
+@messages = Message.order(created_at: :desc)
+@messages = @messages.where(color: params[:color]) if params[:color].present?
+```
+
+```erb
+<%# app/views/messages/index.html.erb, em cima dos cartões %>
+<div class="buttons">
+  <%= link_to "Todos", root_path, class: "button is-small" %>
+  <%= link_to "Amarelo", root_path(color: "yellow"), class: "button is-small" %>
+  <%= link_to "Rosa", root_path(color: "pink"), class: "button is-small" %>
+  <%= link_to "Azul", root_path(color: "blue"), class: "button is-small" %>
+  <%= link_to "Verde", root_path(color: "green"), class: "button is-small" %>
+</div>
+```
+
+- **Perguntas para ajudar:** "Como o controller sabe a cor escolhida?" (o `params`, como o `params[:id]` do capítulo 05), "Onde os recados são buscados?" (na ação `index`) e "E quando não vem cor nenhuma?" (mostra todos).
+- **Confusões comuns:** criar uma rota nova sem precisar; esquecer o caso sem cor (o `where(color: nil)` não mostra nenhum recado); e o formulário de postar, que, quando o recado é recusado, usa a ação `create`, e não a `index`.
+
+## Curtidas
+
+- **Perguntas para o "Pense antes":** "O número de curtidas é texto ou número?" e "Um recado novo tem quantas curtidas?" (leva ao `default: 0`).
+- **Confusões comuns:** esquecer o `default: 0` na migration, e aí os recados antigos mostram o ❤️ sem número; e a rota `member`, que é nova. Vale mostrar o `bin/rails routes` para ela ver a rota `like_message`.
 
 ## Como avançar com o projeto
 

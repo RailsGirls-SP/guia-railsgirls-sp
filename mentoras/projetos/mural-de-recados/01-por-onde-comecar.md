@@ -9,8 +9,21 @@ nav_order: 2
 
 [Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/index.md %}) · Código de referência: tag `passo-01`.
 
-- TODO: perguntas para fazer durante o "Pense antes"
-- TODO: confusões comuns neste capítulo
+## Perguntas para o "Pense antes"
+
+- "Quando você abre um site, quem responde do outro lado?" Leva à ideia de servidor.
+- "O navegador está no seu computador. E o resto, onde poderia ficar?" Prepara o Codespaces: um computador na nuvem.
+- "O que precisa existir antes de o app mostrar alguma coisa?" Ajuda a ler o diagrama do capítulo como um caminho.
+
+## Confusões comuns
+
+- **O primeiro codespace demora.** A primeira vez pode levar alguns minutos para abrir. Não é erro: é o computador na nuvem sendo preparado.
+- **A pergunta "Do you trust the authors…?"** aparece no editor. Os arquivos vêm do modelo do Rails Girls SP: pode confiar.
+- **Esquecer o ponto no `rails new .`.** Sem o ponto, o comando reclama que falta o nome do app. Com outro nome no lugar do ponto, o app é criado numa pasta nova, dentro do repositório, e os comandos seguintes não funcionam da pasta principal.
+- **A pergunta `Overwrite README.md?`** no meio do `rails new`. O guia mostra o que responder: o README do modelo é substituído pelo do app.
+- **Digitar no terminal do servidor.** Enquanto o servidor está ligado, aquele terminal fica ocupado. Para outros comandos, abra um terminal novo pelo botão **+**.
+- **Esquecer o Sync Changes.** O commit fica só no codespace até o Sync. O passo 7 serve justamente para conferir no GitHub.
+- **Fechar a aba do codespace.** Nada se perde: o codespace continua na lista de [github.com/codespaces](https://github.com/codespaces). Só é preciso ligar o servidor de novo.
 
 ## Quem responde ao pedido: o Puma ou o Rails?
 
@@ -74,4 +87,4 @@ config.hosts << /.*\.app\.github\.dev/
 
 Depois, desligue o servidor (Ctrl+C) e ligue de novo com `bin/rails server`.
 
-TODO: se o repositório-modelo já liberar esse endereço (por exemplo, com a variável de ambiente `RAILS_DEVELOPMENT_HOSTS`), este erro não deve aparecer. Confirmar ao testar o modelo.
+Com o repositório-modelo do Rails Girls SP, esse erro **não deve aparecer**: o modelo já libera o endereço do Codespaces pela variável de ambiente `RAILS_DEVELOPMENT_HOSTS`, no `.devcontainer/devcontainer.json`, e isso foi conferido ao testar o modelo. Se o erro aparecer, provavelmente o codespace foi criado sem o modelo (por exemplo, de um repositório vazio). Nesse caso, a linha acima resolve.
