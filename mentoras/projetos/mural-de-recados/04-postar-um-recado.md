@@ -46,4 +46,6 @@ config.action_controller.forgery_protection_origin_check = false
 
 Ela desliga só a conferência do endereço de origem, e só em desenvolvimento. Depois, desligue o servidor (Ctrl+C) e ligue de novo.
 
-Decisão: a linha entra no passo 4 do capítulo 04, antes do primeiro formulário. TODO: confirmar no Codespaces se ela ainda é necessária com o Rails 8.1, e se a linha `config.hosts << /.*\.app\.github\.dev/` da Imersão 2025 faz falta (o template já libera o endereço pela variável `RAILS_DEVELOPMENT_HOSTS`).
+Decisão: a linha entra no passo 4 do capítulo 04, antes do primeiro formulário.
+
+<!-- TODO: confirmar no Codespaces se ela ainda é necessária com o Rails 8.1, e se a linha `config.hosts << /.*\.app\.github\.dev/` da Imersão 2025 faz falta (o template já libera o endereço pela variável `RAILS_DEVELOPMENT_HOSTS`). -->
