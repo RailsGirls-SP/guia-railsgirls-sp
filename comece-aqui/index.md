@@ -10,8 +10,8 @@ Antes de começar o projeto, veja o que você vai precisar. É pouca coisa, e vo
 
 ## O que você precisa
 
-![Uma programadora de costas, com uma caneca na mão, olhando para o código na tela do computador]({{ '/assets/images/programadora.svg' | relative_url }})
-{: .ilustracao .ilustracao-pequena }
+![Uma mulher escrevendo à mão num papel, com um computador ao lado]({{ '/assets/images/anotando.svg' | relative_url }})
+{: .ilustracao .ilustracao-secao }
 
 Ilustração: [unDraw](https://undraw.co/)
 {: .fs-2 .text-center }

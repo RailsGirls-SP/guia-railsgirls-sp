@@ -6,6 +6,12 @@ nav_order: 5
 
 # Usando IA como tutora
 
+![Duas pessoas, cada uma no seu computador, usando ferramentas de IA, com os logos de duas delas acima]({{ '/assets/images/usando-ferramentas-de-ia.svg' | relative_url }})
+{: .ilustracao .ilustracao-secao }
+
+Ilustração: [unDraw](https://undraw.co/)
+{: .fs-2 .text-center }
+
 Uma ferramenta de [IA]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#ia) pode te ajudar muito a aprender, desde que você use como uma **tutora**: alguém que explica e faz perguntas, e não alguém que faz o trabalho por você. Quem aprende é quem faz.
 
 ## Comece dizendo quem a IA deve ser
@@ -38,7 +44,7 @@ Copie, cole no começo da conversa e ajuste do seu jeito. O link do guia ajuda a
 ## Cuidados
 
 ![Um documento com notas de atenção e de dúvida em volta, como numa revisão]({{ '/assets/images/revisando.svg' | relative_url }})
-{: .ilustracao .ilustracao-pequena }
+{: .ilustracao .ilustracao-secao }
 
 Ilustração: [unDraw](https://undraw.co/)
 {: .fs-2 .text-center }

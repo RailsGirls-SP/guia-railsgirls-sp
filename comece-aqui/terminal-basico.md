@@ -9,7 +9,7 @@ nav_order: 3
 ## O que é o terminal
 
 ![Uma mulher no notebook, com código ao lado]({{ '/assets/images/programando-no-notebook.svg' | relative_url }})
-{: .ilustracao .ilustracao-pequena }
+{: .ilustracao .ilustracao-secao }
 
 Ilustração: [unDraw](https://undraw.co/)
 {: .fs-2 .text-center }

@@ -17,7 +17,7 @@ Imagine o fim do workshop. Todo mundo quer deixar uma mensagem: um agradecimento
 Numa parede, cada pessoa pegaria um post-it, escreveria a mensagem, assinaria e colaria. O seu desafio hoje é construir esse **mural de recados**, só que na web: cada recado aparece como um cartão e qualquer pessoa pode deixar o seu.
 
 ![Uma pessoa colando um papel num mural onde já existem outros recados]({{ '/assets/images/mural-fisico.svg' | relative_url }})
-{: .ilustracao }
+{: .ilustracao .ilustracao-secao }
 
 Ilustração: [unDraw](https://undraw.co/)
 {: .fs-2 .text-center }
@@ -28,7 +28,7 @@ Antes de escrever qualquer linha de código, quem programa faz duas coisas: **en
 ## Pense antes de programar
 
 ![Uma mulher organizando notas coloridas num quadro]({{ '/assets/images/organizando-ideias.svg' | relative_url }})
-{: .ilustracao }
+{: .ilustracao .ilustracao-secao }
 
 Ilustração: [unDraw](https://undraw.co/)
 {: .fs-2 .text-center }
@@ -51,6 +51,12 @@ Que recados não deveriam aparecer no mural de recados? Imagine alguém com pres
 Guarde o seu papel. Você vai voltar a ele em todos os capítulos.
 
 ## Compare com o nosso plano
+
+![Uma mulher num quadro branco, explicando um plano com um caminho que dá certo e outro que dá errado]({{ '/assets/images/explicando-o-plano.svg' | relative_url }})
+{: .ilustracao .ilustracao-secao }
+
+Ilustração: [unDraw](https://undraw.co/)
+{: .fs-2 .text-center }
 
 Só abra depois de fazer o seu. Se o seu plano for diferente, tudo bem: compare e pense no motivo de cada diferença.
 

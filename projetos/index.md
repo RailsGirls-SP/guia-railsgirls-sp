@@ -23,7 +23,7 @@ Se é a sua primeira vez, comece pelo [Mural de recados]({{ site.baseurl }}{% li
 ## Como os projetos crescem
 
 ![Uma estrada com curvas, com um carro chegando a um ponto marcado no mapa]({{ '/assets/images/caminho-ate-o-destino.png' | relative_url }})
-{: .ilustracao }
+{: .ilustracao .ilustracao-secao }
 
 Ilustração: [unDraw](https://undraw.co/)
 {: .fs-2 .text-center }

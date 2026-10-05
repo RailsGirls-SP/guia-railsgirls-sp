@@ -7,6 +7,12 @@ has_children: true
 
 # Instalação
 
+![Um monitor com um editor de código, uma janela de pastas e um terminal abertos]({{ '/assets/images/ambiente-de-programacao.svg' | relative_url }})
+{: .ilustracao .ilustracao-secao }
+
+Ilustração: [unDraw](https://undraw.co/)
+{: .fs-2 .text-center }
+
 No workshop, o projeto roda no **GitHub Codespaces**, e você não instala nada. O Codespaces é um computador na nuvem, que você usa pelo navegador, e que já vem com tudo que o projeto precisa: o **Ruby** (a linguagem), o **Rails** (o framework), o **Git** (para guardar o seu progresso) e um **editor de código**.
 
 Você só precisa de uma conta no GitHub. Se ainda não tem, veja [Criando uma conta no GitHub]({{ site.baseurl }}{% link comece-aqui/conta-no-github.md %}).

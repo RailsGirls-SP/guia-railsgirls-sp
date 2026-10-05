@@ -59,7 +59,7 @@ Agora, abra o passo **3. Resolva o erro: crie a rota**
 Uma **[rota]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#rota)** liga um endereço a uma parte do código. É como uma placa que diz: "quem pedir este endereço, vá até ali".
 
 ![Uma pessoa diante de uma placa com setas apontando para lados diferentes]({{ '/assets/images/mural-de-recados/03/rota-placa.svg' | relative_url }})
-{: .ilustracao .ilustracao-pequena }
+{: .ilustracao .ilustracao-secao }
 
 Ilustração: [unDraw](https://undraw.co/)
 {: .fs-2 .text-center }

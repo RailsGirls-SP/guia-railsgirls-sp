@@ -6,8 +6,8 @@ nav_order: 2
 
 # Ruby, Rails e Git
 
-![Uma mulher estudando no notebook]({{ '/assets/images/estudando.svg' | relative_url }})
-{: .ilustracao .ilustracao-pequena }
+![Uma mulher estudando com um tablet, ao lado de um notebook com uma aula on-line e uma pilha de livros]({{ '/assets/images/estudando-online.svg' | relative_url }})
+{: .ilustracao .ilustracao-secao }
 
 Ilustração: [unDraw](https://undraw.co/)
 {: .fs-2 .text-center }

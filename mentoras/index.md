@@ -24,7 +24,7 @@ As participantes seguem o guia por conta própria, no próprio ritmo. O seu pape
 ## Formatos de grupo
 
 ![Três pessoas lado a lado na mesma mesa, cada uma com o seu notebook, conversando]({{ '/assets/images/equipe.svg' | relative_url }})
-{: .ilustracao }
+{: .ilustracao .ilustracao-secao }
 
 Ilustração: [unDraw](https://undraw.co/)
 {: .fs-2 .text-center }

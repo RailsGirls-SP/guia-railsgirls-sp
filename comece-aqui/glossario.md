@@ -7,7 +7,7 @@ nav_order: 6
 # Glossário
 
 ![Uma mulher com uma lupa grande, procurando algo numa página]({{ '/assets/images/buscando.svg' | relative_url }})
-{: .ilustracao .ilustracao-pequena }
+{: .ilustracao .ilustracao-secao }
 
 Ilustração: [unDraw](https://undraw.co/)
 {: .fs-2 .text-center }
