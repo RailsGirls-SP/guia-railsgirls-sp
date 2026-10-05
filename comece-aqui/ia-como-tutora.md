@@ -1,7 +1,7 @@
 ---
 title: Usando IA como tutora
 parent: Comece aqui
-nav_order: 4
+nav_order: 5
 ---
 
 # Usando IA como tutora

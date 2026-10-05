@@ -1,7 +1,7 @@
 ---
 title: Glossário
 parent: Comece aqui
-nav_order: 5
+nav_order: 6
 ---
 
 # Glossário
