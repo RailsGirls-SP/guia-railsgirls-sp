@@ -162,6 +162,11 @@ details.passo {
   &[open] {
     padding-bottom: 1.25rem;
   }
+
+  // Mais espaço entre o título aberto e o conteúdo, como os blocos de pergunta.
+  &[open] > summary {
+    margin-bottom: 1rem;
+  }
 }
 
 // Perguntas e respostas (Não existem perguntas bobas): uma por bloco.

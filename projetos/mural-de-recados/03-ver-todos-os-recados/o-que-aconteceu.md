@@ -25,7 +25,7 @@ flowchart LR
   Model <--> Banco[(Banco de dados)]
   Controller --> View --> Navegador
 
-  classDef aqui fill:#73121b,stroke:#73121b,color:#fff
+  classDef aqui fill:#73121b,stroke:#f2b8be,stroke-width:2px,color:#fff
   class Rota,Controller,View aqui
 ```
 

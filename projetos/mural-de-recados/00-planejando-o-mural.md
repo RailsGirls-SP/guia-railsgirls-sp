@@ -152,6 +152,8 @@ A gente não vai construir o mural de recados inteiro de uma vez. Ele cresce em 
 
 Se o tempo acabar no meio do caminho, você não fica com metade de um mural de recados: fica com um mural de recados que funciona, só que mais simples.
 
+E começar pelo mínimo ajuda a gastar tempo só com o que faz diferença para quem vai usar: o mural de recados fica pronto mais cedo, as pessoas já podem deixar os seus recados, e você descobre com elas o que vale a pena fazer depois.
+
 ## E se fosse com IA?
 
 <details markdown="1">

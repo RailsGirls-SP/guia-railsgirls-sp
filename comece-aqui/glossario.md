@@ -229,6 +229,21 @@ Ele organiza o app em partes com papéis bem definidos ([rota](#rota), [controll
 
 </details>
 
+<details class="termo" id="convencao" markdown="1">
+<summary>Convenção</summary>
+
+Uma **convenção** é um combinado sobre como fazer as coisas: que nome dar, em que pasta colocar cada arquivo. Ninguém é obrigada a seguir, mas, seguindo, todo mundo se entende sem precisar explicar.
+
+O [Rails](#rails) usa muitas convenções. Se você segue o combinado, ele encontra e liga as peças sozinho, sem você configurar nada. No app Mural de recados, por exemplo:
+
+- o [model](#model) `Message`, no singular, usa a tabela `messages`, no plural;
+- a [rota](#rota) `messages#index` leva ao `MessagesController`, [ação](#acao) `index`;
+- a ação `index` mostra a [view](#view) que está em `app/views/messages/index.html.erb`.
+
+Quem programa em Rails resume essa ideia como *convention over configuration*: convenção em vez de configuração.
+
+</details>
+
 <details class="termo" id="rota" markdown="1">
 <summary>Rota</summary>
 
@@ -254,7 +269,7 @@ No app Mural de recados, o controller dos recados se chama `MessagesController`.
 
 Uma **ação** (em inglês, *action*) é cada coisa que um [controller](#controller) sabe fazer. Por exemplo, a ação `index` do `MessagesController` mostra a lista de recados.
 
-No Rails, as ações têm nomes em inglês que seguem uma convenção. Estas são as mais comuns:
+No Rails, as ações têm nomes em inglês que seguem uma [convenção](#convencao). Estas são as mais comuns:
 
 | Ação | Tradução | O que faz | No Mural de recados |
 |---|---|---|---|
@@ -406,6 +421,25 @@ author = "Ana"
 ```
 
 Daqui em diante, `author` (autora) quer dizer `"Ana"`. E dá para trocar o conteúdo da caixa: se depois você escrever `author = "Bia"`, a mesma etiqueta passa a guardar outro valor.
+
+</details>
+
+<details class="termo" id="nil" markdown="1">
+<summary>nil e null</summary>
+
+**`nil`** é o jeito de o [Ruby](#ruby) dizer "nada": a informação não existe ou ainda não foi preenchida. Em inglês, *nil* quer dizer nada, zero.
+
+No [banco de dados](#banco-de-dados), a mesma ideia se chama **`NULL`** (nulo). Quando um recado é guardado sem autora, a coluna `author` fica `NULL` no banco de dados, e o Ruby mostra `nil`.
+
+Repare que "nada" é diferente de zero e de um texto vazio:
+
+| Valor | Quer dizer |
+|---|---|
+| `nil` | não tem nenhuma informação |
+| `0` | tem um número, e ele é zero |
+| `""` | tem um texto, mas sem nenhuma letra |
+
+Você vê o `nil` pela primeira vez no "Quebre de propósito" de [Como guardar os recados?]({{ site.baseurl }}{% link projetos/mural-de-recados/02-como-guardar-os-recados/o-que-aconteceu.md %}).
 
 </details>
 

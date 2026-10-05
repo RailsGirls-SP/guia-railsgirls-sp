@@ -12,11 +12,11 @@ nav_order: 2
 
 Neste capítulo, três peças trabalharam juntas:
 
-- O **[model]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#model)** `Message` (no arquivo `app/models/message.rb`) é quem representa um recado dentro do app. Ele parece vazio, mas herda do Rails tudo o que precisa para guardar, buscar e apagar recados. Foi ele que você usou no console, com `Message.create` e `Message.count`.
-- A **[migration]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#migration)** é a instrução para criar a tabela. Ela só descreve a mudança; quem aplica é o `bin/rails db:migrate`.
-- O **[banco de dados]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#banco-de-dados)** é onde os recados ficam guardados de verdade. No app Mural de recados, ele é um arquivo só, `storage/development.sqlite3`, que o Rails gerencia por você. Em muitos apps que estão no ar, o banco de dados fica num programa separado, às vezes até num computador só para ele, como o PostgreSQL ou o MySQL. Para aprender e para começar um projeto, o SQLite funciona muito bem, e o jeito de usar o model é praticamente o mesmo nos dois casos.
+- O **[model]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#model)** (modelo, em português) `Message` é a parte do app que cuida dos recados: guarda, busca, conta recados e apaga. Foi com ele que você conversou no console, com `Message.create` e `Message.count`. Se você abrir o arquivo dele, `app/models/message.rb`, vai ver só duas linhas. Mesmo assim, ele já sabe guardar, buscar, contar e apagar, porque esse código já vem pronto no Rails.
+- A **[migration]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#migration)** (migração, em português) é a instrução para criar a tabela no banco de dados. Ela só descreve a mudança; quem aplica é o `bin/rails db:migrate`.
+- O **[banco de dados]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#banco-de-dados)** é onde os recados ficam guardados de verdade, para serem usados depois. No app Mural de recados, ele é um banco **SQLite**: um arquivo só, `storage/development.sqlite3`, que o Rails gerencia por você.
 
-**Por que precisamos dos dois?** Pense na planilha de recados:
+**Por que precisamos do model e da migration?** Pense na planilha de recados:
 
 | | Migration | Model |
 |---|---|---|
@@ -26,7 +26,7 @@ Neste capítulo, três peças trabalharam juntas:
 
 São trabalhos diferentes: um prepara o lugar, o outro trabalha com o que está lá dentro. Se um dia o recado ganhar uma informação nova, vai precisar de uma migration nova para criar a coluna, e o model passa a usar essa coluna.
 
-O Rails liga o model à tabela pelo nome: o model `Message`, no singular e com letra maiúscula, conversa com a tabela `messages`, no plural e em minúsculas. Você não precisou configurar nada: é uma **convenção** do Rails.
+O Rails liga o model à tabela pelo nome: o model `Message`, no singular e com letra maiúscula, conversa com a tabela `messages`, no plural e em minúsculas. Você não precisou configurar nada: é uma **[convenção]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#convencao)** do Rails, um combinado sobre como dar nome às coisas.
 
 Você está aqui: este é o caminho que uma requisição percorre dentro do app.
 
@@ -37,7 +37,7 @@ flowchart LR
   Model <--> Banco[(Banco de dados)]
   Controller --> View --> Navegador
 
-  classDef aqui fill:#73121b,stroke:#73121b,color:#fff
+  classDef aqui fill:#73121b,stroke:#f2b8be,stroke-width:2px,color:#fff
   class Model,Banco aqui
 ```
 
@@ -98,6 +98,13 @@ Não apague nem edite o arquivo `storage/development.sqlite3`. Ele não é um ar
 
 </details>
 
+<details class="pergunta" markdown="1">
+<summary>Todo app guarda os dados num arquivo assim? <span class="label label-purple">Para ir além</span></summary>
+
+Não. Em muitos apps que estão no ar, o banco de dados fica num programa separado, às vezes até num computador só para ele, como o PostgreSQL ou o MySQL. Para aprender e para começar um projeto, o SQLite funciona muito bem, e o jeito de usar o model é praticamente o mesmo nos dois casos.
+
+</details>
+
 </details>
 
 <details class="passo" markdown="1">
@@ -121,9 +128,27 @@ Message.create
 
 **Dê um palpite:** vai dar erro?
 
-Não dá! O Rails guarda um recado vazio, sem autora e sem mensagem. Ninguém disse a ele que isso é proibido. Guarde essa observação: ela é o assunto do capítulo [E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %}).
+Não dá! Para ver o que foi guardado, peça o último recado:
 
-Para apagar esse recado vazio, digite `Message.last.destroy`. Depois, saia com `exit`.
+```ruby
+Message.last
+```
+
+O console mostra algo parecido com isto:
+
+```
+#<Message:0x... id: 2, author: nil, content: nil, created_at: "2026-10-03 12:10:00", updated_at: "2026-10-03 12:10:00">
+```
+
+O [`nil`]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#nil) quer dizer "nada": o recado tem número e data, mas não tem autora nem mensagem. O Rails guardou um recado vazio, porque ninguém disse a ele que isso é proibido. Guarde essa observação: ela é o assunto do capítulo [E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %}).
+
+Para apagar esse recado vazio, digite:
+
+```ruby
+Message.last.destroy
+```
+
+Depois, saia do console com `exit`.
 
 </details>
 
@@ -135,7 +160,7 @@ Não. O `bin/rails generate model` já escreve o model e a migration para você,
 Se quiser usar uma IA, use para entender, e não para fazer:
 
 - Peça para ela explicar a migration linha por linha.
-- Se ela sugerir um código diferente do que o `generate` criou, compare com o seu plano. É comum a IA acrescentar coisas que você não pediu, como informações a mais no recado. Elas até podem ser boas ideias, mas não fazem parte desta etapa do MVP.
+- Se ela sugerir um código diferente do que o `generate` criou, compare com o seu plano. É comum a IA acrescentar coisas que você não pediu, como informações a mais no recado. Elas até podem ser boas ideias, mas não fazem parte desta etapa do MVP. Lembre-se: num [MVP]({{ site.baseurl }}{% link projetos/index.md %}#como-os-projetos-crescem), a gente quer construir o mínimo para o mural de recados já funcionar e ser útil, e só depois acrescentar o resto, uma etapa de cada vez. Focar no mínimo ajuda a gastar tempo só com o que faz diferença para quem vai usar: o app fica pronto mais cedo, as pessoas já podem usar, e você descobre com elas o que vale a pena fazer depois.
 
 </details>
 
