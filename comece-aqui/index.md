@@ -23,7 +23,7 @@ Quer programar no seu próprio computador, sem o Codespaces? Fica nos Extras, pa
 | [Instalação]({{ site.baseurl }}{% link comece-aqui/instalacao.md %}) | Onde o projeto roda: no GitHub Codespaces, sem instalar nada. Inclui como criar a conta no GitHub. |
 | [Ruby, Rails e Git]({{ site.baseurl }}{% link comece-aqui/ruby-rails-e-git.md %}) | O que é cada ferramenta, numa visão geral rápida, e as palestras do pré-evento. |
 | [Terminal básico]({{ site.baseurl }}{% link comece-aqui/terminal-basico.md %}) | O que é o terminal, como abrir e os comandos que você vai usar. |
-| [Git básico]({{ site.baseurl }}{% link comece-aqui/git-basico.md %}) | Como guardar o seu progresso com commits e voltar atrás quando algo dá errado. |
+| [Git básico]({{ site.baseurl }}{% link comece-aqui/git-basico.md %}) | Como guardar o seu progresso com commits e desfazer o que deu errado. |
 | [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}) | Como usar uma IA para aprender, e não para fazer por você. |
 | [Glossário]({{ site.baseurl }}{% link comece-aqui/glossario.md %}) | O significado de cada termo do guia. |
 

@@ -147,7 +147,7 @@ Fora deste guia, a palavra "console" também pode aparecer com outros sentidos, 
 <details class="termo" id="git" markdown="1">
 <summary>Git</summary>
 
-O **Git** é um programa que guarda o histórico de um projeto: cada versão importante fica registrada, e você pode ver o que mudou, quando e por quê, ou voltar atrás se algo der errado.
+O **Git** é um programa que guarda o histórico de um projeto: cada versão importante fica registrada, e você pode ver o que mudou, quando e por quê, ou voltar para uma versão anterior se algo der errado.
 
 É parecido com o histórico de versões de um documento on-line, com uma diferença: no Git, é você quem decide quando registrar uma versão, e cada registro ganha uma mensagem explicando a mudança. Esses registros são os [commits](#commit).
 
