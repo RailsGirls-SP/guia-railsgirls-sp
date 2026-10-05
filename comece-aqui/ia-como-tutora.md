@@ -37,6 +37,12 @@ Copie, cole no começo da conversa e ajuste do seu jeito. O link do guia ajuda a
 
 ## Cuidados
 
+![Um documento com notas de atenção e de dúvida em volta, como numa revisão]({{ '/assets/images/revisando.svg' | relative_url }})
+{: .ilustracao .ilustracao-pequena }
+
+Ilustração: [unDraw](https://undraw.co/)
+{: .fs-2 .text-center }
+
 - **Confira o que ela diz.** A IA pode [inventar coisas]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#alucinacao) com toda a confiança. Se algo não bater com o guia, confie no guia ou pergunte para alguém da mentoria.
 - **Nunca rode um comando que você não entendeu.** Pergunte o que ele faz antes.
 - **Não deixe a IA mudar arquivos ou rodar comandos sozinha.** No painel de chat do codespace, prefira o modo de perguntas (**Ask**) ao modo **Agent**, que pode mexer no seu projeto por conta própria.

@@ -6,6 +6,12 @@ nav_order: 6
 
 # Glossário
 
+![Uma mulher com uma lupa grande, procurando algo numa página]({{ '/assets/images/buscando.svg' | relative_url }})
+{: .ilustracao .ilustracao-pequena }
+
+Ilustração: [unDraw](https://undraw.co/)
+{: .fs-2 .text-center }
+
 <div class="busca-glossario">
 <label for="busca-termo">Buscar no glossário</label>
 <input id="busca-termo" type="search" placeholder="Digite um termo, como servidor ou rota" autocomplete="off">

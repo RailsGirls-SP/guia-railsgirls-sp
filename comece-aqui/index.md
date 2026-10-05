@@ -10,6 +10,12 @@ Antes de começar o projeto, veja o que você vai precisar. É pouca coisa, e vo
 
 ## O que você precisa
 
+![Uma programadora de costas, com uma caneca na mão, olhando para o código na tela do computador]({{ '/assets/images/programadora.svg' | relative_url }})
+{: .ilustracao .ilustracao-pequena }
+
+Ilustração: [unDraw](https://undraw.co/)
+{: .fs-2 .text-center }
+
 - **Uma conta no GitHub.** É onde o código do seu projeto vai ficar guardado. Se ainda não tem, veja [Criando uma conta no GitHub]({{ site.baseurl }}{% link comece-aqui/conta-no-github.md %}).
 - **Um computador com navegador,** como o Chrome, o Firefox ou o Edge. No workshop, o projeto roda no **GitHub Codespaces**, um computador na nuvem que já vem com tudo instalado: você não precisa instalar nada.
 - **Papel e caneta,** para planejar antes de programar.

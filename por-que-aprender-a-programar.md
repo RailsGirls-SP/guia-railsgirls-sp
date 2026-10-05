@@ -11,6 +11,12 @@ Porque escrever código é só uma parte do trabalho. A IA é uma assistente mui
 
 ## O que continua sendo trabalho de quem programa
 
+![Uma mulher no notebook, com uma lista de itens para marcar ao lado e um café]({{ '/assets/images/checklist-no-notebook.svg' | relative_url }})
+{: .ilustracao .ilustracao-secao }
+
+Ilustração: [unDraw](https://undraw.co/)
+{: .fs-2 .text-center }
+
 No projeto Mural de recados, você vai fazer cada uma destas coisas. Nenhuma delas uma IA faz no seu lugar, porque todas dependem do que **você** quer:
 
 - **Entender o problema antes da solução.** Quem vai usar o app? O que a pessoa quer fazer? No [planejamento]({{ site.baseurl }}{% link projetos/mural-de-recados/00-planejando-o-mural.md %}), você desenha as telas antes de escrever qualquer código.
@@ -21,11 +27,23 @@ No projeto Mural de recados, você vai fazer cada uma destas coisas. Nenhuma del
 
 ## Pedir em etapas pequenas
 
+![Uma pessoa marcando etapas como concluídas, uma de cada vez, numa linha do tempo]({{ '/assets/images/etapas-concluidas.svg' | relative_url }})
+{: .ilustracao .ilustracao-secao }
+
+Ilustração: [unDraw](https://undraw.co/)
+{: .fs-2 .text-center }
+
 Se você pedir para uma IA "fazer um mural de recados", ela vai entregar dezenas de arquivos de uma vez. Fica difícil saber se está tudo certo, e mais difícil ainda achar o problema quando algo der errado.
 
 Quem programa prefere construir em **etapas pequenas**: primeiro o mínimo que já funciona, depois o resto, uma parte de cada vez. Assim, dá para conferir cada etapa antes de seguir. É a ideia do skate ao carro, em [Como os projetos crescem]({{ site.baseurl }}{% link projetos/index.md %}#como-os-projetos-crescem), e vale também para os pedidos que você faz a uma IA.
 
 ## Saber o nome de cada peça
+
+![Uma pessoa encaixando a última peça de um quebra-cabeça]({{ '/assets/images/quebra-cabeca.svg' | relative_url }})
+{: .ilustracao .ilustracao-secao }
+
+Ilustração: [unDraw](https://undraw.co/)
+{: .fs-2 .text-center }
 
 Um app Rails tem peças com nomes próprios: **rota**, **controller**, **view**, **model**, **migration**. Você vai conhecer cada uma no projeto. Saber esses nomes muda o jeito de pedir ajuda, para uma IA ou para uma pessoa:
 
@@ -37,11 +55,23 @@ O primeiro pedido deixa quase tudo para a IA adivinhar. O segundo diz exatamente
 
 ## A IA como aliada
 
+![Uma pessoa conversando com uma IA pelo computador]({{ '/assets/images/conversa-com-ia.svg' | relative_url }})
+{: .ilustracao .ilustracao-secao }
+
+Ilustração: [unDraw](https://undraw.co/)
+{: .fs-2 .text-center }
+
 A IA pode ser uma ótima tutora: explica uma mensagem de erro, responde uma dúvida a qualquer hora, mostra outro jeito de fazer. Veja como em [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}).
 
 O que o guia defende é que você **entenda** o que está construindo. Quem entende consegue usar a IA para ir mais rápido, sem perder o controle do próprio projeto. Em vários capítulos, a seção **Preciso de IA para este capítulo?** mostra como seria pedir aquela etapa para uma IA e o que conferir no resultado.
 
 ## Por que os termos ficam em inglês?
+
+![Uma mulher olhando para um planeta com o mapa do mundo]({{ '/assets/images/ao-redor-do-mundo.svg' | relative_url }})
+{: .ilustracao .ilustracao-secao }
+
+Ilustração: [unDraw](https://undraw.co/)
+{: .fs-2 .text-center }
 
 Neste guia, os termos técnicos aparecem em inglês, como **model**, **migration**, **controller** e **view**, com a tradução entre parênteses na primeira vez. Os nomes no código também ficam em inglês: o recado do Mural de recados se chama `Message`, e a autora, `author`.
 

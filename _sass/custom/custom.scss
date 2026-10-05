@@ -237,3 +237,11 @@ details.termo {
   white-space: nowrap;
   border: 0;
 }
+
+// Ilustrações de uma página com várias seções: todas com a mesma altura,
+// para as largas não ficarem enormes e as altas não ficarem pequenas.
+.ilustracao-secao img {
+  width: auto;
+  max-width: 100%;
+  height: 200px;
+}

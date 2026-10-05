@@ -23,6 +23,12 @@ As participantes seguem o guia por conta própria, no próprio ritmo. O seu pape
 
 ## Formatos de grupo
 
+![Três pessoas lado a lado na mesma mesa, cada uma com o seu notebook, conversando]({{ '/assets/images/equipe.svg' | relative_url }})
+{: .ilustracao }
+
+Ilustração: [unDraw](https://undraw.co/)
+{: .fs-2 .text-center }
+
 O projeto Mural de recados é uma sequência: cada capítulo depende do anterior, e todos mexem nos mesmos arquivos. Por isso, não dá para dividir o projeto entre as pessoas de um grupo, cada uma fazendo uma parte.
 
 **O formato recomendado é: cada pessoa constrói o próprio app, no próprio codespace e no próprio ritmo, em grupos pequenos de 3 ou 4 pessoas com alguém da mentoria.** Assim, cada pessoa sai do workshop com o seu repositório e pode continuar em casa. O guia foi escrito para esse formato: os commits, o deploy e o "cada pessoa no seu ritmo".

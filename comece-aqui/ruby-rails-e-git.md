@@ -6,6 +6,12 @@ nav_order: 2
 
 # Ruby, Rails e Git
 
+![Uma mulher estudando no notebook]({{ '/assets/images/estudando.svg' | relative_url }})
+{: .ilustracao .ilustracao-pequena }
+
+Ilustração: [unDraw](https://undraw.co/)
+{: .fs-2 .text-center }
+
 Antes de começar o projeto, vale conhecer as três ferramentas principais. Não precisa decorar nada: esta página é só uma visão geral, e o projeto mostra cada uma na prática. Leitura de uns 10 minutos.
 
 ## Ruby, a linguagem

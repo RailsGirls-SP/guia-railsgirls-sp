@@ -8,6 +8,12 @@ nav_order: 3
 
 ## O que é o terminal
 
+![Uma mulher no notebook, com código ao lado]({{ '/assets/images/programando-no-notebook.svg' | relative_url }})
+{: .ilustracao .ilustracao-pequena }
+
+Ilustração: [unDraw](https://undraw.co/)
+{: .fs-2 .text-center }
+
 O **[terminal]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#terminal)** é um programa em que você conversa com o computador **escrevendo**, em vez de clicar. Você digita um comando, aperta **Enter**, e o computador faz o que foi pedido e responde com texto.
 
 Antes de existirem janelas, ícones e mouse, era assim que todo mundo usava o computador. Hoje, quem programa continua usando o terminal porque ele é rápido, faz exatamente o que você escreveu e é fácil de repetir e de compartilhar: um comando pode ser copiado e colado, e um clique precisa ser descrito passo a passo.

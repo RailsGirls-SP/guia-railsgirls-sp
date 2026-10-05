@@ -22,6 +22,12 @@ Se é a sua primeira vez, comece pelo [Mural de recados]({{ site.baseurl }}{% li
 
 ## Como os projetos crescem
 
+![Uma estrada com curvas, com um carro chegando a um ponto marcado no mapa]({{ '/assets/images/caminho-ate-o-destino.png' | relative_url }})
+{: .ilustracao }
+
+Ilustração: [unDraw](https://undraw.co/)
+{: .fs-2 .text-center }
+
 Imagine que alguém precisa ir de casa até o trabalho, e você vai construir um jeito de levar essa pessoa. Existem dois caminhos.
 
 **Construir o carro peça por peça.** Primeiro uma roda, depois o eixo, depois a carroceria. Durante todo esse tempo, a pessoa continua a pé: uma roda sozinha não leva ninguém a lugar nenhum. Ela só consegue usar alguma coisa no final.

@@ -27,6 +27,12 @@ Antes de escrever qualquer linha de código, quem programa faz duas coisas: **en
 
 ## Pense antes de programar
 
+![Uma mulher organizando notas coloridas num quadro]({{ '/assets/images/organizando-ideias.svg' | relative_url }})
+{: .ilustracao }
+
+Ilustração: [unDraw](https://undraw.co/)
+{: .fs-2 .text-center }
+
 Pegue papel e caneta e reserve de 10 a 15 minutos. Não existe resposta errada: o objetivo é você pensar, não acertar.
 
 **1. Quais telas o mural de recados precisa ter?**
