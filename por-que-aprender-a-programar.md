@@ -5,11 +5,41 @@ nav_order: 2
 
 # Por que aprender a programar?
 
-- TODO: por que aprender a programar quando a IA escreve código
-- TODO: modelar dados, prever casos de borda, validar e ler código
-- TODO: como conversar sobre isso sem soar anti-IA
-- TODO: por que pensar em MVP: pedir em etapas pequenas para conseguir conferir o que a IA gerou (link para [Como os projetos crescem]({{ site.baseurl }}{% link projetos/index.md %}#como-os-projetos-crescem))
-- TODO: por que saber o nome das estruturas e componentes (model, controller, view, rota, migration...): para pedir à IA exatamente o que você quer e entender o que ela respondeu
+Hoje, ferramentas de IA escrevem código em segundos. Então por que passar um dia aprendendo a programar?
+
+Porque escrever código é só uma parte do trabalho. A IA é uma assistente muito rápida, mas alguém precisa saber **o que pedir**, **conferir o que veio** e **decidir o que fazer** quando algo não sai como o esperado. Esse alguém é você.
+
+## O que continua sendo trabalho de quem programa
+
+No projeto Mural de recados, você vai fazer cada uma destas coisas. Nenhuma delas uma IA faz no seu lugar, porque todas dependem do que **você** quer:
+
+- **Entender o problema antes da solução.** Quem vai usar o app? O que a pessoa quer fazer? No [planejamento]({{ site.baseurl }}{% link projetos/mural-de-recados/00-planejando-o-mural.md %}), você desenha as telas antes de escrever qualquer código.
+- **Decidir quais informações guardar.** Um recado tem quem escreveu e a mensagem. E a cor? E a data? Quem programa chama isso de **modelar os dados**, e é uma escolha sua.
+- **Prever o que pode dar errado.** E se alguém mandar um recado vazio? E uma mensagem enorme? O código gerado por uma IA costuma funcionar e aceitar um recado vazio. Quem decide que isso é um erro é você, como no capítulo [E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %}).
+- **Ler e conferir o código.** Geradores e IAs economizam digitação, mas às vezes criam coisas que você não pediu. No capítulo [Como ver todos os recados?]({{ site.baseurl }}{% link projetos/mural-de-recados/03-ver-todos-os-recados/index.md %}), você apaga uma rota que o gerador criou sem precisar.
+- **Entender os erros.** Quando algo quebra, a mensagem de erro diz o que falta. Saber ler essa mensagem é o que te deixa resolver sozinha, com ou sem IA.
+
+## Pedir em etapas pequenas
+
+Se você pedir para uma IA "fazer um mural de recados", ela vai entregar dezenas de arquivos de uma vez. Fica difícil saber se está tudo certo, e mais difícil ainda achar o problema quando algo der errado.
+
+Quem programa prefere construir em **etapas pequenas**: primeiro o mínimo que já funciona, depois o resto, uma parte de cada vez. Assim, dá para conferir cada etapa antes de seguir. É a ideia do skate ao carro, em [Como os projetos crescem]({{ site.baseurl }}{% link projetos/index.md %}#como-os-projetos-crescem), e vale também para os pedidos que você faz a uma IA.
+
+## Saber o nome de cada peça
+
+Um app Rails tem peças com nomes próprios: **rota**, **controller**, **view**, **model**, **migration**. Você vai conhecer cada uma no projeto. Saber esses nomes muda o jeito de pedir ajuda, para uma IA ou para uma pessoa:
+
+> Faz o meu app aceitar recados.
+
+> No meu app Rails, crie a ação `create` no `MessagesController`, que guarda o recado com `author` e `content` e volta para a lista de recados.
+
+O primeiro pedido deixa quase tudo para a IA adivinhar. O segundo diz exatamente o que você quer e onde, e você consegue conferir se a resposta faz o que pediu. Saber os nomes também ajuda a entender o que a IA responde.
+
+## Não é contra a IA
+
+Este guia não é contra a IA. Ela pode ser uma ótima tutora: explica uma mensagem de erro, responde uma dúvida a qualquer hora, mostra outro jeito de fazer. Veja como em [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}).
+
+O que o guia defende é que você **entenda** o que está construindo. Quem entende consegue usar a IA para ir mais rápido, sem perder o controle do próprio projeto. Em vários capítulos, a seção **Preciso de IA para este capítulo?** mostra como seria pedir aquela etapa para uma IA e o que conferir no resultado.
 
 ## Por que os termos ficam em inglês?
 
