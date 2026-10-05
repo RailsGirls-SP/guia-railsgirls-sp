@@ -35,9 +35,9 @@ Um app Rails tem peças com nomes próprios: **rota**, **controller**, **view**,
 
 O primeiro pedido deixa quase tudo para a IA adivinhar. O segundo diz exatamente o que você quer e onde, e você consegue conferir se a resposta faz o que pediu. Saber os nomes também ajuda a entender o que a IA responde.
 
-## Não é contra a IA
+## A IA como aliada
 
-Este guia não é contra a IA. Ela pode ser uma ótima tutora: explica uma mensagem de erro, responde uma dúvida a qualquer hora, mostra outro jeito de fazer. Veja como em [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}).
+A IA pode ser uma ótima tutora: explica uma mensagem de erro, responde uma dúvida a qualquer hora, mostra outro jeito de fazer. Veja como em [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}).
 
 O que o guia defende é que você **entenda** o que está construindo. Quem entende consegue usar a IA para ir mais rápido, sem perder o controle do próprio projeto. Em vários capítulos, a seção **Preciso de IA para este capítulo?** mostra como seria pedir aquela etapa para uma IA e o que conferir no resultado.
 
