@@ -137,4 +137,4 @@ Em inglês:
 
 ## E agora?
 
-Parabéns! 🎉 Você construiu um app do zero e colocou no ar. Quer continuar? Veja os [Desafios extras]({{ site.baseurl }}{% link projetos/mural-de-recados/desafios-extras/index.md %}).
+Você construiu um app do zero e colocou no ar. 🎉 Para fechar o dia: [Terminei! E agora?]({{ site.baseurl }}{% link projetos/mural-de-recados/09-terminei-e-agora/index.md %})

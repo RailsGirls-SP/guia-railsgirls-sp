@@ -9,6 +9,8 @@ nav_order: 1
 
 O **GitHub** é um site que guarda projetos de programação e permite trabalhar neles de qualquer lugar. Para entender melhor o que ele é, assista à [introdução a Git e GitHub](https://www.youtube.com/watch?v=UiJ8a8Acvi4) com Rayane Rocha, no Rails Girls São Paulo 2025.
 
+<!-- TODO: atualizar o link da introdução a Git e GitHub para a palestra de quem vai palestrar no pré-evento deste ano. -->
+
 ## 1. Comece o cadastro
 
 Acesse [github.com](https://github.com), preencha o seu e-mail no campo **Enter your email** e clique em **Sign up for GitHub**.

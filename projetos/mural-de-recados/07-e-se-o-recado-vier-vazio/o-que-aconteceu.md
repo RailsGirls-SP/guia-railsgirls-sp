@@ -170,4 +170,4 @@ Guia oficial do Rails, em inglês:
 
 O mural de recados está pronto: bonito, e só aceita recados de verdade. Mas ele só funciona dentro do seu codespace. Próximo desafio, opcional: [Como mostrar o mural de recados para o mundo?]({{ site.baseurl }}{% link projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo/index.md %})
 
-Vai parar por aqui hoje? Desligue o servidor e o codespace, como no passo **Desligue o servidor e o codespace** do [capítulo 08]({{ site.baseurl }}{% link projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo/mao-na-massa.md %}).
+Vai parar por aqui hoje? Veja como desligar tudo e voltar outro dia em [Terminei! E agora?]({{ site.baseurl }}{% link projetos/mural-de-recados/09-terminei-e-agora/index.md %}).

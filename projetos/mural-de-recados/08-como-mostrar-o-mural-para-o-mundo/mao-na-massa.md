@@ -256,31 +256,6 @@ Salve, faça um commit com a mensagem `Muda o título do mural` e clique em **Sy
 
 **Confira:** no painel do Render, um novo deploy começa sozinho. Quando ele terminar, recarregue o endereço do app: o título novo aparece no mural de recados no ar.
 
-Terminou? Abra o passo **11. Desligue o servidor e o codespace**
-
-</details>
-
-<details class="passo" markdown="1">
-<summary>11. Desligue o servidor e o codespace</summary>
-
-O seu mural de recados agora roda no Render. O servidor do codespace só é preciso enquanto você programa, então dá para desligar tudo.
-
-**O servidor.** Clique no terminal onde o servidor está rodando e aperte **Ctrl+C**. O servidor desliga, e o terminal volta para o lugar de digitar.
-
-**O codespace.** Abra a paleta de comandos do editor (**Cmd+Shift+P** no Mac, **Ctrl+Shift+P** no Windows e no Linux), digite `Stop Current Codespace` e escolha **Codespaces: Stop Current Codespace**.
-
-Se preferir, dá para desligar pela lista de codespaces, em [github.com/codespaces](https://github.com/codespaces): clique nos **…** ao lado do seu codespace e escolha **Stop codespace**.
-
-- Desligar não apaga nada: o código e o banco de dados do codespace continuam lá. Para voltar, abra o codespace de novo pela mesma lista.
-- O GitHub também desliga o codespace sozinho depois de um tempo sem uso, mas desligar na hora economiza as horas gratuitas do Codespaces.
-
-**Dê um palpite:** com o codespace desligado, o seu mural de recados no ar continua funcionando?
-
-**Confira:** abra o endereço do app no Render: o mural de recados continua no ar. 🎉
-
-{: .dica }
-Está usando o seu próprio computador, e não o Codespaces? Basta desligar o servidor com **Ctrl+C**.
-
 </details>
 
 ## Travou?
