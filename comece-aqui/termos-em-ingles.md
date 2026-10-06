@@ -21,4 +21,4 @@ Parece mais difícil no começo, mas ajuda muito:
 - **Você pede exatamente o que quer.** Usando os nomes em inglês de cada parte do app, como model e controller, o seu pedido fica mais claro, para uma IA ou para uma pessoa, e você entende melhor a resposta.
 - **O código segue o costume do resto do mundo.** Quase todo código, incluindo o próprio Rails, usa nomes em inglês. E o Rails faz o plural pelas regras do inglês: um model chamado `Mensagem` viraria a tabela `mensagems`.
 
-Não precisa decorar nada: o [glossário]({{ site.baseurl }}{% link extras/glossario.md %}) traz a tradução de cada termo e, em alguns casos, como pronunciar.
+Não precisa decorar nada: o [glossário]({{ site.baseurl }}{% link glossario.md %}) traz a tradução de cada termo e, em alguns casos, como pronunciar.

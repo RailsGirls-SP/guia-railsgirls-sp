@@ -31,7 +31,7 @@ Terminou? Abra o passo **2. Crie o model Message**
 <details class="passo" markdown="1">
 <summary>2. Crie o model Message</summary>
 
-No Rails, a parte do app que cuida de uma informação, como os recados, se chama **[model]({{ site.baseurl }}{% link extras/glossario.md %}#model)** (modelo, em português). Vamos criar o model dos recados, dizendo quais informações ele tem. No código, os nomes ficam em inglês: o recado se chama `Message`, a autora é `author` e a mensagem é `content` (conteúdo). A mensagem se chama `content`, e não `message`, para o código não ficar `message.message`.
+No Rails, a parte do app que cuida de uma informação, como os recados, se chama **[model]({{ site.baseurl }}{% link glossario.md %}#model)** (modelo, em português). Vamos criar o model dos recados, dizendo quais informações ele tem. No código, os nomes ficam em inglês: o recado se chama `Message`, a autora é `author` e a mensagem é `content` (conteúdo). A mensagem se chama `content`, e não `message`, para o código não ficar `message.message`.
 
 **Dê um palpite:** o comando abaixo diz `author:string` e `content:text`. O que você acha que `string` e `text` querem dizer?
 
@@ -56,7 +56,7 @@ O comando criou quatro arquivos:
 
 - `db/migrate/…_create_messages.rb`: a **migration**, com as instruções para criar a tabela dos recados no banco de dados. Você vai revisar esse arquivo no próximo passo. O número no começo do nome é a data e a hora em que você rodou o comando, então o seu vai ser diferente.
 - `app/models/message.rb`: o **model** `Message`, que representa um recado dentro do app.
-- `test/models/message_test.rb`: um lugar para escrever [testes automatizados]({{ site.baseurl }}{% link extras/glossario.md %}#teste-automatizado) do model.
+- `test/models/message_test.rb`: um lugar para escrever [testes automatizados]({{ site.baseurl }}{% link glossario.md %}#teste-automatizado) do model.
 - `test/fixtures/messages.yml`: recados de exemplo, usados só pelos testes.
 
 {: .pensando-title }
@@ -80,7 +80,7 @@ Terminou? Abra o passo **3. Revise a migration**
 <details class="passo" markdown="1">
 <summary>3. Revise a migration</summary>
 
-O `generate` criou uma **[migration]({{ site.baseurl }}{% link extras/glossario.md %}#migration)** (migração, em português): um arquivo com as instruções para criar a tabela de recados no banco de dados. Ela ainda não foi aplicada.
+O `generate` criou uma **[migration]({{ site.baseurl }}{% link glossario.md %}#migration)** (migração, em português): um arquivo com as instruções para criar a tabela de recados no banco de dados. Ela ainda não foi aplicada.
 
 No Explorer, abra a pasta `db/migrate` e clique no arquivo que termina em `_create_messages.rb`. Ele é parecido com isto:
 
@@ -218,7 +218,7 @@ Terminou? Abra o passo **7. Guarde o seu progresso**
 <details class="passo" markdown="1">
 <summary>7. Guarde o seu progresso</summary>
 
-Guarde o seu progresso com um [commit]({{ site.baseurl }}{% link extras/glossario.md %}#commit), como no passo **Guarde o seu progresso** de [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/mao-na-massa.md %}):
+Guarde o seu progresso com um [commit]({{ site.baseurl }}{% link glossario.md %}#commit), como no passo **Guarde o seu progresso** de [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/mao-na-massa.md %}):
 
 1. No painel **Source Control**, clique no **+** ao lado de **Changes** (**Stage All Changes**).
 2. Escreva a mensagem `Cria o model Message` e clique em **Commit**.

@@ -1,6 +1,6 @@
 ---
 title: Extras
-nav_order: 6
+nav_order: 7
 has_children: true
 ---
 
@@ -14,4 +14,3 @@ Conteúdo extra, para consultar quando precisar ou para depois do workshop. Nada
 | [Como pedir código para uma IA]({{ site.baseurl }}{% link extras/como-pedir-codigo-para-uma-ia.md %}) | Por que pedir em etapas pequenas e como o nome de cada peça do app deixa o pedido mais preciso, com exemplos do Mural de recados. |
 | [Terminal básico]({{ site.baseurl }}{% link extras/terminal-basico.md %}) | O que é o terminal, como abrir e os comandos que você vai usar. |
 | [Git básico]({{ site.baseurl }}{% link extras/git-basico.md %}) | Como guardar o seu progresso com commits e desfazer o que deu errado. |
-| [Glossário]({{ site.baseurl }}{% link extras/glossario.md %}) | O significado de cada termo do guia. |

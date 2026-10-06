@@ -12,9 +12,9 @@ nav_order: 2
 
 Quando alguém abre o app, a requisição passa por três peças deste capítulo, nesta ordem:
 
-1. A **[rota]({{ site.baseurl }}{% link extras/glossario.md %}#rota)**, em `config/routes.rb`, recebe o endereço (`/messages` ou a página principal, `/`) e diz: "isso é com o `MessagesController`, ação `index`".
-2. O **[controller]({{ site.baseurl }}{% link extras/glossario.md %}#controller)**, em `app/controllers/messages_controller.rb`, pede os recados ao model (`Message.order(created_at: :desc)`) e guarda a lista em `@messages`.
-3. A **[view]({{ site.baseurl }}{% link extras/glossario.md %}#view)**, em `app/views/messages/index.html.erb`, recebe a `@messages` e monta a página, repetindo o mesmo trecho (a mensagem e a autora) para cada recado.
+1. A **[rota]({{ site.baseurl }}{% link glossario.md %}#rota)**, em `config/routes.rb`, recebe o endereço (`/messages` ou a página principal, `/`) e diz: "isso é com o `MessagesController`, ação `index`".
+2. O **[controller]({{ site.baseurl }}{% link glossario.md %}#controller)**, em `app/controllers/messages_controller.rb`, pede os recados ao model (`Message.order(created_at: :desc)`) e guarda a lista em `@messages`.
+3. A **[view]({{ site.baseurl }}{% link glossario.md %}#view)**, em `app/views/messages/index.html.erb`, recebe a `@messages` e monta a página, repetindo o mesmo trecho (a mensagem e a autora) para cada recado.
 
 Você está aqui: este é o caminho que uma requisição percorre dentro do app.
 
@@ -47,7 +47,7 @@ O model cuida dos dados e das regras: quais informações um recado tem e como g
 - **Os mesmos dados e as mesmas regras servem para telas diferentes.** Uma regra escrita uma vez no model, como "todo recado precisa ter autora", vale para todas as views que mostram ou recebem recados.
 - **Cada arquivo fica pequeno e fácil de achar.** Problema de aparência? Olhe a view. Problema com os dados? Olhe o model.
 
-E o controller fica no meio, juntando os dois. Dividir o app assim deixa tudo mais fácil de organizar, e essa divisão não é invenção do Rails: muitos outros [frameworks]({{ site.baseurl }}{% link extras/glossario.md %}#framework), em outras linguagens, seguem a mesma ideia. Aprendendo aqui, você vai reconhecer essa organização em outros lugares.
+E o controller fica no meio, juntando os dois. Dividir o app assim deixa tudo mais fácil de organizar, e essa divisão não é invenção do Rails: muitos outros [frameworks]({{ site.baseurl }}{% link glossario.md %}#framework), em outras linguagens, seguem a mesma ideia. Aprendendo aqui, você vai reconhecer essa organização em outros lugares.
 
 #### Geradores ajudam, mas você revisa
 
@@ -85,7 +85,7 @@ O gerador não sabe que você já tinha criado a rota no passo 3, então ele acr
 <details class="pergunta" markdown="1">
 <summary>Por que o controller é MessagesController, no plural, e o model é Message, no singular?</summary>
 
-O model representa **um** recado. O controller cuida de **todos** os recados: listar, postar, corrigir e apagar. Por isso, a [convenção]({{ site.baseurl }}{% link extras/glossario.md %}#convencao) do Rails é model no singular e controller no plural.
+O model representa **um** recado. O controller cuida de **todos** os recados: listar, postar, corrigir e apagar. Por isso, a [convenção]({{ site.baseurl }}{% link glossario.md %}#convencao) do Rails é model no singular e controller no plural.
 
 E é seguindo essa convenção que o Rails acha tudo sozinho: a rota `messages#index` leva ao `MessagesController`, que fica no arquivo `app/controllers/messages_controller.rb` e mostra as views da pasta `app/views/messages`. Você não precisou dizer onde está cada arquivo. Com um nome diferente, como `MessageController`, o Rails não encontraria o controller, e apareceria um erro.
 

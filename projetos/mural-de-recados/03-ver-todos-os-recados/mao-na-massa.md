@@ -47,7 +47,7 @@ Aperte **Enter**.
 
 **Confira:** aparece uma página de erro, com o título **Routing Error** e a mensagem `No route matches [GET] "/messages"`.
 
-Calma: esse erro é esperado! Leia a mensagem: o Rails está dizendo que não existe nenhuma **rota** (*route*) para o endereço `/messages`. Ele não sabe o que fazer com essa **[requisição]({{ site.baseurl }}{% link extras/glossario.md %}#requisicao)**, que é o nome do pedido que o navegador faz ao app (em inglês, *request*). Deixe essa aba aberta: você vai recarregar essa página várias vezes.
+Calma: esse erro é esperado! Leia a mensagem: o Rails está dizendo que não existe nenhuma **rota** (*route*) para o endereço `/messages`. Ele não sabe o que fazer com essa **[requisição]({{ site.baseurl }}{% link glossario.md %}#requisicao)**, que é o nome do pedido que o navegador faz ao app (em inglês, *request*). Deixe essa aba aberta: você vai recarregar essa página várias vezes.
 
 Agora, abra o passo **3. Resolva o erro: crie a rota**
 
@@ -56,7 +56,7 @@ Agora, abra o passo **3. Resolva o erro: crie a rota**
 <details class="passo" markdown="1">
 <summary>3. Resolva o erro: crie a rota</summary>
 
-Uma **[rota]({{ site.baseurl }}{% link extras/glossario.md %}#rota)** liga um endereço a uma parte do código. É como uma placa que diz: "quem pedir este endereço, vá até ali".
+Uma **[rota]({{ site.baseurl }}{% link glossario.md %}#rota)** liga um endereço a uma parte do código. É como uma placa que diz: "quem pedir este endereço, vá até ali".
 
 ![Uma pessoa diante de uma placa com setas apontando para lados diferentes]({{ '/assets/images/mural-de-recados/03/rota-placa.svg' | relative_url }})
 {: .ilustracao .ilustracao-secao }
@@ -100,7 +100,7 @@ flowchart LR
   class C faltando
 ```
 
-A placa (a rota) aponta para um **[controller]({{ site.baseurl }}{% link extras/glossario.md %}#controller)** (controlador, em português): a parte do app que recebe a requisição do navegador, depois que a rota encaminhou, e decide o que fazer com ela. É ele que junta os dados com a parte visual do app: no mural de recados, ele busca os recados e entrega para a página que mostra esses recados. Cada coisa que um controller sabe fazer se chama **[ação]({{ site.baseurl }}{% link extras/glossario.md %}#acao)** (em inglês, *action*), e a `index`, como você viu na rota, é a que mostra a lista. Veja as outras ações no [glossário]({{ site.baseurl }}{% link extras/glossario.md %}#acao).
+A placa (a rota) aponta para um **[controller]({{ site.baseurl }}{% link glossario.md %}#controller)** (controlador, em português): a parte do app que recebe a requisição do navegador, depois que a rota encaminhou, e decide o que fazer com ela. É ele que junta os dados com a parte visual do app: no mural de recados, ele busca os recados e entrega para a página que mostra esses recados. Cada coisa que um controller sabe fazer se chama **[ação]({{ site.baseurl }}{% link glossario.md %}#acao)** (em inglês, *action*), e a `index`, como você viu na rota, é a que mostra a lista. Veja as outras ações no [glossário]({{ site.baseurl }}{% link glossario.md %}#acao).
 
 ```mermaid
 flowchart LR
@@ -110,7 +110,7 @@ flowchart LR
   C -->|"3. entrega os recados"| V["View<br/>monta a página"]
 ```
 
-O controller não guarda os recados nem desenha a página: ele pede os recados ao [model]({{ site.baseurl }}{% link extras/glossario.md %}#model) `Message`, que você criou no capítulo anterior, e entrega para a view, que monta a página.
+O controller não guarda os recados nem desenha a página: ele pede os recados ao [model]({{ site.baseurl }}{% link glossario.md %}#model) `Message`, que você criou no capítulo anterior, e entrega para a view, que monta a página.
 
 Terminou? Abra o passo **5. Gere o controller**
 
@@ -147,7 +147,7 @@ invoke    test_unit
 O comando criou:
 
 - `app/controllers/messages_controller.rb`: o **controller**, com a ação `index` ainda vazia.
-- `app/views/messages/index.html.erb`: a **[view]({{ site.baseurl }}{% link extras/glossario.md %}#view)** (visão, em português), a página que a ação `index` mostra.
+- `app/views/messages/index.html.erb`: a **[view]({{ site.baseurl }}{% link glossario.md %}#view)** (visão, em português), a página que a ação `index` mostra.
 - uma **rota** a mais no `config/routes.rb` (o `route` da lista): você vai arrumar isso mais para a frente, no passo 9.
 - `app/helpers/messages_helper.rb`: um lugar para funções de ajuda das views. A gente não vai usar agora.
 - `test/controllers/messages_controller_test.rb`: um arquivo de testes, que a gente também vai pular por enquanto.
@@ -194,7 +194,7 @@ class MessagesController < ApplicationController
 end
 ```
 
-Salve o arquivo. A linha `@messages = Message.all` pede ao model todos os recados e guarda numa [variável]({{ site.baseurl }}{% link extras/glossario.md %}#variavel) chamada `@messages`.
+Salve o arquivo. A linha `@messages = Message.all` pede ao model todos os recados e guarda numa [variável]({{ site.baseurl }}{% link glossario.md %}#variavel) chamada `@messages`.
 
 **Na view.** Abra o `app/views/messages/index.html.erb`, apague o texto de exemplo e escreva no lugar:
 
@@ -211,7 +211,7 @@ Salve o arquivo. A linha `@messages = Message.all` pede ao model todos os recado
 
 Salve o arquivo.
 
-- `<h1>` é um título, em [HTML]({{ site.baseurl }}{% link extras/glossario.md %}#html), a linguagem das páginas da web.
+- `<h1>` é um título, em [HTML]({{ site.baseurl }}{% link glossario.md %}#html), a linguagem das páginas da web.
 - `@messages.each do |message|` repete o trecho de baixo para **cada** recado da lista. Em cada volta, `message` é um recado.
 - `message.content` e `message.author` mostram a mensagem e a autora daquele recado.
 - O que está entre `<%=` e `%>` aparece na página. O que está entre `<%` e `%>` (sem o `=`) só é executado, sem aparecer.
@@ -400,7 +400,7 @@ Terminou? Abra o passo **11. Guarde o seu progresso**
 <details class="passo" markdown="1">
 <summary>11. Guarde o seu progresso</summary>
 
-Guarde o seu progresso com um [commit]({{ site.baseurl }}{% link extras/glossario.md %}#commit), como no passo **Guarde o seu progresso** de [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/mao-na-massa.md %}):
+Guarde o seu progresso com um [commit]({{ site.baseurl }}{% link glossario.md %}#commit), como no passo **Guarde o seu progresso** de [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/mao-na-massa.md %}):
 
 1. No painel **Source Control**, clique no **+** ao lado de **Changes** (**Stage All Changes**).
 2. Escreva a mensagem `Mostra os recados no mural` e clique em **Commit**.

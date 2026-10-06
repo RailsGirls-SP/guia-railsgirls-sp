@@ -8,7 +8,7 @@ nav_order: 3
 
 ## O que é o terminal
 
-O **[terminal]({{ site.baseurl }}{% link extras/glossario.md %}#terminal)** é uma forma de interagir com o computador por texto: em vez de clicar, você escreve. Também é chamado de **linha de comando** ou **shell**.
+O **[terminal]({{ site.baseurl }}{% link glossario.md %}#terminal)** é uma forma de interagir com o computador por texto: em vez de clicar, você escreve. Também é chamado de **linha de comando** ou **shell**.
 
 No dia a dia, você usa o computador por uma **interface gráfica**: telas com janelas, ícones e botões que você aponta e clica com o mouse. O terminal é uma **interface de texto**: você escreve um **comando**, aperta **Enter**, e o computador responde também por escrito. Antes de existirem janelas, ícones e mouse, era assim que todo mundo usava o computador.
 

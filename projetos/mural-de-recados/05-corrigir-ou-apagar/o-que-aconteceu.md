@@ -50,7 +50,7 @@ Em vermelho escuro, as peças deste capítulo; em rosa claro, as que você já c
 
 **O model, de novo.** O model `Message` continua cuidando dos recados guardados no banco de dados (a assistente da "planilha", lembra?). Neste capítulo, o controller pediu ao model: "me traga o recado número 3" (`find`), "troque o que está escrito nele" (`update`) e "apague esse recado do banco de dados" (`destroy`).
 
-**O CRUD está completo.** Com este capítulo, o mural de recados faz as quatro ações do [CRUD]({{ site.baseurl }}{% link extras/glossario.md %}#crud): criar (postar), ler (ver), atualizar (corrigir) e apagar. Quase todo sistema que guarda informações faz essas quatro coisas, e agora você sabe como elas funcionam por dentro.
+**O CRUD está completo.** Com este capítulo, o mural de recados faz as quatro ações do [CRUD]({{ site.baseurl }}{% link glossario.md %}#crud): criar (postar), ler (ver), atualizar (corrigir) e apagar. Quase todo sistema que guarda informações faz essas quatro coisas, e agora você sabe como elas funcionam por dentro.
 
 </details>
 
@@ -90,7 +90,7 @@ O **Editar** só abre uma página, sem mudar nada: um link (`GET`) basta. O **Ap
 <details class="pergunta" markdown="1">
 <summary>E se eu tirar o only da rota?</summary>
 
-Sem o `only`, o `resources :messages` cria as rotas das sete ações do Rails, incluindo duas que o mural de recados não usa: `new` e `show`. Veja a lista no [glossário]({{ site.baseurl }}{% link extras/glossario.md %}#acao). Com o `only`, o app só tem as rotas que você precisa.
+Sem o `only`, o `resources :messages` cria as rotas das sete ações do Rails, incluindo duas que o mural de recados não usa: `new` e `show`. Veja a lista no [glossário]({{ site.baseurl }}{% link glossario.md %}#acao). Com o `only`, o app só tem as rotas que você precisa.
 
 </details>
 

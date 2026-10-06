@@ -33,7 +33,7 @@ Quer programar no seu próprio computador, sem o Codespaces? Fica nos Extras, pa
 
 Não precisa ler tudo antes de começar. O projeto explica cada coisa na hora em que ela aparece, com links para estas páginas. Volte aqui sempre que quiser rever algo.
 
-O [Terminal básico]({{ site.baseurl }}{% link extras/terminal-basico.md %}), o [Git básico]({{ site.baseurl }}{% link extras/git-basico.md %}) e o [Glossário]({{ site.baseurl }}{% link extras/glossario.md %}) ficam nos Extras, para consultar quando precisar.
+O [Terminal básico]({{ site.baseurl }}{% link extras/terminal-basico.md %}) e o [Git básico]({{ site.baseurl }}{% link extras/git-basico.md %}) ficam nos Extras, e o [Glossário]({{ site.baseurl }}{% link glossario.md %}) tem um lugar próprio no menu. Consulte sempre que precisar.
 
 ## E agora?
 

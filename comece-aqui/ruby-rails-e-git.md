@@ -16,7 +16,7 @@ Antes de começar o projeto, vale conhecer as três ferramentas principais. Não
 
 ## Ruby, a linguagem
 
-O **[Ruby]({{ site.baseurl }}{% link extras/glossario.md %}#ruby)** é uma [linguagem de programação]({{ site.baseurl }}{% link extras/glossario.md %}#linguagem-de-programacao): um jeito de escrever instruções que o computador entende. Ele foi criado no Japão, em 1995, por Yukihiro Matsumoto, o Matz, com uma ideia que ficou famosa: uma linguagem que ajude quem programa a gostar de programar e a ser feliz.
+O **[Ruby]({{ site.baseurl }}{% link glossario.md %}#ruby)** é uma [linguagem de programação]({{ site.baseurl }}{% link glossario.md %}#linguagem-de-programacao): um jeito de escrever instruções que o computador entende. Ele foi criado no Japão, em 1995, por Yukihiro Matsumoto, o Matz, com uma ideia que ficou famosa: uma linguagem que ajude quem programa a gostar de programar e a ser feliz.
 
 Por isso, o código Ruby costuma ser fácil de ler, quase como uma frase em inglês:
 
@@ -29,7 +29,7 @@ nome = "Ana"
 
 - `upcase` deixa um texto em letras maiúsculas.
 - `3.times` repete alguma coisa três vezes.
-- `nome = "Ana"` guarda um texto numa [variável]({{ site.baseurl }}{% link extras/glossario.md %}#variavel), e o `#{nome}` coloca esse texto no meio de outro.
+- `nome = "Ana"` guarda um texto numa [variável]({{ site.baseurl }}{% link glossario.md %}#variavel), e o `#{nome}` coloca esse texto no meio de outro.
 - O que vem depois do `#` é um comentário: uma anotação para quem lê, que o Ruby ignora.
 
 <details class="pergunta" markdown="1">
@@ -59,19 +59,19 @@ flowchart LR
 
 ## Rails, o framework
 
-O **[Rails]({{ site.baseurl }}{% link extras/glossario.md %}#rails)**, ou **Ruby on Rails**, é um [framework]({{ site.baseurl }}{% link extras/glossario.md %}#framework) para criar sites e aplicações web com Ruby. Ele foi criado em 2004 por David Heinemeier Hansson e é usado em sites como o GitHub e o Shopify.
+O **[Rails]({{ site.baseurl }}{% link glossario.md %}#rails)**, ou **Ruby on Rails**, é um [framework]({{ site.baseurl }}{% link glossario.md %}#framework) para criar sites e aplicações web com Ruby. Ele foi criado em 2004 por David Heinemeier Hansson e é usado em sites como o GitHub e o Shopify.
 
-Um framework traz pronto o que quase todo app web precisa: receber a [requisição]({{ site.baseurl }}{% link extras/glossario.md %}#requisicao) do navegador, guardar informações num banco de dados, montar as páginas. Assim, você se concentra no que é só do seu app.
+Um framework traz pronto o que quase todo app web precisa: receber a [requisição]({{ site.baseurl }}{% link glossario.md %}#requisicao) do navegador, guardar informações num banco de dados, montar as páginas. Assim, você se concentra no que é só do seu app.
 
-O Rails também segue [convenções]({{ site.baseurl }}{% link extras/glossario.md %}#convencao): combinados sobre que nome dar e onde colocar cada arquivo. Seguindo o combinado, ele liga as peças sozinho, e você escreve muito menos código.
+O Rails também segue [convenções]({{ site.baseurl }}{% link glossario.md %}#convencao): combinados sobre que nome dar e onde colocar cada arquivo. Seguindo o combinado, ele liga as peças sozinho, e você escreve muito menos código.
 
-No projeto, você vai conhecer as peças principais de um app Rails, uma por capítulo: a [rota]({{ site.baseurl }}{% link extras/glossario.md %}#rota), o [controller]({{ site.baseurl }}{% link extras/glossario.md %}#controller), a [view]({{ site.baseurl }}{% link extras/glossario.md %}#view), o [model]({{ site.baseurl }}{% link extras/glossario.md %}#model) e a [migration]({{ site.baseurl }}{% link extras/glossario.md %}#migration). Não precisa entender agora: os nomes vão fazer sentido quando você usar cada uma.
+No projeto, você vai conhecer as peças principais de um app Rails, uma por capítulo: a [rota]({{ site.baseurl }}{% link glossario.md %}#rota), o [controller]({{ site.baseurl }}{% link glossario.md %}#controller), a [view]({{ site.baseurl }}{% link glossario.md %}#view), o [model]({{ site.baseurl }}{% link glossario.md %}#model) e a [migration]({{ site.baseurl }}{% link glossario.md %}#migration). Não precisa entender agora: os nomes vão fazer sentido quando você usar cada uma.
 
 ## Git e GitHub, para guardar o seu progresso
 
-O **[Git]({{ site.baseurl }}{% link extras/glossario.md %}#git)** guarda versões do seu projeto, como os pontos salvos de um jogo de videogame. Cada versão salva é um **commit**. Se algo der errado, dá para voltar à última versão que funcionava.
+O **[Git]({{ site.baseurl }}{% link glossario.md %}#git)** guarda versões do seu projeto, como os pontos salvos de um jogo de videogame. Cada versão salva é um **commit**. Se algo der errado, dá para voltar à última versão que funcionava.
 
-O **[GitHub]({{ site.baseurl }}{% link extras/glossario.md %}#github)** é um site onde você guarda o seu projeto, com todos os commits, na internet. É parecido com um Google Drive ou um Dropbox, só que para código, com uma diferença: ele não salva sozinho. Você escolhe quando guardar uma versão (o commit) e quando enviar para lá. Assim, você pode continuar de qualquer lugar, e outras pessoas podem ver o seu código.
+O **[GitHub]({{ site.baseurl }}{% link glossario.md %}#github)** é um site onde você guarda o seu projeto, com todos os commits, na internet. É parecido com um Google Drive ou um Dropbox, só que para código, com uma diferença: ele não salva sozinho. Você escolhe quando guardar uma versão (o commit) e quando enviar para lá. Assim, você pode continuar de qualquer lugar, e outras pessoas podem ver o seu código.
 
 Em resumo: o Git é a ferramenta, e o GitHub é o lugar. Veja como usar os dois no projeto em [Git básico]({{ site.baseurl }}{% link extras/git-basico.md %}).
 

@@ -54,7 +54,7 @@ Pode aparecer a pergunta **Do you trust the authors of the files in this folder?
 
 ![Janela Do you trust the authors of the files in this folder? com os botões Manage, Cancel e Trust Folder & Continue, este último destacado]({{ '/assets/images/mural-de-recados/01/codespace-confiar.png' | relative_url }})
 
-Quando o codespace terminar de carregar, o [terminal]({{ site.baseurl }}{% link extras/glossario.md %}#terminal) mostra uma mensagem de boas-vindas e fica pronto para receber comandos.
+Quando o codespace terminar de carregar, o [terminal]({{ site.baseurl }}{% link glossario.md %}#terminal) mostra uma mensagem de boas-vindas e fica pronto para receber comandos.
 
 **Confira:** a tela tem três áreas.
 

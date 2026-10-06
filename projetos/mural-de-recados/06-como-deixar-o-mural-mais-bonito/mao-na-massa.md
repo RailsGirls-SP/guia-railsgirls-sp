@@ -195,7 +195,7 @@ Terminou? Abra o passo **6. Guarde o seu progresso**
 <details class="passo" markdown="1">
 <summary>6. Guarde o seu progresso</summary>
 
-Guarde o seu progresso com um [commit]({{ site.baseurl }}{% link extras/glossario.md %}#commit), como no passo **Guarde o seu progresso** de [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/mao-na-massa.md %}):
+Guarde o seu progresso com um [commit]({{ site.baseurl }}{% link glossario.md %}#commit), como no passo **Guarde o seu progresso** de [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/mao-na-massa.md %}):
 
 1. No painel **Source Control**, clique no **+** ao lado de **Changes** (**Stage All Changes**).
 2. Escreva a mensagem `Deixa os recados com cara de post-it` e clique em **Commit**.

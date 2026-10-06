@@ -64,7 +64,7 @@ Um app Rails tem peças com nomes próprios: **rota**, **controller**, **view**,
 
 O primeiro pedido deixa quase tudo para a IA adivinhar.
 
-O segundo já diz o que importa para quem vai usar: os recados ficam guardados (quem programa chama isso de **[persistência dos dados]({{ site.baseurl }}{% link extras/glossario.md %}#persistencia)**) e existem regras para aceitar um recado (as **[validações]({{ site.baseurl }}{% link extras/glossario.md %}#validacao)**). É o tipo de pedido que alguém que conhece bem o problema, mas não programa, consegue fazer.
+O segundo já diz o que importa para quem vai usar: os recados ficam guardados (quem programa chama isso de **[persistência dos dados]({{ site.baseurl }}{% link glossario.md %}#persistencia)**) e existem regras para aceitar um recado (as **[validações]({{ site.baseurl }}{% link glossario.md %}#validacao)**). É o tipo de pedido que alguém que conhece bem o problema, mas não programa, consegue fazer.
 
 O terceiro é melhor quando você já tem um app e quer acrescentar uma parte nele, como no projeto. Por quê?
 

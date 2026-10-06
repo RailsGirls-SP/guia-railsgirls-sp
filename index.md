@@ -7,7 +7,7 @@ nav_order: 1
 
 Boas-vindas ao guia do **[Rails Girls São Paulo](https://railsgirls.com.br/)**! 💜
 
-O Rails Girls é um workshop gratuito, de um dia, para mulheres, pessoas trans e pessoas não-binárias que querem dar os primeiros passos em programação. Em um workshop presencial, sediado na cidade de São Paulo, a gente constrói junto um app de verdade, usando [Ruby on Rails]({{ site.baseurl }}{% link extras/glossario.md %}#rails), e o guia acompanha cada passo, no workshop e depois dele.
+O Rails Girls é um workshop gratuito, de um dia, para mulheres, pessoas trans e pessoas não-binárias que querem dar os primeiros passos em programação. Em um workshop presencial, sediado na cidade de São Paulo, a gente constrói junto um app de verdade, usando [Ruby on Rails]({{ site.baseurl }}{% link glossario.md %}#rails), e o guia acompanha cada passo, no workshop e depois dele.
 
 ![Uma pessoa conversando com outra pessoa na frente de um computador]({{ '/assets/images/pair-programming.svg' | relative_url }})
 {: .ilustracao .ilustracao-secao }
@@ -25,17 +25,18 @@ Ilustração: [unDraw](https://undraw.co/)
 
 ## Como navegar pelo guia
 
-O menu ao lado tem cinco partes:
+O menu ao lado tem seis partes:
 
 | Parte | O que tem lá |
 |---|---|
 | [Por que aprender a programar?]({{ site.baseurl }}{% link por-que-aprender-a-programar.md %}) | Por que aprender a programar quando a IA já escreve código, e o que continua sendo trabalho de quem programa. |
 | [Comece aqui]({{ site.baseurl }}{% link comece-aqui/index.md %}) | O básico de Ruby, Rails e Git, e como usar uma IA para aprender. Para começar, você só precisa de uma conta no GitHub. |
 | [Projetos]({{ site.baseurl }}{% link projetos/index.md %}) | O projeto do workshop, o [Mural de recados]({{ site.baseurl }}{% link projetos/mural-de-recados/index.md %}), capítulo por capítulo. |
+| [Glossário]({{ site.baseurl }}{% link glossario.md %}) | O significado de cada termo do guia, para consultar sempre que aparecer uma palavra nova. |
 | [Guia para mentoria]({{ site.baseurl }}{% link mentoras/index.md %}) | Tudo para quem vai mentorar. |
-| [Extras]({{ site.baseurl }}{% link extras/index.md %}) | Páginas para consultar quando precisar, como o glossário, o terminal e o Git, e conteúdo para depois do workshop, como programar no seu próprio computador. |
+| [Extras]({{ site.baseurl }}{% link extras/index.md %}) | Páginas para consultar quando precisar, como o terminal e o Git, e conteúdo para depois do workshop, como programar no seu próprio computador. |
 
-Encontrou uma palavra nova? O [glossário]({{ site.baseurl }}{% link extras/glossario.md %}) explica cada termo, e a busca, no topo da página, acha qualquer assunto do guia.
+Encontrou uma palavra nova? O [glossário]({{ site.baseurl }}{% link glossario.md %}) explica cada termo, e a busca, no topo da página, acha qualquer assunto do guia.
 
 ## Por onde começar
 

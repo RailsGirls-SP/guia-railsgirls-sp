@@ -1,6 +1,5 @@
 ---
 title: Glossário
-parent: Extras
 nav_order: 5
 ---
 

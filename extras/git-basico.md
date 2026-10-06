@@ -6,7 +6,7 @@ nav_order: 4
 
 # Git básico
 
-O **[Git]({{ site.baseurl }}{% link extras/glossario.md %}#git)** guarda versões do seu projeto. Cada vez que você termina uma parte e quer guardar como ela está, você faz um **[commit]({{ site.baseurl }}{% link extras/glossario.md %}#commit)**: uma foto do projeto naquele momento, com uma mensagem dizendo o que mudou.
+O **[Git]({{ site.baseurl }}{% link glossario.md %}#git)** guarda versões do seu projeto. Cada vez que você termina uma parte e quer guardar como ela está, você faz um **[commit]({{ site.baseurl }}{% link glossario.md %}#commit)**: uma foto do projeto naquele momento, com uma mensagem dizendo o que mudou.
 
 É como o "salvar" de um jogo de videogame: se algo der errado depois, dá para voltar ao último ponto salvo.
 
@@ -29,7 +29,7 @@ Se algo der errado no meio de um capítulo, dá para voltar para a última bolin
 
 - **Desfazer.** Se você mudar alguma coisa e o app parar de funcionar, dá para desfazer e voltar à última versão que funcionava.
 - **Contar a história do projeto.** Cada commit tem uma mensagem. Juntos, eles mostram o que foi feito e quando.
-- **Guardar no GitHub.** O commit fica no seu computador, ou no seu codespace. Quando você envia os commits para o [GitHub]({{ site.baseurl }}{% link extras/glossario.md %}#github), o projeto fica guardado lá também, e você pode continuar de qualquer lugar.
+- **Guardar no GitHub.** O commit fica no seu computador, ou no seu codespace. Quando você envia os commits para o [GitHub]({{ site.baseurl }}{% link glossario.md %}#github), o projeto fica guardado lá também, e você pode continuar de qualquer lugar.
 
 ## Commit e push: duas etapas
 

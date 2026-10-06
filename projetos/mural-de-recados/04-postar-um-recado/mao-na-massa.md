@@ -166,7 +166,7 @@ Troque essa linha por:
 
 Salve o arquivo. Não mexa na linha do `root`.
 
-- `resources :messages` cria as rotas dos recados seguindo a [convenção]({{ site.baseurl }}{% link extras/glossario.md %}#convencao) do Rails: cada [ação]({{ site.baseurl }}{% link extras/glossario.md %}#acao) ganha o seu endereço e o seu tipo de requisição, sem você precisar escrever uma linha para cada uma.
+- `resources :messages` cria as rotas dos recados seguindo a [convenção]({{ site.baseurl }}{% link glossario.md %}#convencao) do Rails: cada [ação]({{ site.baseurl }}{% link glossario.md %}#acao) ganha o seu endereço e o seu tipo de requisição, sem você precisar escrever uma linha para cada uma.
 - `only` (somente) lista as ações que você quer. Por enquanto, duas: `index` (ver a lista, com `GET /messages`, a mesma rota de antes) e `create` (criar, com `POST /messages`, a rota que faltava).
 
 **Dê um palpite:** a rota para o `POST` agora existe. Volte para a página principal, preencha o formulário de novo e clique em **Postar recado**. O que vai acontecer?
@@ -267,7 +267,7 @@ Terminou? Abra o passo **9. Guarde o seu progresso**
 <details class="passo" markdown="1">
 <summary>9. Guarde o seu progresso</summary>
 
-Guarde o seu progresso com um [commit]({{ site.baseurl }}{% link extras/glossario.md %}#commit), como no passo **Guarde o seu progresso** de [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/mao-na-massa.md %}):
+Guarde o seu progresso com um [commit]({{ site.baseurl }}{% link glossario.md %}#commit), como no passo **Guarde o seu progresso** de [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/mao-na-massa.md %}):
 
 1. No painel **Source Control**, clique no **+** ao lado de **Changes** (**Stage All Changes**).
 2. Escreva a mensagem `Posta recados pelo formulário` e clique em **Commit**.

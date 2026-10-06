@@ -41,7 +41,7 @@ Primeiro um skate: simples, mas já leva a pessoa até o trabalho. Depois um pat
 Os projetos deste guia seguem o segundo caminho. Cada projeto começa pela **menor versão que já resolve o problema** e melhora a cada capítulo. Se o tempo acabar no meio do caminho, você não fica com metade de um projeto: fica com um projeto que funciona, só que mais simples.
 
 {: .pensando }
-Escolher o mínimo que já resolve o problema (qual parte é o skate) e o que fica para depois é uma das decisões mais importantes de quem programa. No mercado, essa primeira versão é chamada de **MVP**, do inglês *minimum viable product* (produto mínimo viável). Veja no [glossário]({{ site.baseurl }}{% link extras/glossario.md %}).
+Escolher o mínimo que já resolve o problema (qual parte é o skate) e o que fica para depois é uma das decisões mais importantes de quem programa. No mercado, essa primeira versão é chamada de **MVP**, do inglês *minimum viable product* (produto mínimo viável). Veja no [glossário]({{ site.baseurl }}{% link glossario.md %}).
 
 {: .ia }
 > Construir em etapas vale também quando a IA escreve o código. Se você pede o carro inteiro de uma vez, recebe muito código de uma vez só, difícil de ler e de conferir. Se pede o skate primeiro, recebe um pedaço pequeno: dá para testar, entender e corrigir antes de pedir o próximo. Quando algo dá errado, você sabe em qual etapa procurar.
