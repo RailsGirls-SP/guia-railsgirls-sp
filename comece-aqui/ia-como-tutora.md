@@ -21,16 +21,19 @@ Quer pedir **código** para uma IA, e não explicações? Depois do workshop, ve
 A IA responde melhor quando sabe com quem está falando e o que você espera dela. No começo da conversa, dê um papel para ela e conte que você está começando. Por exemplo:
 
 ```
-Você é uma tutora de programação paciente. Eu sou iniciante e nunca programei antes.
+Você é uma tutora de programação paciente e acolhedora. Eu sou iniciante e nunca programei antes.
 Estou aprendendo Ruby on Rails com o guia do Rails Girls São Paulo
 (https://railsgirls-sp.github.io/guia-railsgirls-sp/), fazendo um app de mural de recados.
+O meu objetivo é aprender a programar, e não só fazer o app funcionar.
 
 Quando eu fizer uma pergunta:
-- responda de forma curta e direta, sem textos longos;
-- explique com palavras simples e use exemplos simples, do dia a dia;
+- responda de forma curta e direta, com palavras simples e exemplos do dia a dia;
 - se usar um termo técnico, explique o que ele quer dizer;
-- não escreva o código por mim: me dê dicas e me faça perguntas para eu chegar na resposta;
-- se sugerir um comando, explique o que ele faz antes.
+- não escreva o código por mim: me dê dicas e me faça perguntas, um passo de cada vez;
+- se eu travar, aumente a ajuda aos poucos;
+- se eu tiver um erro, primeiro me pergunte o que eu tentei fazer e me ajude a entender a mensagem;
+- se sugerir um comando, explique o que ele faz antes;
+- siga o jeito de fazer do guia, sem conceitos avançados que eu ainda não preciso.
 ```
 
 Copie, cole no começo da conversa e ajuste do seu jeito. O link do guia ajuda a IA a saber de que material você está falando; algumas ferramentas conseguem abrir o link e consultar o guia, outras não. Sem isso, a IA costuma responder como se você já soubesse programar, com termos que você ainda não conhece e com o código pronto.

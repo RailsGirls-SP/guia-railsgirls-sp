@@ -38,7 +38,7 @@ Ilustração: [unDraw](https://undraw.co/)
 Saber programar também muda o jeito de pedir ajuda, para uma IA ou para uma pessoa:
 
 - **Pedir em etapas pequenas.** Em vez de pedir o app inteiro de uma vez, você pede uma parte, confere e só depois segue. É a ideia do skate ao carro, em [Como os projetos crescem]({{ site.baseurl }}{% link projetos/index.md %}#como-os-projetos-crescem).
-- **Saber o nome de cada peça.** Um app Rails tem peças com nomes próprios, como rota, controller e model. Com esses nomes, o pedido fica mais preciso, e você entende melhor a resposta.
+- **Saber o nome de cada peça.** Um app Rails tem peças com nomes próprios, como router, controller e model. Com esses nomes, o pedido fica mais preciso, e você entende melhor a resposta.
 
 Depois do workshop, veja exemplos de pedidos, do mais vago ao mais preciso, em [Como pedir código para uma IA]({{ site.baseurl }}{% link extras/como-pedir-codigo-para-uma-ia.md %}).
 

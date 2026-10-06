@@ -27,9 +27,9 @@ Quer programar no seu próprio computador, sem o Codespaces? Fica nos Extras, pa
 | Página | O que tem lá |
 |---|---|
 | [Instalação]({{ site.baseurl }}{% link comece-aqui/instalacao.md %}) | Onde o projeto roda: no GitHub Codespaces, sem instalar nada. Inclui como criar a conta no GitHub. |
-| [Ruby, Rails e Git]({{ site.baseurl }}{% link comece-aqui/ruby-rails-e-git.md %}) | O que é cada ferramenta, numa visão geral rápida, e as palestras do pré-evento. |
-| [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}) | Como usar uma IA para aprender, e não para fazer por você. |
-| [Por que os termos ficam em inglês?]({{ site.baseurl }}{% link comece-aqui/termos-em-ingles.md %}) | Por que o guia usa model, controller e commit, e não as traduções. |
+| [Ruby, Rails e Git]({{ site.baseurl }}{% link comece-aqui/ruby-rails-e-git.md %}) | <span class="label label-blue">Opcional</span> O que é cada ferramenta, numa visão geral rápida, e as palestras do pré-evento. |
+| [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}) | <span class="label label-blue">Opcional</span> Como usar uma IA para aprender, e não para fazer por você. |
+| [Por que os termos ficam em inglês?]({{ site.baseurl }}{% link comece-aqui/termos-em-ingles.md %}) | <span class="label label-blue">Opcional</span> Por que o guia usa model, controller e commit, e não as traduções. |
 
 Não precisa ler tudo antes de começar. O projeto explica cada coisa na hora em que ela aparece, com links para estas páginas. Volte aqui sempre que quiser rever algo.
 
