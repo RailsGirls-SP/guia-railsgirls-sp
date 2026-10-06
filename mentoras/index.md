@@ -12,6 +12,9 @@ As participantes seguem o guia por conta própria, no próprio ritmo. O seu pape
 
 ## Postura de mentoria
 
+- **Entender vale mais que terminar.** O objetivo não é chegar ao fim do guia o mais rápido possível, e sim que cada pessoa saia do workshop entendendo o que construiu. Se for preciso escolher, prefira um capítulo a menos e uma ideia que ficou de verdade.
+- **Mentorar é uma troca.** Você também aprende com as participantes: uma pergunta inesperada, um jeito novo de explicar, um erro que você nunca tinha visto. Aprender com quem está começando também faz parte da mentoria.
+- **Ensine a procurar respostas.** Em vez de dar a resposta, mostre onde procurar: a mensagem de erro, o glossário, o "O que aconteceu?" do capítulo. Aos poucos, a pessoa aprende a encontrar as respostas por conta própria, e isso vale mais do que qualquer resposta pronta.
 - **Não pegue o teclado.** Mesmo quando for mais rápido. Quem digita aprende; quem assiste esquece. Se precisar mostrar algo, aponte na tela e deixe a pessoa fazer.
 - **Pergunte antes de responder.** "O que você acha que aconteceu?", "O que a mensagem de erro diz?", "O que você esperava ver?". Muitas vezes, a resposta aparece durante a explicação.
 - **Leia os erros junto.** As telas de erro fazem parte do guia, e várias aparecem de propósito. Em vez de corrigir, pergunte "o que está faltando?". Quando aparecer um erro novo, comemore: quer dizer que houve avanço.
@@ -42,10 +45,10 @@ Dentro desse formato, vale usar momentos em grupo:
 | Formato | Quando usar | Cuidados |
 |---|---|---|
 | **Cada pessoa no seu app** | Sempre que possível. É o padrão do workshop. | Ritmos diferentes no mesmo grupo: quem andar mais rápido pode ajudar a ler os erros de quem travou, sem pegar o teclado. |
-| **Pair programming** (dupla num app só) | Quando duas pessoas preferirem fazer juntas, ou para alguém sem computador. | Uma pessoa digita e a outra guia, e as duas trocam a cada capítulo. Só uma sai com o app no próprio repositório. |
+| **Pair programming** (dupla num app só) | Quando duas pessoas preferirem fazer juntas, ou para alguém sem computador. | Uma pessoa digita e a outra guia, e as duas trocam a cada capítulo. O app fica no repositório de uma delas; no fim, a outra pessoa pode fazer um **fork** para ter a própria cópia. |
 | **Mob programming** (o grupo todo num app só) | Plano B, quando vários computadores derem problema ou o grupo pedir. | Quem digita troca a cada 10 ou 15 minutos (use um cronômetro). Quem digita só escreve o que o grupo decidir em voz alta. Garanta que todo mundo passe pelo teclado, inclusive as pessoas mais tímidas. |
 
-No pair e no mob, o app fica no repositório de uma pessoa só. Quem não ficou com ele pode refazer o projeto em casa, seguindo o guia, e vai ser bem mais rápido da segunda vez.
+No pair e no mob, o app fica no repositório de uma pessoa só. Para as outras pessoas também terem o app, cada uma pode fazer um fork: no repositório no GitHub, clique em **Fork** e depois em **Create fork**. A cópia fica na conta de quem fez o fork, com todo o histórico, e dá para abrir um codespace nela e continuar o projeto. Refazer o projeto em casa, seguindo o guia, também é uma ótima opção, e vai ser bem mais rápido da segunda vez.
 
 ## Roteiro do dia
 
