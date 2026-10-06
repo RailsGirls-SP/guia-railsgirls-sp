@@ -35,6 +35,7 @@ footer_content: >-
 exclude:
   - README.md
   - LICENSE.md
+  - CODE_OF_CONDUCT.md
   - Gemfile
   - Gemfile.lock
   - vendor

@@ -10,6 +10,12 @@ Obrigada por mentorar no Rails Girls São Paulo! 💜 Esta parte do guia é para
 
 As participantes seguem o guia por conta própria, no próprio ritmo. O seu papel não é dar aula: é ajudar quando alguém travar, fazer boas perguntas e lembrar que errar faz parte.
 
+## Código de conduta
+
+Antes do workshop, leia o [código de conduta](https://railsgirls.com.br/codigo-de-conduta/) do Rails Girls São Paulo. Ele vale para todas as pessoas envolvidas, e tem uma parte só para a mentoria: incentivar a autonomia, respeitar os limites das participantes e não usar a posição de mentoria para constranger ou pressionar ninguém.
+
+Se você presenciar ou souber de uma situação que pode violar o código, procure alguém da organização ou escreva para **conduta@railsgirls.com.br**. Não precisa ter certeza de que é uma violação para pedir ajuda.
+
 ## Postura de mentoria
 
 - **Entender vale mais que terminar.** O objetivo não é chegar ao fim do guia o mais rápido possível, e sim que cada pessoa saia do workshop entendendo o que construiu. Se for preciso escolher, prefira um capítulo a menos e uma ideia que ficou de verdade.

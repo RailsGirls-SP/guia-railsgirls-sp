@@ -9,6 +9,8 @@ Boas-vindas ao guia do **[Rails Girls São Paulo](https://railsgirls.com.br/)**!
 
 O Rails Girls é um workshop gratuito, de um dia, para mulheres, pessoas trans e pessoas não-binárias que querem dar os primeiros passos em programação. Em um workshop presencial, sediado na cidade de São Paulo, a gente constrói junto um app de verdade, usando [Ruby on Rails]({{ site.baseurl }}{% link glossario.md %}#rails), e o guia acompanha cada passo, no workshop e depois dele.
 
+O Rails Girls São Paulo quer ser um espaço acolhedor, seguro e inclusivo para todas as pessoas. Por isso, todo mundo que participa segue o nosso [código de conduta](https://railsgirls.com.br/codigo-de-conduta/).
+
 ![Uma pessoa conversando com outra pessoa na frente de um computador]({{ '/assets/images/pair-programming.svg' | relative_url }})
 {: .ilustracao .ilustracao-secao }
 
