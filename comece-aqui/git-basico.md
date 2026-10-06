@@ -8,7 +8,7 @@ nav_order: 4
 
 O **[Git]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#git)** guarda versões do seu projeto. Cada vez que você termina uma parte e quer guardar como ela está, você faz um **[commit]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#commit)**: uma foto do projeto naquele momento, com uma mensagem dizendo o que mudou.
 
-É como o "salvar" de um jogo: se algo der errado depois, dá para voltar ao último ponto salvo.
+É como o "salvar" de um jogo de videogame: se algo der errado depois, dá para voltar ao último ponto salvo.
 
 No projeto Mural de recados, cada capítulo termina com um commit. O histórico do seu repositório vai ficar parecido com este, uma bolinha para cada ponto salvo:
 
