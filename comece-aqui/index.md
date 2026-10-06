@@ -17,7 +17,7 @@ Ilustração: [unDraw](https://undraw.co/)
 {: .fs-2 .text-center }
 
 - **Uma conta no GitHub.** É onde o código do seu projeto vai ficar guardado. Se ainda não tem, veja [Criando uma conta no GitHub]({{ site.baseurl }}{% link comece-aqui/conta-no-github.md %}).
-- **Um computador com navegador,** como o Chrome, o Firefox ou o Edge. No workshop, o projeto roda no **GitHub Codespaces**, um computador na nuvem que já vem com tudo instalado: você não precisa instalar nada.
+- **Um computador com navegador,** como o Chrome, o Firefox ou o Edge. No workshop, o projeto roda no **[GitHub Codespaces](https://github.com/features/codespaces)**: um serviço do GitHub que empresta para você um computador na nuvem, que você usa pelo navegador. Esse computador já vem com tudo que o projeto precisa, então você não instala nada.
 - **Papel e caneta,** para planejar antes de programar.
 
 Quer programar no seu próprio computador, sem o Codespaces? Fica nos Extras, para depois do workshop: veja [No seu computador]({{ site.baseurl }}{% link bonus/no-seu-computador.md %}).
