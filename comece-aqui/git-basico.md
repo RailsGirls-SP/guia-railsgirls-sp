@@ -19,13 +19,13 @@ gitGraph
   commit id: "Mostra os recados"
   commit id: "Posta recados"
   commit id: "Corrige e apaga"
-  commit id: "Cara de post-it"
+  commit id: "Deixa com cara de post-it"
   commit id: "Não aceita vazio"
 ```
 
 Se algo der errado no meio de um capítulo, dá para voltar para a última bolinha, onde tudo funcionava.
 
-## Por que usar
+## Por que usar?
 
 - **Desfazer.** Se você mudar alguma coisa e o app parar de funcionar, dá para desfazer e voltar à última versão que funcionava.
 - **Contar a história do projeto.** Cada commit tem uma mensagem. Juntos, eles mostram o que foi feito e quando.
@@ -49,9 +49,11 @@ flowchart LR
 1. **O commit é local.** Ele guarda uma versão do projeto no histórico do seu codespace. É rápido e não precisa de internet, mas só existe ali: se o codespace for apagado, os commits vão junto.
 2. **O push é remoto.** Ele envia os commits do codespace para o seu repositório no GitHub. A partir daí, eles ficam guardados também na internet: dá para ver no site do GitHub, continuar de outro computador e, no capítulo 08, colocar o app no ar.
 
+**Por que duas etapas, e não uma só?** Porque assim você decide quando os seus commits saem do codespace. Dá para fazer vários commits pequenos, mesmo sem internet, conferir e até desfazer algum, e só depois enviar tudo para o GitHub. E, num repositório público, o que você envia fica visível para qualquer pessoa.
+
 Por isso o guia sempre pede as duas coisas no passo **Guarde o seu progresso**: o **Commit** e o **Sync Changes**. Um commit sem push fica guardado só no codespace, e o GitHub não fica sabendo dele.
 
-O **Sync Changes** faz um pouco mais que o push: ele também traz para o codespace os commits que estiverem no GitHub e ainda não estiverem no codespace (isso se chama **pull**). No projeto, como só você mexe no repositório, quase sempre ele só envia.
+O **Sync Changes** faz um pouco mais que o push: ele também traz para o codespace os commits que estiverem no GitHub e ainda não estiverem no codespace (isso se chama **pull**). No projeto, só você mexe no seu repositório, então não precisa se preocupar com isso: na prática, ele só envia os seus commits.
 
 ## No Codespaces
 
@@ -71,9 +73,13 @@ flowchart LR
 2. Escreva a mensagem do commit e clique em **Commit**.
 3. Clique em **Sync Changes** para enviar o commit para o GitHub.
 
+{: .pensando }
+O ideal é revisar o que mudou, linha por linha, antes de cada commit, e escolher só o que faz parte dele. No painel **Source Control**, dá para clicar em cada arquivo da lista **Changes** e ver as linhas novas e as apagadas. No workshop, para simplificar, a gente usa o **Stage All Changes** e coloca tudo no commit.
+
 Você faz isso pela primeira vez em [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/mao-na-massa.md %}).
 
-## Os mesmos passos, com comandos
+<details class="pergunta" markdown="1">
+<summary>Os mesmos passos, com comandos <span class="label label-purple">Para ir além</span></summary>
 
 Os cliques do painel **Source Control** rodam comandos do Git por trás. Se quiser, dá para fazer o mesmo no terminal:
 
@@ -85,6 +91,8 @@ Os cliques do painel **Source Control** rodam comandos do Git por trás. Se quis
 | `git push` | Envia os commits para o GitHub. | **Sync Changes** |
 
 O `git status` é o mais útil para usar a qualquer momento: ele não muda nada, só mostra como as coisas estão.
+
+</details>
 
 ## Quando fazer um commit
 
@@ -114,5 +122,22 @@ Descartar apaga as mudanças daquele arquivo desde o último commit, e não tem 
 
 Por isso, fazer commits com frequência ajuda: quanto mais recente o último commit, menos trabalho você perde ao voltar.
 
+<details class="pergunta" markdown="1">
+<summary>E se eu já fiz o commit? <span class="label label-purple">Para ir além</span></summary>
+
+O **Discard Changes** só desfaz o que ainda não entrou num commit. Se você já fez o commit de uma mudança que deu errado, dá para usar o `git revert`. Ele não apaga o commit: cria um commit novo, que desfaz o anterior. Assim, o histórico continua completo, e dá até para desfazer o próprio revert. No terminal, para desfazer o último commit:
+
+```
+git revert HEAD --no-edit
+```
+
+O `--no-edit` usa uma mensagem pronta para o commit novo, sem abrir um editor. Depois, faça o **Sync Changes** para enviar ao GitHub.
+
+</details>
+
 {: .ia }
 > Antes de usar um código que uma IA escreveu, faça um commit do que você já tem funcionando. Se o código da IA não funcionar, ou mudar coisas que você não pediu, é só descartar as mudanças e voltar ao ponto salvo. Depois, com calma, você tenta de novo, com um pedido mais claro ou em etapas menores.
+
+## Referências
+
+- **Para aprender mais:** [Git & GitHub para iniciantes](https://cyz.github.io/gh-for-women/), do GitHub for Women. É uma trilha em português, com aulas do primeiro commit até branches e pull requests.
