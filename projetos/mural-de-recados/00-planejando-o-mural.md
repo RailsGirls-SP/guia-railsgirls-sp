@@ -160,7 +160,7 @@ Cada capítulo daqui pra frente resolve um pedaço deste plano:
 | O que pode dar errado | [E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %}) |
 | Outras pessoas usando o mural de recados | [Como mostrar o mural de recados para o mundo?]({{ site.baseurl }}{% link projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo/index.md %}) |
 
-As quatro ações do plano (postar, ver, corrigir e apagar) aparecem em quase todo sistema que guarda informações: uma rede social, uma loja, uma agenda. Quem programa chama esse conjunto de **CRUD**, das iniciais em inglês de criar, ler, atualizar e apagar. Veja no [glossário]({{ site.baseurl }}{% link comece-aqui/glossario.md %}).
+As quatro ações do plano (postar, ver, corrigir e apagar) aparecem em quase todo sistema que guarda informações: uma rede social, uma loja, uma agenda. Quem programa chama esse conjunto de **CRUD**, das iniciais em inglês de criar, ler, atualizar e apagar. Veja no [glossário]({{ site.baseurl }}{% link extras/glossario.md %}).
 
 ### Um mural de recados que funciona a cada etapa
 

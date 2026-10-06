@@ -48,7 +48,7 @@ Terminou? Abra o passo **3. Escreva as regras do recado**
 <details class="passo" markdown="1">
 <summary>3. Escreva as regras do recado</summary>
 
-As regras sobre os dados ficam no **[model]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#model)**. Abra o arquivo `app/models/message.rb`. Ele tem só duas linhas:
+As regras sobre os dados ficam no **[model]({{ site.baseurl }}{% link extras/glossario.md %}#model)**. Abra o arquivo `app/models/message.rb`. Ele tem só duas linhas:
 
 ```ruby
 class Message < ApplicationRecord
@@ -308,7 +308,7 @@ Terminou? Abra o passo **9. Guarde o seu progresso**
 <details class="passo" markdown="1">
 <summary>9. Guarde o seu progresso</summary>
 
-Guarde o seu progresso com um [commit]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#commit), como no passo **Guarde o seu progresso** de [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/mao-na-massa.md %}):
+Guarde o seu progresso com um [commit]({{ site.baseurl }}{% link extras/glossario.md %}#commit), como no passo **Guarde o seu progresso** de [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/mao-na-massa.md %}):
 
 1. No painel **Source Control**, clique no **+** ao lado de **Changes** (**Stage All Changes**).
 2. Escreva a mensagem `Não aceita recado vazio` e clique em **Commit**.

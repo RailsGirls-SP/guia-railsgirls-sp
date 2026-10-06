@@ -1,11 +1,11 @@
 ---
-title: No seu computador
+title: Instalando no seu computador
 parent: Extras
 nav_order: 1
 has_children: true
 ---
 
-# No seu computador
+# Instalando no seu computador
 
 Para programar no seu próprio computador, você instala o **Ruby**, o **Rails**, o **Git** e um **editor de código**. O guia oficial do Rails, [Install Ruby on Rails](https://guides.rubyonrails.org/install_ruby_on_rails.html) (em inglês), é a base destes passos.
 
@@ -26,9 +26,9 @@ O guia do Rails recomenda o gerenciador **mise**, e é ele que os passos usam.
 
 | Sistema | Passo a passo |
 |---|---|
-| Mac | [No Mac]({{ site.baseurl }}{% link bonus/mac.md %}) |
-| Ubuntu e outros Linux parecidos | [No Ubuntu (Linux)]({{ site.baseurl }}{% link bonus/ubuntu.md %}) |
-| Windows | [No Windows]({{ site.baseurl }}{% link bonus/windows.md %}), usando o WSL, um Linux dentro do Windows |
+| Mac | [No Mac]({{ site.baseurl }}{% link extras/mac.md %}) |
+| Ubuntu e outros Linux parecidos | [No Ubuntu (Linux)]({{ site.baseurl }}{% link extras/ubuntu.md %}) |
+| Windows | [No Windows]({{ site.baseurl }}{% link extras/windows.md %}), usando o WSL, um Linux dentro do Windows |
 
 ## E o projeto?
 

@@ -62,7 +62,7 @@ Algumas ideias para continuar:
 - **Termine o projeto.** Se você parou antes do fim, continue do capítulo em que estava. O guia fica no ar, e você pode seguir no seu ritmo.
 - **Coloque o mural de recados no ar,** se ainda não colocou: veja o capítulo [Como mostrar o mural de recados para o mundo?]({{ site.baseurl }}{% link projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo/index.md %}).
 - **Faça os desafios extras.** Em [Desafios extras]({{ site.baseurl }}{% link projetos/mural-de-recados/desafios-extras/index.md %}), tem desafios para mostrar a data dos recados, escolher a cor de cada recado e mais.
-- **Programe no seu próprio computador.** Veja como instalar tudo em [No seu computador]({{ site.baseurl }}{% link bonus/no-seu-computador.md %}).
+- **Programe no seu próprio computador.** Veja como instalar tudo em [Instalando no seu computador]({{ site.baseurl }}{% link extras/no-seu-computador.md %}).
 - **Mostre o que você fez.** Compartilhe o link do seu repositório no GitHub, ou do seu mural de recados no ar, com quem você quiser.
 
 Obrigada por participar! 💜

@@ -52,7 +52,7 @@ O `message_params` não pega tudo que chegou: ele diz exatamente o que o control
 
 #### O resources e a convenção
 
-O `resources :messages` criou as rotas pela [convenção]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#convencao) do Rails: `GET /messages` vai para o `index`, e `POST /messages` vai para o `create`. Os dois usam o mesmo endereço; o que muda é o tipo de requisição. Com o `only`, o app só tem as rotas que você usa.
+O `resources :messages` criou as rotas pela [convenção]({{ site.baseurl }}{% link extras/glossario.md %}#convencao) do Rails: `GET /messages` vai para o `index`, e `POST /messages` vai para o `create`. Os dois usam o mesmo endereço; o que muda é o tipo de requisição. Com o `only`, o app só tem as rotas que você usa.
 
 </details>
 

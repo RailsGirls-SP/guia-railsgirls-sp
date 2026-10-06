@@ -34,7 +34,7 @@ Em vermelho escuro, as peças deste capítulo; em rosa claro, as que você já c
 
 #### Estilos prontos
 
-O **Bulma** é uma biblioteca de [CSS]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#css): um conjunto de estilos que outra pessoa já escreveu e deixou pronto para usar. Você não escreveu nenhum estilo: só deu nomes às partes da página, com as classes, e o Bulma já sabia como mostrar um `button`, um `card` ou uma `box`.
+O **Bulma** é uma biblioteca de [CSS]({{ site.baseurl }}{% link extras/glossario.md %}#css): um conjunto de estilos que outra pessoa já escreveu e deixou pronto para usar. Você não escreveu nenhum estilo: só deu nomes às partes da página, com as classes, e o Bulma já sabia como mostrar um `button`, um `card` ou uma `box`.
 
 #### O layout, a moldura de todas as páginas
 

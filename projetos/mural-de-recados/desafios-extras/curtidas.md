@@ -21,7 +21,7 @@ Não precisa saber **quem** curtiu, só **quantas** curtidas cada recado tem.
 
 ## Você vai praticar
 
-- Acrescentar uma coluna a uma tabela que já existe, com uma [migration]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#migration) nova.
+- Acrescentar uma coluna a uma tabela que já existe, com uma [migration]({{ site.baseurl }}{% link extras/glossario.md %}#migration) nova.
 - Fazer contas com números inteiros.
 - Criar um botão que muda um dado no banco de dados.
 
@@ -67,7 +67,7 @@ O `increment!` soma 1 e já guarda no banco de dados. Rode duas vezes e veja o n
 <details markdown="1">
 <summary>Dica 3: a rota e o controller</summary>
 
-O clique no botão precisa de uma [rota]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#rota) nova para o recado. Em `config/routes.rb`, acrescente um `do ... end` à linha do `resources :messages`:
+O clique no botão precisa de uma [rota]({{ site.baseurl }}{% link extras/glossario.md %}#rota) nova para o recado. Em `config/routes.rb`, acrescente um `do ... end` à linha do `resources :messages`:
 
 ```ruby
 resources :messages, only: [ :index, :create, :edit, :update, :destroy ] do

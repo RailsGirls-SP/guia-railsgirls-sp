@@ -34,4 +34,4 @@ O resto acontece no próprio projeto: no capítulo [Por onde começar?]({{ site.
 
 ## E no meu computador?
 
-Também dá para programar no seu próprio computador, instalando cada ferramenta. Como isso leva tempo e muda de computador para computador, fica nos Extras, para depois do workshop: veja [No seu computador]({{ site.baseurl }}{% link bonus/no-seu-computador.md %}).
+Também dá para programar no seu próprio computador, instalando cada ferramenta. Como isso leva tempo e muda de computador para computador, fica nos Extras, para depois do workshop: veja [Instalando no seu computador]({{ site.baseurl }}{% link extras/no-seu-computador.md %}).

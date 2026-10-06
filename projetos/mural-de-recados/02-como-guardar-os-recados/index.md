@@ -30,7 +30,7 @@ Reserve uns 5 minutos. Não existe resposta errada.
 <details markdown="1">
 <summary>Abrir o nosso plano</summary>
 
-Os recados vão ficar num **[banco de dados]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#banco-de-dados)**, que funciona como uma planilha bem organizada. Cada tipo de informação ganha uma **tabela**: a nossa se chama `messages`. No código, os nomes ficam em inglês, como na maioria dos projetos de programação. Cada recado é uma **linha**, e cada informação do recado é uma **coluna**:
+Os recados vão ficar num **[banco de dados]({{ site.baseurl }}{% link extras/glossario.md %}#banco-de-dados)**, que funciona como uma planilha bem organizada. Cada tipo de informação ganha uma **tabela**: a nossa se chama `messages`. No código, os nomes ficam em inglês, como na maioria dos projetos de programação. Cada recado é uma **linha**, e cada informação do recado é uma **coluna**:
 
 | id | author | content | created_at |
 |---|---|---|---|

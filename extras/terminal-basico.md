@@ -1,6 +1,6 @@
 ---
 title: Terminal básico
-parent: Comece aqui
+parent: Extras
 nav_order: 3
 ---
 
@@ -8,9 +8,22 @@ nav_order: 3
 
 ## O que é o terminal
 
-O **[terminal]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#terminal)** é um programa em que você conversa com o computador **escrevendo**, em vez de clicar. Você digita um comando, aperta **Enter**, e o computador faz o que foi pedido e responde com texto.
+O **[terminal]({{ site.baseurl }}{% link extras/glossario.md %}#terminal)** é uma forma de interagir com o computador por texto: em vez de clicar, você escreve. Também é chamado de **linha de comando** ou **shell**.
 
-Antes de existirem janelas, ícones e mouse, era assim que todo mundo usava o computador. Hoje, quem programa continua usando o terminal porque ele é rápido, faz exatamente o que você escreveu e é fácil de repetir e de compartilhar: um comando pode ser copiado e colado, e um clique precisa ser descrito passo a passo.
+No dia a dia, você usa o computador por uma **interface gráfica**: telas com janelas, ícones e botões que você aponta e clica com o mouse. O terminal é uma **interface de texto**: você escreve um **comando**, aperta **Enter**, e o computador responde também por escrito. Antes de existirem janelas, ícones e mouse, era assim que todo mundo usava o computador.
+
+Os dois fazem muitas das mesmas coisas. Por exemplo, para criar uma pasta chamada `receitas`:
+
+| Na interface gráfica | No terminal |
+|---|---|
+| Clicar com o botão direito, escolher **Nova pasta** e digitar o nome `receitas` | Escrever `mkdir receitas` e apertar **Enter** |
+
+Por que quem programa usa tanto o terminal?
+
+- **Muitas ferramentas só existem nele.** O Rails, por exemplo, não tem botões: você usa por comandos.
+- **Um comando faz o trabalho de muitos cliques.** O `rails new` cria dezenas de arquivos de uma vez.
+- **Comandos são fáceis de repetir e compartilhar.** Alguém da equipe de mentoria pode te mandar o comando exato, e você copia e cola. Com cliques, seria preciso descrever cada passo.
+- **Funciona em computadores sem tela,** como os servidores na internet que deixam os sites no ar.
 
 Parece difícil no começo, mas no projeto você vai usar poucos comandos, e o guia mostra cada um na hora certa.
 
@@ -35,7 +48,7 @@ Fora do Codespaces, cada sistema tem o seu programa de terminal, com nomes difer
 | Linux (como o Ubuntu) | **Terminal** |
 | Windows | **Terminal**, **PowerShell** ou **Prompt de Comando** |
 
-No Windows, o PowerShell e o Prompt de Comando usam comandos diferentes dos do Linux e do Mac. Por isso, para programar em Rails no Windows, geralmente se usa o **WSL**, que roda um Linux (o Ubuntu) dentro do Windows. Veja como instalar em [No seu computador]({{ site.baseurl }}{% link bonus/no-seu-computador.md %}), nos Extras.
+No Windows, o PowerShell e o Prompt de Comando usam comandos diferentes dos do Linux e do Mac. Por isso, para programar em Rails no Windows, geralmente se usa o **WSL**, que roda um Linux (o Ubuntu) dentro do Windows. Veja como instalar em [Instalando no seu computador]({{ site.baseurl }}{% link extras/no-seu-computador.md %}), nos Extras.
 
 ## Lendo o terminal
 

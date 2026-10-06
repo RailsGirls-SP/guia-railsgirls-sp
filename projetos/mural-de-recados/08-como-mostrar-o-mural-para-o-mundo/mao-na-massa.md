@@ -114,7 +114,7 @@ Terminou? Abra o passo **4. Guarde e envie para o GitHub**
 
 O Render vai buscar o código no seu repositório do GitHub. Então, as mudanças precisam estar lá.
 
-Guarde o seu progresso com um [commit]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#commit), como no passo **Guarde o seu progresso** de [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/mao-na-massa.md %}):
+Guarde o seu progresso com um [commit]({{ site.baseurl }}{% link extras/glossario.md %}#commit), como no passo **Guarde o seu progresso** de [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/mao-na-massa.md %}):
 
 1. No painel **Source Control**, clique no **+** ao lado de **Changes** (**Stage All Changes**).
 2. Escreva a mensagem `Prepara o app para o Render` e clique em **Commit**.

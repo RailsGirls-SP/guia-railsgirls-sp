@@ -1,6 +1,6 @@
 ---
 title: "No Windows"
-parent: No seu computador
+parent: Instalando no seu computador
 grand_parent: Extras
 nav_order: 3
 ---
@@ -72,4 +72,4 @@ git --version
 
 ## E agora?
 
-Tudo instalado? Veja como começar o projeto no seu computador em [No seu computador]({{ site.baseurl }}{% link bonus/no-seu-computador.md %}#e-o-projeto).
+Tudo instalado? Veja como começar o projeto no seu computador em [Instalando no seu computador]({{ site.baseurl }}{% link extras/no-seu-computador.md %}#e-o-projeto).

@@ -25,9 +25,9 @@ Cada recado ganha uma **cor**, escolhida por quem escreveu, numa lista pequena: 
 
 ## Você vai praticar
 
-- Acrescentar uma coluna a uma tabela que já existe, com uma [migration]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#migration) nova, e dar um valor padrão a ela.
+- Acrescentar uma coluna a uma tabela que já existe, com uma [migration]({{ site.baseurl }}{% link extras/glossario.md %}#migration) nova, e dar um valor padrão a ela.
 - Acrescentar um campo de escolha ao formulário.
-- Usar um valor guardado para montar o nome de uma classe, e escrever um pouco de [CSS]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#css) seu.
+- Usar um valor guardado para montar o nome de uma classe, e escrever um pouco de [CSS]({{ site.baseurl }}{% link extras/glossario.md %}#css) seu.
 
 No código, os nomes ficam em inglês: a coluna se chama `color`, e as cores, `yellow`, `pink`, `blue` e `green`. Na tela, aparecem em português.
 

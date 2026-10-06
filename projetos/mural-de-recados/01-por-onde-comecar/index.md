@@ -20,7 +20,7 @@ Um site começa como **texto**: arquivos com instruções escritas numa linguage
 No app Mural de recados:
 
 - O seu código é a **receita**.
-- O **Ruby** é a **cozinheira**: entende a língua em que a receita está escrita e segue cada passo.
+- O **Ruby** é a **cozinheira**: entende a linguagem em que a receita está escrita e segue cada passo.
 - O **Rails** é uma **cozinha já equipada**, com utensílios e preparos básicos prontos (feitos em Ruby também). Você não precisa fazer a massa do zero: pode se concentrar no que é especial no seu prato.
 
 ```mermaid

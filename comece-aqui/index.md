@@ -20,7 +20,7 @@ Ilustração: [unDraw](https://undraw.co/)
 - **Um computador com navegador,** como o Chrome, o Firefox ou o Edge. No workshop, o projeto roda no **[GitHub Codespaces](https://github.com/features/codespaces)**: um serviço do GitHub que empresta para você um computador na nuvem, que você usa pelo navegador. Esse computador já vem com tudo que o projeto precisa, então você não instala nada.
 - **Papel e caneta,** para planejar antes de programar.
 
-Quer programar no seu próprio computador, sem o Codespaces? Fica nos Extras, para depois do workshop: veja [No seu computador]({{ site.baseurl }}{% link bonus/no-seu-computador.md %}).
+Quer programar no seu próprio computador, sem o Codespaces? Fica nos Extras, para depois do workshop: veja [Instalando no seu computador]({{ site.baseurl }}{% link extras/no-seu-computador.md %}).
 
 ## Nesta parte
 
@@ -28,12 +28,12 @@ Quer programar no seu próprio computador, sem o Codespaces? Fica nos Extras, pa
 |---|---|
 | [Instalação]({{ site.baseurl }}{% link comece-aqui/instalacao.md %}) | Onde o projeto roda: no GitHub Codespaces, sem instalar nada. Inclui como criar a conta no GitHub. |
 | [Ruby, Rails e Git]({{ site.baseurl }}{% link comece-aqui/ruby-rails-e-git.md %}) | O que é cada ferramenta, numa visão geral rápida, e as palestras do pré-evento. |
-| [Terminal básico]({{ site.baseurl }}{% link comece-aqui/terminal-basico.md %}) | O que é o terminal, como abrir e os comandos que você vai usar. |
-| [Git básico]({{ site.baseurl }}{% link comece-aqui/git-basico.md %}) | Como guardar o seu progresso com commits e desfazer o que deu errado. |
 | [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}) | Como usar uma IA para aprender, e não para fazer por você. |
-| [Glossário]({{ site.baseurl }}{% link comece-aqui/glossario.md %}) | O significado de cada termo do guia. |
+| [Por que os termos ficam em inglês?]({{ site.baseurl }}{% link comece-aqui/termos-em-ingles.md %}) | Por que o guia usa model, controller e commit, e não as traduções. |
 
 Não precisa ler tudo antes de começar. O projeto explica cada coisa na hora em que ela aparece, com links para estas páginas. Volte aqui sempre que quiser rever algo.
+
+O [Terminal básico]({{ site.baseurl }}{% link extras/terminal-basico.md %}), o [Git básico]({{ site.baseurl }}{% link extras/git-basico.md %}) e o [Glossário]({{ site.baseurl }}{% link extras/glossario.md %}) ficam nos Extras, para consultar quando precisar.
 
 ## E agora?
 

@@ -1,7 +1,7 @@
 ---
 title: Glossário
-parent: Comece aqui
-nav_order: 6
+parent: Extras
+nav_order: 5
 ---
 
 # Glossário
@@ -58,7 +58,7 @@ Neste guia, "o servidor" quase sempre quer dizer o programa.
 <details class="termo" id="html" markdown="1">
 <summary>HTML</summary>
 
-**HTML** é a língua em que as páginas da web são escritas. Ele diz **o que** tem na página: um título, um parágrafo, uma imagem, um botão, um formulário.
+**HTML** é a linguagem em que as páginas da web são escritas. Ele diz **o que** tem na página: um título, um parágrafo, uma imagem, um botão, um formulário.
 
 Cada parte da página fica entre marcações chamadas **tags**, como `<h1>` para um título e `<p>` para um parágrafo:
 
@@ -74,7 +74,7 @@ O [navegador](#navegador) lê o HTML e mostra a página. No Rails, as [views](#v
 <details class="termo" id="css" markdown="1">
 <summary>CSS</summary>
 
-**CSS** é a língua que diz **como** a página aparece: cores, tamanhos, fontes, espaços e a posição de cada coisa na tela.
+**CSS** é a linguagem que diz **como** a página aparece: cores, tamanhos, fontes, espaços e a posição de cada coisa na tela.
 
 Se o [HTML](#html) é o conteúdo da página, o CSS é a decoração. Por exemplo, esta regra deixa todos os títulos `<h1>` vermelhos:
 
@@ -95,6 +95,15 @@ Muitas vezes, em vez de escrever todo o CSS do zero, usa-se uma biblioteca pront
 
 Resumindo os três: o [HTML](#html) diz o que tem na página, o [CSS](#css) diz como ela aparece, e o JavaScript diz o que ela faz quando você interage. O [Ruby](#ruby) roda no [servidor](#servidor); o JavaScript roda no navegador.
 
+```mermaid
+%%{init: {"sequence": {"mirrorActors": false}}}%%
+sequenceDiagram
+  participant js_nav as 💻 Navegador (cliente)<br/>roda o JavaScript
+  participant js_srv as ☁️ Servidor<br/>roda o Ruby, com o Rails
+  js_nav->>js_srv: 1. requisição
+  js_srv->>js_nav: 2. resposta: HTML, CSS e JavaScript
+```
+
 Apesar do nome parecido, JavaScript não tem nada a ver com Java, que é outra linguagem.
 
 </details>
@@ -109,26 +118,9 @@ Apesar do nome parecido, JavaScript não tem nada a ver com Java, que é outra l
 <details class="termo" id="terminal" markdown="1">
 <summary>Terminal</summary>
 
-O **terminal** é uma forma de interagir com o computador por texto: em vez de clicar, você escreve.
+O **terminal** é uma forma de interagir com o computador por texto: em vez de clicar, você escreve um **comando**, aperta **Enter**, e o computador responde também por escrito. No codespace, o terminal fica na parte de baixo da tela e dá ordens para o computador na nuvem, não para o seu.
 
-No dia a dia, você usa o computador por uma **interface gráfica**: telas com janelas, ícones e botões que você aponta e clica com o mouse. O terminal é uma **interface de texto**: em vez de clicar, você escreve um **comando**, aperta **Enter**, e o computador responde também por escrito.
-
-Os dois fazem muitas das mesmas coisas. Por exemplo, para criar uma pasta chamada `receitas`:
-
-| Na interface gráfica | No terminal |
-|---|---|
-| Clicar com o botão direito, escolher **Nova pasta** e digitar o nome `receitas` | Escrever `mkdir receitas` e apertar **Enter** |
-
-Por que quem programa usa tanto o terminal?
-
-- **Muitas ferramentas só existem nele.** O Rails, por exemplo, não tem botões: você usa por comandos.
-- **Um comando faz o trabalho de muitos cliques.** O `rails new` cria dezenas de arquivos de uma vez.
-- **Comandos são fáceis de repetir e compartilhar.** Alguém da equipe de mentoria pode te mandar o comando exato, e você copia e cola. Com cliques, seria preciso descrever cada passo.
-- **Funciona em computadores sem tela,** como os servidores na internet que deixam os sites no ar.
-
-Quando o terminal termina uma tarefa e está pronto para o próximo comando, ele mostra uma linha terminando em `$`. No codespace, o terminal fica na parte de baixo da tela e dá ordens para o computador na nuvem, não para o seu.
-
-Também é chamado de **linha de comando** ou **shell**. Veja os comandos mais usados em [Terminal básico]({{ site.baseurl }}{% link comece-aqui/terminal-basico.md %}).
+Também é chamado de **linha de comando** ou **shell**. Veja o que é, por que quem programa usa tanto e os comandos do projeto em [Terminal básico]({{ site.baseurl }}{% link extras/terminal-basico.md %}).
 
 </details>
 
@@ -157,7 +149,7 @@ O **Git** é um programa que guarda o histórico de um projeto: cada versão imp
 
 É parecido com o histórico de versões de um documento on-line, com uma diferença: no Git, é você quem decide quando registrar uma versão, e cada registro ganha uma mensagem explicando a mudança. Esses registros são os [commits](#commit).
 
-O Git não é o [GitHub](#github): o **Git** é o programa que guarda o histórico; o **GitHub** é um site que guarda os projetos na internet. Veja mais em [Git básico]({{ site.baseurl }}{% link comece-aqui/git-basico.md %}).
+O Git não é o [GitHub](#github): o **Git** é o programa que guarda o histórico; o **GitHub** é um site que guarda os projetos na internet. Veja mais em [Git básico]({{ site.baseurl }}{% link extras/git-basico.md %}).
 
 </details>
 
@@ -412,7 +404,7 @@ As instruções de um programa são escritas numa [linguagem de programação](#
 
 Uma **linguagem de programação** é um jeito de escrever instruções que o computador consegue seguir. O código é texto, escrito com palavras e símbolos dessa linguagem.
 
-É parecida com uma língua como o português, só que muito mais rígida: cada palavra tem um significado exato, e uma vírgula fora do lugar pode fazer o computador não entender nada. Por isso as mensagens de erro são tão comuns, e aprender a lê-las faz parte de programar.
+É parecida com um idioma como o português, só que muito mais rígida: cada palavra tem um significado exato, e uma vírgula fora do lugar pode fazer o computador não entender nada. Por isso as mensagens de erro são tão comuns, e aprender a lê-las faz parte de programar.
 
 Existem muitas linguagens, cada uma com os seus pontos fortes. Alguns exemplos: [Ruby](#ruby), Python e JavaScript.
 

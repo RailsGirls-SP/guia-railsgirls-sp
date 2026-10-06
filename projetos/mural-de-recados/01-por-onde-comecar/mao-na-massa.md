@@ -54,13 +54,13 @@ Pode aparecer a pergunta **Do you trust the authors of the files in this folder?
 
 ![Janela Do you trust the authors of the files in this folder? com os botões Manage, Cancel e Trust Folder & Continue, este último destacado]({{ '/assets/images/mural-de-recados/01/codespace-confiar.png' | relative_url }})
 
-Quando o codespace terminar de carregar, o [terminal]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#terminal) mostra uma mensagem de boas-vindas e fica pronto para receber comandos.
+Quando o codespace terminar de carregar, o [terminal]({{ site.baseurl }}{% link extras/glossario.md %}#terminal) mostra uma mensagem de boas-vindas e fica pronto para receber comandos.
 
 **Confira:** a tela tem três áreas.
 
 - À esquerda, o **Explorer**: a lista de arquivos do projeto.
 - No meio, o **editor**: onde os arquivos abrem quando você clica neles.
-- Embaixo, o **terminal**: onde você digita comandos. Se ele não aparecer, abra pelo menu ☰ → **Terminal** → **New Terminal**. Veja mais sobre o terminal em [Terminal básico]({{ site.baseurl }}{% link comece-aqui/terminal-basico.md %}).
+- Embaixo, o **terminal**: onde você digita comandos. Se ele não aparecer, abra pelo menu ☰ → **Terminal** → **New Terminal**. Veja mais sobre o terminal em [Terminal básico]({{ site.baseurl }}{% link extras/terminal-basico.md %}).
 
 ![Codespace pronto: Explorer à esquerda com .devcontainer, LICENSE e README.md, o README do modelo aberto no meio, o terminal com a mensagem Welcome to Codespaces embaixo e o painel de chat à direita]({{ '/assets/images/mural-de-recados/01/codespace-aberto.png' | relative_url }})
 
@@ -149,7 +149,7 @@ Terminou? Abra o passo **6. Guarde o seu progresso**
 <details class="passo" markdown="1">
 <summary>6. Guarde o seu progresso</summary>
 
-Os arquivos do app estão no codespace, mas ainda não foram guardados no seu repositório no GitHub. Para guardar, você vai fazer um **commit**: um registro de como o projeto está agora, com uma mensagem dizendo o que mudou. Veja mais em [Git básico]({{ site.baseurl }}{% link comece-aqui/git-basico.md %}).
+Os arquivos do app estão no codespace, mas ainda não foram guardados no seu repositório no GitHub. Para guardar, você vai fazer um **commit**: um registro de como o projeto está agora, com uma mensagem dizendo o que mudou. Veja mais em [Git básico]({{ site.baseurl }}{% link extras/git-basico.md %}).
 
 1. Na barra da esquerda, clique no ícone de **Source Control** (o terceiro, com bolinhas ligadas por linhas). O número em cima dele mostra quantos arquivos mudaram.
 2. Ao lado de **Changes**, clique no **+** (**Stage All Changes**). Assim, todos os arquivos vão entrar no commit.

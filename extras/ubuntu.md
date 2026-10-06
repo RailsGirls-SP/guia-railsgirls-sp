@@ -1,11 +1,11 @@
 ---
-title: "No Mac"
-parent: No seu computador
+title: "No Ubuntu (Linux)"
+parent: Instalando no seu computador
 grand_parent: Extras
-nav_order: 1
+nav_order: 2
 ---
 
-# No Mac
+# No Ubuntu (Linux)
 
 <!-- TODO: testar este caminho do zero, com a versão atual do Ruby e do Rails. -->
 
@@ -13,27 +13,19 @@ Copie e cole **um comando de cada vez** no terminal e espere cada um terminar an
 
 ## 1. O Ruby
 
-Abra o aplicativo **Terminal** (procure por "Terminal" no Spotlight, com **Cmd+Espaço**). Primeiro, instale as ferramentas de linha de comando da Apple (vai abrir uma janela pedindo para confirmar):
+Abra o aplicativo **Terminal**. Instale as peças que o Ruby precisa (o `sudo` vai pedir a senha do seu computador):
 
 ```
-xcode-select --install
-```
-
-Depois, instale o [Homebrew](https://brew.sh/), um programa que instala outros programas, e as peças que o Ruby precisa:
-
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo 'export PATH="/opt/homebrew/bin:$PATH"' >> ~/.zshrc
-source ~/.zshrc
-brew install openssl@3 libyaml gmp rust
+sudo apt update
+sudo apt install build-essential rustc libssl-dev libyaml-dev zlib1g-dev libgmp-dev git
 ```
 
 Instale o mise e ative ele no terminal:
 
 ```
 curl https://mise.run | sh
-echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshrc
-source ~/.zshrc
+echo 'eval "$(~/.local/bin/mise activate bash)"' >> ~/.bashrc
+source ~/.bashrc
 ```
 
 E, por fim, o Ruby:
@@ -75,4 +67,4 @@ git --version
 
 ## E agora?
 
-Tudo instalado? Veja como começar o projeto no seu computador em [No seu computador]({{ site.baseurl }}{% link bonus/no-seu-computador.md %}#e-o-projeto).
+Tudo instalado? Veja como começar o projeto no seu computador em [Instalando no seu computador]({{ site.baseurl }}{% link extras/no-seu-computador.md %}#e-o-projeto).

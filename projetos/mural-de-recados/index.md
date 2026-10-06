@@ -12,7 +12,7 @@ Neste projeto, você vai construir um **mural de recados** na web: um app onde q
 ![Mural de recados com o título em destaque, o formulário numa caixa branca com os campos Seu nome e Recado e o botão Postar recado e, embaixo, quatro cartões amarelos lado a lado, cada um com a mensagem, a autora em itálico e os botões Editar e Apagar]({{ '/assets/images/mural-de-recados/06/mural-post-it.png' | relative_url }})
 {: .ilustracao }
 
-Você não precisa saber programar para começar. O guia explica cada passo, e no fim do dia você vai ter construído um app de verdade, com [Ruby on Rails]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#rails).
+Você não precisa saber programar para começar. O guia explica cada passo, e no fim do dia você vai ter construído um app de verdade, com [Ruby on Rails]({{ site.baseurl }}{% link extras/glossario.md %}#rails).
 
 ## Como o projeto funciona
 
@@ -52,10 +52,10 @@ Não precisa terminar tudo hoje. Cada pessoa vai num ritmo diferente, e está tu
 ## Antes de começar
 
 - **Uma conta no GitHub.** Se ainda não tem, veja [Criando uma conta no GitHub]({{ site.baseurl }}{% link comece-aqui/conta-no-github.md %}).
-- **Um navegador**, como o Chrome, o Firefox ou o Edge. O projeto roda no **GitHub Codespaces**, um computador na nuvem que já vem com tudo instalado. Quer usar o seu próprio computador? Fica nos Extras, para depois do workshop: veja [No seu computador]({{ site.baseurl }}{% link bonus/no-seu-computador.md %}).
+- **Um navegador**, como o Chrome, o Firefox ou o Edge. O projeto roda no **GitHub Codespaces**, um computador na nuvem que já vem com tudo instalado. Quer usar o seu próprio computador? Fica nos Extras, para depois do workshop: veja [Instalando no seu computador]({{ site.baseurl }}{% link extras/no-seu-computador.md %}).
 - **Papel e caneta**, para o "Pense antes de programar".
 
-Os termos novos têm um link para o [glossário]({{ site.baseurl }}{% link comece-aqui/glossario.md %}), com a explicação de cada um. Não precisa decorar nada.
+Os termos novos têm um link para o [glossário]({{ site.baseurl }}{% link extras/glossario.md %}), com a explicação de cada um. Não precisa decorar nada.
 
 ## Comece aqui
 

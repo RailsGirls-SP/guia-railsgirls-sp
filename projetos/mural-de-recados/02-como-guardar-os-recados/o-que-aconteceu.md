@@ -12,9 +12,9 @@ nav_order: 2
 
 Neste capítulo, três peças trabalharam juntas:
 
-- O **[model]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#model)** (modelo, em português) `Message` é a parte do app que cuida dos recados: guarda, busca, conta recados e apaga. Foi com ele que você conversou no console, com `Message.create` e `Message.count`. Se você abrir o arquivo dele, `app/models/message.rb`, vai ver só duas linhas. Mesmo assim, ele já sabe guardar, buscar, contar e apagar, porque esse código já vem pronto no Rails.
-- A **[migration]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#migration)** (migração, em português) é a instrução para criar a tabela no banco de dados. Ela só descreve a mudança; quem aplica é o `bin/rails db:migrate`.
-- O **[banco de dados]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#banco-de-dados)** é onde os recados ficam guardados de verdade, para serem usados depois. No app Mural de recados, ele é um banco **SQLite**: um arquivo só, `storage/development.sqlite3`, que o Rails gerencia por você.
+- O **[model]({{ site.baseurl }}{% link extras/glossario.md %}#model)** (modelo, em português) `Message` é a parte do app que cuida dos recados: guarda, busca, conta recados e apaga. Foi com ele que você conversou no console, com `Message.create` e `Message.count`. Se você abrir o arquivo dele, `app/models/message.rb`, vai ver só duas linhas. Mesmo assim, ele já sabe guardar, buscar, contar e apagar, porque esse código já vem pronto no Rails.
+- A **[migration]({{ site.baseurl }}{% link extras/glossario.md %}#migration)** (migração, em português) é a instrução para criar a tabela no banco de dados. Ela só descreve a mudança; quem aplica é o `bin/rails db:migrate`.
+- O **[banco de dados]({{ site.baseurl }}{% link extras/glossario.md %}#banco-de-dados)** é onde os recados ficam guardados de verdade, para serem usados depois. No app Mural de recados, ele é um banco **SQLite**: um arquivo só, `storage/development.sqlite3`, que o Rails gerencia por você.
 
 **Por que precisamos do model e da migration?** Pense na planilha de recados:
 
@@ -26,7 +26,7 @@ Neste capítulo, três peças trabalharam juntas:
 
 São trabalhos diferentes: um prepara o lugar, o outro trabalha com o que está lá dentro. Se um dia o recado ganhar uma informação nova, vai precisar de uma migration nova para criar a coluna, e o model passa a usar essa coluna.
 
-O Rails liga o model à tabela pelo nome: o model `Message`, no singular e com letra maiúscula, conversa com a tabela `messages`, no plural e em minúsculas. Você não precisou configurar nada: é uma **[convenção]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#convencao)** do Rails, um combinado sobre como dar nome às coisas.
+O Rails liga o model à tabela pelo nome: o model `Message`, no singular e com letra maiúscula, conversa com a tabela `messages`, no plural e em minúsculas. Você não precisou configurar nada: é uma **[convenção]({{ site.baseurl }}{% link extras/glossario.md %}#convencao)** do Rails, um combinado sobre como dar nome às coisas.
 
 Você está aqui: este é o caminho que uma requisição percorre dentro do app.
 
@@ -140,7 +140,7 @@ O console mostra algo parecido com isto:
 #<Message:0x... id: 2, author: nil, content: nil, created_at: "2026-10-03 12:10:00", updated_at: "2026-10-03 12:10:00">
 ```
 
-O [`nil`]({{ site.baseurl }}{% link comece-aqui/glossario.md %}#nil) quer dizer "nada": o recado tem número e data, mas não tem autora nem mensagem. O Rails guardou um recado vazio, porque ninguém disse a ele que isso é proibido. Guarde essa observação: ela é o assunto do capítulo [E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %}).
+O [`nil`]({{ site.baseurl }}{% link extras/glossario.md %}#nil) quer dizer "nada": o recado tem número e data, mas não tem autora nem mensagem. O Rails guardou um recado vazio, porque ninguém disse a ele que isso é proibido. Guarde essa observação: ela é o assunto do capítulo [E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %}).
 
 Para apagar esse recado vazio, digite:
 
