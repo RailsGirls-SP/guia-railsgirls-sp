@@ -31,62 +31,20 @@ Reserve uns 5 minutos. Não existe resposta errada.
 <details markdown="1">
 <summary>Abrir o nosso plano</summary>
 
-Cada cartão ganha um link **Editar** e um botão **Apagar**:
+No fim deste capítulo, cada recado ganha um link **Editar** e um botão **Apagar**:
 
-<div aria-hidden="true" markdown="1">
-
-```
-┌──────────────────────────────┐
-│ Adorei o worksop!            │
-│ — Bia                        │
-│                              │
-│ Editar   ( Apagar )          │
-└──────────────────────────────┘
-```
-
-</div>
-
-Descrição do cartão: a mensagem "Adorei o worksop!", o nome Bia e, embaixo, o link Editar e o botão Apagar.
-{: .sr-only }
+![Página com o título Mural de recados, o link Novo recado e dois recados: "Adorei o worksop!", da Bia, e "Meu primeiro recado!", da Ana; embaixo de cada um, o link Editar e o botão Apagar]({{ '/assets/images/mural-de-recados/05/editar-e-apagar.png' | relative_url }})
+{: .ilustracao }
 
 O **Editar** abre uma página só para corrigir aquele recado, com o formulário já preenchido:
 
-<div aria-hidden="true" markdown="1">
-
-```
-┌────────────────────────────────────────────────┐
-│  Corrigir recado                               │
-│                                                │
-│  Seu nome:  [ Bia______________]               │
-│  Recado:    [ Adorei o worksop!]               │
-│             [__________________]               │
-│             ( Salvar )                         │
-│                                                │
-│  Voltar                                        │
-└────────────────────────────────────────────────┘
-```
-
-</div>
-
-Descrição da tela de correção: o título Corrigir recado, o formulário com os campos Seu nome e Recado já preenchidos com Bia e "Adorei o worksop!", o botão Salvar e, embaixo, o link Voltar.
-{: .sr-only }
+![Página com o título Corrigir recado, o formulário com os campos Seu nome e Recado já preenchidos com Bia e "Adorei o worksop!", o botão Salvar e o link Voltar]({{ '/assets/images/mural-de-recados/05/corrigir-recado.png' | relative_url }})
+{: .ilustracao }
 
 O **Apagar** pergunta antes de apagar:
 
-<div aria-hidden="true" markdown="1">
-
-```
-┌────────────────────────────────────┐
-│  Quer mesmo apagar este recado?    │
-│                                    │
-│         ( Cancelar )  ( OK )       │
-└────────────────────────────────────┘
-```
-
-</div>
-
-Descrição da pergunta de confirmação: uma janela com a pergunta "Quer mesmo apagar este recado?" e os botões Cancelar e OK.
-{: .sr-only }
+![Janela do navegador, com o endereço do codespace, a pergunta "Quer mesmo apagar este recado?" e os botões Cancel e OK]({{ '/assets/images/mural-de-recados/05/confirmar-apagar.png' | relative_url }})
+{: .ilustracao }
 
 - **Qual recado:** cada recado tem um número só dele, o `id`, que o Rails criou sozinho. É por ele que o app sabe qual recado corrigir ou apagar.
 - **Corrigir** tem duas partes: abrir o formulário preenchido e, depois, salvar a correção.

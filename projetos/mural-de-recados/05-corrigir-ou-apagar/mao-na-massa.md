@@ -298,7 +298,10 @@ O `turbo_confirm` faz o navegador perguntar antes de mandar a requisição. Se a
 
 **Confira:** aparece a pergunta **Quer mesmo apagar este recado?**. Com **Cancelar**, o recado continua no mural de recados. Com **OK**, ele é apagado.
 
-<!-- TODO: captura da pergunta de confirmação -->
+![Janela do navegador, com o endereço do codespace, a pergunta "Quer mesmo apagar este recado?" e os botões Cancel e OK]({{ '/assets/images/mural-de-recados/05/confirmar-apagar.png' | relative_url }})
+{: .ilustracao }
+
+No Chrome em inglês, o botão **Cancelar** aparece como **Cancel**. A cor da janela também muda com o navegador e com o modo claro ou escuro do seu computador.
 
 O cartão inteiro fica assim:
 
