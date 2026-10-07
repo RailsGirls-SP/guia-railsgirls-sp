@@ -39,7 +39,7 @@ Ao fim de cada capítulo, o mural de recados já funciona, só que mais simples.
 | [04. Como postar um recado?]({{ site.baseurl }}{% link projetos/mural-de-recados/04-postar-um-recado/index.md %}) | …recebe recados novos por um formulário, numa página própria. |
 | [05. Errei! Como corrigir ou apagar?]({{ site.baseurl }}{% link projetos/mural-de-recados/05-corrigir-ou-apagar/index.md %}) | …deixa corrigir e apagar recados. |
 | [06. Como deixar o mural de recados mais bonito?]({{ site.baseurl }}{% link projetos/mural-de-recados/06-como-deixar-o-mural-mais-bonito/index.md %}) | …mostra os recados como post-its, lado a lado. |
-| [07. E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %}) | …recusa recados vazios e avisa o que falta. |
+| [07. E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %}) <span class="label label-blue">Opcional</span> | …recusa recados vazios e avisa o que falta. |
 | [08. Como mostrar o mural de recados para o mundo?]({{ site.baseurl }}{% link projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo/index.md %}) <span class="label label-blue">Opcional</span> | …está no ar, num endereço que qualquer pessoa pode abrir. |
 | [09. Terminei! E agora?]({{ site.baseurl }}{% link projetos/mural-de-recados/09-terminei-e-agora/index.md %}) | …está guardado, e você sabe como voltar a ele e o que fazer depois. |
 

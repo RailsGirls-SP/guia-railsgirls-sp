@@ -6,7 +6,7 @@ nav_order: 8
 has_children: true
 ---
 
-# 07. E se alguém mandar um recado vazio?
+# 07. E se alguém mandar um recado vazio? <span class="label label-blue">Opcional</span>
 
 Tempo: uns 45 minutos.
 {: .fs-5 }
