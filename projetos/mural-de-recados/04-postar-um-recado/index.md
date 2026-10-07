@@ -8,7 +8,7 @@ has_children: true
 
 # 04. Como postar um recado?
 
-Tempo: uns 50 minutos.
+Tempo: uns 60 minutos.
 {: .fs-5 }
 
 ## O desafio

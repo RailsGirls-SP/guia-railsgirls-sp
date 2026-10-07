@@ -8,7 +8,7 @@ has_children: true
 
 # 05. Errei! Como corrigir ou apagar?
 
-Tempo: uns 45 minutos.
+Tempo: uns 50 minutos.
 {: .fs-5 }
 
 ## O desafio
