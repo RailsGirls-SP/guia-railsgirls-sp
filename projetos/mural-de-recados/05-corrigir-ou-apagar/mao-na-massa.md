@@ -38,6 +38,9 @@ Para ter o que corrigir, clique em **Novo recado** e poste um recado com um erro
 
 **Confira:** o recado da Bia aparece no mural de recados, com o erro de digitação.
 
+![Página Mural de recados com o link Novo recado e dois recados: "Adorei o worksop!", da Bia, com o erro de digitação, e "Meu primeiro recado!", da Ana]({{ '/assets/images/mural-de-recados/05/recado-com-erro.png' | relative_url }})
+{: .ilustracao }
+
 Terminou? Abra o passo **3. Coloque o link Editar em cada cartão**
 
 </details>
@@ -100,6 +103,9 @@ Salve o arquivo.
 Recarregue a página principal.
 
 **Confira:** a página volta, e cada cartão ganhou um link **Editar**.
+
+![Página Mural de recados com os recados da Bia e da Ana, cada um com o link Editar embaixo]({{ '/assets/images/mural-de-recados/05/links-editar.png' | relative_url }})
+{: .ilustracao }
 
 **Dê um palpite:** a rota agora existe, mas o controller ainda não sabe fazer `edit`. Clique em **Editar** no recado da Bia: o que acontece?
 
@@ -190,7 +196,8 @@ Salve o arquivo.
 
 **Confira:** aparece **Corrigir recado**, com o formulário já preenchido com o recado da Bia. O `form_with model: @message` preenche cada campo com o que está guardado no recado.
 
-<!-- TODO: captura da página Corrigir recado preenchida -->
+![Página Corrigir recado com os campos Seu nome e Recado já preenchidos com Bia e "Adorei o worksop!", o botão Salvar e o link Voltar]({{ '/assets/images/mural-de-recados/05/corrigir-recado.png' | relative_url }})
+{: .ilustracao }
 
 Terminou? Abra o passo **8. Salve a correção**
 
@@ -232,6 +239,9 @@ Volte para a página de correção, confira o texto e clique em **Salvar**.
 
 **Confira:** você volta para o mural de recados, e o recado da Bia aparece corrigido: "Adorei o workshop!". 🎉
 
+![Página Mural de recados com o recado da Bia corrigido, "Adorei o workshop!", e o recado da Ana, cada um com o link Editar]({{ '/assets/images/mural-de-recados/05/recado-corrigido.png' | relative_url }})
+{: .ilustracao }
+
 Terminou? Abra o passo **9. Apague um recado**
 
 </details>
@@ -269,7 +279,10 @@ resources :messages, only: [ :index, :new, :create, :edit, :update, :destroy ]
 
 O `button_to` cria um botão que manda uma requisição do tipo `DELETE` (apagar) para o endereço daquele recado, como `/messages/3`.
 
-Salve os três arquivos.
+Salve os três arquivos e recarregue a página principal: cada recado ganhou um botão **Apagar**, embaixo do link **Editar**.
+
+![Página Mural de recados com os recados da Bia e da Ana, cada um com o link Editar e, embaixo, o botão Apagar]({{ '/assets/images/mural-de-recados/05/botoes-apagar.png' | relative_url }})
+{: .ilustracao }
 
 **Dê um palpite:** poste um recado de teste pela página **Novo recado** e clique em **Apagar** nele. O que acontece?
 
