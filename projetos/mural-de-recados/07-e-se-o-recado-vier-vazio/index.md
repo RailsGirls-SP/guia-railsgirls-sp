@@ -34,7 +34,7 @@ Reserve uns 5 minutos. Não existe resposta errada.
 
 No fim deste capítulo, quem tentar postar um recado vazio vai ver isto:
 
-![Mural de recados com o formulário: embaixo do campo Seu nome, em vermelho, a mensagem "Escreva o seu nome."; embaixo do campo Recado, "Escreva o seu recado."; e, mais abaixo, os cartões amarelos dos recados que já existiam]({{ '/assets/images/mural-de-recados/07/recado-recusado.png' | relative_url }})
+![Página Novo recado com o formulário: embaixo do campo Seu nome, em vermelho, a mensagem "Escreva o seu nome."; embaixo do campo Recado, "Escreva o seu recado."; depois, o botão Postar recado e o link Voltar]({{ '/assets/images/mural-de-recados/07/recado-recusado.png' | relative_url }})
 {: .ilustracao }
 
 **As regras de um recado:**

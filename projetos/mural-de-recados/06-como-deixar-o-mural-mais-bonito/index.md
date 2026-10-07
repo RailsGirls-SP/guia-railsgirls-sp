@@ -35,13 +35,14 @@ Reserve uns 5 minutos. Não existe resposta errada.
 
 No fim deste capítulo, quem abrir o app vai ver isto:
 
-![Mural de recados com o título em destaque, o formulário numa caixa branca com os campos Seu nome e Recado e o botão verde Postar recado e, embaixo, quatro cartões amarelos lado a lado, cada um com a mensagem, a autora em itálico e os botões Editar e Apagar]({{ '/assets/images/mural-de-recados/06/mural-post-it.png' | relative_url }})
+![Mural de recados com o título em destaque, o botão verde Novo recado e, embaixo, quatro cartões amarelos lado a lado, cada um com a mensagem, a autora em itálico e os botões Editar e Apagar]({{ '/assets/images/mural-de-recados/06/mural-post-it.png' | relative_url }})
 {: .ilustracao }
 
 - **Os cartões:** cada recado vira um cartão amarelo, como um post-it, com cantos arredondados e um pouco de sombra.
 - **Dentro do cartão:** a mensagem, a autora em itálico e, embaixo, os botões **Editar** e **Apagar**, este em vermelho.
 - **A grade:** os cartões ficam lado a lado, quatro por linha. Numa tela de celular, cabe um por linha.
-- **O formulário:** numa caixa branca, com os campos arrumados e um botão colorido.
+- **O botão Novo recado:** colorido, em destaque, logo abaixo do título.
+- **As páginas do formulário:** em Novo recado e em Corrigir recado, o formulário fica numa caixa branca, com os campos arrumados e um botão colorido.
 - **O mínimo:** todos os cartões da mesma cor. Quem terminar antes pode deixar cada pessoa escolher a cor do seu recado, no desafio [Cores nos recados]({{ site.baseurl }}{% link projetos/mural-de-recados/desafios-extras/cores-nos-recados.md %}).
 
 </details>

@@ -40,7 +40,7 @@ Se a pessoa não achar a linha `Parameters`, ajude a encontrar o terminal do ser
 ### Confusões comuns
 
 - **Rodar a migration antes de revisar.** Se a migration rodou sem o `default`, os recados antigos ficam com a cor vazia (e o `null: false` não foi aplicado). Desfaça com `bin/rails db:rollback`, corrija e rode de novo.
-- **Esquecer o campo da cor no `edit.html.erb`.** O formulário foi copiado no capítulo 05, então são dois lugares.
+- **Esquecer o campo da cor no `edit.html.erb`.** O formulário está no `new.html.erb` e foi copiado para o `edit.html.erb` no capítulo 05, então são dois lugares.
 - **A classe com espaço errado.** `card card-<%= message.color %>`: um espaço entre as duas classes e nenhum entre `card-` e o `<%=`.
 - **Esquecer de tirar o `has-background-warning-light`.** É a classe do Bulma que deixa todos os cartões amarelos, e ela ganha das cores da participante (as classes de cor do Bulma usam `!important`). Se tudo continuar amarelo, é ela.
 - **Cartões brancos no meio da dica 4.** É de propósito: o `card-pink` ainda não existe no CSS.
@@ -74,7 +74,7 @@ Este desafio não tem dicas de propósito: é para a participante planejar e res
 ```
 
 - **Perguntas para ajudar:** "Como o controller sabe a cor escolhida?" (o `params`, como o `params[:id]` do capítulo 05), "Onde os recados são buscados?" (na ação `index`) e "E quando não vem cor nenhuma?" (mostra todos).
-- **Confusões comuns:** criar uma rota nova sem precisar; esquecer o caso sem cor (o `where(color: nil)` não mostra nenhum recado); e o formulário de postar, que, quando o recado é recusado, usa a ação `create`, e não a `index`.
+- **Confusões comuns:** criar uma rota nova sem precisar e esquecer o caso sem cor (o `where(color: nil)` não mostra nenhum recado).
 
 ## Curtidas
 

@@ -73,3 +73,11 @@ O terceiro é melhor quando você já tem um app e quer acrescentar uma parte ne
 - **Fica fácil conferir.** Você sabe exatamente o que deveria mudar: a ação `create` no controller e a validação no model. Se a resposta mexer em outra coisa, você percebe na hora.
 
 Saber os nomes das peças também ajuda a entender o que a IA responde.
+
+## Peça também um teste
+
+Depois do workshop, quando você já entende o código, vale pedir junto um **[teste automatizado]({{ site.baseurl }}{% link glossario.md %}#teste-automatizado)**: um pequeno programa que confere sozinho se o que você pediu funciona. Por exemplo, junto com o pedido das validações:
+
+> Escreva também um teste para o model `Message` que confira que um recado sem `author` ou sem `content` é recusado.
+
+Rode o teste antes de confiar no código, com `bin/rails test`. Se ele passar, você tem uma conferência que se repete sozinha a cada mudança. E leia o teste também: ele é código como qualquer outro, e a IA pode escrever um teste que confere a coisa errada.

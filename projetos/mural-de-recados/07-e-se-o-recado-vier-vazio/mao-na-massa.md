@@ -22,7 +22,7 @@ bin/rails server
 
 Abra o app no navegador (pelo aviso **Open in Browser** ou pela aba **Ports**) e deixe essa aba aberta. Para os outros comandos, abra um terminal novo pelo botão **+**.
 
-**Confira:** o navegador mostra o mural de recados, com o formulário e os cartões amarelos.
+**Confira:** o navegador mostra o mural de recados, com o botão **Novo recado** e os cartões amarelos.
 
 Terminou? Abra o passo **2. Veja o problema de novo**
 
@@ -31,7 +31,7 @@ Terminou? Abra o passo **2. Veja o problema de novo**
 <details class="passo" markdown="1">
 <summary>2. Veja o problema de novo</summary>
 
-Deixe os dois campos vazios e clique em **Postar recado**.
+Clique em **Novo recado**, deixe os dois campos vazios e clique em **Postar recado**.
 
 **Dê um palpite:** o que vai aparecer?
 
@@ -106,11 +106,11 @@ Terminou? Abra o passo **4. Teste no navegador**
 <details class="passo" markdown="1">
 <summary>4. Teste no navegador</summary>
 
-Volte para a aba do app, deixe os dois campos vazios e clique em **Postar recado**.
+Volte para a aba do app, clique em **Novo recado**, deixe os dois campos vazios e clique em **Postar recado**.
 
 **Dê um palpite:** o cartão vazio vai aparecer?
 
-**Confira:** não aparece. O model recusou o recado, e nada foi guardado. Mas repare: também não aparece **nenhum aviso**. A página só volta como estava, e quem tentou postar não sabe o que aconteceu.
+**Confira:** não aparece. O model recusou o recado, e nada foi guardado. Mas repare: também não aparece **nenhum aviso**. O app só volta para o mural de recados, como estava, e quem tentou postar não sabe o que aconteceu.
 
 O problema está no controller. Abra o `app/controllers/messages_controller.rb` e olhe a ação `create`:
 
@@ -139,8 +139,7 @@ No `app/controllers/messages_controller.rb`, troque a ação `create` por:
     if @message.save
       redirect_to root_path
     else
-      @messages = Message.order(created_at: :desc)
-      render :index, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 ```
@@ -149,14 +148,13 @@ Salve o arquivo. Leia com calma, de cima para baixo:
 
 - `Message.new(message_params)` monta o recado com o que veio do formulário, ainda sem guardar.
 - `@message.save` tenta guardar. Ele responde `true` (verdadeiro) se o recado cumpre as regras e foi guardado, e `false` (falso) se não.
-- `if` e `else` querem dizer "se" e "senão". **Se** guardou, volta para a página principal, como antes. **Senão**, mostra a página do mural de recados de novo, com o recado recusado no formulário.
-- `render :index` mostra a view `index` sem fazer uma requisição nova. Por isso, o que a pessoa escreveu continua no formulário.
-- A view `index` também precisa da lista de recados, então o `@messages` é buscado de novo, como na ação `index`.
+- `if` e `else` querem dizer "se" e "senão". **Se** guardou, volta para a página principal, como antes. **Senão**, mostra a página **Novo recado** de novo, com o recado recusado no formulário.
+- `render :new` mostra a view `new` sem fazer uma requisição nova. Por isso, o que a pessoa escreveu continua no formulário.
 - `status: :unprocessable_entity` avisa o navegador que o formulário foi recusado.
 
-**Dê um palpite:** escreva só o seu nome, deixe o recado vazio e clique em **Postar recado**. O seu nome continua no formulário?
+**Dê um palpite:** clique em **Novo recado**, escreva só o seu nome, deixe o recado vazio e clique em **Postar recado**. O seu nome continua no formulário?
 
-**Confira:** continua! Nenhum cartão vazio aparece, e o nome fica no campo. Mas o aviso ainda não aparece: falta a view mostrar.
+**Confira:** continua! A página **Novo recado** fica aberta, com o nome no campo, e nenhum cartão vazio é guardado. Mas o aviso ainda não aparece: falta a view mostrar.
 
 Terminou? Abra o passo **6. Mostre o que falta**
 
@@ -165,7 +163,7 @@ Terminou? Abra o passo **6. Mostre o que falta**
 <details class="passo" markdown="1">
 <summary>6. Mostre o que falta</summary>
 
-Abra o `app/views/messages/index.html.erb`. No formulário, logo abaixo da linha do `form.text_field :author`, acrescente:
+Abra o `app/views/messages/new.html.erb`. No formulário, logo abaixo da linha do `form.text_field :author`, acrescente:
 
 ```erb
         <% @message.errors[:author].each do |error| %>
@@ -213,7 +211,7 @@ Salve o arquivo.
 
 **Confira:** embaixo de cada campo, em vermelho, aparece o que falta:
 
-![Mural de recados com o formulário: embaixo do campo Seu nome, em vermelho, a mensagem "Escreva o seu nome."; embaixo do campo Recado, "Escreva o seu recado."; e, mais abaixo, os cartões amarelos dos recados que já existiam]({{ '/assets/images/mural-de-recados/07/recado-recusado.png' | relative_url }})
+![Página Novo recado com o formulário: embaixo do campo Seu nome, em vermelho, a mensagem "Escreva o seu nome."; embaixo do campo Recado, "Escreva o seu recado."; depois, o botão Postar recado e o link Voltar]({{ '/assets/images/mural-de-recados/07/recado-recusado.png' | relative_url }})
 {: .ilustracao }
 
 <!-- TODO: trocar pela captura no Codespaces -->
@@ -232,7 +230,7 @@ Um post-it não cabe um livro. O nosso plano limita a mensagem a 280 caracteres.
 No `app/models/message.rb`, acrescente mais uma regra, logo abaixo das outras:
 
 ```ruby
-  validates :content, length: { maximum: 280, message: "O recado pode ter no máximo 280 caracteres." }
+validates :content, length: { maximum: 280, message: "O recado pode ter no máximo 280 caracteres." }
 ```
 
 O model fica assim:
@@ -330,16 +328,9 @@ Confira se o `app/models/message.rb` está salvo e se cada `validates` está **d
 </details>
 
 <details class="pergunta" markdown="1">
-<summary>Aparece <code>undefined method 'empty?' for nil</code></summary>
-
-A view do mural de recados precisa da lista de recados. Confira se a ação `create` tem a linha `@messages = Message.order(created_at: :desc)` dentro do `else`, antes do `render`.
-
-</details>
-
-<details class="pergunta" markdown="1">
 <summary>Cliquei em Postar recado e nada aconteceu, nem o aviso</summary>
 
-Confira se o `render :index` tem o `status: :unprocessable_entity` no fim. Sem ele, o navegador não mostra a página com o aviso. Depois, confira se a view tem os blocos do `@message.errors` do passo 6.
+Confira se o `render :new` tem o `status: :unprocessable_entity` no fim. Sem ele, o navegador não mostra a página com o aviso. Depois, confira se a view tem os blocos do `@message.errors` do passo 6.
 
 </details>
 

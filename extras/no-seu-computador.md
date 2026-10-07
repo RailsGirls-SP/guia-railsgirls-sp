@@ -37,4 +37,4 @@ No capítulo [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-re
 1. No VS Code, abra a paleta de comandos (**Cmd+Shift+P** no Mac, **Ctrl+Shift+P** no Windows e no Linux), escolha **Git: Clone** e cole o endereço do seu repositório.
 2. Abra a pasta do repositório no VS Code e siga o capítulo a partir do passo 3, **Confira as ferramentas**.
 
-Os passos são os mesmos, com uma diferença: o app abre no endereço `http://localhost:3000`, e não num endereço do Codespaces. Os passos que só existem no Codespaces, como a linha do passo 4 do capítulo 04, podem ser pulados: o guia avisa quando é o caso.
+Os passos são os mesmos, com uma diferença: o app abre no endereço `http://localhost:3000`, e não num endereço do Codespaces. Os passos que só existem no Codespaces, como a linha do passo 9 do capítulo 04, podem ser pulados: o guia avisa quando é o caso.

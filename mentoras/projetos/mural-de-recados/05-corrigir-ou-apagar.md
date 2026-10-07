@@ -13,7 +13,7 @@ nav_order: 6
 
 - "Se duas pessoas escreverem 'Oi!', como o app sabe qual das duas apagar?" Leva ao `id`.
 - "Você já apagou alguma coisa sem querer? O que teria ajudado?" Leva à confirmação.
-- "Corrigir é parecido com postar? O que muda?" Leva à ideia de formulário preenchido e às duas ações, `edit` e `update`.
+- "Corrigir é parecido com postar? O que muda?" Leva à ideia de formulário preenchido e às duas ações, `edit` e `update`, que fazem par com o `new` e o `create` do capítulo 04.
 
 ## O caminho dos erros
 
@@ -22,7 +22,7 @@ Como no capítulo 03, os erros aparecem de propósito e seguem o caminho da requ
 1. `/messages/3/edit`: **Routing Error**, `No route matches`. **Falta a rota.**
 2. Com `:edit` no `only`: **Unknown action**, `The action 'edit' could not be found`. **Falta a ação.**
 3. Com a ação: **No view template for interactive request**. **Falta a view.**
-4. Clicar em **Salvar**: **Routing Error**, `No route matches [PATCH]`, e depois **Unknown action**, `The action 'update' could not be found`.
+4. Clicar em **Salvar**: nada acontece na tela. No terminal do servidor, aparece `No route matches [PATCH]` e, depois da rota, `The action 'update' could not be found`. Como no capítulo 04, erros de formulário só aparecem no terminal.
 
 No passo 8, a participante é convidada a prever os dois erros do `update` antes de ver. Se a pessoa acertar, vale comemorar: é o sinal de que entendeu o caminho. No passo 9 (apagar), rota, ação e botão entram de uma vez.
 
@@ -32,7 +32,44 @@ No passo 8, a participante é convidada a prever os dois erros do `update` antes
 - **Onde colocar as ações.** As ações novas ficam **antes** do `private`. Depois dele, o Rails não encontra a ação, e o erro é o mesmo de quando ela não existe.
 - **O `@`.** O `edit` e o `update` usam `@message`; o `destroy` usa `message`, sem `@`. A diferença está explicada no "O que aconteceu?".
 - **A confirmação não aparece.** Normalmente é a sintaxe das chaves em `form: { data: { turbo_confirm: "..." } }`, ou a página guardada no navegador (Cmd+Shift+R).
-- **O formulário copiado.** Alguém pode perguntar se dá para não repetir o formulário. Dá, com uma *partial*, mas a gente deixou de fora de propósito. Se houver tempo e curiosidade, é um bom desafio.
+- **O formulário copiado.** O `edit.html.erb` é uma cópia do `new.html.erb`, com outro título e outro botão. Alguém pode perguntar se dá para não repetir o formulário. Dá, com uma *partial*, mas a gente deixou de fora de propósito. Se houver tempo e curiosidade, é um bom desafio.
+
+## REST, verbos HTTP e códigos de status
+
+Contexto só para a mentoria. **Não precisa levar isso para as participantes**: o guia mostra os verbos na prática (a tabela do "O que aconteceu?" deste capítulo), sem usar a palavra REST. Se alguém se interessar, é um ótimo assunto para depois do workshop.
+
+**O que é REST.** É um jeito de organizar um app web (ou uma API) em torno de **recursos**, como "recados", em que cada operação é a combinação de um **endereço** com um **verbo HTTP**. O `resources :messages` é o REST do Rails: ele cria as sete rotas padrão, e o `only` escolhe quais. O Mural de recados usa seis delas (todas menos o `show`).
+
+| Verbo | Endereço | Ação | Para quê |
+|---|---|---|---|
+| `GET` | `/messages` | `index` | ver a lista |
+| `GET` | `/messages/new` | `new` | abrir o formulário de recado novo |
+| `POST` | `/messages` | `create` | criar |
+| `GET` | `/messages/3/edit` | `edit` | abrir o formulário de correção |
+| `PATCH` | `/messages/3` | `update` | atualizar |
+| `DELETE` | `/messages/3` | `destroy` | apagar |
+
+**Por que os verbos importam.**
+
+- **O endereço diz o quê, o verbo diz o que fazer.** `/messages/3` serve para atualizar (`PATCH`) e para apagar (`DELETE`). Sem o verbo, a rota não saberia qual ação chamar.
+- **`GET` não muda nada.** É a regra mais importante: um `GET` só lê. Navegadores, buscadores e ferramentas que "pré-carregam" links fazem `GET` à vontade. Se apagar um recado fosse um `GET`, um robô passando pelo site apagaria tudo. Por isso o **Apagar** é um botão (`button_to`), e não um link.
+- **Formulários HTML só sabem `GET` e `POST`.** O Rails simula o `PATCH` e o `DELETE` com um campo escondido, `_method`, que o `form_with` e o `button_to` colocam sozinhos. No terminal do servidor, aparece o verbo final (`PATCH`, `DELETE`).
+
+**Os códigos de status.** Toda resposta leva um número que diz como foi a requisição. Os que aparecem no projeto, no terminal do servidor (na linha `Completed …`):
+
+| Código | Nome | Onde aparece |
+|---|---|---|
+| `200` | OK | qualquer página que abriu certinho |
+| `302` | Found (redirecionamento) | depois do `create`, do `update` e do `destroy`, com o `redirect_to` |
+| `404` | Not Found | rota que não existe, ou ação que não existe |
+| `422` | Unprocessable Content | recado recusado pelas validações, no capítulo 07 |
+| `500` | Internal Server Error | erro no código do app, como um `NoMethodError` |
+
+- **O `422` do capítulo 07 é o que faz o Turbo mostrar a página.** Depois de enviar um formulário, o Turbo só troca a tela se a resposta for um redirecionamento ou um erro (`4xx` ou `5xx`). Com `render :new` e status `200`, nada aparece, e o console do navegador avisa "Form responses must redirect to another location". Daí o `status: :unprocessable_entity`.
+- **O nome mudou.** O guia usa `:unprocessable_entity`, que é o nome que a maioria dos exemplos na internet usa. No Rails 8.1, o nome oficial passou a ser `:unprocessable_content`, e o terminal mostra `422 Unprocessable Content`. Os dois funcionam, sem aviso.
+- **Os erros de formulário do capítulo 04 também são `404`.** Por que eles não aparecem na tela, se o `422` aparece? A página de erro do Rails tem a linha `<meta name="turbo-visit-control" content="reload">`, que pede ao Turbo para recarregar a página em vez de mostrar a resposta. O navegador recarrega a página Novo recado, e o erro só fica no terminal. A página do `422` é uma view do próprio app, sem essa linha, e por isso aparece.
+
+**Para quem quiser ir além depois do workshop:** uma API REST usa as mesmas rotas e os mesmos verbos, mas responde com dados (geralmente JSON) em vez de páginas HTML. É um bom próximo passo, junto com o guia oficial [Rails Routing from the Outside In](https://guides.rubyonrails.org/routing.html), em inglês.
 
 ## Por que não usamos `status: :see_other`
 

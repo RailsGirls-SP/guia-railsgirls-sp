@@ -67,13 +67,13 @@ A hora está adiantada? O Rails usa o horário de Greenwich (o `UTC` do formato 
 Abra o arquivo `config/application.rb` e procure a linha:
 
 ```ruby
-    # config.time_zone = "Central Time (US & Canada)"
+# config.time_zone = "Central Time (US & Canada)"
 ```
 
 Troque por:
 
 ```ruby
-    config.time_zone = "Brasilia"
+config.time_zone = "Brasilia"
 ```
 
 Salve, desligue o servidor (**Ctrl+C**) e ligue de novo com `bin/rails server`: esse arquivo só é lido quando o servidor liga. Recarregue a página.

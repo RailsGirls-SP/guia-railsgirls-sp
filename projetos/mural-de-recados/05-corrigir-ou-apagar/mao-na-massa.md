@@ -22,7 +22,7 @@ bin/rails server
 
 Abra o app no navegador (pelo aviso **Open in Browser** ou pela aba **Ports**) e deixe essa aba aberta. Para os outros comandos, abra um terminal novo pelo botão **+**.
 
-**Confira:** o navegador mostra o mural de recados, com o formulário em cima e os recados embaixo.
+**Confira:** o navegador mostra o mural de recados, com o link **Novo recado** em cima e os recados embaixo.
 
 Terminou? Abra o passo **2. Poste um recado com erro**
 
@@ -31,7 +31,7 @@ Terminou? Abra o passo **2. Poste um recado com erro**
 <details class="passo" markdown="1">
 <summary>2. Poste um recado com erro</summary>
 
-Para ter o que corrigir, poste pelo formulário um recado com um erro de digitação de propósito:
+Para ter o que corrigir, clique em **Novo recado** e poste um recado com um erro de digitação de propósito:
 
 - **Seu nome:** Bia
 - **Recado:** Adorei o worksop!
@@ -83,13 +83,13 @@ Terminou? Abra o passo **4. Resolva o erro: crie a rota**
 Abra o `config/routes.rb`. A linha dos recados está assim:
 
 ```ruby
-  resources :messages, only: [ :index, :create ]
+resources :messages, only: [ :index, :new, :create ]
 ```
 
-O `only` (somente) lista as ações que têm rota: por enquanto, só ver a lista (`index`) e postar (`create`). Acrescente a ação `edit` (editar), a que mostra o formulário para corrigir um recado:
+O `only` (somente) lista as ações que têm rota: por enquanto, ver a lista (`index`), abrir a página do recado novo (`new`) e postar (`create`). Acrescente a ação `edit` (editar), a que mostra o formulário para corrigir um recado:
 
 ```ruby
-  resources :messages, only: [ :index, :create, :edit ]
+resources :messages, only: [ :index, :new, :create, :edit ]
 ```
 
 Salve o arquivo.
@@ -130,7 +130,7 @@ Terminou? Abra o passo **6. Mais um erro: falta a view**
 <details class="passo" markdown="1">
 <summary>6. Mais um erro: falta a view</summary>
 
-**Confira:** aparece a página **No view template for interactive request**, com a mensagem `MessagesController#edit is missing a template for request formats: text/html`. Quer dizer: a ação `edit` não tem uma view para mostrar.
+**Confira:** aparece a página **No view template for interactive request**, com a mensagem `MessagesController#edit is missing a template for request formats: text/html`. Quer dizer: a ação `edit` não tem uma view para mostrar. É o mesmo erro do `new`, no capítulo anterior.
 
 Leia o resto da mensagem: o próprio Rails diz onde ele procurou a view, em `app/views/messages/edit.html.erb`.
 
@@ -154,7 +154,7 @@ No Explorer, clique com o botão direito na pasta `app/views/messages`, escolha 
 <%= link_to "Voltar", root_path %>
 ```
 
-Salve o arquivo. É o mesmo formulário do capítulo 04, com outro título e outro botão. No fim, o `link_to` cria um link para voltar à página principal.
+Salve o arquivo. É o mesmo formulário do `new.html.erb`, do capítulo 04, com outro título e outro botão. Se quiser, copie o `new.html.erb` e mude só essas duas coisas.
 
 **Dê um palpite:** recarregue a página. O formulário vai aparecer vazio ou preenchido?
 
@@ -174,7 +174,7 @@ Ninguém vai digitar `/messages/3/edit` na barra de endereço. Vamos pôr um lin
 Abra o `app/views/messages/index.html.erb`. Dentro do cartão, logo abaixo da linha da autora, acrescente:
 
 ```erb
-    <%= link_to "Editar", edit_message_path(message) %>
+<%= link_to "Editar", edit_message_path(message) %>
 ```
 
 O cartão fica assim:
@@ -189,7 +189,7 @@ O cartão fica assim:
 
 Salve o arquivo e volte para a página principal do app.
 
-- `link_to` cria um link: primeiro o texto, depois o endereço.
+- `link_to` cria um link, como o **Novo recado** do capítulo 04: primeiro o texto, depois o endereço.
 - `edit_message_path(message)` monta o endereço de correção daquele recado, com o número certo: `/messages/3/edit` para o recado 3, `/messages/1/edit` para o recado 1. Esse nome veio da rota `edit` que você criou.
 
 **Confira:** cada cartão tem um link **Editar**. Clique no de outro recado e veja o número mudar no endereço.
@@ -205,19 +205,31 @@ Abra a correção do recado da Bia, troque `worksop` por `workshop` e clique em 
 
 **Dê um palpite:** o que vai acontecer?
 
-**Confira:** aparece a página de erro **Routing Error**, com a mensagem `No route matches [PATCH] "/messages/3"`. O `PATCH` é o tipo de requisição que o navegador usa para **atualizar** alguma coisa, e não existe rota para isso ainda.
+**Confira:** na tela, nada acontece. Como no capítulo 04, o erro de um formulário aparece no **terminal do servidor**:
+
+```
+ActionController::RoutingError (No route matches [PATCH] "/messages/3"):
+```
+
+O `PATCH` é o tipo de requisição que o navegador usa para **atualizar** alguma coisa, e não existe rota para isso ainda.
 
 **Dê um palpite:** pelo que você viu nos passos 4 e 5, o que falta? E depois, qual vai ser o próximo erro?
 
 No `config/routes.rb`, acrescente a ação `update` (atualizar), a que guarda a correção:
 
 ```ruby
-  resources :messages, only: [ :index, :create, :edit, :update ]
+resources :messages, only: [ :index, :new, :create, :edit, :update ]
 ```
 
 Salve, volte para a página de correção e clique em **Salvar** de novo.
 
-**Confira:** agora aparece a página **Unknown action**, com a mensagem `The action 'update' could not be found for MessagesController`. Acertou? Falta a ação.
+**Confira:** de novo, nada na tela. No terminal do servidor, aparece:
+
+```
+AbstractController::ActionNotFound (The action 'update' could not be found for MessagesController):
+```
+
+Acertou? Falta a ação.
 
 No `app/controllers/messages_controller.rb`, logo depois do `edit` e antes do `private`, acrescente:
 
@@ -251,7 +263,7 @@ Agora você já conhece o caminho: rota, ação e, na tela, um jeito de chamar a
 **A rota.** No `config/routes.rb`, acrescente a ação `destroy` (destruir, apagar):
 
 ```ruby
-  resources :messages, only: [ :index, :create, :edit, :update, :destroy ]
+resources :messages, only: [ :index, :new, :create, :edit, :update, :destroy ]
 ```
 
 **A ação.** No `app/controllers/messages_controller.rb`, logo depois do `update` e antes do `private`, acrescente:
@@ -271,14 +283,14 @@ Agora você já conhece o caminho: rota, ação e, na tela, um jeito de chamar a
 **O botão.** No `app/views/messages/index.html.erb`, logo abaixo do link **Editar**, acrescente:
 
 ```erb
-    <%= button_to "Apagar", message, method: :delete %>
+<%= button_to "Apagar", message, method: :delete %>
 ```
 
 O `button_to` cria um botão que manda uma requisição do tipo `DELETE` (apagar) para o endereço daquele recado, como `/messages/3`.
 
 Salve os três arquivos.
 
-**Dê um palpite:** poste um recado de teste pelo formulário e clique em **Apagar** nele. O que acontece?
+**Dê um palpite:** poste um recado de teste pela página **Novo recado** e clique em **Apagar** nele. O que acontece?
 
 **Confira:** o recado some do mural de recados.
 
@@ -294,7 +306,7 @@ Um clique sem querer em **Apagar**, e o recado some para sempre. O nosso plano p
 No `app/views/messages/index.html.erb`, troque a linha do botão por:
 
 ```erb
-    <%= button_to "Apagar", message, method: :delete, form: { data: { turbo_confirm: "Quer mesmo apagar este recado?" } } %>
+<%= button_to "Apagar", message, method: :delete, form: { data: { turbo_confirm: "Quer mesmo apagar este recado?" } } %>
 ```
 
 Salve o arquivo e recarregue a página.
@@ -363,7 +375,7 @@ A view está usando o endereço de correção, mas a rota `edit` não existe. Co
 <details class="pergunta" markdown="1">
 <summary>Cliquei em Salvar, mas o recado não mudou</summary>
 
-Confira a ação `update` no controller: ela precisa ter a linha `@message.update(message_params)`. Sem ela, o Rails busca o recado e volta para a página principal sem mudar nada.
+Primeiro, olhe o **terminal do servidor**: se apareceu um erro, ele está lá, e não no navegador. Se não tiver erro, confira a ação `update` no controller: ela precisa ter a linha `@message.update(message_params)`. Sem ela, o Rails busca o recado e volta para a página principal sem mudar nada.
 
 </details>
 

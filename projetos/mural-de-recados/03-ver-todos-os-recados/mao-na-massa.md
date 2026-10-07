@@ -67,7 +67,7 @@ Ilustração: [unDraw](https://undraw.co/)
 No Explorer, abra o arquivo `config/routes.rb`. Ele tem várias linhas começando com `#`: são comentários, que o Rails ignora. Logo antes do último `end`, acrescente esta linha, **sem** o `#` na frente (com o `#`, ela vira comentário e o Rails ignora):
 
 ```ruby
-  get "messages", to: "messages#index"
+get "messages", to: "messages#index"
 ```
 
 Salve o arquivo (**Cmd+S** no Mac, **Ctrl+S** no Windows e no Linux).

@@ -91,13 +91,13 @@ Daria, com o `@message.errors.full_messages`, mas o Rails monta essas frases jun
 <details class="passo" markdown="1">
 <summary>Quebre de propósito <span class="label label-blue">Opcional</span></summary>
 
-Na ação `create`, coloque um `#` na frente da linha `@messages = Message.order(created_at: :desc)`, a que fica dentro do `else`. Salve, deixe o formulário vazio e clique em **Postar recado**.
+Na ação `create`, troque a linha `render :new, status: :unprocessable_entity` por `redirect_to new_message_path`. Salve, clique em **Novo recado**, escreva só o seu nome e clique em **Postar recado**.
 
 **Dê um palpite:** o que vai acontecer?
 
-Aparece a página de erro **NoMethodError in Messages#create**, com a mensagem `undefined method 'empty?' for nil`. A view do mural de recados pergunta se a lista está vazia (`@messages.empty?`), mas o controller não preparou a lista: para a view, `@messages` é "nada" (`nil`).
+A página **Novo recado** volta, mas vazia: o seu nome sumiu, e nenhum aviso aparece. O `redirect_to` manda o navegador fazer uma requisição nova, e a ação `new` prepara um recado em branco, sem nada do que você escreveu e sem os avisos. É por isso que, quando o recado é recusado, o controller usa o `render`.
 
-Tire o `#` e salve.
+Volte a linha para `render :new, status: :unprocessable_entity` e salve.
 
 Agora, no model, troque `presence: { message: "Escreva o seu nome." }` por só `presence: true`. Salve e poste um recado sem nome.
 
@@ -111,6 +111,17 @@ Volte para `presence: { message: "Escreva o seu nome." }`, salve e poste de novo
 
 <details class="passo" markdown="1">
 <summary>Preciso de IA para este capítulo?</summary>
+
+Não. As regras são poucas linhas no model, e o próprio Rails guarda os avisos de cada campo.
+
+Se quiser usar uma IA, use como tutora: peça para ela explicar, e faça você cada passo. Por exemplo:
+
+> Por que as regras de um recado ficam no model, e não no formulário? Me explique sem me dar código.
+
+Veja como começar a conversa em [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}).
+
+<details class="pergunta" markdown="1">
+<summary>E se eu pedisse o código para a IA? <span class="label label-purple">Para ir além</span></summary>
 
 Este capítulo é o melhor exemplo do porquê de pensar antes de pedir.
 
@@ -127,6 +138,9 @@ Confira o resultado contra o plano:
 - A ação `create` e a ação `update` conferem se deu certo, com `if`?
 - O que a pessoa escreveu continua no formulário quando o recado é recusado?
 
+Veja mais dicas em [Como pedir código para uma IA]({{ site.baseurl }}{% link extras/como-pedir-codigo-para-uma-ia.md %}), nos Extras.
+
+</details>
 </details>
 
 <details class="passo" markdown="1">

@@ -65,7 +65,7 @@ Só abra depois de fazer o seu. Se o seu plano for diferente, tudo bem: compare 
 
 ### As telas
 
-A tela principal tem tudo junto: o formulário para postar um recado em cima e o mural de recados com os cartões embaixo. Cada cartão tem botões para editar e apagar:
+A tela principal mostra o mural de recados, com os cartões, e um botão para postar um recado novo. Cada cartão tem botões para editar e apagar:
 
 <div aria-hidden="true" markdown="1">
 
@@ -73,10 +73,7 @@ A tela principal tem tudo junto: o formulário para postar um recado em cima e o
 ┌────────────────────────────────────────────────┐
 │  Mural de recados                              │
 │                                                │
-│  Seu nome:  [__________________]               │
-│  Recado:    [__________________]               │
-│             [__________________]               │
-│             ( Postar recado )                  │
+│  ( Novo recado )                               │
 │                                                │
 │  ┌────────────┐ ┌────────────┐ ┌────────────┐  │
 │  │ Bem-vindas │ │ Adorei o   │ │ Meu 1º app │  │
@@ -92,10 +89,31 @@ A tela principal tem tudo junto: o formulário para postar um recado em cima e o
 
 </div>
 
-Descrição da tela principal: no topo, o título Mural de recados. Embaixo, o formulário com os campos Seu nome e Recado e o botão Postar recado. Mais abaixo, três cartões lado a lado, cada um com uma mensagem, o nome de quem escreveu (Ana, Bia e Carla) e os links editar e apagar.
+Descrição da tela principal: no topo, o título Mural de recados. Embaixo, o botão Novo recado. Mais abaixo, três cartões lado a lado, cada um com uma mensagem, o nome de quem escreveu (Ana, Bia e Carla) e os links editar e apagar.
 {: .sr-only }
 
-Para corrigir um recado, uma segunda tela mostra o mesmo formulário, já preenchido com o recado escolhido:
+O botão **Novo recado** abre uma segunda tela, só com o formulário para escrever o recado:
+
+<div aria-hidden="true" markdown="1">
+
+```
+┌────────────────────────────────────────────────┐
+│  Novo recado                                   │
+│                                                │
+│  Seu nome:  [__________________]               │
+│  Recado:    [__________________]               │
+│             [__________________]               │
+│             ( Postar recado )  voltar          │
+│                                                │
+└────────────────────────────────────────────────┘
+```
+
+</div>
+
+Descrição da tela do recado novo: o título Novo recado, o formulário com os campos Seu nome e Recado, vazios, o botão Postar recado e o link voltar.
+{: .sr-only }
+
+Para corrigir um recado, uma terceira tela mostra o mesmo formulário, já preenchido com o recado escolhido:
 
 <div aria-hidden="true" markdown="1">
 
@@ -191,7 +209,7 @@ Compare estes dois pedidos para uma ferramenta de IA.
 
 **Pedido 2: com o seu plano**
 
-> Faz um mural de recados em Rails. Cada recado tem autora (texto curto) e mensagem (texto longo). Uma página mostra o formulário para postar um recado e, embaixo, os recados como cartões, cada um com botões de editar e apagar. Não aceitar recado sem autora ou sem mensagem, nem mensagens com mais de 280 caracteres.
+> Faz um mural de recados em Rails. Cada recado tem autora (texto curto) e mensagem (texto longo). A página principal mostra os recados como cartões, cada um com botões de editar e apagar, e um botão "Novo recado", que abre uma página com o formulário para postar. Não aceitar recado sem autora ou sem mensagem, nem mensagens com mais de 280 caracteres.
 
 Os dois vão gerar código. Mas, com o pedido 1, a IA precisa **inventar** cada decisão que você tomou no seu plano: quais informações um recado tem, como a tela é organizada, se um recado vazio é aceito. Ela vai escolher alguma coisa, e talvez não seja o que você queria.
 

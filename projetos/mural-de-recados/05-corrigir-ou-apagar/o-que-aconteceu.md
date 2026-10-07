@@ -17,13 +17,14 @@ nav_order: 2
 1. `edit` busca o recado e mostra o formulário já preenchido.
 2. `update` recebe o formulário, troca o que mudou e guarda no banco de dados.
 
-Postar, no capítulo 04, também tinha essa ideia: o formulário aparece na página principal (`index`), e o `create` guarda o recado novo.
+Postar, no capítulo 04, tem a mesma ideia: o `new` mostra o formulário vazio, e o `create` guarda o recado novo. São dois pares que andam juntos: `new` e `create`, `edit` e `update`.
 
 **Cada requisição tem um tipo.** O navegador não manda só o endereço: ele diz também **o que quer fazer** com ele. Esse tipo de requisição se chama **verbo HTTP**:
 
 | O que a pessoa faz | Verbo | Endereço | Ação |
 |---|---|---|---|
 | Vê o mural de recados | `GET` (pegar) | `/` ou `/messages` | `index` |
+| Abre a página do recado novo | `GET` (pegar) | `/messages/new` | `new` |
 | Posta um recado | `POST` (enviar) | `/messages` | `create` |
 | Abre a correção | `GET` (pegar) | `/messages/3/edit` | `edit` |
 | Salva a correção | `PATCH` (atualizar) | `/messages/3` | `update` |
@@ -90,14 +91,14 @@ O **Editar** só abre uma página, sem mudar nada: um link (`GET`) basta. O **Ap
 <details class="pergunta" markdown="1">
 <summary>E se eu tirar o only da rota?</summary>
 
-Sem o `only`, o `resources :messages` cria as rotas das sete ações do Rails, incluindo duas que o mural de recados não usa: `new` e `show`. Veja a lista no [glossário]({{ site.baseurl }}{% link glossario.md %}#acao). Com o `only`, o app só tem as rotas que você precisa.
+Sem o `only`, o `resources :messages` cria as rotas das sete ações do Rails, incluindo uma que o mural de recados não usa: `show`, a página de um recado só. Veja a lista no [glossário]({{ site.baseurl }}{% link glossario.md %}#acao). Com o `only`, o app só tem as rotas que você precisa.
 
 </details>
 
 <details class="pergunta" markdown="1">
 <summary>Eu copiei o formulário. Tem jeito de não repetir? <span class="label label-purple">Para ir além</span></summary>
 
-Tem: o Rails permite separar um pedaço de view num arquivo próprio, chamado *partial*, e usar esse pedaço em várias views. A gente preferiu copiar para deixar cada view completa e fácil de ler. Se quiser experimentar, procure por *partials* no guia [Layouts and Rendering in Rails](https://guides.rubyonrails.org/layouts_and_rendering.html#using-partials), em inglês.
+Tem: o Rails permite separar um pedaço de view num arquivo próprio, chamado *partial*, e usar esse pedaço em várias views. O `new.html.erb` e o `edit.html.erb` são um ótimo exemplo: os dois têm o mesmo formulário, e só mudam o título e o botão. A gente preferiu copiar para deixar cada view completa e fácil de ler. Se quiser experimentar, procure por *partials* no guia [Layouts and Rendering in Rails](https://guides.rubyonrails.org/layouts_and_rendering.html#using-partials), em inglês.
 
 </details>
 
@@ -116,7 +117,7 @@ Agora tire o `:destroy` da lista do `only`, em `config/routes.rb`, salve e recar
 
 **Dê um palpite:** clique em **Apagar** num recado e depois em **OK**. O que acontece?
 
-Aparece a página de erro **Routing Error**, com a mensagem `No route matches [DELETE] "/messages/3"`. O botão existe e manda a requisição, mas nenhuma rota recebe o verbo `DELETE` para esse endereço. Repare: o endereço `/messages/3` ainda existe, para o `PATCH` do `update`. O que falta é a rota para **apagar**.
+Na tela, nada acontece: o recado continua lá. No terminal do servidor, aparece `No route matches [DELETE] "/messages/3"`. O botão existe e manda a requisição, mas nenhuma rota recebe o verbo `DELETE` para esse endereço. Repare: o endereço `/messages/3` ainda existe, para o `PATCH` do `update`. O que falta é a rota para **apagar**.
 
 Coloque o `:destroy` de volta, salve e recarregue: o mural de recados volta ao normal.
 
@@ -126,6 +127,15 @@ Coloque o `:destroy` de volta, salve e recarregue: o mural de recados volta ao n
 <summary>Preciso de IA para este capítulo?</summary>
 
 Não. Você repetiu o mesmo caminho do capítulo 03, rota, controller e view, e os erros mostraram cada peça que faltava.
+
+Se quiser usar uma IA, use como tutora: peça para ela explicar, e faça você cada passo. Por exemplo:
+
+> Por que, no Rails, apagar alguma coisa é feito com um botão, e não com um link? Me explique sem me dar código.
+
+Veja como começar a conversa em [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}).
+
+<details class="pergunta" markdown="1">
+<summary>E se eu pedisse o código para a IA? <span class="label label-purple">Para ir além</span></summary>
 
 Se você pedir para uma IA "fazer o editar e o apagar", é bem provável que ela sugira o *scaffold*, ou que crie as sete ações de uma vez, incluindo páginas que o mural de recados não usa. Por isso, o pedido funciona melhor com o seu plano:
 
@@ -137,6 +147,9 @@ Mesmo com um bom pedido, confira o resultado contra o plano:
 - O **Apagar** pergunta antes de apagar?
 - O controller usa `message_params`, e não `params` direto?
 
+Veja mais dicas em [Como pedir código para uma IA]({{ site.baseurl }}{% link extras/como-pedir-codigo-para-uma-ia.md %}), nos Extras.
+
+</details>
 </details>
 
 <details class="passo" markdown="1">

@@ -280,8 +280,8 @@ No Rails, as ações têm nomes em inglês que seguem uma [convenção](#convenc
 | Ação | Tradução | O que faz | No Mural de recados |
 |---|---|---|---|
 | `index` | índice, lista | mostra a lista de itens | ver todos os recados |
-| `show` | mostrar | mostra um item só | ver um recado |
-| `new` | novo | mostra o formulário para criar um item | abrir o formulário de recado |
+| `show` | mostrar | mostra um item só | (o app não usa) |
+| `new` | novo | mostra o formulário para criar um item | abrir a página Novo recado |
 | `create` | criar | guarda o item novo | postar o recado |
 | `edit` | editar | mostra o formulário para mudar um item | abrir um recado para corrigir |
 | `update` | atualizar | guarda as mudanças | salvar a correção |
@@ -536,6 +536,42 @@ flowchart LR
     gl_bia_valor["📦 dentro da caixa:<br/>#quot;Bia#quot;<br/>(o #quot;Ana#quot; saiu)"]
   end
 ```
+
+</details>
+
+<details class="termo" id="private" markdown="1">
+<summary>private e public <span class="label label-purple">Para ir além</span></summary>
+
+Cada `def` do controller cria um **método** (em inglês, *method*): um bloco de código com um nome, que faz uma tarefa. As ações, como `index` e `create`, são métodos.
+
+Por padrão, os métodos são **públicos** (`public`): outras partes do app podem usar. No controller, o Rails trata cada método público como uma [ação](#acao), que uma rota pode chamar por um endereço.
+
+A palavra **`private`** (privado) muda isso. Todos os métodos escritos **depois** dela só podem ser usados por dentro do próprio controller. É por isso que o `message_params` fica depois do `private`: ele ajuda as ações, mas não é uma ação.
+
+```ruby
+class MessagesController < ApplicationController
+  def create          # público: é uma ação
+    Message.create(message_params)
+    redirect_to root_path
+  end
+
+  private
+
+  def message_params  # privado: só o controller usa
+    params.expect(message: [ :author, :content ])
+  end
+end
+```
+
+**Por que é importante deixar um método privado:**
+
+- **Segurança.** No controller, um método público pode virar uma ação, e uma ação pode ser chamada por um endereço. Deixando privado o que não é ação, ninguém consegue usar esse método de fora do app.
+- **Clareza.** Quem lê o código sabe na hora o que é usado de fora (as ações) e o que é só um ajudante por dentro (como o `message_params`).
+- **Liberdade para mudar.** Como só o próprio controller usa um método privado, dá para mudar ou renomear esse método sem medo de quebrar outra parte do app.
+
+Atenção: uma ação escrita depois do `private` não funciona. O Rails não encontra, e aparece o erro `The action '…' could not be found`.
+
+Não é preciso escrever `public`: tudo que vem antes do `private` já é público.
 
 </details>
 

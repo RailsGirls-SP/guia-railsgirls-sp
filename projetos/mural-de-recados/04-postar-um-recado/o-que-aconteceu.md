@@ -10,31 +10,45 @@ nav_order: 2
 <details class="passo" markdown="1" open>
 <summary>Por dentro do app</summary>
 
-Postar um recado usa **duas** requisições, uma depois da outra:
+Postar um recado usa **três** requisições, uma depois da outra:
 
-1. **Enviar o formulário.** Quando a pessoa clica em **Postar recado**, o navegador faz uma requisição `POST /messages`, levando o que foi escrito. A rota manda para a ação `create`, que pede ao model para guardar o recado no banco de dados.
-2. **Voltar para o mural de recados.** O `create` não monta nenhuma página: ele responde "vá para a página principal" (`redirect_to root_path`). O navegador faz então uma requisição `GET /`, e a ação `index`, que você criou no capítulo anterior, mostra o mural de recados, já com o recado novo.
-
-Você está aqui: este é o caminho que uma requisição percorre dentro do app.
+1. **Abrir o formulário.** Quando a pessoa clica em **Novo recado**, o navegador faz uma requisição `GET /messages/new`. A rota manda para a ação `new`, que prepara um recado em branco, e a view `new.html.erb` mostra o formulário.
+2. **Enviar o formulário.** Quando a pessoa clica em **Postar recado**, o navegador faz uma requisição `POST /messages`, levando o que foi escrito. A rota manda para a ação `create`, que pede ao model para guardar o recado no banco de dados.
+3. **Voltar para o mural de recados.** O `create` não monta nenhuma página: ele responde "vá para a página principal" (`redirect_to root_path`). O navegador faz então uma requisição `GET /`, e a ação `index`, que você criou no capítulo anterior, mostra o mural de recados, já com o recado novo.
 
 ```mermaid
-flowchart LR
-  Navegador --> Rota --> Controller
-  Controller <--> Model
-  Model <--> Banco[(Banco de dados)]
-  Controller --> View --> Navegador
-
-  classDef aqui fill:#73121b,stroke:#f2b8be,stroke-width:2px,color:#fff
-  classDef visto fill:#fbe3e5,stroke:#c98b91,color:#490606
-  class Rota,Controller,View aqui
-  class Model,Banco visto
+%%{init: {"sequence": {"mirrorActors": false}}}%%
+sequenceDiagram
+  participant N as 💻 Navegador
+  participant C as Controller
+  participant M as Model
+  participant B as Banco de dados
+  Note over N,B: 1. Abrir o formulário
+  N->>C: GET /messages/new (ação new)
+  C->>M: Message.new
+  M-->>C: um recado em branco, só na memória
+  C-->>N: página Novo recado, com o formulário
+  Note over N,B: 2. Enviar o formulário
+  N->>C: POST /messages, com o recado (ação create)
+  C->>M: Message.create
+  M->>B: guarda o recado
+  B-->>M: guardado
+  M-->>C: o recado novo salvo
+  C-->>N: "vá para a página principal" (redirect_to)
+  Note over N,B: 3. Voltar para o mural de recados
+  N->>C: GET / (ação index)
+  C->>M: busca os recados
+  M->>B: lê os recados
+  B-->>M: os recados
+  M-->>C: a lista de recados
+  C-->>N: mural de recados, com o recado novo
 ```
 
-Em vermelho escuro, as peças deste capítulo; em rosa claro, as que você já conhece dos capítulos anteriores.
+Em cada requisição, a rota escolhe a ação do controller, como você viu no capítulo anterior.
 
 #### O formulário e o recado em branco
 
-A view monta o formulário a partir do recado em branco que o controller preparou (`@message = Message.new`). É por isso que os campos se chamam `author` e `content`, iguais às colunas da tabela: o formulário sabe quais informações um recado tem.
+A view `new.html.erb` monta o formulário a partir do recado em branco que a ação `new` preparou (`@message = Message.new`). É por isso que os campos se chamam `author` e `content`, iguais às colunas da tabela: o formulário sabe quais informações um recado tem.
 
 #### O que viaja do navegador até o controller
 
@@ -52,7 +66,9 @@ O `message_params` não pega tudo que chegou: ele diz exatamente o que o control
 
 #### O resources e a convenção
 
-O `resources :messages` criou as rotas pela [convenção]({{ site.baseurl }}{% link glossario.md %}#convencao) do Rails: `GET /messages` vai para o `index`, e `POST /messages` vai para o `create`. Os dois usam o mesmo endereço; o que muda é o tipo de requisição. Com o `only`, o app só tem as rotas que você usa.
+O `resources :messages` criou as rotas pela [convenção]({{ site.baseurl }}{% link glossario.md %}#convencao) do Rails: `GET /messages` vai para o `index`, `GET /messages/new` vai para o `new`, e `POST /messages` vai para o `create`. O `index` e o `create` usam o mesmo endereço; o que muda é o tipo de requisição. Com o `only`, o app só tem as rotas que você usa.
+
+A convenção também dá nome aos endereços: é daí que vem o `new_message_path` do link **Novo recado**. Por isso, o link só funcionou depois que a rota existia.
 
 </details>
 
@@ -90,7 +106,7 @@ Se o `create` mostrasse o mural de recados direto, a última requisição do nav
 <details class="pergunta" markdown="1">
 <summary>Por que existe o private no controller?</summary>
 
-Tudo que vem depois do `private` só pode ser usado pelo próprio controller. Assim, o `message_params` não vira uma ação, e ninguém consegue chamar ele por um endereço. As ações, como `index` e `create`, ficam sempre antes do `private`.
+Tudo que vem depois do `private` só pode ser usado pelo próprio controller. Assim, o `message_params` não vira uma ação, e ninguém consegue chamar ele por um endereço. As ações, como `index`, `new` e `create`, ficam sempre antes do `private`.
 
 </details>
 
@@ -99,19 +115,19 @@ Tudo que vem depois do `private` só pode ser usado pelo próprio controller. As
 <details class="passo" markdown="1">
 <summary>Quebre de propósito <span class="label label-blue">Opcional</span></summary>
 
-No controller, coloque um `#` na frente da linha `@message = Message.new`, para ela virar comentário. Salve e recarregue a página.
+No controller, coloque um `#` na frente da linha `@message = Message.new`, para ela virar comentário. Salve e abra a página **Novo recado**.
 
 **Dê um palpite:** o que vai acontecer?
 
-Aparece a página de erro **ArgumentError in Messages#index**, com a mensagem `Passed nil to the :model argument, expect an object or false`. O `form_with` recebeu "nada" (`nil`) no lugar do recado em branco e não sabe montar o formulário.
+Aparece a página de erro **ArgumentError in Messages#new**, com a mensagem `Passed nil to the :model argument, expect an object or false`. O `form_with` recebeu "nada" (`nil`) no lugar do recado em branco e não sabe montar o formulário.
 
 Tire o `#`, salve e recarregue: o formulário volta.
 
-Agora, coloque um `#` na frente da linha `redirect_to root_path`, na ação `create`. Salve, recarregue a página e poste um recado.
+Agora, coloque um `#` na frente da linha `redirect_to root_path`, na ação `create`. Salve, recarregue a página **Novo recado** e poste um recado.
 
 **Dê um palpite:** o recado vai aparecer?
 
-Parece que nada aconteceu: a página não muda, e o texto continua no formulário. Mas recarregue a página: o recado está lá! Ele foi guardado, só que o `create` não mandou o navegador de volta para o mural de recados. Esse é outro tipo de problema sem mensagem de erro: o app funciona pela metade.
+Parece que nada aconteceu: a página não muda, e o texto continua no formulário. Mas clique em **Voltar**: o recado está lá! Ele foi guardado, só que o `create` não mandou o navegador de volta para o mural de recados. Esse é outro tipo de problema sem mensagem de erro: o app funciona pela metade.
 
 Tire o `#`, salve, e apague o recado de teste pelo console (`Message.last.destroy`).
 
@@ -120,23 +136,36 @@ Tire o `#`, salve, e apague o recado de teste pelo console (`Message.last.destro
 <details class="passo" markdown="1">
 <summary>Preciso de IA para este capítulo?</summary>
 
-Não. O formulário, a rota e a ação seguem o mesmo caminho dos capítulos anteriores, e os erros mostram cada peça que falta.
+Não. O formulário, a rota e as ações seguem o mesmo caminho dos capítulos anteriores, e os erros mostram cada peça que falta.
 
-Se você pedir para uma IA "fazer um formulário para postar recados", é comum ela criar uma página separada para o formulário (a ação `new`), ou sugerir o *scaffold*. O nosso plano pede o formulário na própria página do mural de recados. Por isso, o pedido funciona melhor com o plano:
+Se quiser usar uma IA, use como tutora: peça para ela explicar, e faça você cada passo. Por exemplo:
 
-> No meu app Rails, o model `Message` tem `author` e `content`. Quero um formulário na mesma página da lista de recados (a ação `index`), com os campos "Seu nome" e "Recado" e o botão "Postar recado". Depois de postar, volta para a lista. Sem scaffold, e só com as rotas necessárias.
+> Qual é a diferença entre uma requisição GET e uma POST? Me explique com um exemplo do dia a dia, sem me dar código.
+
+Veja como começar a conversa em [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}).
+
+<details class="pergunta" markdown="1">
+<summary>E se eu pedisse o código para a IA? <span class="label label-purple">Para ir além</span></summary>
+
+Se você pedir para uma IA "fazer um formulário para postar recados", é comum ela sugerir o *scaffold*, que cria de uma vez todas as páginas e ações, inclusive as que o plano não pede. Por isso, o pedido funciona melhor com o plano:
+
+> No meu app Rails, o model `Message` tem `author` e `content`. Quero uma página "Novo recado" (a ação `new`), com os campos "Seu nome" e "Recado" e o botão "Postar recado", e um link "Novo recado" na página da lista. Depois de postar, volta para a lista. Sem scaffold, e só com as rotas necessárias.
 
 Confira o resultado contra o plano:
 
-- O formulário está na página do mural de recados, e não numa página separada?
+- Tem só o que o plano pede: a página Novo recado e o link na lista, sem páginas a mais?
 - O controller usa uma lista do que aceita (como o `message_params`), e não `params` direto?
 - A rota tem `only`, só com as ações que você usa?
 
+Veja mais dicas em [Como pedir código para uma IA]({{ site.baseurl }}{% link extras/como-pedir-codigo-para-uma-ia.md %}), nos Extras.
+
+</details>
 </details>
 
 <details class="passo" markdown="1">
 <summary>Não esqueça</summary>
 
+- A ação `new` prepara um recado em branco, e a view `new.html.erb` mostra o formulário.
 - Um formulário envia o que a pessoa escreveu com uma requisição `POST`.
 - A ação `create` recebe o formulário, pede ao model para guardar o recado e manda o navegador de volta para o mural de recados.
 - O controller só aceita do formulário o que está na lista do `message_params`.
@@ -148,15 +177,17 @@ Confira o resultado contra o plano:
 <summary>Quiz</summary>
 
 1. Quando a pessoa clica em **Postar recado**, que tipo de requisição o navegador faz, e para qual ação ela vai?
-2. Você criou a rota do `create`, mas esqueceu de escrever a ação no controller. Qual erro aparece?
-3. Depois que o recado é guardado, por que a pessoa volta a ver o mural de recados?
+2. Você criou a rota do `create`, mas esqueceu de escrever a ação no controller. Onde o erro aparece, e o que ele diz?
+3. Por que o link **Novo recado** deu erro antes de você criar a rota?
+4. Depois que o recado é guardado, por que a pessoa volta a ver o mural de recados?
 
 <details markdown="1">
 <summary>Ver respostas</summary>
 
 1. Uma requisição `POST /messages`, que vai para a ação `create`.
-2. A página **Unknown action**, com `The action 'create' could not be found for MessagesController`.
-3. Porque a ação `create` termina com `redirect_to root_path`, que manda o navegador de volta para a página principal.
+2. Na tela, nada acontece. No terminal do servidor, aparece `The action 'create' could not be found for MessagesController`.
+3. Porque o `new_message_path` é um nome que o Rails cria a partir das rotas. Sem a rota do `new`, esse nome não existia, e apareceu o **NameError**.
+4. Porque a ação `create` termina com `redirect_to root_path`, que manda o navegador de volta para a página principal.
 
 </details>
 

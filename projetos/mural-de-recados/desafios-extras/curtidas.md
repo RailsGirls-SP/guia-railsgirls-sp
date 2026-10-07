@@ -70,7 +70,7 @@ O `increment!` soma 1 e já guarda no banco de dados. Rode duas vezes e veja o n
 O clique no botão precisa de uma [rota]({{ site.baseurl }}{% link glossario.md %}#rota) nova para o recado. Em `config/routes.rb`, acrescente um `do ... end` à linha do `resources :messages`:
 
 ```ruby
-resources :messages, only: [ :index, :create, :edit, :update, :destroy ] do
+resources :messages, only: [ :index, :new, :create, :edit, :update, :destroy ] do
   member do
     post :like
   end

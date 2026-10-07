@@ -21,7 +21,7 @@ O desafio agora é deixar qualquer pessoa **postar** um recado pelo próprio nav
 
 Reserve uns 5 minutos. Não existe resposta errada.
 
-- Volte ao desenho da tela principal que você fez em [Planejando o app]({{ site.baseurl }}{% link projetos/mural-de-recados/00-planejando-o-mural.md %}). Onde fica o formulário para postar?
+- Volte aos desenhos das telas que você fez em [Planejando o app]({{ site.baseurl }}{% link projetos/mural-de-recados/00-planejando-o-mural.md %}). Onde fica o formulário para postar? Como a pessoa chega até ele?
 - Que campos o formulário precisa ter? Cada um é um texto curto ou um texto longo?
 - O que acontece na tela depois que a pessoa clica no botão para postar?
 - Qual é o mínimo que o formulário precisa ter para já ser útil? O que pode ficar para depois?
@@ -33,13 +33,16 @@ Reserve uns 5 minutos. Não existe resposta errada.
 
 No fim deste capítulo, quem abrir o app vai ver isto:
 
-![Página com o título Mural de recados, um formulário com os campos Seu nome e Recado e o botão Postar recado e, embaixo, dois recados: primeiro "Adorei o workshop!", da Bia, e depois "Meu primeiro recado!", da Ana]({{ '/assets/images/mural-de-recados/04/resultado-final.png' | relative_url }})
+![Página com o título Mural de recados, o link Novo recado e, embaixo, dois recados: primeiro "Adorei o workshop!", da Bia, e depois "Meu primeiro recado!", da Ana]({{ '/assets/images/mural-de-recados/04/resultado-final.png' | relative_url }})
 {: .ilustracao }
 
-- **Onde fica:** o formulário fica na própria página do mural de recados, em cima dos recados. Assim, quem chega já vê onde escrever.
+![Página com o título Novo recado, um formulário com os campos Seu nome e Recado, o botão Postar recado e o link Voltar]({{ '/assets/images/mural-de-recados/04/novo-recado.png' | relative_url }})
+{: .ilustracao }
+
+- **Onde fica:** o formulário fica numa página só para ele, a **Novo recado**. Na página principal, um link **Novo recado**, em cima dos recados, leva até lá.
 - **Os campos:** **Seu nome** (um texto curto, para a autora) e **Recado** (um texto longo, para a mensagem), e o botão **Postar recado**.
-- **Depois de postar:** a página volta para o mural de recados, com o recado novo em primeiro lugar e o formulário vazio, pronto para o próximo.
-- **O mínimo:** só os dois campos e o botão. A aparência ainda é a mais simples possível, e um recado vazio ainda é aceito: isso vem nos próximos capítulos.
+- **Depois de postar:** o app volta para o mural de recados, com o recado novo em primeiro lugar.
+- **O mínimo:** o link, os dois campos, o botão e um link para voltar. A aparência ainda é a mais simples possível, e um recado vazio ainda é aceito: isso vem nos próximos capítulos.
 
 </details>
 

@@ -227,9 +227,9 @@ No topo da página do app no Render, tem um endereço parecido com `https://mura
 
 O navegador abre uma janelinha pedindo um usuário e uma senha. Digite `mural` no usuário e, na senha, a palavra-chave que você escolheu no passo 7.
 
-**Confira:** aparece o seu mural de recados, com o formulário e o convite **Ainda não tem nenhum recado. Que tal postar o primeiro?**. Os recados do seu codespace não vieram: o app no ar tem o seu próprio banco de dados.
+**Confira:** aparece o seu mural de recados, com o botão **Novo recado** e o convite **Ainda não tem nenhum recado. Que tal postar o primeiro?**. Os recados do seu codespace não vieram: o app no ar tem o seu próprio banco de dados.
 
-Poste o primeiro recado do mural de recados no ar. 🎉
+Clique em **Novo recado** e poste o primeiro recado do mural de recados no ar. 🎉
 
 Agora abra o mesmo endereço no seu celular, ou mande para alguém do workshop, junto com a palavra-chave: quem souber a palavra-chave pode abrir e deixar um recado.
 

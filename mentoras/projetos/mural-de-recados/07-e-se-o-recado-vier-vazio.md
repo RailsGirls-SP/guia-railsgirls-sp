@@ -30,9 +30,8 @@ Os passos seguem um problema de cada vez, e cada um aparece na tela antes de ser
 ## Confusões comuns
 
 - **Os dois `end` no fim do `create`.** Um fecha o `if`, o outro, o `def`. Faltar um dá erro de sintaxe, e o erro às vezes aponta para o fim do arquivo, longe do problema.
-- **Esquecer o `@messages` no `else`.** A view do mural de recados precisa da lista, e o erro é `undefined method 'empty?' for nil`. Está no "Quebre de propósito", de propósito.
 - **Esquecer o `status: :unprocessable_entity`.** Com o Turbo, uma resposta de formulário com status 200 não é mostrada: nada acontece na tela, e o navegador registra no console "Form responses must redirect to another location". É uma das confusões mais difíceis de achar, porque não aparece erro na página.
-- **`@message` e `@messages` de novo.** No `create`, os dois aparecem juntos.
+- **`render :index` em vez de `render :new`.** O formulário está na view `new`, então é ela que precisa aparecer de novo com os avisos. Com `render :index`, aparece `undefined method 'empty?' for nil`, porque a view do mural de recados precisa da lista `@messages`, que o `create` não prepara.
 - **Os avisos em inglês.** Sem o `message:`, aparece `can't be blank`.
 - **Recados inválidos antigos.** As validações não apagam nem corrigem o que já estava no banco de dados.
 

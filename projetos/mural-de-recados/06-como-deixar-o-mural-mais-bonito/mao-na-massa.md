@@ -27,7 +27,7 @@ bin/rails server
 
 Abra o app no navegador (pelo aviso **Open in Browser** ou pela aba **Ports**) e deixe essa aba aberta.
 
-**Confira:** o navegador mostra o mural de recados, com o formulário e os recados com **Editar** e **Apagar**. Se ainda não tiver uns três recados, poste alguns pelo formulário: assim dá para ver os cartões lado a lado.
+**Confira:** o navegador mostra o mural de recados, com o link **Novo recado** e os recados com **Editar** e **Apagar**. Se ainda não tiver uns três recados, poste alguns pelo formulário: assim dá para ver os cartões lado a lado.
 
 Terminou? Abra o passo **2. Traga o Bulma para o app**
 
@@ -49,7 +49,7 @@ No Explorer, abra o arquivo `app/views/layouts/application.html.erb`. Faça duas
 **2.** Procure a linha que começa com `<%# Includes all stylesheet files`. Logo **antes** dela, acrescente:
 
 ```erb
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
 ```
 
 Salve o arquivo.
@@ -61,42 +61,30 @@ Salve o arquivo.
 
 **Confira:** muda um pouco: a letra da página fica diferente, e o título fica do tamanho do resto do texto. O Bulma já está funcionando, mas ainda não sabe o que é cada parte da página. É isso que você vai dizer a ele nos próximos passos.
 
-Terminou? Abra o passo **3. Arrume o formulário**
+Terminou? Abra o passo **3. Arrume o título e o link Novo recado**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>3. Arrume o formulário</summary>
+<summary>3. Arrume o título e o link Novo recado</summary>
 
-Abra o `app/views/messages/index.html.erb`. Troque o começo do arquivo, do `<h1>` até o `<% end %>` do formulário, por:
+Abra o `app/views/messages/index.html.erb`. Troque o começo do arquivo, o `<h1>` e o link **Novo recado**, por:
 
 ```erb
 <section class="section">
   <div class="container">
     <h1 class="title">Mural de recados</h1>
 
-    <%= form_with model: @message, class: "box" do |form| %>
-      <div class="field">
-        <%= form.label :author, "Seu nome", class: "label" %>
-        <%= form.text_field :author, class: "input" %>
-      </div>
-      <div class="field">
-        <%= form.label :content, "Recado", class: "label" %>
-        <%= form.text_area :content, class: "textarea" %>
-      </div>
-      <%= form.submit "Postar recado", class: "button is-primary" %>
-    <% end %>
+    <%= link_to "Novo recado", new_message_path, class: "button is-primary mb-5" %>
 ```
 
 Salve o arquivo. Ainda não recarregue: a `<section>` e a `<div>` que você abriu aqui só fecham no próximo passo.
 
-O formulário é o mesmo de antes. A diferença é o `class:`, que dá um nome do Bulma para cada parte:
+O título e o link são os mesmos de antes. A diferença é o `class:`, que dá um nome do Bulma para cada parte:
 
 - `section` e `container` deixam um espaço em volta e centralizam a página.
 - `title` é o título em destaque.
-- `box` é a caixa branca em volta do formulário.
-- `field`, `label`, `input` e `textarea` arrumam cada campo e o seu rótulo.
-- `button is-primary` é o botão principal, colorido.
+- `button is-primary` transforma o link **Novo recado** num botão colorido, o principal da página. O `mb-5` dá um espaço embaixo dele.
 
 Terminou? Abra o passo **4. Transforme os recados em cartões**
 
@@ -144,23 +132,53 @@ Salve o arquivo.
 
 **Confira:** a página fica parecida com esta:
 
-![Mural de recados com o título em destaque, o formulário numa caixa branca com os campos Seu nome e Recado e o botão verde Postar recado e, embaixo, quatro cartões amarelos lado a lado, cada um com a mensagem, a autora em itálico e os botões Editar e Apagar]({{ '/assets/images/mural-de-recados/06/mural-post-it.png' | relative_url }})
+![Mural de recados com o título em destaque, o botão verde Novo recado e, embaixo, quatro cartões amarelos lado a lado, cada um com a mensagem, a autora em itálico e os botões Editar e Apagar]({{ '/assets/images/mural-de-recados/06/mural-post-it.png' | relative_url }})
 {: .ilustracao }
 
 <!-- TODO: trocar pela captura no Codespaces -->
 
 Diminua a largura da janela do navegador: os cartões vão para baixo, um por linha, como numa tela de celular.
 
-Terminou? Abra o passo **5. Arrume a página de correção**
+Terminou? Abra o passo **5. Arrume as páginas do formulário**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>5. Arrume a página de correção</summary>
+<summary>5. Arrume as páginas do formulário</summary>
 
-A página de correção também usa o layout, então já tem o Bulma. Só falta dar os nomes às partes dela.
+As páginas **Novo recado** e **Corrigir recado** também usam o layout, então já têm o Bulma. Só falta dar os nomes às partes delas.
 
-Abra o `app/views/messages/edit.html.erb` e troque tudo por:
+Abra o `app/views/messages/new.html.erb` e troque tudo por:
+
+```erb
+<section class="section">
+  <div class="container">
+    <h1 class="title">Novo recado</h1>
+
+    <%= form_with model: @message, class: "box" do |form| %>
+      <div class="field">
+        <%= form.label :author, "Seu nome", class: "label" %>
+        <%= form.text_field :author, class: "input" %>
+      </div>
+      <div class="field">
+        <%= form.label :content, "Recado", class: "label" %>
+        <%= form.text_area :content, class: "textarea" %>
+      </div>
+      <%= form.submit "Postar recado", class: "button is-primary" %>
+    <% end %>
+
+    <%= link_to "Voltar", root_path %>
+  </div>
+</section>
+```
+
+Salve o arquivo.
+
+- `box` é a caixa branca em volta do formulário.
+- `field`, `label`, `input` e `textarea` arrumam cada campo e o seu rótulo.
+- `button is-primary` é o botão principal, colorido, como o **Novo recado**.
+
+Agora, faça o mesmo no `app/views/messages/edit.html.erb`. Troque tudo por:
 
 ```erb
 <section class="section">
@@ -184,9 +202,9 @@ Abra o `app/views/messages/edit.html.erb` e troque tudo por:
 </section>
 ```
 
-Salve o arquivo e clique em **Editar** num recado.
+Salve o arquivo. Repare: é o mesmo código do `new.html.erb`, só com outro título e outro botão.
 
-**Confira:** a página de correção fica com o mesmo jeito do mural de recados: o título em destaque, o formulário numa caixa branca e o botão colorido.
+**Confira:** clique em **Novo recado** e, depois, em **Editar** num recado. As duas páginas ficam com o mesmo jeito do mural de recados: o título em destaque, o formulário numa caixa branca e o botão colorido.
 
 Terminou? Abra o passo **6. Guarde o seu progresso**
 
@@ -224,7 +242,7 @@ Confira, nesta ordem:
 <details class="pergunta" markdown="1">
 <summary>Aparece um erro na página depois de mudar a view</summary>
 
-Confira se o `<% end %>` do `each` e o `<% end %>` do formulário continuam lá, e se não sobrou nenhum pedaço do código antigo. Compare o arquivo inteiro com o código dos passos 3 e 4. Na dúvida, peça ajuda para alguém da mentoria. 💜
+Confira se os `<% end %>` continuam lá (o do `each`, no `index.html.erb`, e o do formulário, no `new.html.erb` e no `edit.html.erb`), e se não sobrou nenhum pedaço do código antigo. Compare o arquivo inteiro com o código dos passos 3, 4 e 5. Na dúvida, peça ajuda para alguém da mentoria. 💜
 
 </details>
 

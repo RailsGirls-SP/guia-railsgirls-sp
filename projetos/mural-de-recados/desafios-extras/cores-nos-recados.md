@@ -13,7 +13,10 @@ Num mural de verdade, cada pessoa escolhe a cor do seu post-it. Hoje, todos os r
 
 Cada recado ganha uma **cor**, escolhida por quem escreveu, numa lista pequena: amarelo, rosa, azul ou verde. O cartão aparece na cor escolhida, e dá para trocar a cor na correção.
 
-![Mural de recados com o formulário numa caixa branca, com os campos Seu nome, Recado e Cor, e quatro cartões lado a lado: rosa, azul, verde e amarelo, cada um com a mensagem, a autora em itálico e os botões Editar e Apagar]({{ '/assets/images/mural-de-recados/desafios/cores.png' | relative_url }})
+![Mural de recados com o botão Novo recado e quatro cartões lado a lado: rosa, azul, verde e amarelo, cada um com a mensagem, a autora em itálico e os botões Editar e Apagar]({{ '/assets/images/mural-de-recados/desafios/cores.png' | relative_url }})
+{: .ilustracao }
+
+![Página Novo recado com os campos Seu nome, Recado e Cor, esta com a opção Amarelo escolhida, o botão Postar recado e o link Voltar]({{ '/assets/images/mural-de-recados/desafios/cores-formulario.png' | relative_url }})
 {: .ilustracao }
 
 ## Pense antes de programar
@@ -55,7 +58,7 @@ Depois, rode `bin/rails db:migrate` e confira no console: `Message.first.color` 
 <details markdown="1">
 <summary>Dica 2: o campo de escolha</summary>
 
-No formulário do `index.html.erb`, logo depois do campo do recado, acrescente:
+No formulário do `new.html.erb`, logo depois do campo do recado, acrescente:
 
 ```erb
       <div class="field">
@@ -91,7 +94,7 @@ O `message_params` é a lista do que o controller aceita do formulário, e a `co
 No `index.html.erb`, troque a classe amarela do Bulma pela cor do recado:
 
 ```erb
-          <div class="card card-<%= message.color %>">
+<div class="card card-<%= message.color %>">
 ```
 
 Os cartões ficam brancos: o Bulma não conhece `card-pink`. Ensine no seu arquivo de CSS, o `app/assets/stylesheets/application.css`, logo depois do comentário:

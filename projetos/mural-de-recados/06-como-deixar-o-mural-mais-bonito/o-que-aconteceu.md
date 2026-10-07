@@ -13,7 +13,7 @@ nav_order: 2
 Neste capítulo, só a aparência mudou. Você mexeu em três arquivos, todos de view:
 
 1. O **layout**, `app/views/layouts/application.html.erb`, que é a moldura de todas as páginas: ele passou a trazer o Bulma.
-2. A view do mural de recados, `index.html.erb`, e a da correção, `edit.html.erb`: elas ganharam classes, que dizem ao Bulma o que é cada parte da página.
+2. As views do app: a do mural de recados, `index.html.erb`, e as dos formulários, `new.html.erb` e `edit.html.erb`. Elas ganharam classes, que dizem ao Bulma o que é cada parte da página.
 
 Você está aqui: este é o caminho que uma requisição percorre dentro do app.
 
@@ -101,7 +101,18 @@ Tire o `<!--` e o `-->`, salve e recarregue: o mural de recados volta a ficar bo
 <details class="passo" markdown="1">
 <summary>Preciso de IA para este capítulo?</summary>
 
-Não precisa. Mas, para deixar o visual do seu jeito, uma IA pode ajudar a achar as classes certas. O pedido funciona melhor com o seu plano:
+Não. O Bulma já traz as classes prontas, e a [documentação do Bulma](https://bulma.io/documentation/) mostra o que cada uma faz.
+
+Se quiser usar uma IA, use como tutora: peça para ela explicar, e faça você cada passo. Por exemplo:
+
+> No Bulma, o que fazem as classes `columns` e `column`? Me explique com um exemplo, sem mudar o meu código.
+
+Veja como começar a conversa em [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}).
+
+<details class="pergunta" markdown="1">
+<summary>E se eu pedisse o código para a IA? <span class="label label-purple">Para ir além</span></summary>
+
+Para deixar o visual do seu jeito, uma IA pode ajudar a achar as classes certas. O pedido funciona melhor com o seu plano:
 
 > No meu app Rails, já uso o Bulma 1.0, com uma linha `<link>` no layout. Cada recado aparece num `card` dentro de `columns is-multiline`. Como eu deixo o título do mural de recados maior e com uma cor diferente, usando só classes do Bulma?
 
@@ -111,6 +122,9 @@ Confira o resultado:
 - Ele pediu para instalar alguma coisa? Com a linha do `<link>`, não precisa.
 - As classes que ele sugeriu existem na [documentação do Bulma](https://bulma.io/documentation/)?
 
+Veja mais dicas em [Como pedir código para uma IA]({{ site.baseurl }}{% link extras/como-pedir-codigo-para-uma-ia.md %}), nos Extras.
+
+</details>
 </details>
 
 <details class="passo" markdown="1">
@@ -126,13 +140,13 @@ Confira o resultado:
 <summary>Quiz</summary>
 
 1. Você quer que o botão **Postar recado** fique azul. Em qual arquivo você mexe?
-2. Por que bastou uma linha no layout para o Bulma valer também na página de correção?
+2. Por que bastou uma linha no layout para o Bulma valer também nas páginas Novo recado e Corrigir recado?
 3. Neste capítulo, algum recado guardado no banco de dados mudou?
 
 <details markdown="1">
 <summary>Ver respostas</summary>
 
-1. No `app/views/messages/index.html.erb`, trocando a classe do botão, por exemplo de `is-primary` para `is-link`.
+1. No `app/views/messages/new.html.erb`, trocando a classe do botão, por exemplo de `is-primary` para `is-link`.
 2. Porque o layout envolve todas as views do app.
 3. Não. Só a aparência mudou.
 

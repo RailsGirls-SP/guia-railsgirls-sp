@@ -9,7 +9,7 @@ has_children: true
 
 Neste projeto, você vai construir um **mural de recados** na web: um app onde qualquer pessoa pode deixar um recado, que aparece como um post-it colado na parede. Dá para postar, ver, corrigir e apagar recados.
 
-![Mural de recados com o título em destaque, o formulário numa caixa branca com os campos Seu nome e Recado e o botão Postar recado e, embaixo, quatro cartões amarelos lado a lado, cada um com a mensagem, a autora em itálico e os botões Editar e Apagar]({{ '/assets/images/mural-de-recados/06/mural-post-it.png' | relative_url }})
+![Mural de recados com o título em destaque, o botão verde Novo recado e, embaixo, quatro cartões amarelos lado a lado, cada um com a mensagem, a autora em itálico e os botões Editar e Apagar]({{ '/assets/images/mural-de-recados/06/mural-post-it.png' | relative_url }})
 {: .ilustracao }
 
 Você não precisa saber programar para começar. O guia explica cada passo, e no fim do dia você vai ter construído um app de verdade, com [Ruby on Rails]({{ site.baseurl }}{% link glossario.md %}#rails).
@@ -36,7 +36,7 @@ Ao fim de cada capítulo, o mural de recados já funciona, só que mais simples.
 | [01. Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/index.md %}) | …é um app Rails novo, rodando no seu codespace. |
 | [02. Como guardar os recados?]({{ site.baseurl }}{% link projetos/mural-de-recados/02-como-guardar-os-recados/index.md %}) | …guarda recados no banco de dados. |
 | [03. Como ver todos os recados?]({{ site.baseurl }}{% link projetos/mural-de-recados/03-ver-todos-os-recados/index.md %}) | …mostra os recados no navegador. |
-| [04. Como postar um recado?]({{ site.baseurl }}{% link projetos/mural-de-recados/04-postar-um-recado/index.md %}) | …recebe recados novos por um formulário. |
+| [04. Como postar um recado?]({{ site.baseurl }}{% link projetos/mural-de-recados/04-postar-um-recado/index.md %}) | …recebe recados novos por um formulário, numa página própria. |
 | [05. Errei! Como corrigir ou apagar?]({{ site.baseurl }}{% link projetos/mural-de-recados/05-corrigir-ou-apagar/index.md %}) | …deixa corrigir e apagar recados. |
 | [06. Como deixar o mural de recados mais bonito?]({{ site.baseurl }}{% link projetos/mural-de-recados/06-como-deixar-o-mural-mais-bonito/index.md %}) | …mostra os recados como post-its, lado a lado. |
 | [07. E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/index.md %}) | …recusa recados vazios e avisa o que falta. |
