@@ -32,13 +32,13 @@ O menu ao lado tem seis partes:
 | Parte | O que tem lá |
 |---|---|
 | [Por que aprender a programar?]({{ site.baseurl }}{% link por-que-aprender-a-programar.md %}) | Por que aprender a programar quando a IA já escreve código, e o que continua sendo trabalho de quem programa. |
-| [Comece aqui]({{ site.baseurl }}{% link comece-aqui/index.md %}) | O básico de Ruby, Rails e Git, e como usar uma IA para aprender. Para começar, você só precisa de uma conta no GitHub. |
+| [Comece aqui]({{ site.baseurl }}{% link comece-aqui/index.md %}) | O que você precisa para começar: uma conta no GitHub e o GitHub Codespaces, sem instalar nada. Também tem o básico de Ruby, Rails e Git e como usar uma IA para aprender. |
 | [Projetos]({{ site.baseurl }}{% link projetos/index.md %}) | O projeto do workshop, o [Mural de recados]({{ site.baseurl }}{% link projetos/mural-de-recados/index.md %}), capítulo por capítulo. |
 | [Glossário]({{ site.baseurl }}{% link glossario.md %}) | O significado de cada termo do guia, para consultar sempre que aparecer uma palavra nova. |
 | [Guia para mentoria]({{ site.baseurl }}{% link mentoras/index.md %}) | Tudo para quem vai mentorar. |
-| [Extras]({{ site.baseurl }}{% link extras/index.md %}) | Páginas para consultar quando precisar, como o terminal e o Git, e conteúdo para depois do workshop, como programar no seu próprio computador. |
+| [Extras]({{ site.baseurl }}{% link extras/index.md %}) | Páginas para consultar quando precisar, como o Terminal básico e o Git básico, e conteúdo para depois do workshop, como instalar tudo no seu próprio computador e pedir código para uma IA. |
 
-Encontrou uma palavra nova? O [glossário]({{ site.baseurl }}{% link glossario.md %}) explica cada termo, e a busca, no topo da página, acha qualquer assunto do guia.
+Procurando algum assunto? A busca, no topo da página, acha qualquer coisa no guia.
 
 ## Por onde começar
 
