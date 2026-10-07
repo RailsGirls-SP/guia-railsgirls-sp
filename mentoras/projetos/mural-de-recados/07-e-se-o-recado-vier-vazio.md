@@ -42,6 +42,16 @@ O `errors.full_messages` monta as frases juntando o nome da coluna (em inglês) 
 
 Se uma participante quiser ir além, traduzir o app com o `rails-i18n` é um bom desafio para depois do workshop.
 
+## Regras de negócio no model
+
+Contexto para a mentoria. As validações do capítulo são um exemplo pequeno de **regras de negócio**: as regras que dizem o que faz sentido para o app, como "um recado precisa ter autora" ou "a mensagem tem no máximo 280 caracteres". No Rails, a boa prática é deixar essas regras no **model**, e não no controller nem na view:
+
+- **Um lugar só.** Toda criação e toda mudança de um recado passa pelo model, venha do formulário, do console, de uma tarefa agendada ou de uma API. A regra vale para todos os caminhos, sem repetir.
+- **Controller enxuto.** O controller só recebe a requisição, chama o model e escolhe a resposta (`redirect_to` ou `render`). É a ideia conhecida como *"skinny controller, fat model"* (controller magro, model gordo), popularizada por Jamis Buck no texto [Skinny Controller, Fat Model](https://weblog.jamisbuck.org/2006/10/18/skinny-controller-fat-model), de 2006, em inglês.
+- **O guia oficial recomenda.** O guia [Active Record Validations](https://guides.rubyonrails.org/active_record_validations.html), em inglês, compara validações no banco de dados, no navegador, no controller e no model, e aponta as do model como o melhor jeito de garantir que só dados válidos sejam guardados.
+
+Um cuidado, se a conversa for longe: em apps grandes, "model gordo" demais também vira problema, e é comum separar regras complexas em outros objetos (como *concerns*, *form objects* ou *service objects*). Uma divisão comum: regras sobre os dados ficam no model (o que é um recado válido); regras de um processo, como limitar quantos recados alguém posta por hora ou avisar a moderação ao postar, vão para um service object. O service object só vale para quem passa por ele, por isso o mínimo que nunca pode ser quebrado continua no model. Para o tamanho do Mural de recados, o model é o lugar certo, e não vale levar essa discussão para o dia.
+
 ## Por que não usar `required` no HTML
 
 O formulário poderia ter `required: true` nos campos, e o navegador já impediria o envio vazio. O guia não usa isso de propósito: a regra no navegador é fácil de contornar (basta mandar a requisição de outro jeito), e o objetivo do capítulo é mostrar que a regra que vale de verdade fica no model. Se alguém perguntar, as duas coisas podem andar juntas: o `required` ajuda quem usa, e o `validates` protege os dados.

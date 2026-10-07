@@ -56,6 +56,8 @@ Até aqui, depois de guardar, o controller usava o `redirect_to`: ele manda o na
 
 Porque o formulário é só um dos jeitos de criar um recado. Também dá para criar pelo console, pela correção e, num app maior, por outros caminhos. Com a regra no model, todo recado passa por ela, venha de onde vier.
 
+É a ideia de **centralizar**: a regra fica escrita num lugar só. Se ela estivesse em cada formulário, seria preciso repetir a mesma regra no `new.html.erb`, no `edit.html.erb` e em qualquer outra página nova, e bastaria esquecer uma para um recado vazio passar. Com a regra no model, mudar o limite de 280 para 200 caracteres é mudar uma linha, e a mudança vale para o app inteiro.
+
 </details>
 
 <details class="pergunta" markdown="1">
@@ -68,7 +70,7 @@ As regras só valem para o que for guardado daqui para frente. Um recado vazio g
 <details class="pergunta" markdown="1">
 <summary>Por que 280 caracteres?</summary>
 
-É uma decisão de quem planeja o app: o suficiente para um recado, e pouco o bastante para caber num cartão. Outro app poderia escolher outro número. O importante é a regra existir e estar escrita num lugar só, o model.
+É uma decisão de quem planeja o app: o suficiente para um recado, e pouco o bastante para caber num cartão. O número 280 é só um exemplo, baseado no limite de uma postagem no X (antigo Twitter), um tamanho que muita gente já conhece como mensagem curta. Outro app, ou outro grupo, poderia escolher outro número. O importante é a regra existir e estar escrita num lugar só, o model.
 
 </details>
 
