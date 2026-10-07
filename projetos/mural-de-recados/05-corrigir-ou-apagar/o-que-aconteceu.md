@@ -107,7 +107,7 @@ Tem: o Rails permite separar um pedaço de view num arquivo próprio, chamado *p
 <details class="passo" markdown="1">
 <summary>Quebre de propósito <span class="label label-blue">Opcional</span></summary>
 
-Na barra de endereço, abra `/messages/999/edit` (ou outro número que não seja de nenhum recado).
+Clique em **Editar** num recado. Na barra de endereço, troque o número do recado por `999` (ou outro número que não seja de nenhum recado), para o endereço terminar com `/messages/999/edit`, e aperte **Enter**.
 
 **Dê um palpite:** o que vai acontecer?
 
@@ -126,7 +126,7 @@ Coloque o `:destroy` de volta, salve e recarregue: o mural de recados volta ao n
 <details class="passo" markdown="1">
 <summary>Preciso de IA para este capítulo?</summary>
 
-Não. Você repetiu o mesmo caminho do capítulo 03, rota, controller e view, e os erros mostraram cada peça que faltava.
+Não. Você repetiu o mesmo caminho do capítulo 04, link, rota, controller e view, e os erros mostraram cada peça que faltava.
 
 Se quiser usar uma IA, use como tutora: peça para ela explicar, e faça você cada passo. Por exemplo:
 

@@ -43,6 +43,7 @@ Os problemas que mais aparecem durante o projeto Mural de recados, e como resolv
 | `undefined local variable or method 'new_message_path'` | Falta o `:new` na rota. | Capítulo 04 (de propósito) |
 | `param is missing or the value is empty` | Os campos do formulário não batem com o `message_params`. | Capítulo 04 |
 | `undefined method 'edit_message_path'` | Falta o `:edit` na rota. | Capítulo 05 |
+| `undefined method 'message_path'` ao abrir a correção | Falta o `:update` na rota: o formulário de correção não tem para onde enviar. | Capítulo 05 (de propósito) |
 | `Couldn't find Message with 'id'=…` | O número no endereço não é de nenhum recado. | Capítulo 05 |
 | `syntax error` apontando para o fim do arquivo | Falta um `end` (de um `def`, de um `if` ou de um `do`), ou sobra um. | Qualquer capítulo, principalmente o 07 |
 | O conteúdo não aparece, sem erro | `<% %>` no lugar de `<%= %>`. | Capítulos 03 e 04 |

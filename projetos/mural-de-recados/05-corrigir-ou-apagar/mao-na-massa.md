@@ -36,44 +36,47 @@ Para ter o que corrigir, clique em **Novo recado** e poste um recado com um erro
 - **Seu nome:** Bia
 - **Recado:** Adorei o worksop!
 
-Agora vamos descobrir o número desse recado. No terminal novo, abra o console:
+**Confira:** o recado da Bia aparece no mural de recados, com o erro de digitação.
 
-```
-bin/rails console
-```
-
-E peça o último recado guardado:
-
-```ruby
-Message.last
-```
-
-**Confira:** o console mostra o recado da Bia, começando com `id:` e um número. Por exemplo:
-
-```
-#<Message:0x... id: 3, author: "Bia", content: "Adorei o worksop!", ...>
-```
-
-Esse `id` é o número do recado: o Rails cria um diferente para cada recado, como você viu em [Como guardar os recados?]({{ site.baseurl }}{% link projetos/mural-de-recados/02-como-guardar-os-recados/mao-na-massa.md %}). No seu codespace, o número pode ser outro. Anote o seu: você vai usar daqui a pouco.
-
-Saia do console com `exit`.
-
-Terminou? Abra o passo **3. Procure a página de correção**
+Terminou? Abra o passo **3. Coloque o link Editar em cada cartão**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>3. Procure a página de correção</summary>
+<summary>3. Coloque o link Editar em cada cartão</summary>
 
-No Rails, a página para corrigir um recado costuma ficar num endereço assim: `/messages/3/edit`. Quer dizer "recados, número 3, editar".
+Para corrigir um recado, cada cartão precisa de um caminho até a página de correção, como o link **Novo recado** do capítulo 04.
 
-Na aba do app, acrescente `/messages/3/edit` no fim do endereço, depois do `.app.github.dev`, trocando o `3` pelo número do seu recado. Aperte **Enter**.
+Abra o `app/views/messages/index.html.erb` e deixe o arquivo assim, com a linha nova do `link_to "Editar"` dentro do cartão, logo abaixo da autora:
 
-**Dê um palpite:** você já viu esse filme no capítulo 03. O que vai aparecer?
+```erb
+<h1>Mural de recados</h1>
 
-**Confira:** a página de erro **Routing Error**, com a mensagem `No route matches [GET] "/messages/3/edit"`. Não existe uma rota para esse endereço.
+<%= link_to "Novo recado", new_message_path %>
 
-Terminou? Abra o passo **4. Resolva o erro: crie a rota**
+<% if @messages.empty? %>
+  <p>Ainda não tem nenhum recado. Que tal postar o primeiro?</p>
+<% end %>
+
+<% @messages.each do |message| %>
+  <div>
+    <p><%= message.content %></p>
+    <p>— <%= message.author %></p>
+    <%= link_to "Editar", edit_message_path(message) %>
+  </div>
+<% end %>
+```
+
+Salve o arquivo.
+
+- `link_to` cria um link, como o **Novo recado** do capítulo 04: primeiro o texto, depois o endereço.
+- `edit_message_path(message)` monta o endereço de correção **daquele** recado. Por isso ele recebe o `message`, o recado do cartão.
+
+**Dê um palpite:** você já viu um erro parecido no capítulo 04. Recarregue a página principal: o que vai aparecer?
+
+**Confira:** a página de erro **NoMethodError**, com a mensagem `undefined method 'edit_message_path'`. Como o `new_message_path` do capítulo 04, esse nome só existe depois que a rota existe.
+
+Viu o erro? Agora, abra o passo **4. Resolva o erro: crie a rota**
 
 </details>
 
@@ -94,9 +97,15 @@ resources :messages, only: [ :index, :new, :create, :edit ]
 
 Salve o arquivo.
 
-**Dê um palpite:** a rota agora existe, mas o controller ainda não sabe fazer `edit`. Recarregue a página: o que acontece?
+Recarregue a página principal.
 
-Terminou? Abra o passo **5. Ah não! Um novo erro!**
+**Confira:** a página volta, e cada cartão ganhou um link **Editar**.
+
+**Dê um palpite:** a rota agora existe, mas o controller ainda não sabe fazer `edit`. Clique em **Editar** no recado da Bia: o que acontece?
+
+Antes de ler o erro, repare no endereço do navegador. Ele termina com algo como `/messages/3/edit`, que quer dizer "recados, número 3, editar". Esse número é o `id` do recado da Bia: o Rails cria um diferente para cada recado, como você viu em [Como guardar os recados?]({{ site.baseurl }}{% link projetos/mural-de-recados/02-como-guardar-os-recados/mao-na-massa.md %}). No seu codespace, o número pode ser outro. Clique em **Editar** em outro cartão e veja o número mudar.
+
+Viu o novo erro? Agora, abra o passo **5. Ah não! Um novo erro!**
 
 </details>
 
@@ -156,80 +165,52 @@ No Explorer, clique com o botão direito na pasta `app/views/messages`, escolha 
 
 Salve o arquivo. É o mesmo formulário do `new.html.erb`, do capítulo 04, com outro título e outro botão. Se quiser, copie o `new.html.erb` e mude só essas duas coisas.
 
-**Dê um palpite:** recarregue a página. O formulário vai aparecer vazio ou preenchido?
+**Dê um palpite:** recarregue a página de correção. O formulário vai aparecer?
 
-**Confira:** aparece **Corrigir recado**, com o formulário já preenchido com o recado da Bia. O `form_with model: @message` preenche cada campo com o que está guardado no recado.
+**Confira:** ainda não! Aparece a página de erro **NoMethodError in Messages#edit**, com a mensagem `undefined method 'message_path'`.
 
-<!-- TODO: captura da página Corrigir recado preenchida -->
-
-Terminou? Abra o passo **7. Um link em cada cartão**
+Viu o erro? Agora, abra o passo **7. Resolva o erro: para onde vai a correção?**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>7. Um link em cada cartão</summary>
+<summary>7. Resolva o erro: para onde vai a correção?</summary>
 
-Ninguém vai digitar `/messages/3/edit` na barra de endereço. Vamos pôr um link **Editar** em cada cartão.
+O formulário precisa saber **para onde** enviar a correção. No formulário do recado novo, o destino era `/messages`, com `POST`, a rota do `create`. Para um recado que já existe, o destino é o endereço daquele recado, como `/messages/3`, com a ação `update` (atualizar), a que guarda a correção. O `message_path` é o nome desse endereço, e ele só existe quando a rota do `update` existe.
 
-Abra o `app/views/messages/index.html.erb`. Dentro do cartão, logo abaixo da linha da autora, acrescente:
-
-```erb
-<%= link_to "Editar", edit_message_path(message) %>
-```
-
-O cartão fica assim:
-
-```erb
-  <div>
-    <p><%= message.content %></p>
-    <p>— <%= message.author %></p>
-    <%= link_to "Editar", edit_message_path(message) %>
-  </div>
-```
-
-Salve o arquivo e volte para a página principal do app.
-
-- `link_to` cria um link, como o **Novo recado** do capítulo 04: primeiro o texto, depois o endereço.
-- `edit_message_path(message)` monta o endereço de correção daquele recado, com o número certo: `/messages/3/edit` para o recado 3, `/messages/1/edit` para o recado 1. Esse nome veio da rota `edit` que você criou.
-
-**Confira:** cada cartão tem um link **Editar**. Clique no de outro recado e veja o número mudar no endereço.
-
-Terminou? Abra o passo **8. Salve a correção**
-
-</details>
-
-<details class="passo" markdown="1">
-<summary>8. Salve a correção</summary>
-
-Abra a correção do recado da Bia, troque `worksop` por `workshop` e clique em **Salvar**.
-
-**Dê um palpite:** o que vai acontecer?
-
-**Confira:** na tela, nada acontece. Como no capítulo 04, o erro de um formulário aparece no **terminal do servidor**:
-
-```
-ActionController::RoutingError (No route matches [PATCH] "/messages/3"):
-```
-
-O `PATCH` é o tipo de requisição que o navegador usa para **atualizar** alguma coisa, e não existe rota para isso ainda.
-
-**Dê um palpite:** pelo que você viu nos passos 4 e 5, o que falta? E depois, qual vai ser o próximo erro?
-
-No `config/routes.rb`, acrescente a ação `update` (atualizar), a que guarda a correção:
+No `config/routes.rb`, acrescente o `:update` na lista do `only`:
 
 ```ruby
 resources :messages, only: [ :index, :new, :create, :edit, :update ]
 ```
 
-Salve, volte para a página de correção e clique em **Salvar** de novo.
+Salve o arquivo.
 
-**Confira:** de novo, nada na tela. No terminal do servidor, aparece:
+**Dê um palpite:** recarregue a página de correção. O formulário vai aparecer vazio ou preenchido?
+
+**Confira:** aparece **Corrigir recado**, com o formulário já preenchido com o recado da Bia. O `form_with model: @message` preenche cada campo com o que está guardado no recado.
+
+<!-- TODO: captura da página Corrigir recado preenchida -->
+
+Terminou? Abra o passo **8. Salve a correção**
+
+</details>
+
+
+<details class="passo" markdown="1">
+<summary>8. Salve a correção</summary>
+
+Na correção do recado da Bia, troque `worksop` por `workshop` e clique em **Salvar**.
+
+**Dê um palpite:** a rota do `update` já existe. Pelo que você viu nos passos 4 e 5, qual vai ser o erro agora?
+
+**Confira:** na tela, nada acontece. Como no capítulo 04, o erro de um formulário aparece no **terminal do servidor**:
 
 ```
 AbstractController::ActionNotFound (The action 'update' could not be found for MessagesController):
 ```
 
-Acertou? Falta a ação.
+Acertou? Falta a ação. Repare também na requisição, umas linhas acima no terminal: ela começa com `Started PATCH "/messages/3"`. O `PATCH` é o tipo de requisição que o navegador usa para **atualizar** alguma coisa.
 
 No `app/controllers/messages_controller.rb`, logo depois do `edit` e antes do `private`, acrescente:
 
@@ -369,6 +350,13 @@ Não existe nenhum recado com o número que está no endereço. Talvez você ten
 <summary>Aparece <code>undefined method 'edit_message_path'</code></summary>
 
 A view está usando o endereço de correção, mas a rota `edit` não existe. Confira se o `:edit` está na lista do `only`, em `config/routes.rb`, e se o arquivo está salvo.
+
+</details>
+
+<details class="pergunta" markdown="1">
+<summary>Aparece <code>undefined method 'message_path'</code></summary>
+
+O formulário de correção não sabe para onde enviar a correção. Confira se o `:update` está na lista do `only`, em `config/routes.rb` (passo 7), e se o arquivo está salvo.
 
 </details>
 

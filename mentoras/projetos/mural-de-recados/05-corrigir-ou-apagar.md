@@ -17,14 +17,15 @@ nav_order: 6
 
 ## O caminho dos erros
 
-Como no capítulo 03, os erros aparecem de propósito e seguem o caminho da requisição:
+Como no capítulo 04, os erros aparecem de propósito e seguem o caminho da requisição, começando pelo link:
 
-1. `/messages/3/edit`: **Routing Error**, `No route matches`. **Falta a rota.**
-2. Com `:edit` no `only`: **Unknown action**, `The action 'edit' could not be found`. **Falta a ação.**
+1. O link `link_to "Editar", edit_message_path(message)` sem a rota: **NoMethodError**, `undefined method 'edit_message_path'`. **Falta a rota.** Como no `new_message_path`, quem quebra é a página principal inteira.
+2. Com `:edit` no `only`, clicar em **Editar**: **Unknown action**, `The action 'edit' could not be found`. **Falta a ação.**
 3. Com a ação: **No view template for interactive request**. **Falta a view.**
-4. Clicar em **Salvar**: nada acontece na tela. No terminal do servidor, aparece `No route matches [PATCH]` e, depois da rota, `The action 'update' could not be found`. Como no capítulo 04, erros de formulário só aparecem no terminal.
+4. Com o `edit.html.erb`: **NoMethodError in Messages#edit**, `undefined method 'message_path'`. O `form_with` de um recado que já existe aponta para `/messages/3` (o `update`), e essa rota ainda não existe. **Falta a rota do `update`.**
+5. Clicar em **Salvar**: nada acontece na tela. No terminal do servidor, aparece `The action 'update' could not be found`. Como no capítulo 04, erros de formulário só aparecem no terminal.
 
-No passo 8, a participante é convidada a prever os dois erros do `update` antes de ver. Se a pessoa acertar, vale comemorar: é o sinal de que entendeu o caminho. No passo 9 (apagar), rota, ação e botão entram de uma vez.
+No passo 4, a participante vê o número do recado no endereço (`/messages/3/edit`) e liga ele ao `id` do capítulo 02. No passo 8, ela é convidada a prever o erro do `update` antes de ver. Se a pessoa acertar, vale comemorar: é o sinal de que entendeu o caminho. No passo 9 (apagar), rota, ação e botão entram de uma vez.
 
 ## Confusões comuns
 

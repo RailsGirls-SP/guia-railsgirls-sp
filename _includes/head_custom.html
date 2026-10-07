@@ -2,3 +2,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<script>
+  // O botão de copiar do tema copia o código com uma quebra de linha no fim.
+  // No terminal, ela roda o comando na hora; aqui ela é tirada antes de copiar.
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    const writeText = navigator.clipboard.writeText.bind(navigator.clipboard);
+    navigator.clipboard.writeText = (text) => writeText(String(text).replace(/\n+$/, ""));
+  }
+</script>
