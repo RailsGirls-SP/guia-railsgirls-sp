@@ -2,7 +2,7 @@
 title: "Cores nos recados 🎨"
 parent: Desafios extras
 grand_parent: Mural de recados
-nav_order: 2
+nav_order: 3
 ---
 
 # Cores nos recados 🎨

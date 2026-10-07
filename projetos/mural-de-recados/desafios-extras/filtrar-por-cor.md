@@ -2,7 +2,7 @@
 title: "Filtrar recados por cor 🔎"
 parent: Desafios extras
 grand_parent: Mural de recados
-nav_order: 3
+nav_order: 4
 ---
 
 # Filtrar recados por cor 🔎

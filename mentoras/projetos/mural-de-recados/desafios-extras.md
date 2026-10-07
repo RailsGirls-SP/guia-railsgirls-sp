@@ -23,6 +23,15 @@ Os desafios são para quem termina antes. Não precisa garantir que todo mundo c
 - **Confusões comuns:** a hora 3 horas adiantada (é o UTC; a dica 3 resolve) e esquecer de reiniciar o servidor depois de mudar o `config/application.rb`.
 - **Ir além:** o `time_ago_in_words` ("há 5 minutos") aparece em inglês sem traduzir o app. É um bom gancho para a gem `rails-i18n`, mas é bastante coisa nova.
 
+## Postar direto do mural de recados
+
+O guia separou o formulário numa página própria (a ação `new`), seguindo o CRUD padrão do Rails. Este desafio leva o formulário de volta para a página principal, como um mural de verdade. É um bom jeito de mostrar que as duas formas funcionam, e que a escolha é de quem planeja o app.
+
+- **Perguntas para o "Pense antes":** "Quem prepara o recado em branco na página principal?" (a ação `index`, com `@message = Message.new`) e "Onde os avisos aparecem quando o recado é recusado?" (prepara a dica 3).
+- **Confusões comuns:** trocar `@message` por `@messages`; e, ao trocar o `render :new` por `render :index`, esquecer de buscar o `@messages` de novo, o que dá `undefined method 'empty?' for nil`.
+- **A partial ajuda muito aqui:** com o bônus do capítulo 07 feito, o formulário entra com uma linha. Sem ele, o mesmo formulário passa a existir em três lugares, e vale sugerir a partial.
+- **Ir além:** tirar a página Novo recado é um bom exercício de conferir o que ainda usa o quê antes de apagar (o link, a ação, a rota e a view).
+
 ## Cores nos recados
 
 É um bom primeiro desafio: repete a migration do capítulo 02 e o formulário do capítulo 04, com uma novidade de cada vez.
