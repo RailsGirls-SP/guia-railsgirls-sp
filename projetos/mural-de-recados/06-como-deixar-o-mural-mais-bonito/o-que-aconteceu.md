@@ -57,6 +57,15 @@ Não. Ninguém decora: quem programa consulta a [documentação do Bulma](https:
 </details>
 
 <details class="pergunta" markdown="1">
+<summary>Todo app busca o CSS na internet, como o Bulma aqui? <span class="label label-purple">Para ir além</span></summary>
+
+Não. Buscar o CSS em outro site, pela linha do `<link>`, é o jeito mais rápido de começar: uma linha só, sem instalar nada. Por isso o guia usa. Mas esse jeito depende da internet e de outro site estar no ar. É também por isso que o endereço tem a versão do Bulma (`bulma@1.0.4`): assim, o visual do app não muda sozinho quando sair uma versão nova.
+
+Em apps de verdade, o mais comum é o CSS ficar **dentro do próprio app**, junto com o resto do código, na pasta `app/assets/stylesheets`. O Rails já criou um arquivo lá, o `application.css`, que você vai usar no desafio [Cores nos recados]({{ site.baseurl }}{% link projetos/mural-de-recados/desafios-extras/cores-nos-recados.md %}). Esse CSS pode ser escrito à mão, vir de uma biblioteca guardada no projeto ou ser montado por uma ferramenta, como o Tailwind. Assim, o app funciona igual em qualquer lugar, e quem programa decide quando atualizar.
+
+</details>
+
+<details class="pergunta" markdown="1">
 <summary>Usar uma biblioteca pronta não é trapaça?</summary>
 
 Não. Quase todo app usa código que outras pessoas escreveram, e o próprio Rails é um exemplo disso. Escolher uma boa ferramenta e saber usar é parte do trabalho de quem programa. Aprender a escrever CSS do zero continua útil, e você pode fazer isso com calma depois do workshop.

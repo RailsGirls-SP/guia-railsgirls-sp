@@ -68,7 +68,7 @@ Terminou? Abra o passo **3. Arrume o título e o link Novo recado**
 <details class="passo" markdown="1">
 <summary>3. Arrume o título e o link Novo recado</summary>
 
-Abra o `app/views/messages/index.html.erb`. Troque o começo do arquivo, o `<h1>` e o link **Novo recado**, por:
+Abra o `app/views/messages/index.html.erb` e deixe o arquivo assim:
 
 ```erb
 <section class="section">
@@ -76,15 +76,32 @@ Abra o `app/views/messages/index.html.erb`. Troque o começo do arquivo, o `<h1>
     <h1 class="title">Mural de recados</h1>
 
     <%= link_to "Novo recado", new_message_path, class: "button is-primary mb-5" %>
+
+    <% if @messages.empty? %>
+      <p>Ainda não tem nenhum recado. Que tal postar o primeiro?</p>
+    <% end %>
+
+    <% @messages.each do |message| %>
+      <div>
+        <p><%= message.content %></p>
+        <p>— <%= message.author %></p>
+        <%= link_to "Editar", edit_message_path(message) %>
+        <%= button_to "Apagar", message, method: :delete, form: { data: { turbo_confirm: "Quer mesmo apagar este recado?" } } %>
+      </div>
+    <% end %>
+  </div>
+</section>
 ```
 
-Salve o arquivo. Ainda não recarregue: a `<section>` e a `<div>` que você abriu aqui só fecham no próximo passo.
+Salve o arquivo e recarregue a página.
 
-O título e o link são os mesmos de antes. A diferença é o `class:`, que dá um nome do Bulma para cada parte:
+O título, o link e os recados são os mesmos de antes. As diferenças são a `<section>` e a `<div>` em volta de tudo, e o `class:`, que dá um nome do Bulma para cada parte:
 
 - `section` e `container` deixam um espaço em volta e centralizam a página.
 - `title` é o título em destaque.
 - `button is-primary` transforma o link **Novo recado** num botão colorido, o principal da página. O `mb-5` dá um espaço embaixo dele.
+
+**Confira:** o título fica em destaque, e o **Novo recado** vira um botão colorido. Os recados ainda são só texto: isso é o próximo passo.
 
 Terminou? Abra o passo **4. Transforme os recados em cartões**
 
@@ -93,9 +110,15 @@ Terminou? Abra o passo **4. Transforme os recados em cartões**
 <details class="passo" markdown="1">
 <summary>4. Transforme os recados em cartões</summary>
 
-No mesmo arquivo, troque todo o resto, do `<% if @messages.empty? %>` até o fim, por:
+No mesmo arquivo, troque o bloco dos recados, do `<% @messages.each do |message| %>` até o `<% end %>` dele, pela grade de cartões. O arquivo inteiro fica assim:
 
 ```erb
+<section class="section">
+  <div class="container">
+    <h1 class="title">Mural de recados</h1>
+
+    <%= link_to "Novo recado", new_message_path, class: "button is-primary mb-5" %>
+
     <% if @messages.empty? %>
       <p>Ainda não tem nenhum recado. Que tal postar o primeiro?</p>
     <% end %>
@@ -126,7 +149,6 @@ Salve o arquivo.
 - `card` e `card-content` fazem o cartão, e `has-background-warning-light` pinta o fundo de amarelo clarinho, como um post-it.
 - `is-italic` deixa a autora em itálico.
 - `buttons`, `button is-small` e `is-danger` transformam o **Editar** e o **Apagar** em botões pequenos, o **Apagar** em vermelho. O `mt-4` dá um espaço em cima deles.
-- As duas últimas linhas, `</div>` e `</section>`, fecham o que você abriu no passo 3.
 
 **Dê um palpite:** recarregue a página. Como ficou o mural de recados?
 
