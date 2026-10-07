@@ -36,7 +36,7 @@ Ele pede as páginas para o [servidor](#servidor) e mostra o resultado na tela. 
 <details class="termo" id="requisicao" markdown="1">
 <summary>Requisição (request)</summary>
 
-Uma **requisição** (em inglês, *request*) é o pedido que o [navegador](#navegador) faz ao app: "me mostra a página `/messages`", "guarda este recado novo". Toda vez que você abre um endereço, clica num link ou envia um formulário, o navegador manda uma requisição.
+Uma **requisição** (em inglês, *request*, pronuncia-se mais ou menos *ri-KUÉST*) é o pedido que o [navegador](#navegador) faz ao app: "me mostra a página `/messages`", "guarda este recado novo". Toda vez que você abre um endereço, clica num link ou envia um formulário, o navegador manda uma requisição.
 
 O app recebe a requisição, decide o que fazer e devolve uma **resposta** (em inglês, *response*): normalmente, uma página pronta. No Rails, quem recebe a requisição é a [rota](#rota), que manda para o [controller](#controller) certo.
 
@@ -144,7 +144,7 @@ Fora deste guia, a palavra "console" também pode aparecer com outros sentidos, 
 <details class="termo" id="git" markdown="1">
 <summary>Git</summary>
 
-O **Git** é um programa que guarda o histórico de um projeto: cada versão importante fica registrada, e você pode ver o que mudou, quando e por quê, ou voltar para uma versão anterior se algo der errado.
+O **Git** (pronuncia-se *GUIT*) é um programa que guarda o histórico de um projeto: cada versão importante fica registrada, e você pode ver o que mudou, quando e por quê, ou voltar para uma versão anterior se algo der errado.
 
 É parecido com o histórico de versões de um documento on-line, com uma diferença: no Git, é você quem decide quando registrar uma versão, e cada registro ganha uma mensagem explicando a mudança. Esses registros são os [commits](#commit).
 
@@ -155,7 +155,7 @@ O Git não é o [GitHub](#github): o **Git** é o programa que guarda o históri
 <details class="termo" id="github" markdown="1">
 <summary>GitHub</summary>
 
-O **GitHub** é um site que guarda [repositórios](#repositorio) na internet. Com ele, o seu projeto fica salvo fora do seu computador, você pode trabalhar de qualquer lugar e outras pessoas podem ver o código e colaborar.
+O **GitHub** (pronuncia-se mais ou menos *GUIT-râb*) é um site que guarda [repositórios](#repositorio) na internet. Com ele, o seu projeto fica salvo fora do seu computador, você pode trabalhar de qualquer lugar e outras pessoas podem ver o código e colaborar.
 
 Além de guardar o código, o GitHub tem várias ferramentas. Algumas que aparecem neste guia:
 
@@ -185,8 +185,8 @@ No Brasil, muita gente fala *CÔ-mit*, e todo mundo entende do mesmo jeito.
 
 Um [commit](#commit) fica primeiro só no computador onde você está trabalhando (no workshop, o codespace). Para ele chegar ao [GitHub](#github), é preciso enviá-lo:
 
-- **push** (empurrar): manda os seus commits para o GitHub;
-- **pull** (puxar): traz do GitHub os commits que você ainda não tem no seu computador.
+- **push** (empurrar; pronuncia-se *PUCH*): manda os seus commits para o GitHub;
+- **pull** (puxar; pronuncia-se *PUL*): traz do GitHub os commits que você ainda não tem no seu computador.
 
 No terminal, os comandos são `git push` e `git pull`. No painel Source Control, o botão **Sync Changes** faz os dois de uma vez: primeiro o pull, depois o push. É isso que diz a janela que aparece no passo **Guarde o seu progresso** de [Mão na massa]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/mao-na-massa.md %}): "This action will pull and push commits".
 
@@ -211,7 +211,7 @@ Ele pode ficar no seu computador e também num site como o GitHub, onde outras p
 <details class="termo" id="framework" markdown="1">
 <summary>Framework</summary>
 
-Um **framework** é um conjunto de ferramentas e regras prontas para resolver problemas que quase todo projeto tem, para você se concentrar no que é só do seu.
+Um **framework** (pronuncia-se mais ou menos *FRÊIM-uârk*) é um conjunto de ferramentas e regras prontas para resolver problemas que quase todo projeto tem, para você se concentrar no que é só do seu.
 
 Em vez de construir do zero como o app recebe requisições, guarda dados e monta páginas, você usa o que o framework já traz e segue o jeito de organizar que ele propõe. É como cozinhar numa cozinha já equipada, em vez de começar construindo o fogão.
 
@@ -222,7 +222,7 @@ O [Rails](#rails) é um framework.
 <details class="termo" id="rails" markdown="1">
 <summary>Rails</summary>
 
-O **Rails**, ou **Ruby on Rails**, é um [framework](#framework) para criar aplicações web, escrito na linguagem Ruby. Ele existe desde 2004 e é usado em sites como o GitHub e o Shopify.
+O **Rails** (pronuncia-se *RÊILS*), ou **Ruby on Rails**, é um [framework](#framework) para criar aplicações web, escrito na linguagem Ruby. Ele existe desde 2004 e é usado em sites como o GitHub e o Shopify.
 
 Ele organiza o app em partes com papéis bem definidos ([rota](#rota), [controller](#controller), [model](#model) e [view](#view)) e traz comandos prontos, como o `rails new`, que cria a estrutura de um app inteiro.
 
@@ -246,18 +246,25 @@ Quem programa em Rails resume essa ideia como *convention over configuration*: c
 <details class="termo" id="rota" markdown="1">
 <summary>Rota</summary>
 
-A **rota** liga um endereço a uma parte do código. Quando o navegador pede `/messages` (a lista de recados), é a rota que diz qual [controller](#controller) vai cuidar dessa [requisição](#requisicao).
+A **rota** liga um endereço a uma parte do código. É como uma placa que diz: "quem pedir este endereço, vá até ali". Quando o navegador pede `/messages` (a lista de recados), é a rota que diz qual [controller](#controller) e qual [ação](#acao) vão cuidar dessa [requisição](#requisicao).
 
-Funciona como um mapa de endereços do app. As rotas ficam todas num arquivo só, o `config/routes.rb`.
+A rota olha duas coisas: o **endereço** e o **verbo** da requisição, que diz o que o navegador quer fazer. O mesmo endereço pode levar a ações diferentes:
+
+| Verbo | Endereço | Ação |
+|---|---|---|
+| `GET` (pegar) | `/messages` | `index`: mostra os recados |
+| `POST` (enviar) | `/messages` | `create`: guarda um recado novo |
+
+As rotas ficam todas num arquivo só, o `config/routes.rb`. Veja a tabela completa, com todos os verbos, em [O que aconteceu?]({{ site.baseurl }}{% link projetos/mural-de-recados/05-corrigir-ou-apagar/o-que-aconteceu.md %}) do capítulo 05.
 
 </details>
 
 <details class="termo" id="controller" markdown="1">
 <summary>Controller</summary>
 
-O **controller** é a parte do app que recebe a [requisição](#requisicao) do navegador, depois que a [rota](#rota) encaminhou, e decide o que fazer com ela. É ele que junta os dados com a parte visual do app: por exemplo, busca os recados no [model](#model) e entrega para a [view](#view), que monta a página.
+O **controller** (pronuncia-se mais ou menos *con-TRÔU-ler*) é a parte do app que recebe a [requisição](#requisicao) do navegador, depois que a [rota](#rota) encaminhou, e decide o que fazer com ela. É ele que junta os dados com a parte visual do app: por exemplo, busca os recados no [model](#model) e entrega para a [view](#view), que monta a página.
 
-Pense numa chef de cozinha: ela recebe o pedido, pega os ingredientes certos e manda montar o prato. Ela mesma não guarda os ingredientes nem decora o prato, mas coordena tudo.
+Pense em quem atende você num restaurante: anota o pedido, leva para a cozinha e traz o prato pronto até a mesa. Essa pessoa não cozinha nem guarda os ingredientes, mas faz o pedido chegar a quem resolve e devolve o resultado.
 
 No app Mural de recados, o controller dos recados se chama `MessagesController`.
 
@@ -266,7 +273,7 @@ No app Mural de recados, o controller dos recados se chama `MessagesController`.
 <details class="termo" id="acao" markdown="1">
 <summary>Ação (action)</summary>
 
-Uma **ação** (em inglês, *action*) é cada coisa que um [controller](#controller) sabe fazer. Por exemplo, a ação `index` do `MessagesController` mostra a lista de recados.
+Uma **ação** (em inglês, *action*, pronuncia-se mais ou menos *ÉK-chan*) é cada coisa que um [controller](#controller) sabe fazer. Por exemplo, a ação `index` do `MessagesController` mostra a lista de recados.
 
 No Rails, as ações têm nomes em inglês que seguem uma [convenção](#convencao). Estas são as mais comuns:
 
@@ -287,7 +294,7 @@ Juntas, essas ações formam o [CRUD](#crud): criar (`new` e `create`), ler (`in
 <details class="termo" id="model" markdown="1">
 <summary>Model</summary>
 
-O **model** é a parte do app que representa as informações e as regras sobre elas. É ele que conversa com o [banco de dados](#banco-de-dados) para guardar e buscar dados.
+O **model** (pronuncia-se mais ou menos *MÓ-del*) é a parte do app que representa as informações e as regras sobre elas. É ele que conversa com o [banco de dados](#banco-de-dados) para guardar e buscar dados.
 
 No app Mural de recados, o model `Message` (o recado) sabe que um recado tem `author` (autora) e `content` (a mensagem). As regras também ficam nele, como "um recado não pode ser vazio".
 
@@ -305,9 +312,26 @@ No Rails, as validações ficam no [model](#model), com o `validates`. Você esc
 <details class="termo" id="view" markdown="1">
 <summary>View</summary>
 
-A **view** é a parte do app que monta o que aparece na tela. No app Mural de recados, é a view que mostra o formulário e os cartões com os recados.
+A **view** (pronuncia-se *VIU*) é a parte do app que monta o que aparece na tela. No app Mural de recados, é a view que mostra o formulário e os cartões com os recados.
 
 Ela recebe as informações do [controller](#controller) e só cuida da apresentação. Na cozinha, seria a montagem do prato: os ingredientes já estão prontos, e a view decide como eles aparecem.
+
+</details>
+
+<details class="termo" id="mvc" markdown="1">
+<summary>MVC (Model-View-Controller) <span class="label label-purple">Para ir além</span></summary>
+
+**MVC** (*Model-View-Controller*) é um jeito de organizar um app em três partes, cada uma com a sua responsabilidade:
+
+| Parte | Responsabilidade | No app Mural de recados |
+|---|---|---|
+| [Model](#model) | Os dados e as regras sobre eles | `Message`: o que um recado tem e o que é um recado válido |
+| [View](#view) | O que aparece na tela | `index.html.erb`: como os recados aparecem |
+| [Controller](#controller) | Recebe a [requisição](#requisicao) e liga o model à view | `MessagesController`: busca os recados e entrega para a view |
+
+O Rails segue esse padrão, e por isso o app tem as pastas `app/models`, `app/views` e `app/controllers`. Separar as partes ajuda a mudar a aparência sem mexer nos dados e a saber onde procurar cada problema.
+
+A [rota](#rota) não faz parte do MVC: ela vem antes, e escolhe qual controller vai cuidar de cada endereço.
 
 </details>
 
@@ -324,6 +348,14 @@ Ela recebe as informações do [controller](#controller) e só cuida da apresent
 O **banco de dados** é onde o app guarda as informações para que elas não sumam quando alguém fecha o navegador. No app Mural de recados, é onde ficam os recados.
 
 Dá para pensar nele como uma planilha: cada tipo de informação ganha uma **tabela**, cada recado é uma **linha** e cada informação do recado, como autora e mensagem, é uma **coluna**.
+
+Por exemplo, a tabela `messages` (recados) do app Mural de recados:
+
+| id | author (autora) | content (mensagem) |
+|---|---|---|
+| 1 | Ana | Boas-vindas ao mural de recados! |
+| 2 | Bia | Hoje eu fiz o meu primeiro app! |
+| 3 | Carla | Alguém quer estudar Rails comigo? |
 
 Mas o banco de dados é bem mais esperto que uma planilha. É como ter várias planilhas interligadas: uma tabela pode apontar para as linhas de outra. Por exemplo, uma tabela de respostas pode dizer a qual recado cada resposta pertence. O banco também encontra informações rapidinho, mesmo entre milhões de linhas, deixa várias pessoas usarem ao mesmo tempo sem uma atrapalhar a outra e segue regras que impedem dados errados, como uma linha sem informação obrigatória.
 
@@ -345,7 +377,9 @@ No Rails, quem cuida disso é o [model](#model), que guarda e busca as informaç
 
 Uma **migration** (em português, **migração**; em inglês, pronuncia-se mais ou menos *mai-GRÊI-xan*) é um arquivo com instruções para mudar a estrutura do [banco de dados](#banco-de-dados): criar uma tabela, acrescentar uma coluna, mudar o tipo de uma informação.
 
-Pense numa planta de reforma: em vez de mexer na casa direto, você descreve a mudança num papel, e alguém segue as instruções. Assim fica registrado o que mudou e em que ordem, e qualquer pessoa consegue montar o mesmo banco de dados do zero.
+Pense no manual de montagem de um móvel: em vez de montar do seu jeito, você segue os passos do manual, um depois do outro. Qualquer pessoa com o mesmo manual monta o mesmo móvel do zero. As migrations são os passos do manual do banco de dados: cada uma diz o que mudar, como "crie a tabela de recados, com as colunas autora e mensagem".
+
+As migrations ficam guardadas uma depois da outra, e por isso funcionam como um **histórico das mudanças** no banco de dados: dá para ver o que mudou, quando e em que ordem. E, seguindo esse histórico, qualquer pessoa consegue montar o mesmo banco de dados do zero.
 
 No Rails, as migrations ficam na pasta `db/migrate`, e você aplica as que ainda não rodaram com o comando `bin/rails db:migrate`.
 
@@ -376,7 +410,7 @@ O `rails new` já cria uma pasta `test` no projeto, e os testes rodam com o coma
 
 No GitHub, quem roda essas verificações é o **GitHub Actions**. O resultado aparece ao lado do commit: um ✅ verde quando tudo passou e um ❌ vermelho quando alguma verificação falhou.
 
-O `rails new` já cria uma configuração de CI no arquivo `.github/workflows/ci.yml`. Por isso, o seu repositório pode mostrar um ❌ ao lado do commit mesmo sem você ter escrito nenhum teste: não é um erro seu, e o app continua funcionando.
+Num projeto de verdade, um ❌ é um aviso para levar a sério: alguém olha o que falhou e corrige antes de seguir. O `rails new` já deixa uma configuração de CI pronta, no arquivo `.github/workflows/ci.yml`, mas, por enquanto, o projeto do workshop não usa testes automatizados. Por isso, se aparecer um ❌ no seu repositório, ele vem dessas verificações que o projeto ainda não usa, e não de algo que você fez de errado.
 
 </details>
 
@@ -412,7 +446,7 @@ Existem muitas linguagens, cada uma com os seus pontos fortes. Alguns exemplos: 
 <details class="termo" id="ruby" markdown="1">
 <summary>Ruby</summary>
 
-**Ruby** é a [linguagem de programação](#linguagem-de-programacao) usada neste guia. Ela foi criada no Japão, por Yukihiro Matsumoto, e lançada em 1995, com um objetivo declarado: ser agradável para quem programa.
+**Ruby** (pronuncia-se *RÚ-bi*) é a [linguagem de programação](#linguagem-de-programacao) usada neste guia. Ela foi criada no Japão, por Yukihiro Matsumoto, e lançada em 1995, com um objetivo declarado: ser agradável para quem programa.
 
 O código em Ruby costuma ser fácil de ler, quase como uma frase em inglês. Por exemplo:
 
@@ -423,6 +457,23 @@ O código em Ruby costuma ser fácil de ler, quase como uma frase em inglês. Po
 Esse código mostra "Olá!" três vezes.
 
 O [Rails](#rails) é escrito em Ruby, e o código do seu app também. Na analogia do capítulo [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/index.md %}), o Ruby é a cozinheira que lê e segue a receita.
+
+</details>
+
+<details class="termo" id="open-source" markdown="1">
+<summary>Open source (código aberto) e software livre <span class="label label-purple">Para ir além</span></summary>
+
+Um programa é **open source** (em português, **código aberto**) quando o código dele fica disponível para qualquer pessoa consultar, mudar e redistribuir. A ideia é prática: com o código aberto, mais pessoas colaboram, e o programa melhora. O Ruby e o Rails são assim: dá para ver todo o código do [Ruby](https://github.com/ruby/ruby) e do [Rails](https://github.com/rails/rails) no GitHub.
+
+O que diz o que você pode fazer com um código é a **licença**, um texto que acompanha o projeto. Código que dá para ver não é o mesmo que código aberto: um repositório público no GitHub sem licença pode ser lido, mas não pode ser copiado nem usado no seu projeto sem permissão.
+
+**Software livre** vai além: é um movimento que defende, como uma questão de princípio, que quem usa um programa tenha liberdade para usar, estudar, mudar e compartilhar. E "livre" não quer dizer "grátis": quer dizer livre para usar e mudar.
+
+Existem dois tipos principais de licença de software livre, e eles funcionam de jeitos diferentes. As licenças **copyleft**, como a GPL, exigem que as versões modificadas continuem abertas, com as mesmas liberdades. As **permissivas**, como a MIT, que o Rails usa, deixam o código ser usado até em programas fechados.
+
+Projetos abertos são feitos por comunidades: qualquer pessoa pode sugerir uma mudança, corrigir um bug ou melhorar a documentação. É um ótimo jeito de continuar aprendendo depois do workshop: veja [Como Contribuir para o Open Source](https://opensource.guide/pt/how-to-contribute/), um guia do GitHub em português.
+
+Veja mais em [Software livre](https://pt.wikipedia.org/wiki/Software_livre), na Wikipédia.
 
 </details>
 
@@ -453,6 +504,8 @@ No Ruby, a indentação não muda o que o programa faz: ela serve para as pessoa
 
 O editor ajuda: ao apertar **Enter** dentro de um bloco, ele já coloca os espaços da próxima linha. Para recuar ou desfazer o recuo de várias linhas, selecione as linhas e aperte **Tab** ou **Shift+Tab**.
 
+**Tab ou espaços?** A indentação pode ser feita com espaços ou com um caractere especial, o tab. Em Ruby, o costume é usar espaços. Não se preocupe com a tecla: no codespace, quando você aperta **Tab**, o editor coloca espaços no lugar. Para conferir, olhe a barra de baixo do editor: ela deve mostrar **Spaces: 2**. Se aparecer **Spaces: 4**, clique ali e escolha 2.
+
 </details>
 
 <details class="termo" id="variavel" markdown="1">
@@ -466,16 +519,32 @@ Pense numa caixa com uma etiqueta: a etiqueta é o nome, e o que está dentro é
 author = "Ana"
 ```
 
+```mermaid
+flowchart LR
+  gl_ana_linha["A linha de código<br/>author = #quot;Ana#quot;"] -->|cria| gl_ana_caixa
+  subgraph gl_ana_caixa["🏷️ etiqueta: author"]
+    gl_ana_valor["📦 dentro da caixa:<br/>#quot;Ana#quot;"]
+  end
+```
+
 Daqui em diante, `author` (autora) quer dizer `"Ana"`. E dá para trocar o conteúdo da caixa: se depois você escrever `author = "Bia"`, a mesma etiqueta passa a guardar outro valor.
+
+```mermaid
+flowchart LR
+  gl_bia_linha["A linha de código<br/>author = #quot;Bia#quot;"] -->|troca o que está dentro| gl_bia_caixa
+  subgraph gl_bia_caixa["🏷️ etiqueta: author (a mesma)"]
+    gl_bia_valor["📦 dentro da caixa:<br/>#quot;Bia#quot;<br/>(o #quot;Ana#quot; saiu)"]
+  end
+```
 
 </details>
 
 <details class="termo" id="nil" markdown="1">
 <summary>nil e null</summary>
 
-**`nil`** é o jeito de o [Ruby](#ruby) dizer "nada": a informação não existe ou ainda não foi preenchida. Em inglês, *nil* quer dizer nada, zero.
+**`nil`** é o jeito de o [Ruby](#ruby) dizer "nada": a informação não existe ou ainda não foi preenchida. Em inglês, *nil* quer dizer "nada" (vem do latim *nihil*) e pronuncia-se *NIL*.
 
-No [banco de dados](#banco-de-dados), a mesma ideia se chama **`NULL`** (nulo). Quando um recado é guardado sem autora, a coluna `author` fica `NULL` no banco de dados, e o Ruby mostra `nil`.
+No [banco de dados](#banco-de-dados), a mesma ideia se chama **`NULL`** (nulo; pronuncia-se *NÂL*). Quando um recado é guardado sem autora, a coluna `author` fica `NULL` no banco de dados, e o Ruby mostra `nil`.
 
 Repare que "nada" é diferente de zero e de um texto vazio:
 
@@ -494,11 +563,16 @@ Você vê o `nil` pela primeira vez no "Quebre de propósito" de [Como guardar o
 
 Um **bug** (em inglês, "inseto"; pronuncia-se *bâg*) é um defeito num programa: algo que faz o programa se comportar diferente do que deveria. Por exemplo, um mural de recados que mostra a autora no lugar da mensagem.
 
-Uma mensagem de erro e um bug não são a mesma coisa. A mensagem de erro é o programa avisando que algo deu errado, e costuma ajudar a achar o problema. Já um bug pode acontecer sem nenhum aviso: o programa funciona, só que do jeito errado.
+Uma mensagem de erro e um bug não são a mesma coisa. A mensagem de erro é o programa avisando que algo deu errado, e ela pode ser de dois tipos:
+
+- **Um erro previsto:** quem programou pensou no caso e escreveu o aviso. Por exemplo, quando o app Mural de recados avisa que o recado precisa ter um nome.
+- **Um erro que ninguém previu:** o app não esperava aquilo, mas o Rails percebeu e mostrou uma página de erro. Por exemplo, quando falta uma rota ou uma view.
+
+O erro previsto não é um bug: o app está fazendo o que deveria, que é recusar um recado sem nome. Já o erro que ninguém previu é um bug, mas pelo menos ele aparece, e a mensagem costuma ajudar a achar a causa. Os bugs mais difíceis de achar são os que não dão aviso nenhum, como o mural de recados que mostra a autora no lugar da mensagem: o programa funciona, só que do jeito errado.
 
 Procurar e corrigir bugs se chama **depurar** (em inglês, *debug*). Todo mundo que programa passa boa parte do tempo fazendo isso: encontrar bugs faz parte do trabalho, e não quer dizer que você é ruim nisso.
 
-Uma curiosidade: em 1947, a equipe da cientista da computação Grace Hopper encontrou uma mariposa presa dentro de um computador, o Mark II, e colou o inseto no caderno de anotações como "o primeiro caso de um bug de verdade". A palavra já era usada para defeitos, mas a história ficou famosa.
+Uma curiosidade: a palavra "bug" já era usada para defeitos em máquinas desde o século 19, inclusive pelo inventor Thomas Edison. Em 1947, a equipe que trabalhava no computador Mark II, onde estava a cientista da computação Grace Hopper, encontrou uma mariposa presa dentro da máquina e colou o inseto no caderno de anotações como "o primeiro caso de um bug de verdade". A piada era essa: dessa vez, o bug era um inseto mesmo. Veja a história em [Falha (tecnologia)](https://pt.wikipedia.org/wiki/Falha_(tecnologia)), na Wikipédia.
 
 </details>
 
@@ -542,11 +616,11 @@ Uma rede social, uma loja e uma agenda fazem essas mesmas quatro coisas, cada um
 {: #grupo-ia }
 
 <details class="termo" id="ia" markdown="1">
-<summary>IA (inteligência artificial)</summary>
+<summary>IA (inteligência artificial), em inglês AI</summary>
 
-**IA**, ou **inteligência artificial**, é o nome geral para programas que fazem tarefas que antes pareciam exigir uma pessoa: reconhecer imagens, traduzir textos, responder perguntas, escrever código.
+**IA**, ou **inteligência artificial** (em inglês, *artificial intelligence*, ou **AI**), é o nome geral para programas que fazem tarefas que antes pareciam exigir uma pessoa: reconhecer imagens, traduzir textos, responder perguntas, escrever código.
 
-Quando este guia fala em IA, quase sempre é a **IA generativa**: programas treinados com uma quantidade enorme de textos e código, que geram respostas novas a partir do que você pede. Por trás deles estão os **modelos de linguagem** (em inglês, *large language models*, ou LLMs).
+Quando este guia fala em IA, quase sempre é a **IA generativa**: programas treinados com uma quantidade enorme de textos e código, que geram respostas novas a partir do que você pede. Por trás deles estão os **grandes modelos de linguagem** (em inglês, *large language models*, ou **LLMs**).
 
 Eles não pensam nem entendem como uma pessoa: geram a resposta que parece mais provável para o seu pedido. Por isso podem acertar muito e, às vezes, [inventar](#alucinacao) coisas com toda a confiança.
 
@@ -562,9 +636,9 @@ Existem muitas ferramentas que usam IA para ajudar a programar. Elas mudam rápi
 | **Assistentes de conversa** | Você escreve uma pergunta num chat, e a IA responde. Para usar o código, você copia e cola. | ChatGPT (da OpenAI), Claude (da Anthropic), Gemini (do Google) |
 | **Ferramentas no editor e no terminal** | Ficam dentro do lugar onde você programa: sugerem código enquanto você digita, conversam sobre os seus arquivos e, em alguns casos, mudam arquivos e rodam comandos por você. | GitHub Copilot (é o painel de chat que aparece no codespace), Cursor (um editor de código com IA embutida), Claude Code (trabalha no terminal) |
 
-Quando uma ferramenta pode mudar arquivos e rodar comandos sozinha, ela está trabalhando como **agente**. É poderoso, mas você precisa conferir o que ela fez, porque o código continua sendo responsabilidade de quem programa.
+Quando uma ferramenta muda arquivos e roda comandos por conta própria, ela está trabalhando como **agente**. Muita gente que programa usa agentes no dia a dia, e eles economizam bastante tempo, desde que alguém confira o que foi feito: o código continua sendo responsabilidade de quem programa.
 
-Neste guia, a recomendação é usar qualquer uma delas como uma tutora, e não como alguém que faz por você: peça explicações, faça você cada passo e nunca rode um comando que você não entendeu. Veja um exemplo na seção "Preciso de IA para este capítulo?" de [O que aconteceu?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/o-que-aconteceu.md %}).
+No workshop, e sempre que o seu objetivo for aprender algo novo, a recomendação do guia é usar qualquer uma delas como uma tutora, e não como alguém que faz por você: peça explicações, faça você cada passo e nunca rode um comando que você não entendeu. Quando você já entende o que está pedindo e consegue conferir o resultado, usar a IA como agente pode ser um ótimo atalho. Veja dicas em [Como pedir código para uma IA]({{ site.baseurl }}{% link extras/como-pedir-codigo-para-uma-ia.md %}) e um exemplo na seção "Preciso de IA para este capítulo?" de [O que aconteceu?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/o-que-aconteceu.md %}).
 
 </details>
 

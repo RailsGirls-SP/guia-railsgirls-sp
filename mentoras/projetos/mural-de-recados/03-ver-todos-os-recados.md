@@ -116,7 +116,7 @@ Contexto só para a mentoria. **Não precisa levar isso para as participantes**:
 **Dicas para conversar sobre isso:**
 
 - Fique nas três responsabilidades e nos arquivos do Mural de recados. Termos como "camada", "arquitetura" ou "separação de responsabilidades" não ajudam quem está começando.
-- O guia usa analogias diferentes em lugares diferentes: a planilha e a assistente para o model (capítulo 02) e a cozinha no glossário (o controller como chef, a view como a montagem do prato). Elas se completam, mas não force uma analogia única para as três peças.
+- O guia usa analogias diferentes em lugares diferentes: a planilha e a assistente para o model (capítulo 02) e o restaurante no glossário (o controller como quem atende o pedido, a view como a montagem do prato). Elas se completam, mas não force uma analogia única para as três peças.
 - Uma regra comum na comunidade Rails é "controller magro, model gordo": as regras ficam no model, e o controller só coordena. Não precisa falar disso agora, mas é o que o guia segue quando, no capítulo 07, a regra "recado não pode ser vazio" vai para o model.
 
 ## A página de erro no Codespaces

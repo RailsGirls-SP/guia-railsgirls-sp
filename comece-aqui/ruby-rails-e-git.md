@@ -57,6 +57,15 @@ flowchart LR
 
 </details>
 
+### Por que começar pelo Ruby?
+
+O Ruby não é a linguagem mais usada do mundo, mas é uma ótima escolha para começar:
+
+- **É fácil de ler.** Como nos exemplos acima, o código parece quase uma frase. Assim, você presta atenção na ideia, e não em símbolos.
+- **É usado em produtos grandes.** Sites como o GitHub e o Shopify são feitos com Ruby e Rails.
+- **O que você aprende vale para outras linguagens.** Variáveis, banco de dados, Git, ler mensagens de erro: tudo isso se repete no Python, no JavaScript e em muitas outras.
+- **Tem uma comunidade acolhedora.** Um lema famoso da comunidade é "*Matz is nice, so we are nice*" (o Matz é gentil, então a gente também é). O próprio Rails Girls nasceu nessa comunidade.
+
 ## Rails, o framework
 
 O **[Rails]({{ site.baseurl }}{% link glossario.md %}#rails)**, ou **Ruby on Rails**, é um [framework]({{ site.baseurl }}{% link glossario.md %}#framework) para criar sites e aplicações web com Ruby. Ele foi criado em 2004 por David Heinemeier Hansson e é usado em sites como o GitHub e o Shopify.
