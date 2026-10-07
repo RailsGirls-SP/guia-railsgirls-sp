@@ -226,6 +226,11 @@ details.termo {
   max-width: 280px;
 }
 
+// Prints largos, como o mural de recados com os cartões lado a lado.
+.ilustracao-larga img {
+  max-width: 560px;
+}
+
 // Texto só para leitores de tela (ex.: descrição dos desenhos em texto das telas).
 .sr-only {
   position: absolute;

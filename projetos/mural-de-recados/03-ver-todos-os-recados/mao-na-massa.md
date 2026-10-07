@@ -212,7 +212,7 @@ Salve o arquivo. A linha `@messages = Message.all` pede ao model todos os recado
 Salve o arquivo.
 
 - `<h1>` é um título, em [HTML]({{ site.baseurl }}{% link glossario.md %}#html), a linguagem das páginas da web.
-- `@messages.each do |message|` repete o trecho de baixo para **cada** recado da lista. Em cada volta, `message` é um recado.
+- `@messages.each do |message|` repete o trecho de baixo para **cada** recado da lista. Em cada volta, `message` é um recado. Isso é um [loop]({{ site.baseurl }}{% link glossario.md %}#loop).
 - `message.content` e `message.author` mostram a mensagem e a autora daquele recado.
 - O que está entre `<%=` e `%>` aparece na página. O que está entre `<%` e `%>` (sem o `=`) só é executado, sem aparecer.
 
@@ -312,7 +312,7 @@ Vamos mostrar um convite quando o mural de recados estiver vazio. No arquivo `ap
 
 Salve o arquivo.
 
-- `if` quer dizer "se": o trecho de dentro só aparece **se** a condição for verdadeira.
+- `if` quer dizer "se": o trecho de dentro só aparece **se** a [condição]({{ site.baseurl }}{% link glossario.md %}#condicao) for verdadeira.
 - `@messages.empty?` pergunta se a lista de recados está vazia.
 
 **Dê um palpite:** recarregue a página. O que aparece agora?

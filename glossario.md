@@ -539,6 +539,83 @@ flowchart LR
 
 </details>
 
+<details class="termo" id="loop" markdown="1">
+<summary>Loop (each)</summary>
+
+Um **loop** (em inglês, "laço"; pronuncia-se *LUP*) repete um trecho de código várias vezes. Em Ruby, o jeito mais comum de repetir é o **`each`** (cada): ele passa por **cada** item de uma lista, um de cada vez.
+
+```ruby
+["Ana", "Bia", "Carla"].each do |nome|
+  puts "Oi, #{nome}!"
+end
+```
+
+Esse código escreve três linhas: "Oi, Ana!", "Oi, Bia!" e "Oi, Carla!". Em cada volta, `nome` guarda um item da lista.
+
+No app Mural de recados, a view do mural de recados usa o `each` para mostrar um cartão para cada recado:
+
+```erb
+<% @messages.each do |message| %>
+  <p><%= message.content %></p>
+<% end %>
+```
+
+O trecho entre o `do` e o `end` se repete uma vez para cada recado, e o `message` é o recado daquela volta.
+
+</details>
+
+<details class="termo" id="condicao" markdown="1">
+<summary>Condição (if e else)</summary>
+
+Uma **condição** decide se um trecho de código vai rodar ou não. Em Ruby, ela começa com **`if`** (se) e termina com `end`:
+
+```ruby
+if chovendo
+  puts "Leve o guarda-chuva."
+end
+```
+
+O trecho de dentro só roda **se** a condição for verdadeira. Com o **`else`** (senão), dá para dizer o que fazer quando ela for falsa:
+
+```ruby
+if chovendo
+  puts "Leve o guarda-chuva."
+else
+  puts "Pode deixar o guarda-chuva em casa."
+end
+```
+
+No app Mural de recados, as condições aparecem duas vezes:
+
+- **No mural de recados vazio:** `if @messages.empty?` mostra o convite para postar o primeiro recado só quando não tem nenhum.
+- **Ao postar um recado:** `if @message.save` volta para o mural de recados **se** o recado foi guardado; **senão** (`else`), mostra o formulário de novo, com os avisos.
+
+A condição é uma pergunta que responde [`true` ou `false`](#true-e-false).
+
+</details>
+
+<details class="termo" id="true-e-false" markdown="1">
+<summary>true e false</summary>
+
+**`true`** (verdadeiro; pronuncia-se *TRU*) e **`false`** (falso; pronuncia-se *FÁLS*) são as duas respostas possíveis para uma pergunta de sim ou não. No código, quem programa chama esse tipo de valor de **booleano**.
+
+Em Ruby, os métodos que fazem uma pergunta costumam terminar com `?`:
+
+```ruby
+[].empty?          # => true: a lista está vazia
+["Ana"].empty?     # => false: a lista tem um item
+```
+
+No app Mural de recados:
+
+- `@messages.empty?` responde se a lista de recados está vazia.
+- `recado.valid?` responde se o recado cumpre as regras, as [validações](#validacao).
+- `@message.save` tenta guardar o recado e responde `true` se deu certo, e `false` se o recado foi recusado.
+
+É essa resposta que o [`if`](#condicao) usa para decidir o que fazer.
+
+</details>
+
 <details class="termo" id="private" markdown="1">
 <summary>private e public <span class="label label-purple">Para ir além</span></summary>
 

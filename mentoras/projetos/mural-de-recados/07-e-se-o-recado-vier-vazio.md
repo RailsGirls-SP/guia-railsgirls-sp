@@ -23,9 +23,10 @@ Os passos seguem um problema de cada vez, e cada um aparece na tela antes de ser
 
 1. O cartão vazio aparece (passo 2).
 2. Com a regra no model, o recado vazio some, mas **sem aviso nenhum** (passo 4). Pergunte: "como a pessoa sabe que deu errado?".
-3. Com o `if` no controller, o que foi escrito fica no formulário, mas ainda sem aviso (passo 5).
-4. Com os avisos na view, tudo funciona (passo 6).
-5. A correção tem o mesmo problema da postagem, e a solução é a mesma (passo 8).
+3. No console, os avisos existem (passo 5): o model sabe o que falta, e o problema é que ninguém mostra.
+4. Com o `if` no controller, o que foi escrito fica no formulário, mas ainda sem aviso (passo 6).
+5. Com os avisos na view, tudo funciona (passo 7).
+6. A correção tem o mesmo problema da postagem, e a solução é a mesma (passo 9).
 
 ## Confusões comuns
 

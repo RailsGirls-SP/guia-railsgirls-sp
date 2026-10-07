@@ -56,11 +56,21 @@ No console, teste antes de mexer nas telas:
 ```ruby
 message = Message.first
 message.likes
+```
+
+O console mostra quantas curtidas o recado tem. Agora some 1:
+
+```ruby
 message.increment!(:likes)
+```
+
+O `increment!` soma 1 e já guarda no banco de dados. Veja o número de novo:
+
+```ruby
 message.likes
 ```
 
-O `increment!` soma 1 e já guarda no banco de dados. Rode duas vezes e veja o número mudar.
+Rode o `increment!` mais uma vez e veja o número mudar.
 
 </details>
 

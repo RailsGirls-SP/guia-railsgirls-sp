@@ -20,7 +20,7 @@ gitGraph
   commit id: "Posta recados"
   commit id: "Corrige e apaga"
   commit id: "Deixa com cara de post-it"
-  commit id: "Não aceita vazio"
+  commit id: "Valida os recados"
 ```
 
 Se algo der errado no meio de um capítulo, dá para voltar para a última bolinha, onde tudo funcionava.

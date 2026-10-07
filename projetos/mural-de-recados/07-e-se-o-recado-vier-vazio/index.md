@@ -15,6 +15,9 @@ Tempo: uns 45 minutos.
 
 Você já viu isso duas vezes: no console, em [Como guardar os recados?]({{ site.baseurl }}{% link projetos/mural-de-recados/02-como-guardar-os-recados/o-que-aconteceu.md %}), e no formulário, em [Como postar um recado?]({{ site.baseurl }}{% link projetos/mural-de-recados/04-postar-um-recado/mao-na-massa.md %}). Se alguém clicar em **Postar recado** sem escrever nada, aparece um cartão vazio no mural de recados.
 
+![Mural de recados com o botão Novo recado e quatro cartões amarelos: o primeiro está vazio, só com o travessão e os botões Editar e Apagar; os outros têm os recados da Carla, da Bia e da Ana]({{ '/assets/images/mural-de-recados/07/recado-vazio.png' | relative_url }})
+{: .ilustracao .ilustracao-larga }
+
 O Rails aceita porque ninguém disse a ele que isso é proibido. O desafio agora é decidir **o que é um recado válido** e fazer o app recusar o que não for, avisando a pessoa do que falta.
 
 ## Pense antes de programar
@@ -45,6 +48,7 @@ No fim deste capítulo, quem tentar postar um recado vazio vai ver isto:
 | Precisa ter a mensagem | Escreva o seu recado. |
 | A mensagem pode ter no máximo 280 caracteres | O recado pode ter no máximo 280 caracteres. |
 
+- **O limite de 280 caracteres** é só um exemplo, baseado no limite de uma postagem no X (antigo Twitter). Ele pode ser diferente de grupo para grupo: se o seu plano tem outro número, use o seu.
 - **Espaços em branco** não contam: um nome só com espaços é um nome vazio.
 - **Quando o recado é recusado,** a página volta com o aviso embaixo do campo que falta, e o que a pessoa já escreveu continua no formulário.
 - **A correção segue as mesmas regras:** não dá para salvar um recado sem mensagem.

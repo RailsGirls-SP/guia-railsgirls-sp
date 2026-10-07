@@ -37,7 +37,8 @@ Clique em **Novo recado**, deixe os dois campos vazios e clique em **Postar reca
 
 **Confira:** um cartão vazio, só com o travessão (—). O app aceitou um recado sem nome e sem mensagem.
 
-<!-- TODO: captura do cartão vazio no mural de recados -->
+![Um cartão amarelo vazio, só com o travessão e os botões Editar e Apagar]({{ '/assets/images/mural-de-recados/07/cartao-vazio.png' | relative_url }})
+{: .ilustracao .ilustracao-pequena }
 
 Apague esse cartão pelo botão **Apagar**. Ele foi feito no capítulo 05 justamente para isso.
 
@@ -71,34 +72,6 @@ Salve o arquivo.
 - `presence` (presença) quer dizer que a informação precisa estar lá. Um texto vazio, ou só com espaços, não conta.
 - `message` é o aviso que a pessoa vai ver quando a regra não for cumprida.
 
-Agora confira as regras no console. No terminal novo:
-
-```
-bin/rails console
-```
-
-Crie um recado em branco, sem guardar, e pergunte se ele é válido:
-
-```ruby
-recado = Message.new
-recado.valid?
-```
-
-**Confira:** o console responde `false` (falso): o recado não cumpre as regras. Agora pergunte quais avisos ele tem:
-
-```ruby
-recado.errors[:author]
-recado.errors[:content]
-```
-
-**Confira:** o console responde `["Escreva o seu nome."]` e `["Escreva o seu recado."]`.
-
-Saia do console. Digite:
-
-```
-exit
-```
-
 Terminou? Abra o passo **4. Teste no navegador**
 
 </details>
@@ -112,6 +85,60 @@ Volte para a aba do app, clique em **Novo recado**, deixe os dois campos vazios 
 
 **Confira:** não aparece. O model recusou o recado, e nada foi guardado. Mas repare: também não aparece **nenhum aviso**. O app só volta para o mural de recados, como estava, e quem tentou postar não sabe o que aconteceu.
 
+<details class="pergunta" markdown="1">
+<summary>Veja como fica na tela</summary>
+
+![Animação: na página Novo recado, com os campos vazios, a pessoa clica em Postar recado; o app volta para o mural de recados, que continua só com o convite para postar o primeiro recado, sem cartão novo e sem nenhum aviso]({{ '/assets/images/mural-de-recados/07/postar-vazio-sem-aviso.gif' | relative_url }})
+{: .ilustracao .ilustracao-larga }
+
+</details>
+
+Terminou? Abra o passo **5. Veja os avisos no console**
+
+</details>
+
+<details class="passo" markdown="1">
+<summary>5. Veja os avisos no console</summary>
+
+Se o app recusou o recado, onde estão os avisos? Vamos perguntar ao model, pelo console.
+
+No terminal novo, abra o console:
+
+```
+bin/rails console
+```
+
+Crie um recado em branco, sem guardar, e pergunte se ele é válido:
+
+```ruby
+recado = Message.new
+recado.valid?
+```
+
+**Confira:** o console responde `false` (falso): o recado não cumpre as regras. Agora pergunte quais avisos ele tem, um de cada vez. Primeiro, o aviso da autora:
+
+```ruby
+recado.errors[:author]
+```
+
+**Confira:** o console responde `["Escreva o seu nome."]`.
+
+Depois, o aviso da mensagem:
+
+```ruby
+recado.errors[:content]
+```
+
+**Confira:** o console responde `["Escreva o seu recado."]`.
+
+Saia do console. Digite:
+
+```
+exit
+```
+
+Os avisos existem: o model sabe o que falta. Então por que eles não apareceram no navegador?
+
 O problema está no controller. Abra o `app/controllers/messages_controller.rb` e olhe a ação `create`:
 
 ```ruby
@@ -121,14 +148,14 @@ O problema está no controller. Abra o `app/controllers/messages_controller.rb` 
   end
 ```
 
-Ela tenta guardar o recado e, dando certo ou não, manda o navegador de volta para a página principal. Ninguém confere se o recado foi guardado.
+Ela tenta guardar o recado e, dando certo ou não, manda o navegador de volta para a página principal. Ninguém confere se o recado foi guardado. **É esse o erro:** quando o model recusa o recado, a ação `create` precisa mostrar o formulário de novo, com os avisos, e não voltar para o mural de recados como se tudo tivesse dado certo. É o que você vai arrumar no próximo passo.
 
-Terminou? Abra o passo **5. Confira se o recado foi guardado**
+Terminou? Abra o passo **6. Confira se o recado foi guardado**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>5. Confira se o recado foi guardado</summary>
+<summary>6. Confira se o recado foi guardado</summary>
 
 No `app/controllers/messages_controller.rb`, troque a ação `create` por:
 
@@ -147,8 +174,8 @@ No `app/controllers/messages_controller.rb`, troque a ação `create` por:
 Salve o arquivo. Leia com calma, de cima para baixo:
 
 - `Message.new(message_params)` monta o recado com o que veio do formulário, ainda sem guardar.
-- `@message.save` tenta guardar. Ele responde `true` (verdadeiro) se o recado cumpre as regras e foi guardado, e `false` (falso) se não.
-- `if` e `else` querem dizer "se" e "senão". **Se** guardou, volta para a página principal, como antes. **Senão**, mostra a página **Novo recado** de novo, com o recado recusado no formulário.
+- `@message.save` tenta guardar. Ele responde [`true` (verdadeiro)]({{ site.baseurl }}{% link glossario.md %}#true-e-false) se o recado cumpre as regras e foi guardado, e `false` (falso) se não.
+- [`if` e `else`]({{ site.baseurl }}{% link glossario.md %}#condicao) querem dizer "se" e "senão". **Se** guardou, volta para a página principal, como antes. **Senão**, mostra a página **Novo recado** de novo, com o recado recusado no formulário.
 - `render :new` mostra a view `new` sem fazer uma requisição nova. Por isso, o que a pessoa escreveu continua no formulário.
 - `status: :unprocessable_entity` avisa o navegador que o formulário foi recusado.
 
@@ -156,12 +183,12 @@ Salve o arquivo. Leia com calma, de cima para baixo:
 
 **Confira:** continua! A página **Novo recado** fica aberta, com o nome no campo, e nenhum cartão vazio é guardado. Mas o aviso ainda não aparece: falta a view mostrar.
 
-Terminou? Abra o passo **6. Mostre o que falta**
+Terminou? Abra o passo **7. Mostre o que falta**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>6. Mostre o que falta</summary>
+<summary>7. Mostre o que falta</summary>
 
 Abra o `app/views/messages/new.html.erb`. No formulário, logo abaixo da linha do `form.text_field :author`, acrescente:
 
@@ -218,12 +245,12 @@ Salve o arquivo.
 
 Agora preencha os dois campos e poste: o recado aparece normalmente. 🎉
 
-Terminou? Abra o passo **7. E um recado enorme?**
+Terminou? Abra o passo **8. E um recado enorme?**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>7. E um recado enorme?</summary>
+<summary>8. E um recado enorme?</summary>
 
 Um post-it não cabe um livro. O nosso plano limita a mensagem a 280 caracteres.
 
@@ -257,27 +284,32 @@ bin/rails console
 ```ruby
 recado = Message.new(author: "Ana", content: "a" * 281)
 recado.valid?
-recado.errors[:content]
 ```
 
 O `"a" * 281` monta um texto com a letra "a" repetida 281 vezes.
 
-**Confira:** o `valid?` responde `false`, e o `errors[:content]` mostra `["O recado pode ter no máximo 280 caracteres."]`. Troque o `281` por `280` e teste de novo: agora o recado é válido.
+**Confira:** o `valid?` responde `false`. Agora veja o aviso:
+
+```ruby
+recado.errors[:content]
+```
+
+**Confira:** o console mostra `["O recado pode ter no máximo 280 caracteres."]`. Troque o `281` por `280` e teste de novo: agora o recado é válido.
 
 Saia do console com `exit`.
 
-Terminou? Abra o passo **8. E na correção?**
+Terminou? Abra o passo **9. E na correção?**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>8. E na correção?</summary>
+<summary>9. E na correção?</summary>
 
 **Dê um palpite:** clique em **Editar** num recado, apague a mensagem e clique em **Salvar**. O que vai acontecer?
 
 **Confira:** você volta para o mural de recados, e o recado continua com a mensagem antiga. A regra funcionou, e a mensagem vazia não foi guardada. Mas, de novo, ninguém avisou a pessoa: parece que a correção foi ignorada.
 
-É o mesmo problema do passo 4, agora na ação `update`. No `app/controllers/messages_controller.rb`, troque a ação `update` por:
+É o mesmo problema dos passos 4 e 5, agora na ação `update`. No `app/controllers/messages_controller.rb`, troque a ação `update` por:
 
 ```ruby
   def update
@@ -293,26 +325,122 @@ Terminou? Abra o passo **8. E na correção?**
 
 O `@message.update` também responde `true` ou `false`, como o `save`. Se der errado, a página de correção aparece de novo, com o que a pessoa escreveu.
 
-Agora abra o `app/views/messages/edit.html.erb` e acrescente os avisos nos mesmos lugares do passo 6: o bloco do `@message.errors[:author]` logo abaixo do `form.text_field :author`, e o do `@message.errors[:content]` logo abaixo do `form.text_area :content`.
+Agora a página de correção precisa mostrar os avisos, como a página Novo recado. Abra o `app/views/messages/edit.html.erb` e deixe o arquivo assim:
+
+```erb
+<section class="section">
+  <div class="container">
+    <h1 class="title">Corrigir recado</h1>
+
+    <%= form_with model: @message, class: "box" do |form| %>
+      <div class="field">
+        <%= form.label :author, "Seu nome", class: "label" %>
+        <%= form.text_field :author, class: "input" %>
+        <% @message.errors[:author].each do |error| %>
+          <p class="help is-danger"><%= error %></p>
+        <% end %>
+      </div>
+      <div class="field">
+        <%= form.label :content, "Recado", class: "label" %>
+        <%= form.text_area :content, class: "textarea" %>
+        <% @message.errors[:content].each do |error| %>
+          <p class="help is-danger"><%= error %></p>
+        <% end %>
+      </div>
+      <%= form.submit "Salvar", class: "button is-primary" %>
+    <% end %>
+
+    <%= link_to "Voltar", root_path %>
+  </div>
+</section>
+```
 
 Salve os dois arquivos.
 
 **Confira:** abra a correção de um recado, apague a mensagem e clique em **Salvar**. Aparece o aviso **Escreva o seu recado.** embaixo do campo, e o recado não muda até você escrever alguma coisa.
 
-Terminou? Abra o passo **9. Guarde o seu progresso**
+Repare: o formulário do `edit.html.erb` é igual ao do `new.html.erb`, com os mesmos avisos. Só mudam o título e o texto do botão.
+
+<details class="pergunta" markdown="1">
+<summary>Um formulário só para as duas páginas <span class="label label-purple">Para ir além</span></summary>
+
+Você escreveu o mesmo formulário duas vezes. Se um dia o recado ganhar um campo novo, como a cor do desafio extra, vai ser preciso mexer nos dois arquivos, e é fácil esquecer um deles. O Rails tem um jeito de escrever um pedaço de view uma vez só e usar em várias páginas: a **partial**.
+
+**1.** No Explorer, clique com o botão direito na pasta `app/views/messages`, escolha **New File…** e crie o arquivo `_form.html.erb`. O `_` no começo do nome é o que diz ao Rails que o arquivo é uma partial. Escreva nele:
+
+```erb
+<%= form_with model: message, class: "box" do |form| %>
+  <div class="field">
+    <%= form.label :author, "Seu nome", class: "label" %>
+    <%= form.text_field :author, class: "input" %>
+    <% message.errors[:author].each do |error| %>
+      <p class="help is-danger"><%= error %></p>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= form.label :content, "Recado", class: "label" %>
+    <%= form.text_area :content, class: "textarea" %>
+    <% message.errors[:content].each do |error| %>
+      <p class="help is-danger"><%= error %></p>
+    <% end %>
+  </div>
+  <%= form.submit submit_text, class: "button is-primary" %>
+<% end %>
+```
+
+É o mesmo formulário, com duas diferenças: o recado se chama `message`, sem o `@`, e o texto do botão é o `submit_text` (texto do botão). Quem usa a partial é que diz o que vai em cada um.
+
+**2.** Deixe o `app/views/messages/new.html.erb` assim:
+
+```erb
+<section class="section">
+  <div class="container">
+    <h1 class="title">Novo recado</h1>
+
+    <%= render "form", message: @message, submit_text: "Postar recado" %>
+
+    <%= link_to "Voltar", root_path %>
+  </div>
+</section>
+```
+
+**3.** E o `app/views/messages/edit.html.erb` assim:
+
+```erb
+<section class="section">
+  <div class="container">
+    <h1 class="title">Corrigir recado</h1>
+
+    <%= render "form", message: @message, submit_text: "Salvar" %>
+
+    <%= link_to "Voltar", root_path %>
+  </div>
+</section>
+```
+
+Salve os três arquivos.
+
+- `render "form"` coloca a partial `_form.html.erb` naquele lugar da página. No `render`, o nome vai sem o `_` e sem o `.html.erb`.
+- `message: @message` entrega o recado para a partial, e `submit_text:` entrega o texto do botão.
+
+**Confira:** abra a página **Novo recado** e a correção de um recado. As duas aparecem iguais a antes, com os avisos quando falta alguma coisa. A diferença está no código: o formulário agora mora num lugar só.
+
+</details>
+
+Terminou? Abra o passo **10. Guarde o seu progresso**
 
 </details>
 
 <details class="passo" markdown="1">
-<summary>9. Guarde o seu progresso</summary>
+<summary>10. Guarde o seu progresso</summary>
 
 Guarde o seu progresso com um [commit]({{ site.baseurl }}{% link glossario.md %}#commit), como no passo **Guarde o seu progresso** de [Por onde começar?]({{ site.baseurl }}{% link projetos/mural-de-recados/01-por-onde-comecar/mao-na-massa.md %}):
 
 1. No painel **Source Control**, clique no **+** ao lado de **Changes** (**Stage All Changes**).
-2. Escreva a mensagem `Não aceita recado vazio` e clique em **Commit**.
+2. Escreva a mensagem `Valida os recados e mostra os avisos` e clique em **Commit**.
 3. Clique em **Sync Changes** e, na janela que abrir, em **OK**.
 
-**Confira:** em **Graph**, o commit `Não aceita recado vazio` aparece com a etiqueta **main** e o ícone de nuvem.
+**Confira:** em **Graph**, o commit `Valida os recados e mostra os avisos` aparece com a etiqueta **main** e o ícone de nuvem.
 
 </details>
 
@@ -330,7 +458,7 @@ Confira se o `app/models/message.rb` está salvo e se cada `validates` está **d
 <details class="pergunta" markdown="1">
 <summary>Cliquei em Postar recado e nada aconteceu, nem o aviso</summary>
 
-Confira se o `render :new` tem o `status: :unprocessable_entity` no fim. Sem ele, o navegador não mostra a página com o aviso. Depois, confira se a view tem os blocos do `@message.errors` do passo 6.
+Confira se o `render :new` tem o `status: :unprocessable_entity` no fim. Sem ele, o navegador não mostra a página com o aviso. Depois, confira se a view tem os blocos do `@message.errors` do passo 7.
 
 </details>
 
@@ -344,7 +472,7 @@ Falta o `message:` na regra, no model. Confira se cada `validates` está igual a
 <details class="pergunta" markdown="1">
 <summary>Aparece um erro de sintaxe depois de mudar o controller</summary>
 
-Confira se cada `if` tem o seu `end`, e se cada `def` também. Na ação `create`, são dois `end` no fim: um do `if` e um do `def`. Compare com o código do passo 5. Na dúvida, peça ajuda para alguém da mentoria. 💜
+Confira se cada `if` tem o seu `end`, e se cada `def` também. Na ação `create`, são dois `end` no fim: um do `if` e um do `def`. Compare com o código do passo 6. Na dúvida, peça ajuda para alguém da mentoria. 💜
 
 </details>
 

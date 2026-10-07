@@ -98,7 +98,7 @@ Sem o `only`, o `resources :messages` cria as rotas das sete ações do Rails, i
 <details class="pergunta" markdown="1">
 <summary>Eu copiei o formulário. Tem jeito de não repetir? <span class="label label-purple">Para ir além</span></summary>
 
-Tem: o Rails permite separar um pedaço de view num arquivo próprio, chamado *partial*, e usar esse pedaço em várias views. O `new.html.erb` e o `edit.html.erb` são um ótimo exemplo: os dois têm o mesmo formulário, e só mudam o título e o botão. A gente preferiu copiar para deixar cada view completa e fácil de ler. Se quiser experimentar, procure por *partials* no guia [Layouts and Rendering in Rails](https://guides.rubyonrails.org/layouts_and_rendering.html#using-partials), em inglês.
+Tem: o Rails permite separar um pedaço de view num arquivo próprio, chamado *partial*, e usar esse pedaço em várias views. O `new.html.erb` e o `edit.html.erb` são um ótimo exemplo: os dois têm o mesmo formulário, e só mudam o título e o botão. A gente preferiu copiar para deixar cada view completa e fácil de ler. No capítulo [E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link projetos/mural-de-recados/07-e-se-o-recado-vier-vazio/mao-na-massa.md %}), o passo 9 mostra como juntar os dois formulários numa partial. Para saber mais, veja *partials* no guia [Layouts and Rendering in Rails](https://guides.rubyonrails.org/layouts_and_rendering.html#using-partials), em inglês.
 
 </details>
 
