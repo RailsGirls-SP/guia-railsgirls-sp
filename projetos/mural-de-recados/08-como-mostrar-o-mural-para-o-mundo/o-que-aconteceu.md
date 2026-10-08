@@ -40,7 +40,7 @@ Em vermelho escuro, a peça que mudou neste capítulo; em rosa claro, as que voc
 
 #### O deploy
 
-**Deploy** (implantação) é o nome do processo de levar o código para o lugar onde o app roda e ligar o app de novo. Cada deploy do Render segue a mesma receita: buscar o código no GitHub, rodar o `bin/render-build.sh` e ligar o app com o `bin/rails server`. Como ele acompanha o seu repositório, cada **Sync Changes** vira um deploy novo.
+**Deploy** (implantação) é o nome do processo de levar o código para o lugar onde o app roda e ligar o app de novo. Cada deploy do Render segue a mesma receita: buscar o código no GitHub, rodar a receita do **Build Command** e ligar o app com o `bin/rails server`. Como ele acompanha o seu repositório, cada **Sync Changes** vira um deploy novo.
 
 #### Segredos ficam fora do código
 
@@ -131,6 +131,7 @@ Nunca cole numa IA, nem em nenhum outro lugar, o `DATABASE_URL` nem o conteúdo 
 Em inglês:
 
 - [Deploying Rails on Render](https://render.com/docs/deploy-rails-8): o guia do Render para apps Rails.
+- [Build command](https://render.com/docs/deploys#build-command): o que é a receita de preparação que o Render roda a cada deploy.
 - [Free instances](https://render.com/docs/free): o que o plano gratuito do Render oferece e os seus limites.
 
 </details>
