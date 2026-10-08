@@ -276,6 +276,9 @@ O navegador abre uma janelinha pedindo um usuário e uma senha. Ela é do navega
 
 Clique em **Novo recado** e poste o primeiro recado do mural de recados no ar. 🎉
 
+![Mural de recados no ar, com o endereço do Render na barra do navegador, o botão Novo recado e um cartão amarelo com o recado "AEEEE! Deu certo!" e os botões Editar e Apagar]({{ '/assets/images/mural-de-recados/08/mural-no-ar.png' | relative_url }})
+{: .ilustracao .ilustracao-larga }
+
 Agora abra o mesmo endereço no seu celular, ou mande para alguém do workshop, junto com a palavra-chave: quem souber a palavra-chave pode abrir e deixar um recado.
 
 <!-- TODO: captura do mural de recados no ar, no celular -->
