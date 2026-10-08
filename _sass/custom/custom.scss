@@ -182,6 +182,72 @@ details.passo {
   }
 }
 
+// Progresso do "Mão na massa" (assets/js/progresso.js).
+.progresso {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1.25rem;
+  background: #fbf3f1;
+  border: 1px solid #e0dcd8;
+  border-radius: 4px;
+
+  .progresso-contador {
+    margin: 0;
+    font-weight: 600;
+    color: #490606;
+  }
+
+  .progresso-recomecar {
+    padding: 0.15rem 0.6rem;
+    font-size: 0.85rem;
+    color: #73121b;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #e0dcd8;
+    border-radius: 4px;
+
+    &:disabled {
+      color: #9a9a9a;
+      cursor: default;
+    }
+  }
+
+  .progresso-aviso {
+    flex-basis: 100%;
+    margin: 0;
+    font-size: 0.85rem;
+    color: #5c5962;
+  }
+}
+
+.progresso-marcar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  padding: 0.4rem 0.8rem;
+  font-weight: 600;
+  color: #490606;
+  cursor: pointer;
+  background: #fbf3f1;
+  border: 1px solid #e0dcd8;
+  border-radius: 4px;
+
+  input {
+    width: 1.1rem;
+    height: 1.1rem;
+    accent-color: #2f7d32;
+  }
+}
+
+details.passo.passo-concluido > summary::after {
+  content: " ✓" / " (concluído)";
+  color: #2f7d32;
+}
+
 // Perguntas e respostas (Não existem perguntas bobas): uma por bloco.
 details.pergunta {
   margin: 0.5rem 0;

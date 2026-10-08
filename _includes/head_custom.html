@@ -17,3 +17,6 @@
     navigator.clipboard.writeText = (text) => writeText(String(text).replace(/\n+$/, ""));
   }
 </script>
+{% if page.url contains '/mao-na-massa' %}
+<script src="{{ '/assets/js/progresso.js' | relative_url }}" defer></script>
+{% endif %}
