@@ -7,7 +7,7 @@ nav_order: 1
 
 # Mão na massa
 
-<!-- TODO: testar o capítulo inteiro num deploy de verdade no Render, com um app criado pelo template do Codespaces: confirmar se o Render instala a versão do Ruby do .ruby-version (Ruby 4.0), se o plano gratuito pede cartão de crédito, os nomes dos botões e campos do painel do Render e o tempo do primeiro deploy. Tirar as capturas. -->
+<!-- TODO: testado num deploy de verdade em 2026-10-08 (Ruby 4.0.6 instalado pelo .ruby-version, sem cartão de crédito, primeiro deploy em cerca de 2 minutos). Falta: a captura das mensagens do deploy (passo 7), a do mural de recados no celular (passo 8) e os nomes dos botões de apagar no Render (capítulo 09). -->
 
 Travou em algum passo? Veja [Travou?](#travou), no fim da página.
 
@@ -252,7 +252,7 @@ O Render começa o **deploy**: busca o seu código no GitHub, roda a receita do 
 
 **Dê um palpite:** o que aparece nas mensagens, pela receita que você colou no **Build Command**?
 
-O primeiro deploy demora alguns minutos. Enquanto espera, procure nas mensagens os passos da receita: o `bundle install` instalando as peças, o `assets:precompile` e o `db:prepare` criando as tabelas.
+O primeiro deploy demora uns 2 ou 3 minutos. Enquanto espera, procure nas mensagens os passos da receita: o `bundle install` instalando as peças, o `assets:precompile` e o `db:prepare` criando as tabelas.
 
 **Confira:** no fim, aparece a mensagem **Your service is live** 🎉, e o status do app fica **Live**.
 
@@ -302,7 +302,10 @@ Salve, faça um commit com a mensagem `Muda o título do mural` e clique em **Sy
 
 **Dê um palpite:** o que acontece no Render?
 
-**Confira:** no painel do Render, um novo deploy começa sozinho. Quando ele terminar, recarregue o endereço do app: o título novo aparece no mural de recados no ar.
+**Confira:** no Render, abra o app `mural-de-recados`. No alto da página, aparece uma faixa **In progress** (em andamento), com o código do commit anterior, uma seta e o código do seu commit novo. Quando o deploy terminar, a faixa some e o app volta a ficar **Live**. Recarregue o endereço do app: o título novo aparece no mural de recados no ar.
+
+![Página do app mural-de-recados no Render, com o status Live e, embaixo, a faixa In progress mostrando o código do commit anterior, uma seta e o código do commit novo]({{ '/assets/images/mural-de-recados/08/deploy-em-andamento.png' | relative_url }})
+{: .ilustracao .ilustracao-larga }
 
 </details>
 

@@ -10,7 +10,7 @@ nav_order: 9
 [Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo/index.md %}) <!-- TODO: quando as tags existirem, voltar com \" · Código de referência: tag `passo-08`\", com link para a tag no repositório RailsGirls-SP/mural-de-recados. -->
 
 {: .atencao }
-Este capítulo é **opcional** e ainda **não foi testado num deploy de verdade**. Antes do workshop, alguém da organização precisa fazer o capítulo inteiro, do zero, com uma conta nova no Render.
+Este capítulo é **opcional**. Foi testado num deploy de verdade em 2026-10-08, com Rails 8.1.4 e Ruby 4.0. As telas do Render mudam com frequência: antes do workshop, vale alguém da organização refazer o capítulo, do zero, com uma conta nova.
 
 ## Perguntas para o "Pense antes"
 
@@ -30,6 +30,10 @@ Este capítulo é **opcional** e ainda **não foi testado num deploy de verdade*
 - **Regiões diferentes** para o app e o banco de dados: o endereço interno não funciona entre regiões.
 - **O app "dormindo".** Depois de 15 minutos sem acesso, a primeira visita demora cerca de um minuto. Não é erro.
 
+## Deploy ou deployment?
+
+Se alguém perguntar: os dois existem. Em inglês, *deploy* é o verbo ("to deploy") e *deployment* é o substantivo formal. No português de quem programa, "deploy" virou substantivo também ("fazer o deploy", "o deploy falhou"), e *deployment* aparece mais em texto formal ou em nomes de ferramentas. O próprio Render usa **Deploy** nas telas (**Deploys**, **Manual Deploy**, **Deploy web service**). O guia usa só "deploy", com a tradução "implantação" no "O que aconteceu?" e no [glossário]({{ site.baseurl }}{% link glossario.md %}#deploy).
+
 ## Decisões técnicas do capítulo
 
 - **PostgreSQL em produção, SQLite em desenvolvimento.** No plano gratuito, o Render não tem disco permanente: um arquivo SQLite seria apagado a cada deploy ou reinício. O PostgreSQL gratuito dura 30 dias, o que basta para o workshop. O `database.yml` não muda: o `DATABASE_URL` substitui a configuração do banco principal em produção. Testado localmente com Rails 8.1.4 e PostgreSQL 17.
@@ -39,7 +43,7 @@ Este capítulo é **opcional** e ainda **não foi testado num deploy de verdade*
 - **`RAILS_MASTER_KEY`, como o Render sugere.** É o padrão do Rails para produção (o `Dockerfile` e o Kamal do app também usam). Existe outro caminho, uma `SECRET_KEY_BASE` gerada pelo **Generate** do Render, mas o guia segue a sugestão do Render para mexer no mínimo. **Não use o Generate na `RAILS_MASTER_KEY`:** uma chave aleatória não abre o `config/credentials.yml.enc`, e o app falha ao ligar.
 - **`db:prepare`, e não `db:migrate`, na receita.** O `db:prepare` cria as tabelas dessas bases a partir dos arquivos `*_schema.rb`, e o `db:migrate` não.
 - **A gem `pg` em todos os ambientes.** Desde a versão 1.6, a gem `pg` tem versões pré-compiladas para Linux, então o `bundle add pg` funciona no Codespaces sem instalar nada no sistema.
-- **Ruby 4.0 no Render.** O `.ruby-version` do app tem a versão do Codespaces (Ruby 4.0). A documentação do Render ainda não confirma Ruby 4.0. Se o deploy falhar por isso, a alternativa é o deploy com Docker, usando o `Dockerfile` que o `rails new` já criou (escolher **Docker** como linguagem no Render). Precisa ser testado.
+- **Ruby 4.0 no Render.** O Render lê o `.ruby-version` do app e instala a versão sozinho. No teste, o log mostrou `Using Ruby version 4.0.6 via /opt/render/project/src/.ruby-version`, seguido de `Installing Ruby version 4.0.6...`.
 
 ## Segurança
 

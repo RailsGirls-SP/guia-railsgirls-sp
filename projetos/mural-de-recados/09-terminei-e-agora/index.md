@@ -32,6 +32,15 @@ Se preferir, dá para desligar pela lista de codespaces, em [github.com/codespac
 
 **Confira:** continua. O app no ar roda no Render, e não no seu codespace.
 
+**E o app no Render?** Pode deixar no ar: é para isso que ele existe, e no plano gratuito ele não custa nada. Mas ele não fica lá para sempre: o banco de dados gratuito é apagado depois de 30 dias, e o app passa a dar erro. Quando não precisar mais do mural de recados no ar (no máximo, perto dos 30 dias), apague os dois, para não deixar um app quebrado na internet nem recados guardados sem uso:
+
+1. No Render, abra o app `mural-de-recados`, clique em **Settings** e, no fim da página, em **Delete Web Service**.
+2. Abra o banco de dados `mural_de_recados_db` e, no fim da página **Info**, clique em **Delete Database**.
+
+Apagar no Render não mexe no seu código: ele continua no GitHub, e dá para colocar no ar de novo seguindo o capítulo 08.
+
+<!-- TODO: confirmar os nomes dos botões de apagar no Render (o menu do app mostra "Delete or suspend"). -->
+
 {: .dica }
 Está usando o seu próprio computador, e não o Codespaces? Basta desligar o servidor com **Ctrl+C**.
 

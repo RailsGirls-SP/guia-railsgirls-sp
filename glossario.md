@@ -54,6 +54,15 @@ Neste guia, "o servidor" quase sempre quer dizer o programa.
 
 </details>
 
+<details class="termo" id="deploy" markdown="1">
+<summary>Deploy</summary>
+
+**Deploy** (pronuncia-se mais ou menos *di-PLÓI*; em português, **implantação**) é levar o código para o computador onde o app roda para as pessoas usarem, e ligar o app de novo com a versão nova. Quem programa diz "fazer o deploy" ou "o deploy falhou".
+
+No [Render](#render), cada commit enviado para o GitHub vira um deploy: ele busca o código, prepara o app e liga de novo. Você faz o primeiro deploy do mural de recados em [Como mostrar o mural de recados para o mundo?]({{ site.baseurl }}{% link projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo/index.md %}).
+
+</details>
+
 <details class="termo" id="html" markdown="1">
 <summary>HTML</summary>
 
@@ -131,6 +140,15 @@ Neste guia, **console** quase sempre quer dizer o **console do Rails**: um jeito
 O terminal entende comandos do computador, como `bin/rails server`. Já o console do Rails entende Ruby e conhece o seu app: dá para escrever `Message.count` e ver na hora quantos recados existem. Para sair do console e voltar ao terminal, digite `exit`. Você usa o console pela primeira vez em [Como guardar os recados?]({{ site.baseurl }}{% link projetos/mural-de-recados/02-como-guardar-os-recados/mao-na-massa.md %}).
 
 Fora deste guia, a palavra "console" também pode aparecer com outros sentidos, como sinônimo de terminal ou como o painel de ferramentas do navegador.
+
+</details>
+
+<details class="termo" id="render" markdown="1">
+<summary>Render</summary>
+
+O **Render** (pronuncia-se mais ou menos *RÉN-der*) é um serviço que guarda e roda apps na internet. Ele busca o código no seu repositório do [GitHub](#github), prepara o app, liga o [servidor](#servidor) e dá um endereço, como `https://mural-de-recados.onrender.com`, para qualquer pessoa abrir. Também oferece bancos de dados, como o PostgreSQL.
+
+Tem um plano gratuito, com limites: o app "dorme" depois de um tempo sem uso, e o banco de dados gratuito é apagado depois de 30 dias. É o serviço usado em [Como mostrar o mural de recados para o mundo?]({{ site.baseurl }}{% link projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo/index.md %}). Existem vários outros serviços parecidos.
 
 </details>
 

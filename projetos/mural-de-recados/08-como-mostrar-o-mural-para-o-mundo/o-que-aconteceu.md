@@ -19,7 +19,11 @@ Agora o seu app existe em dois lugares:
 | **Banco de dados** | SQLite, um arquivo (`storage/development.sqlite3`) | PostgreSQL, um serviço separado |
 | **Os recados** | Os seus testes | Os recados de verdade |
 
-Quem programa chama o primeiro de ambiente de **desenvolvimento** (*development*) e o segundo de ambiente de **produção** (*production*). O código é o mesmo, e o Rails ajusta o que muda entre os dois, como o banco de dados.
+Quem programa chama o primeiro de ambiente de **desenvolvimento** (*development*) e o segundo de ambiente de **produção** (*production*). O código é o mesmo, e o que muda entre os dois fica em configurações separadas.
+
+Você não precisou escolher o ambiente: quem diz ao Rails em qual ambiente ele está é a variável de ambiente `RAILS_ENV`. O Render já cria essa variável sozinho, com o valor `production`, em todo app Ruby. No codespace, ela não existe, e o Rails usa `development`.
+
+Cada ambiente tem o seu arquivo de configurações, na pasta `config/environments`: o `development.rb` e o `production.rb`, que o `rails new` já criou. Você mexeu num deles no capítulo 04: a linha da proteção de formulários foi para o `development.rb`, e por isso só vale no codespace. E o banco de dados de produção vem da variável `DATABASE_URL`, que você colou no Render.
 
 Você está aqui: este é o caminho que uma requisição percorre dentro do app. Ele é o mesmo no codespace e no Render: o que mudou foi o computador onde o app roda.
 
@@ -46,6 +50,9 @@ Em vermelho escuro, a peça que mudou neste capítulo; em rosa claro, as que voc
 
 O `DATABASE_URL` (com a senha do banco de dados), o `RAILS_MASTER_KEY` (a chave secreta do app) e a `ACCESS_PASSWORD` (a palavra-chave do mural de recados) não estão no seu código nem no GitHub: eles foram colados direto no Render, como **variáveis de ambiente**. Assim, mesmo que alguém veja o seu repositório, não consegue entrar no seu banco de dados.
 
+{: .atencao }
+Nunca escreva um segredo no código nem faça commit de um arquivo com segredos, mesmo com o repositório privado. Tudo o que vai para o GitHub fica guardado no histórico de commits: apagar o segredo num commit seguinte não tira ele dos commits anteriores. Se um segredo for parar no GitHub, considere que ele vazou e troque por um novo. É por isso que o Rails já deixa o `config/master.key` de fora dos commits.
+
 #### Seus commits contam a história
 
 Desde o capítulo 01, você guardou o progresso com commits e enviou para o GitHub. Foi isso que permitiu o Render buscar o app pronto. O histórico de commits é também a história do seu mural de recados, capítulo por capítulo.
@@ -65,7 +72,7 @@ Porque cada lugar tem o seu banco de dados. O banco de dados do codespace é um 
 <details class="pergunta" markdown="1">
 <summary>O meu mural de recados vai ficar no ar para sempre?</summary>
 
-No plano gratuito do Render, o banco de dados dura 30 dias: depois disso, ele é apagado, e o mural de recados no ar perde os recados. O app continua no ar, mas sem banco de dados ele para de funcionar. Para manter por mais tempo, dá para pagar um plano do Render ou usar outro serviço. O código continua seguro no seu GitHub.
+No plano gratuito do Render, o banco de dados dura 30 dias: depois disso, ele é apagado, e o mural de recados no ar perde os recados. O app continua no ar, mas sem banco de dados ele para de funcionar. Para manter por mais tempo, dá para pagar um plano do Render ou usar outro serviço. Se não for manter, apague o app e o banco de dados no Render quando não precisar mais deles: o capítulo 09 mostra como. O código continua seguro no seu GitHub.
 
 </details>
 
@@ -79,7 +86,21 @@ Qualquer pessoa que tenha a palavra-chave, sim. A palavra-chave segura os robôs
 <details class="pergunta" markdown="1">
 <summary>Por que o Render, e não outro serviço? <span class="label label-purple">Para ir além</span></summary>
 
-O Render tem um plano gratuito que funciona com apps Rails sem precisar configurar um servidor. Existem muitos outros serviços para colocar apps no ar, cada um com as suas vantagens, e o próprio Rails traz uma ferramenta para isso, o Kamal. O que você aprendeu aqui vale para quase todos: o código vem do GitHub, os segredos ficam em variáveis de ambiente, e o banco de dados de produção é separado do de desenvolvimento.
+O Render tem um plano gratuito que funciona com apps Rails sem precisar configurar um servidor, e que não pede cartão de crédito para criar a conta, o app e o banco de dados. Existem muitos outros serviços para colocar apps no ar, cada um com as suas vantagens, e o próprio Rails traz uma ferramenta para isso, o [Kamal](https://kamal-deploy.org/), que coloca o app no ar num servidor seu (veja também [Deploying to Production](https://guides.rubyonrails.org/getting_started.html#deploying-to-production), no guia oficial do Rails, em inglês). O que você aprendeu aqui vale para quase todos: o código vem do GitHub, os segredos ficam em variáveis de ambiente, e o banco de dados de produção é separado do de desenvolvimento.
+
+</details>
+
+<details class="pergunta" markdown="1">
+<summary>Dá para usar um endereço meu, como <code>mural.meusite.com.br</code>? <span class="label label-purple">Para ir além</span></summary>
+
+Dá. Esse endereço próprio se chama **domínio personalizado** (*custom domain*). O caminho é este:
+
+1. **Ter um domínio.** Ele é comprado num serviço de registro de domínios. Os terminados em `.br`, por exemplo, são registrados no [Registro.br](https://registro.br). O registro é pago por ano.
+2. **Avisar o Render.** Na página do app, em **Settings**, procure **Custom Domains** e acrescente o endereço, por exemplo `mural.meusite.com.br`.
+3. **Apontar o domínio para o Render.** No serviço onde o domínio foi registrado, crie o registro de **DNS** que o Render mostrar (em geral, um `CNAME` apontando para o endereço `.onrender.com` do app). O DNS é a "lista telefônica" da internet: ele diz para qual computador cada endereço leva.
+4. **Verificar.** De volta ao Render, clique em **Verify**. A mudança no DNS pode levar de alguns minutos a algumas horas para valer.
+
+Funciona no plano gratuito do Render: o único custo é o registro do domínio. O Render também cuida sozinho do **HTTPS** (o cadeado do navegador) para o seu domínio. Veja os detalhes em [Custom Domains](https://render.com/docs/custom-domains), na documentação do Render, em inglês.
 
 </details>
 
