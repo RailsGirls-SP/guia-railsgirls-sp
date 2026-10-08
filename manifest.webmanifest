@@ -1,0 +1,32 @@
+---
+layout: null
+---
+{
+  "name": "Guia Rails Girls São Paulo",
+  "short_name": "Rails Girls SP",
+  "description": "Guia de autoestudo do Rails Girls São Paulo",
+  "lang": "pt-BR",
+  "start_url": "{{ '/' | relative_url }}",
+  "scope": "{{ '/' | relative_url }}",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#73121b",
+  "icons": [
+    {
+      "src": "{{ '/assets/images/icones/icone-192.png' | relative_url }}",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "{{ '/assets/images/icones/icone-512.png' | relative_url }}",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "{{ '/assets/images/icones/icone-maskable-512.png' | relative_url }}",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
