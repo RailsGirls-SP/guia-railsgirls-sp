@@ -109,14 +109,23 @@ Contexto só para a mentoria. **Não precisa levar isso para as participantes**:
 
 **De onde vem.** O padrão foi criado no fim dos anos 1970 por Trygve Reenskaug, no Xerox PARC, para interfaces gráficas em Smalltalk. Ele chegou à web nos anos 1990 e 2000, com frameworks como o Struts (Java), e o Rails ajudou a popularizar. Hoje aparece com variações em muitos frameworks, como Django, Laravel, Phoenix e ASP.NET MVC.
 
+**O papel do Rails.** O Rails (agosto de 2004) e o Django (julho de 2005) apareceram com ênfase em desenvolvimento rápido, e isso levou o MVC para além do mundo das grandes empresas, onde ele já era usado há tempos. É o que diz o artigo da Wikipédia sobre o MVC, que ainda registra que o Django adotou uma variação, o *model-template-view*, e que o padrão já era popular entre quem programava em Java. Dizer que o Rails "ajudou a popularizar" é uma leitura razoável, mas ele não inventou nada: o MVC é de mais de 20 anos antes (1979 contra 2004), e já existia na web.
+
+Para saber mais (em inglês, exceto a primeira):
+
+- [MVC](https://pt.wikipedia.org/wiki/MVC), na Wikipédia em português, e [Model–view–controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller), na versão em inglês, que é mais completa e traz a história, as variações e as referências: da criação, no Smalltalk, até o Rails e o Django.
+- [Getting Started with Rails](https://guides.rubyonrails.org/getting_started.html#model-view-controller-basics), na parte "Model-View-Controller Basics": como o próprio Rails descreve o MVC.
+- [GUI Architectures](https://martinfowler.com/eaaDev/uiArchs.html), de Martin Fowler: a origem do MVC nas interfaces gráficas e variações como o MVP. O texto fala só de interfaces gráficas, e não de web.
+
 **No Rails.** O MVC aparece nos nomes das pastas: `app/models`, `app/views` e `app/controllers`. Mas o Rails tem mais peças em volta, que o guia apresenta aos poucos: as **rotas** (`config/routes.rb`), que vêm antes do controller; os **layouts**, que envolvem todas as views; os **helpers**; e as **migrations**, que mudam o banco de dados, mas não fazem parte do MVC em si. Se uma participante perguntar "e a rota, é o quê no MVC?", a resposta honesta é: nenhuma das três; ela é a porta de entrada que escolhe o controller.
 
 **Por que separar.** O argumento do capítulo é o mesmo que se usa no dia a dia: mudar a aparência sem mexer nos dados, usar os mesmos dados em telas diferentes e saber onde procurar cada problema. O capítulo 06 é a prova prática: os cartões mudam por completo, e o model não muda nada.
 
+Uma comparação que ajuda aqui é a **organização da casa**: cada coisa fica no cômodo certo, as panelas e os mantimentos na cozinha, as roupas no quarto. Dá para trocar o sofá da sala sem mexer na despensa, e, quando falta sal, ninguém procura no armário de roupas. No app é igual: cada tipo de arquivo mora na sua pasta (`app/models`, `app/views`, `app/controllers`), e, na hora de um problema, a pessoa já sabe em que cômodo olhar. A comparação serve bem para o **porquê** de separar e para as pastas, mas não para explicar o papel de cada peça, porque numa casa não existe um "controller".
+
 **Dicas para conversar sobre isso:**
 
 - Fique nas três responsabilidades e nos arquivos do Mural de recados. Termos como "camada", "arquitetura" ou "separação de responsabilidades" não ajudam quem está começando.
-- O guia usa analogias diferentes em lugares diferentes: a planilha e a assistente para o model (capítulo 02) e o restaurante no glossário (o controller como quem atende o pedido, a view como a montagem do prato). Elas se completam, mas não force uma analogia única para as três peças.
 - Uma regra comum na comunidade Rails é "controller magro, model gordo": as regras ficam no model, e o controller só coordena. Não precisa falar disso agora, mas é o que o guia segue quando, no capítulo 07, a regra "recado não pode ser vazio" vai para o model.
 
 ## A página de erro no Codespaces
