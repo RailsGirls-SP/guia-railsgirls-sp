@@ -62,6 +62,17 @@ O app no ar é público: qualquer pessoa com o endereço consegue abrir. Vale co
 | **Acesso do Render ao GitHub** | O Render pede permissão para ler repositórios. | Sugira dar acesso só ao repositório do mural de recados (**Only select repositories**). |
 | **Dados apagados depois de 30 dias** | O banco de dados gratuito expira. | Avise a participante, para não estranhar quando os recados sumirem. |
 
+## Se o tempo apertar
+
+O capítulo é **opcional**, e a página dele já diz que pode ser feito em casa. Se sobrar pouco tempo no dia, o **mínimo** é ver o mural de recados no ar, que são os **passos 1 a 8**. O passo 9 (mudar o título e ver o deploy automático) e o "O que aconteceu?" ficam para casa.
+
+Se nem isso couber, há um ponto de parada seguro: **depois do passo 5**. Nesse ponto, a conta e o banco de dados já existem no Render, e o app está preparado e enviado ao GitHub (o `pg`, a palavra-chave e o commit). Em casa, a participante recomeça no passo 6, e nada fica pela metade.
+
+Duas ideias que ajudam:
+
+- **A conta no Render** (passo 1) pode ser criada antes, por exemplo no intervalo, para ganhar tempo.
+- **Uma demonstração** também vale: se poucas pessoas chegarem ao capítulo, uma delas faz os passos na tela grande, e as outras acompanham e repetem em casa.
+
 ## Próximas notas
 
 [09. Terminei! E agora?]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/09-terminei-e-agora.md %})

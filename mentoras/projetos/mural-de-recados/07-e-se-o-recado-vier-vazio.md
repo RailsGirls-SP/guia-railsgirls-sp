@@ -56,6 +56,18 @@ Um cuidado, se a conversa for longe: em apps grandes, "model gordo" demais tamb�
 
 O formulário poderia ter `required: true` nos campos, e o navegador já impediria o envio vazio. O guia não usa isso de propósito: a regra no navegador é fácil de contornar (basta mandar a requisição de outro jeito), e o objetivo do capítulo é mostrar que a regra que vale de verdade fica no model. Se alguém perguntar, as duas coisas podem andar juntas: o `required` ajuda quem usa, e o `validates` protege os dados.
 
+## Se o tempo apertar
+
+O capítulo é um "nice to have", mas é o mais importante dos opcionais: é onde aparece a ideia de que quem decide o que é um erro é quem programa. Se sobrar pouco tempo, o **mínimo** é:
+
+| Fazer | Passos | O que a participante ganha |
+|---|---|---|
+| Ver o problema e escrever a regra no model | 1 a 4 | O recado vazio deixa de ser guardado |
+| Mostrar os avisos | 5 a 7 | A pessoa vê o que faltou, e o que foi escrito continua no formulário |
+| Guardar o progresso | 10 | Um commit com a regra e os avisos |
+
+Ficam para depois, ou para casa: o **passo 8** (o limite de 280 caracteres) e o **passo 9** (os avisos na correção, que repetem o padrão do passo 7 na ação `update`). Se der para fazer só uma parte, prefira terminar no passo 7: parar no 4 deixa o recado sumindo sem aviso, que é o problema que o capítulo mostra de propósito, e que os passos 5 a 7 resolvem. Se parar no 4 mesmo assim, o commit do passo 10 não diz a verdade (`Valida os recados e mostra os avisos`): use `Valida os recados`.
+
 ## Próximas notas
 
 [08. Como mostrar o mural de recados para o mundo?]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo.md %})

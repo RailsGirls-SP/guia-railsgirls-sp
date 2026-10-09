@@ -9,6 +9,11 @@ nav_order: 5
 
 [Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/04-postar-um-recado/index.md %}) <!-- TODO: quando as tags existirem, voltar com \" · Código de referência: tag `passo-04`\", com link para a tag no repositório RailsGirls-SP/mural-de-recados. -->
 
+{: .atencao }
+**Deixe os erros acontecerem.** Os erros deste capítulo aparecem **de propósito**, na ordem do caminho da requisição (veja "O caminho dos erros", abaixo). Não corrija antes, não diga "é só um erro, ignora" e não adiante a solução: pergunte "o que a mensagem está dizendo que falta?". Vários só aparecem no terminal do servidor, e isso também é parte do aprendizado (veja "Erros de formulário só aparecem no terminal").
+
+**E o formulário não usa partial, de propósito.** O capítulo escreve o formulário direto no `new.html.erb`. A partial seria um conceito a mais (o `render` e as variáveis locais) num capítulo que já traz rota, ação, view, formulário e a proteção de formulários, e ela só faz sentido quando o formulário se repete, o que acontece no capítulo 05. Ela aparece depois, como "Para ir além", no passo 9 do capítulo 07. Se alguém perguntar antes, diga que existe, e que vai aparecer.
+
 ## Perguntas para o "Pense antes"
 
 - "Onde você procuraria o lugar para escrever o seu recado?" Leva ao link **Novo recado** na página principal e à página só para o formulário, como no plano.

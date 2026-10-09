@@ -71,7 +71,7 @@ O workshop dura um dia, com cerca de **4h30 de mão na massa**. O resto do tempo
 
 Algumas dicas para o dia:
 
-- **A meta é a etapa 🛴 (capítulo 05).** Os capítulos 06 e 07 são para quem andar mais rápido, e o 08 (publicar no Render) é opcional. Os desafios extras são para quem terminar tudo.
+- **A meta é a etapa 🛴 (capítulo 05).** Os capítulos 06 e 07 são para quem andar mais rápido, e o 08 (publicar no Render) é opcional. Os desafios extras são para quem terminar tudo. Cada nota dos capítulos 06, 07 e 08 tem uma seção "Se o tempo apertar", com o mínimo de cada um.
 - **O "O que aconteceu?" pode ficar para casa.** No dia, vale fazer o Mão na massa e ler o "Não esqueça" de cada capítulo.
 - **Fique de olho em quem está parada no mesmo passo há muito tempo.** Mais de 10 minutos no mesmo passo é sinal para chegar perto, sem esperar pedirem ajuda.
 - **No encerramento, todo mural de recados conta.** Quem chegou ao capítulo 03 também tem um app que funciona. Celebre o caminho, não só o ponto de chegada.

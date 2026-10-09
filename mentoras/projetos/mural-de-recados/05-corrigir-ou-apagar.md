@@ -9,6 +9,11 @@ nav_order: 6
 
 [Ver capítulo]({{ site.baseurl }}{% link projetos/mural-de-recados/05-corrigir-ou-apagar/index.md %}) <!-- TODO: quando as tags existirem, voltar com \" · Código de referência: tag `passo-05`\", com link para a tag no repositório RailsGirls-SP/mural-de-recados. -->
 
+{: .atencao }
+**Deixe os erros acontecerem.** Como no capítulo 04, os erros deste capítulo aparecem **de propósito**, seguindo o caminho da requisição a partir do link **Editar** (veja "O caminho dos erros", abaixo). Não corrija antes, não diga "é só um erro, ignora" e não adiante a solução. Quem prevê o erro do `update` antes de ele aparecer está mostrando que entendeu o caminho, e vale comemorar.
+
+**E o formulário repetido é de propósito.** O `edit.html.erb` é uma cópia do `new.html.erb`, com outro título e outro botão, e **a gente não usa partial agora**. Escrever o formulário duas vezes mostra à participante o que muda (o recado que já existe manda o formulário para o `update`) e o que não muda, e a repetição reforça o que ela acabou de aprender. A partial vem depois, como "Para ir além", no passo 9 do capítulo 07, e quem sentir falta dela antes pode ver a resposta no "O que aconteceu?" deste capítulo. Veja também "O formulário copiado", em "Confusões comuns".
+
 ## Perguntas para o "Pense antes"
 
 - "Se duas pessoas escreverem 'Oi!', como o app sabe qual das duas apagar?" Leva ao `id`.
@@ -41,6 +46,16 @@ No passo 4, a participante vê o número do recado no endereço (`/messages/3/ed
 Contexto só para a mentoria. **Não precisa levar isso para as participantes**: o guia mostra os verbos na prática (a tabela do "O que aconteceu?" deste capítulo), sem usar a palavra REST. Se alguém se interessar, é um ótimo assunto para depois do workshop.
 
 **O que é REST.** É um jeito de organizar um app web (ou uma API) em torno de **recursos**, como "recados", em que cada operação é a combinação de um **endereço** com um **verbo HTTP**. O `resources :messages` é o REST do Rails: ele cria as sete rotas padrão, e o `only` escolhe quais. O Mural de recados usa seis delas (todas menos o `show`).
+
+**Outros nomes que você vai ouvir.**
+
+- **REST** vem de *Representational State Transfer* ("transferência de estado representacional"), e foi descrito por Roy Fielding na tese de doutorado dele, em 2000 ([capítulo 5 da tese](https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm), em inglês).
+- **RESTful** é o adjetivo: um app, uma rota ou uma API "RESTful" é uma que segue o REST. O guia de rotas do Rails usa essa palavra ("RESTful routes").
+- **API REST**, **REST API** ou **RESTful API** (nas empresas, em geral só "API") é uma API que usa esse estilo: as mesmas rotas e os mesmos verbos, mas respondendo com dados, em geral em JSON, e não com páginas HTML.
+- **Resourceful routing**, ou *resource routing*, é como o Rails chama o `resources` na documentação ("Resource Routing: the Rails Default"): declarar de uma vez as rotas de um recurso.
+- **CRUD** (*Create, Read, Update, Delete*: criar, ler, atualizar e apagar) é o nome das quatro operações básicas sobre os dados. Muita gente usa "CRUD" e "REST" como sinônimos, mas o CRUD fala do que se faz com os dados, e o REST, de como organizar os endereços e os verbos. As seis ações do Mural de recados cobrem o CRUD inteiro: `create` e `new` (criar), `index` (ler), `edit` e `update` (atualizar) e `destroy` (apagar).
+
+Uma ressalva que costuma aparecer em conversas de quem já programa: na prática, quase toda "API REST" segue só uma parte das ideias do Fielding. O rigor completo do REST inclui, por exemplo, links dentro das respostas que dizem o que dá para fazer a seguir (o HATEOAS), e quase ninguém usa. Por isso, "REST" no dia a dia costuma querer dizer só "recursos com endereços e verbos, como o `resources` do Rails".
 
 | Verbo | Endereço | Ação | Para quê |
 |---|---|---|---|

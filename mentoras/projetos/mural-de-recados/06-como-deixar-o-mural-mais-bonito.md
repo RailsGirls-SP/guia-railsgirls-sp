@@ -43,6 +43,18 @@ O Tailwind é muito usado no mercado, e o próprio Rails oferece a opção `--cs
 
 Também ficou de fora o **Bootstrap**: ele é parecido com o Bulma nos nomes de componentes, mas alguns componentes dependem de JavaScript, e o visual padrão é mais reconhecível como "cara de Bootstrap".
 
+## Se o tempo apertar
+
+O capítulo é um "nice to have": o mural de recados já funciona sem ele, e a meta do dia é o capítulo 05. Se sobrar pouco tempo, o **mínimo** que já deixa o mural de recados bonito é:
+
+| Fazer | Passos | O que a participante ganha |
+|---|---|---|
+| Ligar o servidor e trazer o Bulma | 1 e 2 | O visual básico do Bulma em todas as páginas |
+| Transformar os recados em cartões | 4 | O mural vira uma grade de cartões. O passo 4 mostra o `index.html.erb` **inteiro**, então dá para pular o passo 3 |
+| Guardar o progresso | 6 | Um commit com o resultado |
+
+Ficam para depois, ou para casa: o **passo 3** (o título e o link, que o arquivo do passo 4 já traz) e o **passo 5** (as páginas Novo recado e Editar, que continuam funcionando, só sem o estilo). Avise que o "Terminou? Abra o passo…" de cada passo vai levar para o seguinte, e que o plano é pular.
+
 ## Ir além com o Bulma
 
 Se sobrar tempo, sugestões para brincar sem ajuda, com a [documentação do Bulma](https://bulma.io/documentation/) aberta:

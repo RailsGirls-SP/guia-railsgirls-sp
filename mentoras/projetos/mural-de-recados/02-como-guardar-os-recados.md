@@ -93,7 +93,7 @@ Para um app com poucos acessos por segundo, como o mural de recados, o SQLite d�
 | | SQLite | PostgreSQL e MySQL |
 |---|---|---|
 | **O que acontece** | O primeiro `INSERT` trava o banco inteiro para escrita. O segundo espera, por alguns milissegundos, e só então entra | Os dois `INSERT` entram ao mesmo tempo, cada um na sua linha |
-| **E se forem em tabelas diferentes?** | Espera do mesmo jeito: o trava vale para o arquivo todo | Entram ao mesmo tempo |
+| **E se forem em tabelas diferentes?** | Espera do mesmo jeito: a trava vale para o arquivo todo | Entram ao mesmo tempo |
 | **E se as duas pessoas editarem o mesmo recado?** | Uma espera a outra | Uma espera a outra, só aquela linha fica travada |
 | **Se a espera passar do limite** | O segundo pedido falha com `SQLite3::BusyException: database is locked`. O Rails espera até 5 segundos antes de desistir (`timeout: 5000` no `config/database.yml`) | Não costuma acontecer com esse volume |
 
