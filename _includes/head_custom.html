@@ -17,6 +17,32 @@
     navigator.clipboard.writeText = (text) => writeText(String(text).replace(/\n+$/, ""));
   }
 </script>
+<script>
+  // Guia instalado como app: ao abrir, volta para a última página lida, e não para a página inicial.
+  // A página fica guardada no navegador (localStorage). O redirecionamento só acontece na primeira
+  // página de cada abertura do app (sessionStorage), então tocar em "Início" depois continua funcionando.
+  (function () {
+    try {
+      var chave = "guia-rg:ultima-pagina";
+      var sessao = "guia-rg:app-aberto";
+      var inicio = "{{ '/' | relative_url }}";
+      var instalado = navigator.standalone === true || window.matchMedia("(display-mode: standalone)").matches;
+      var ultima = localStorage.getItem(chave);
+      var primeira = !sessionStorage.getItem(sessao);
+      sessionStorage.setItem(sessao, "1");
+      if (instalado && primeira && location.pathname === inicio && ultima && ultima !== inicio && ultima.indexOf(inicio) === 0) {
+        location.replace(ultima);
+        return;
+      }
+      var salvar = function () { localStorage.setItem(chave, location.pathname + location.hash); };
+      salvar();
+      window.addEventListener("hashchange", salvar);
+      window.addEventListener("pagehide", salvar);
+    } catch (e) {
+      // Sem localStorage (janela anônima, por exemplo): o app abre na página inicial.
+    }
+  })();
+</script>
 {% if page.url contains '/mao-na-massa' %}
 <script src="{{ '/assets/js/progresso.js' | relative_url }}" defer></script>
 {% endif %}
