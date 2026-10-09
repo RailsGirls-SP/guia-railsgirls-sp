@@ -146,31 +146,59 @@ Curiosidade só para a mentoria. **Não precisa falar para as participantes**: p
 O capítulo diz que o Rails cria sozinho as colunas `id`, `created_at` e `updated_at`. É o comportamento padrão, mas dá para mudar. O Rails tem convenções, mas não obriga ninguém a segui-las:
 
 - **Sem as datas:** basta tirar o `t.timestamps` da migration. A tabela fica sem `created_at` e `updated_at`.
-- **Sem o `id`:** `create_table :messages, id: false do |t|` cria a tabela sem a coluna `id`. É comum em tabelas que só ligam outras duas tabelas; o `create_join_table` já cria assim, sem `id` e sem as datas.
-- **Outro tipo de `id`:** `id: :uuid` (no PostgreSQL) troca o número por um código único, e `primary_key: :code` usa outra coluna como identificador.
+- **Sem o `id`:** `create_table :messages, id: false do |t|` cria a tabela sem a coluna `id`. Muita gente acredita que toda tabela precisa de `id`, mas não precisa: o `id` é só o jeito padrão de identificar cada linha. Uma tabela pode ser identificada por outra coluna (`primary_key: :code`) ou por uma combinação de colunas, a **chave primária composta** (`primary_key: [:product_id, :client_id]`, que o Rails aceita desde a versão 7.1). Tabelas que só ligam outras duas tabelas costumam ser assim, e o `create_join_table` já cria sem `id`. Esse comando não acrescenta as datas, mas na prática é comum colocá-las (`t.timestamps` no bloco), principalmente quando a ligação vira um model e vale saber **quando** ela foi criada.
+- **Outro tipo de `id`:** `id: :uuid` (no PostgreSQL) troca o número por um código único (veja [UUID ou `id` numérico?](#uuid-ou-id-numérico)), e `primary_key: :code` usa outra coluna como identificador.
 - **Outros nomes:** no model, `self.table_name = "recados"` liga o `Message` a uma tabela com outro nome, por exemplo num banco de dados que já existia antes do app.
 
 Seguir a convenção é o caminho mais curto: o Rails liga tudo sozinho e o código fica parecido com o de qualquer outro app Rails. Sair dela é possível, mas cada exceção precisa ser configurada à mão.
+
+### UUID ou `id` numérico?
+
+Se alguém perguntar por que o Rails usa `1, 2, 3…` e quando faz sentido trocar por UUID (um código aleatório como `3f2b8c1e-…`), um overview:
+
+| | `id` numérico (padrão) | UUID |
+|---|---|---|
+| **Segurança** | Previsível: se o recado 12 existe, o 13 também. Quem vê `/messages/12` tenta `/messages/13`, e o total de registros do app fica à mostra | Impossível de adivinhar e não revela quantos registros existem |
+| **Tamanho** | 8 bytes (`bigint`) | 16 bytes (128 bits). Índices e chaves estrangeiras ficam maiores |
+| **Desempenho** | Ótimo: cresce em ordem, e cada novo registro entra no fim do índice | UUID aleatório (v4) entra em posições espalhadas do índice, o que custa mais em tabelas grandes. O **UUIDv7**, que começa com a data e a hora, volta a entrar em ordem (o PostgreSQL 18 gera com `uuidv7()`) |
+| **Outras diferenças** | Simples de ler e de falar ("recado 12"). `Message.first` e `.last` são o mais antigo e o mais novo | Pode ser gerado fora do banco e juntar bancos diferentes sem colisão. Com UUID aleatório, `.first` e `.last` deixam de ser o mais antigo e o mais novo (dá para ordenar por data com `implicit_order_column`) |
+
+Dois cuidados:
+
+- **UUID não substitui autorização.** Esconder o endereço não impede ninguém de ver o que não deveria. A regra que protege é conferir, em cada pedido, se a pessoa pode ver aquele recado (a falha de não conferir se chama **IDOR**). O UUID só dificulta adivinhar, uma camada extra.
+- **Dá para ter os dois.** Muitos apps guardam o `id` numérico no banco, por desempenho, e mostram na URL um código público. O Active Record tem o `signed_id`, que gera um código assinado, impossível de forjar, a partir do `id`.
+
+Para o mural de recados, o `id` numérico é a escolha certa: os recados são públicos para quem tem a palavra-chave, a tabela é pequena e a convenção deixa tudo mais simples.
+
+**Para ir além:**
+
+- [Normalização de dados](https://pt.wikipedia.org/wiki/Normaliza%C3%A7%C3%A3o_de_dados), na Wikipédia: por que dividir os dados em várias tabelas, e as formas normais (1FN, 2FN, 3FN…). É daí que vêm as tabelas de ligação.
+- [Database normalization basics](https://learn.microsoft.com/en-us/office/troubleshoot/access/database-normalization-description), da Microsoft (em inglês): uma introdução curta, com exemplos.
+- [`has_many :through` ou `has_and_belongs_to_many`?](https://guides.rubyonrails.org/association_basics.html#has-many-through-vs-has-and-belongs-to-many), no guia de associações do Rails (em inglês): quando a tabela de ligação precisa de `id` e de datas (vira um model) e quando não.
+- [Chaves primárias compostas](https://guides.rubyonrails.org/active_record_composite_primary_keys.html), no guia do Rails (em inglês).
+- [Tipo `uuid`](https://www.postgresql.org/docs/current/datatype-uuid.html) e [funções de UUID](https://www.postgresql.org/docs/current/functions-uuid.html), na documentação do PostgreSQL (em inglês).
+- [Insecure Direct Object Reference Prevention](https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html), da OWASP (em inglês): o IDOR, e por que identificadores difíceis de adivinhar são uma camada extra, e não a proteção principal.
 
 ## Active Record é um padrão, não só do Rails
 
 {: .atencao }
 Isto é só curiosidade para quem não conhece. **Não precisa falar para as participantes**, nem se alguém perguntar por que o model se chama `Message` e a tabela, `messages`: a resposta do guia (convenção do Rails) basta.
 
-A pergunta "Por que o model se chama Message e a tabela, messages?" tem uma história por trás. A parte do Rails que cuida dos models se chama **Active Record**, e esse nome vem de um **padrão de projeto** (*design pattern*) descrito por Martin Fowler no livro *Patterns of Enterprise Application Architecture* (2002). Veja o resumo do padrão no [catálogo do Fowler](https://martinfowler.com/eaaCatalog/activeRecord.html).
+A parte do Rails que cuida dos models se chama **Active Record**, e esse nome vem de um **padrão de projeto** (*design pattern*) descrito por Martin Fowler no livro *Patterns of Enterprise Application Architecture* (2002). Veja o resumo do padrão no [catálogo do Fowler](https://martinfowler.com/eaaCatalog/activeRecord.html): "um objeto que envolve uma linha de uma tabela do banco de dados, encapsula o acesso ao banco e acrescenta regras sobre esses dados" (tradução livre).
 
-A ideia do padrão: um objeto representa uma linha de uma tabela e também sabe se guardar e se buscar no banco de dados.
+**Isso não explica os nomes `Message` e `messages`.** A pergunta "Por que o model se chama Message e a tabela, messages?" é sobre a **convenção de nomes do Rails**, e o padrão não diz nada sobre nomes: ele só descreve que um objeto representa uma linha. Singular para o model e plural para a tabela é uma escolha do Rails, parte do "convenção em vez de configuração", e quem faz a conversão é o *inflector* do Active Support, que segue as regras do inglês (por isso `Mensagem` viraria `mensagems`). Quando o plural é irregular, dá para ensinar o Rails em `config/initializers/inflections.rb`.
+
+A ideia do padrão, em Rails:
 
 | No padrão | No Mural de recados |
 |---|---|
-| uma classe para cada tabela | `Message` ↔ tabela `messages` |
 | um objeto para cada linha | `Message.first` é um recado, uma linha |
 | um atributo para cada coluna | `message.author`, `message.content` |
 | o próprio objeto se guarda e se busca | `Message.create`, `Message.find`, `message.destroy` |
 
-O padrão não é exclusivo do Rails. O Eloquent, do Laravel (PHP), segue a mesma ideia, e o ORM do Django (Python) é bem parecido. Outras bibliotecas preferem separar o objeto do acesso ao banco, como no padrão **Data Mapper** (por exemplo, Doctrine, em PHP, e SQLAlchemy, em Python) ou num repositório à parte, como o `Repo` do Ecto, em Elixir.
+Já a ligação entre a classe `Message` e a tabela `messages` é a convenção de nomes do Rails, e não do padrão.
 
-O que é do Rails, e não do padrão, é a convenção de nomes: model no singular e tabela no plural, ligados sem configuração.
+O padrão não é exclusivo do Rails. O Eloquent, do Laravel (PHP), segue a mesma ideia, e o ORM do Django (Python) é bem parecido. Outras bibliotecas preferem separar o objeto do acesso ao banco, como no padrão **Data Mapper** (por exemplo, Doctrine, em PHP, e SQLAlchemy, em Python) ou num repositório à parte, como o `Repo` do Ecto, em Elixir.
 
 ## A analogia da planilha e da assistente
 
