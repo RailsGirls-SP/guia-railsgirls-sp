@@ -51,3 +51,7 @@ Se sobrar tempo, sugestões para brincar sem ajuda, com a [documentação do Bul
 - Colocar um cabeçalho com o componente `hero`, com título e subtítulo.
 - Mostrar o número de recados com uma `tag`, por exemplo "4 recados" (`@messages.count`).
 - Girar os cartões um pouquinho, como post-its, com CSS próprio no `application.css`: `.card { rotate: -1deg; }`.
+
+## Próximas notas
+
+[07. E se alguém mandar um recado vazio?]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/07-e-se-o-recado-vier-vazio.md %})

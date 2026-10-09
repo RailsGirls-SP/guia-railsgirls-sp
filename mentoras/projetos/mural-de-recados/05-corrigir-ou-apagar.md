@@ -75,3 +75,7 @@ Contexto só para a mentoria. **Não precisa levar isso para as participantes**:
 ## Por que não usamos `status: :see_other`
 
 O scaffold do Rails usa `redirect_to ..., status: :see_other` no `destroy`. Ele é necessário quando a requisição sai do navegador como `DELETE` de verdade, por exemplo num link com `data-turbo-method="delete"`. O `button_to` manda um `POST` com `_method=delete`, e o redirecionamento comum funciona. Por isso, o guia deixa o `status` de fora. Se a pessoa trocar o botão por um link, ele passa a ser necessário.
+
+## Próximas notas
+
+[06. Como deixar o mural de recados mais bonito?]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/06-como-deixar-o-mural-mais-bonito.md %})

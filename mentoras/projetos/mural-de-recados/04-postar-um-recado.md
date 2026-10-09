@@ -60,3 +60,7 @@ Testado no Codespaces em 2026-10-06, com o Rails 8.1: sem a linha, o formulário
 Decisão: a linha entra no passo 9 do capítulo 04, como mais um erro do caminho, depois da ação `create`.
 
 <!-- TODO: confirmar se a linha `config.hosts << /.*\.app\.github\.dev/` da Imersão 2025 faz falta (o template já libera o endereço pela variável `RAILS_DEVELOPMENT_HOSTS`). -->
+
+## Próximas notas
+
+[05. Errei! Como corrigir ou apagar?]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/05-corrigir-ou-apagar.md %})

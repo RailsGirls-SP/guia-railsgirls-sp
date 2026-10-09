@@ -122,3 +122,7 @@ Contexto só para a mentoria. **Não precisa levar isso para as participantes**:
 ## A página de erro no Codespaces
 
 No terminal do servidor, pode aparecer `Cannot render console from …! Allowed networks: …`. É o Rails dizendo que não vai mostrar o console interativo na página de erro, porque o acesso vem pelo endereço do Codespaces, e não do próprio computador. A página de erro aparece normalmente, só sem esse console. Pode ignorar.
+
+## Próximas notas
+
+[04. Como postar um recado?]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/04-postar-um-recado.md %})

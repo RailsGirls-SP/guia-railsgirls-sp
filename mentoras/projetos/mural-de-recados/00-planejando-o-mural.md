@@ -52,3 +52,7 @@ Referências (em inglês):
 - [Technical Debt](https://martinfowler.com/bliki/TechnicalDebt.html), de Martin Fowler.
 - [Technical Debt Quadrant](https://martinfowler.com/bliki/TechnicalDebtQuadrant.html), de Martin Fowler: dívida deliberada ou acidental, prudente ou imprudente.
 - [The WyCash Portfolio Management System](http://c2.com/doc/oopsla92.html), de Ward Cunningham (1992): onde a metáfora apareceu pela primeira vez.
+
+## Próximas notas
+
+[01. Por onde começar?]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/01-por-onde-comecar.md %})

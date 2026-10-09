@@ -61,3 +61,7 @@ O app no ar é público: qualquer pessoa com o endereço consegue abrir. Vale co
 | **HTTPS** | O Render serve o app com HTTPS. | Nada. |
 | **Acesso do Render ao GitHub** | O Render pede permissão para ler repositórios. | Sugira dar acesso só ao repositório do mural de recados (**Only select repositories**). |
 | **Dados apagados depois de 30 dias** | O banco de dados gratuito expira. | Avise a participante, para não estranhar quando os recados sumirem. |
+
+## Próximas notas
+
+[09. Terminei! E agora?]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/09-terminei-e-agora.md %})

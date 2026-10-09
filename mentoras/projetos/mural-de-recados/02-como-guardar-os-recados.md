@@ -133,3 +133,7 @@ O ponto em que ela não funciona é a diferença entre **classe** e **objeto**: 
 ## Por que `generate model`
 
 O capítulo usa `bin/rails generate model`, e não `scaffold`, para a participante ver só o model e a migration, sem telas. O projeto não usa scaffold em nenhum capítulo (veja [Sem scaffold]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/index.md %}#sem-scaffold)): rotas, controller e views são escritos à mão nos capítulos 03 a 05.
+
+## Próximas notas
+
+[03. Como ver todos os recados?]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/03-ver-todos-os-recados.md %})

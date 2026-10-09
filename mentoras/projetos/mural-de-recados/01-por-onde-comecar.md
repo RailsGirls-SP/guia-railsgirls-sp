@@ -88,3 +88,7 @@ config.hosts << /.*\.app\.github\.dev/
 Depois, desligue o servidor (Ctrl+C) e ligue de novo com `bin/rails server`.
 
 Com o repositório-modelo do Rails Girls SP, esse erro **não deve aparecer**: o modelo já libera o endereço do Codespaces pela variável de ambiente `RAILS_DEVELOPMENT_HOSTS`, no `.devcontainer/devcontainer.json`, e isso foi conferido ao testar o modelo. Se o erro aparecer, provavelmente o codespace foi criado sem o modelo (por exemplo, de um repositório vazio). Nesse caso, a linha acima resolve.
+
+## Próximas notas
+
+[02. Como guardar os recados?]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/02-como-guardar-os-recados.md %})

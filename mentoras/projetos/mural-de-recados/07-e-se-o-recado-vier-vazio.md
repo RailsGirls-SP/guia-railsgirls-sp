@@ -55,3 +55,7 @@ Um cuidado, se a conversa for longe: em apps grandes, "model gordo" demais tamb�
 ## Por que não usar `required` no HTML
 
 O formulário poderia ter `required: true` nos campos, e o navegador já impediria o envio vazio. O guia não usa isso de propósito: a regra no navegador é fácil de contornar (basta mandar a requisição de outro jeito), e o objetivo do capítulo é mostrar que a regra que vale de verdade fica no model. Se alguém perguntar, as duas coisas podem andar juntas: o `required` ajuda quem usa, e o `validates` protege os dados.
+
+## Próximas notas
+
+[08. Como mostrar o mural de recados para o mundo?]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/08-como-mostrar-o-mural-para-o-mundo.md %})

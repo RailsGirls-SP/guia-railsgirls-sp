@@ -22,3 +22,7 @@ Este capítulo fecha o dia para **todo mundo**, em qualquer capítulo em que a p
 
 - **"Apaguei o codespace sem querer."** O código está no GitHub (se o último Sync foi feito). Dá para criar um codespace novo a partir do repositório. Os recados de teste se perdem, porque o banco de dados não vai para o GitHub, e é preciso rodar `bin/rails db:migrate` de novo.
 - **"O mural de recados no ar parou depois que desliguei."** Não deveria: o app no ar roda no Render. O mais provável é o app ter "dormido" (plano gratuito); a primeira visita demora cerca de um minuto.
+
+## Próximas notas
+
+[Notas dos desafios extras]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/desafios-extras.md %})
