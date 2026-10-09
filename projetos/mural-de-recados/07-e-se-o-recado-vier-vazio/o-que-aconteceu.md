@@ -119,6 +119,7 @@ Não. As regras são poucas linhas no model, e o próprio Rails guarda os avisos
 Se quiser usar uma IA, use como tutora: peça para ela explicar, e faça você cada passo. Por exemplo:
 
 > Por que as regras de um recado ficam no model, e não no formulário? Me explique sem me dar código.
+{: .pedido-ia }
 
 Veja como começar a conversa em [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}).
 
@@ -132,6 +133,7 @@ Se você pedir para uma IA "fazer um mural de recados em Rails", o código gerad
 Com o plano, o pedido fica assim:
 
 > No meu app Rails, o model `Message` tem `author` e `content`. Quero estas regras: `author` e `content` obrigatórios, e `content` com no máximo 280 caracteres. Os avisos devem ser em português: "Escreva o seu nome.", "Escreva o seu recado." e "O recado pode ter no máximo 280 caracteres.". Quando o recado for recusado, o formulário volta com o que a pessoa escreveu e com o aviso embaixo de cada campo.
+{: .pedido-ia }
 
 Confira o resultado contra o plano:
 

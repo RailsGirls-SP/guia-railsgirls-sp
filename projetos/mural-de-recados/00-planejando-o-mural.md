@@ -206,10 +206,12 @@ Compare estes dois pedidos para uma ferramenta de IA.
 **Pedido 1: sem plano**
 
 > Faz um mural de recados em Rails.
+{: .pedido-ia }
 
 **Pedido 2: com o seu plano**
 
 > Faz um mural de recados em Rails. Cada recado tem autora (texto curto) e mensagem (texto longo). A página principal mostra os recados como cartões, cada um com botões de editar e apagar, e um botão "Novo recado", que abre uma página com o formulário para postar. Não aceitar recado sem autora ou sem mensagem, nem mensagens com mais de 280 caracteres.
+{: .pedido-ia }
 
 Os dois vão gerar código. Mas, com o pedido 1, a IA precisa **inventar** cada decisão que você tomou no seu plano: quais informações um recado tem, como a tela é organizada, se um recado vazio é aceito. Ela vai escolher alguma coisa, e talvez não seja o que você queria.
 

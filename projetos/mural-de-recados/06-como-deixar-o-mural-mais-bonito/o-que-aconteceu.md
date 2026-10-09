@@ -115,6 +115,7 @@ Não. O Bulma já traz as classes prontas, e a [documentação do Bulma](https:/
 Se quiser usar uma IA, use como tutora: peça para ela explicar, e faça você cada passo. Por exemplo:
 
 > No Bulma, o que fazem as classes `columns` e `column`? Me explique com um exemplo, sem mudar o meu código.
+{: .pedido-ia }
 
 Veja como começar a conversa em [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}).
 
@@ -124,6 +125,7 @@ Veja como começar a conversa em [Usando IA como tutora]({{ site.baseurl }}{% li
 Para deixar o visual do seu jeito, uma IA pode ajudar a achar as classes certas. O pedido funciona melhor com o seu plano:
 
 > No meu app Rails, já uso o Bulma 1.0, com uma linha `<link>` no layout. Cada recado aparece num `card` dentro de `columns is-multiline`. Como eu deixo o título do mural de recados maior e com uma cor diferente, usando só classes do Bulma?
+{: .pedido-ia }
 
 Confira o resultado:
 

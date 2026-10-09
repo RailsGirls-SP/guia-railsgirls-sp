@@ -141,6 +141,7 @@ Não. O formulário, a rota e as ações seguem o mesmo caminho dos capítulos a
 Se quiser usar uma IA, use como tutora: peça para ela explicar, e faça você cada passo. Por exemplo:
 
 > Qual é a diferença entre uma requisição GET e uma POST? Me explique com um exemplo do dia a dia, sem me dar código.
+{: .pedido-ia }
 
 Veja como começar a conversa em [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}).
 
@@ -150,6 +151,7 @@ Veja como começar a conversa em [Usando IA como tutora]({{ site.baseurl }}{% li
 Se você pedir para uma IA "fazer um formulário para postar recados", é comum ela sugerir o *scaffold*, que cria de uma vez todas as páginas e ações, inclusive as que o plano não pede. Por isso, o pedido funciona melhor com o plano:
 
 > No meu app Rails, o model `Message` tem `author` e `content`. Quero uma página "Novo recado" (a ação `new`), com os campos "Seu nome" e "Recado" e o botão "Postar recado", e um link "Novo recado" na página da lista. Depois de postar, volta para a lista. Sem scaffold, e só com as rotas necessárias.
+{: .pedido-ia }
 
 Confira o resultado contra o plano:
 

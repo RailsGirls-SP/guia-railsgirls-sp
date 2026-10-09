@@ -131,6 +131,7 @@ Não. Você repetiu o mesmo caminho do capítulo 04, link, rota, controller e vi
 Se quiser usar uma IA, use como tutora: peça para ela explicar, e faça você cada passo. Por exemplo:
 
 > Por que, no Rails, apagar alguma coisa é feito com um botão, e não com um link? Me explique sem me dar código.
+{: .pedido-ia }
 
 Veja como começar a conversa em [Usando IA como tutora]({{ site.baseurl }}{% link comece-aqui/ia-como-tutora.md %}).
 
@@ -140,6 +141,7 @@ Veja como começar a conversa em [Usando IA como tutora]({{ site.baseurl }}{% li
 Se você pedir para uma IA "fazer o editar e o apagar", é bem provável que ela sugira o *scaffold*, ou que crie as sete ações de uma vez, incluindo páginas que o mural de recados não usa. Por isso, o pedido funciona melhor com o seu plano:
 
 > No meu app Rails, o model `Message` tem `author` e `content`. Quero um link **Editar** em cada cartão, que abre uma página com o formulário preenchido, e um botão **Apagar** que pergunta "Quer mesmo apagar este recado?" antes de apagar. Sem scaffold, e só com as rotas necessárias.
+{: .pedido-ia }
 
 Mesmo com um bom pedido, confira o resultado contra o plano:
 
