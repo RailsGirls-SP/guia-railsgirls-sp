@@ -37,6 +37,7 @@ No passo 4, a participante vê o número do recado no endereço (`/messages/3/ed
 
 ## REST, verbos HTTP e códigos de status
 
+{: .atencao }
 Contexto só para a mentoria. **Não precisa levar isso para as participantes**: o guia mostra os verbos na prática (a tabela do "O que aconteceu?" deste capítulo), sem usar a palavra REST. Se alguém se interessar, é um ótimo assunto para depois do workshop.
 
 **O que é REST.** É um jeito de organizar um app web (ou uma API) em torno de **recursos**, como "recados", em que cada operação é a combinação de um **endereço** com um **verbo HTTP**. O `resources :messages` é o REST do Rails: ele cria as sete rotas padrão, e o `only` escolhe quais. O Mural de recados usa seis delas (todas menos o `show`).
@@ -68,7 +69,8 @@ Contexto só para a mentoria. **Não precisa levar isso para as participantes**:
 
 - **O `422` do capítulo 07 é o que faz o Turbo mostrar a página.** Depois de enviar um formulário, o Turbo só troca a tela se a resposta for um redirecionamento ou um erro (`4xx` ou `5xx`). Com `render :new` e status `200`, nada aparece, e o console do navegador avisa "Form responses must redirect to another location". Daí o `status: :unprocessable_entity`.
 - **O nome mudou.** O guia usa `:unprocessable_entity`, que é o nome que a maioria dos exemplos na internet usa. No Rails 8.1, o nome oficial passou a ser `:unprocessable_content`, e o terminal mostra `422 Unprocessable Content`. Os dois funcionam, sem aviso.
-- **Os erros de formulário do capítulo 04 também são `404`.** Por que eles não aparecem na tela, se o `422` aparece? A página de erro do Rails tem a linha `<meta name="turbo-visit-control" content="reload">`, que pede ao Turbo para recarregar a página em vez de mostrar a resposta. O navegador recarrega a página Novo recado, e o erro só fica no terminal. A página do `422` é uma view do próprio app, sem essa linha, e por isso aparece.
+- **Os erros de formulário do capítulo 04 também não aparecem na tela.** Eles são `404` (falta a rota ou a ação do `create`) e `422` (a proteção de formulários, no Codespaces). Por que eles não aparecem, se o `422` do capítulo 07 aparece? A página de erro do Rails tem a linha `<meta name="turbo-visit-control" content="reload">`, que pede ao Turbo para recarregar a página em vez de mostrar a resposta. O navegador recarrega a página Novo recado, e o erro só fica no terminal. A página do `422` é uma view do próprio app, sem essa linha, e por isso aparece.
+- **Para saber mais sobre o Turbo** (em inglês), na documentação oficial do Turbo Drive: [Redirecting After a Form Submission](https://turbo.hotwired.dev/handbook/drive#redirecting-after-a-form-submission) (o que o Turbo espera como resposta a um formulário: um redirecionamento ou um erro `4xx` ou `5xx`) e [Ensuring Specific Pages Trigger a Full Reload](https://turbo.hotwired.dev/handbook/drive#ensuring-specific-pages-trigger-a-full-reload) (o `turbo-visit-control`). A explicação geral do Turbo está no [Turbo Handbook](https://turbo.hotwired.dev/handbook/introduction). O capítulo 04 também fala disso, em "Erros de formulário só aparecem no terminal".
 
 **Para quem quiser ir além depois do workshop:** uma API REST usa as mesmas rotas e os mesmos verbos, mas responde com dados (geralmente JSON) em vez de páginas HTML. É um bom próximo passo, junto com o guia oficial [Rails Routing from the Outside In](https://guides.rubyonrails.org/routing.html), em inglês.
 
