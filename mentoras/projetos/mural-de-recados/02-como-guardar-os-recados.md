@@ -17,7 +17,7 @@ nav_order: 3
 
 ## Confusões comuns
 
-- **Model e migration parecem a mesma coisa.** A migration é a instrução para criar a tabela, e roda uma vez. O model é quem usa a tabela, o tempo todo. Uma analogia que costuma ajudar: a migration é a planta da reforma; o model é quem mora na casa.
+- **Model e migration parecem a mesma coisa.** A migration é a instrução para criar a tabela, e roda uma vez. O model é quem usa a tabela, o tempo todo. Uma analogia que costuma ajudar: a migration é a planta da reforma; o model é quem mora na casa. E quem faz a obra? O comando `bin/rails db:migrate`: ele lê a planta e constrói a tabela no banco de dados. Sem rodá-lo, a planta existe, mas a casa não foi construída, e o model não tem onde morar (é o erro `no such table: messages`).
 - **Esquecer o `bin/rails db:migrate`.** O console responde `no such table: messages`, e o navegador mostra `Migrations are pending`.
 - **Ficar "preso" no console.** Quem tenta rodar `bin/rails ...` dentro do console recebe erro de Ruby. O `exit` volta para o terminal.
 - **`Message` com m minúsculo** no console dá `NameError`.
@@ -75,6 +75,31 @@ O app usa o **SQLite**, que é o padrão do Rails. Ele funciona diferente de ban
 | **Onde fica** | Num único arquivo dentro do projeto (`storage/development.sqlite3`) | Num programa separado, o servidor do banco de dados, que o app acessa pela rede |
 | **Instalação** | Nenhuma: já vem com o Rails | Precisa instalar e configurar o servidor do banco, usuário e senha |
 | **Bom para** | Aprender, desenvolver e apps pequenos ou médios | Apps com muitos acessos ao mesmo tempo, vários servidores usando o mesmo banco e recursos avançados |
+| **Leitura e escrita de dados ao mesmo tempo** | **Ler** (mostrar os recados) pode ser feito por várias pessoas ao mesmo tempo. **Escrever** (guardar, mudar ou apagar um recado) é uma de cada vez: as outras esperam na fila | Várias leituras **e** várias escritas ao mesmo tempo, desde que em linhas diferentes da tabela |
+| **Vários servidores** | Não: o arquivo fica num computador só, e só o app que está nele acessa | Sim: o banco fica num servidor próprio, e vários apps conectam a ele pela rede |
+| **Recursos avançados** | Menos: poucos tipos de dados, sem usuários e permissões, sem réplicas | Mais: usuários e permissões, réplicas (cópias para leitura e para backup) e, no PostgreSQL, tipos como JSON e busca em texto |
+
+**Limitações do SQLite, em resumo:**
+
+- **Escrita: uma por vez.** Enquanto um app guarda, muda ou apaga um dado, os outros que querem escrever esperam na fila. Cada escrita leva milissegundos, então a fila quase não existe com poucos acessos, e vira problema só quando muita gente escreve no mesmo instante.
+- **Leitura: não é limite.** Ler dados em paralelo funciona bem, inclusive durante uma escrita.
+- **Um servidor só.** O arquivo fica num computador, então o app não consegue rodar em vários servidores usando o mesmo banco.
+- **Velocidade, número de tabelas e tamanho não costumam ser problema.** Sem rede no caminho, as leituras são rapidíssimas. O tamanho máximo de um banco é de 281 TB, e o número de tabelas, na prática, não tem limite.
+
+Para um app com poucos acessos por segundo, como o mural de recados, o SQLite dá conta com folga. Quando o app passa a ter muita escrita ao mesmo tempo, ou precisa rodar em vários servidores, aí vale migrar para o PostgreSQL ou o MySQL.
+
+**Um mini exemplo:** duas pessoas clicam em **Postar recado** no mesmo instante, e cada clique vira um `INSERT` na tabela `messages`.
+
+| | SQLite | PostgreSQL e MySQL |
+|---|---|---|
+| **O que acontece** | O primeiro `INSERT` trava o banco inteiro para escrita. O segundo espera, por alguns milissegundos, e só então entra | Os dois `INSERT` entram ao mesmo tempo, cada um na sua linha |
+| **E se forem em tabelas diferentes?** | Espera do mesmo jeito: o trava vale para o arquivo todo | Entram ao mesmo tempo |
+| **E se as duas pessoas editarem o mesmo recado?** | Uma espera a outra | Uma espera a outra, só aquela linha fica travada |
+| **Se a espera passar do limite** | O segundo pedido falha com `SQLite3::BusyException: database is locked`. O Rails espera até 5 segundos antes de desistir (`timeout: 5000` no `config/database.yml`) | Não costuma acontecer com esse volume |
+
+O SQLite trava o arquivo inteiro; o PostgreSQL e o MySQL travam só a linha que está sendo alterada. Com dezenas de escritas por segundo, essa diferença começa a aparecer. O Rails 8 já deixa o SQLite bem ajustado para isso (usa o modo WAL, em que leitura e escrita andam juntas).
+
+Fontes: a [documentação do SQLite sobre o modo WAL](https://www.sqlite.org/wal.html) ("there can only be one writer at a time"), os [limites do SQLite](https://www.sqlite.org/limits.html) e a [documentação do PostgreSQL sobre MVCC](https://www.postgresql.org/docs/current/mvcc-intro.html) ("reading never blocks writing and writing never blocks reading"). Os padrões do Rails (WAL e `timeout`) estão no adaptador do SQLite do Active Record 8.1 e no `database.yml` de um app novo.
 
 No dia a dia do Rails, a diferença quase não aparece: o Active Record (a parte do Rails por trás dos models) gera os comandos certos para cada banco, e o código do app praticamente não muda. Quem escolhe o banco é o arquivo `config/database.yml`.
 
