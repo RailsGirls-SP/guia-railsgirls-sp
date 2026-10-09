@@ -25,18 +25,22 @@ Quem programa prefere construir em **etapas pequenas**: primeiro o mínimo que j
 **Um pedido grande demais:**
 
 > Faça um mural de recados em Rails, onde as pessoas postam, corrigem e apagam recados.
+{: .pedido-ia }
 
 **O mesmo projeto, em etapas.** Você pode pedir uma parte de cada vez, na ordem do projeto:
 
 > No meu app Rails, crie o model `Message`, com `author` e `content`.
+{: .pedido-ia }
 
 E, só depois de conferir que funcionou:
 
 > Agora, mostre todos os recados na página inicial.
+{: .pedido-ia }
 
 **Ou peça para a IA planejar as etapas com você:**
 
 > Quero construir um mural de recados em Rails. Antes de escrever código, me proponha as etapas, da menor versão que já funciona até a completa. Depois, vamos fazer uma etapa de cada vez: só siga para a próxima quando eu pedir.
+{: .pedido-ia }
 
 Entre uma etapa e outra, confira se o app funciona e faça um commit. Se a próxima etapa der errado, é só voltar ao ponto salvo (veja [Git básico]({{ site.baseurl }}{% link extras/git-basico.md %})).
 
@@ -53,14 +57,17 @@ Um app Rails tem peças com nomes próprios: **rota**, **controller**, **view**,
 **1. Um pedido vago:**
 
 > Faz o meu app aceitar recados.
+{: .pedido-ia }
 
 **2. Um pedido melhor, sabendo o que o app precisa fazer:**
 
 > Quero que as pessoas possam postar recados no meu app. Cada recado tem o nome de quem escreveu e a mensagem, e precisa continuar lá mesmo depois que a pessoa fechar o navegador. Um recado sem nome ou sem mensagem não pode ser aceito.
+{: .pedido-ia }
 
 **3. Um pedido ainda mais preciso, sabendo também o nome de cada peça:**
 
 > No meu app Rails, crie a ação `create` no `MessagesController`, que guarda o recado com `author` e `content` e volta para a lista de recados. No model `Message`, valide que `author` e `content` são obrigatórios.
+{: .pedido-ia }
 
 O primeiro pedido deixa quase tudo para a IA adivinhar.
 
@@ -79,5 +86,6 @@ Saber os nomes das peças também ajuda a entender o que a IA responde.
 Depois do workshop, quando você já entende o código, vale pedir junto um **[teste automatizado]({{ site.baseurl }}{% link glossario.md %}#teste-automatizado)**: um pequeno programa que confere sozinho se o que você pediu funciona. Por exemplo, junto com o pedido das validações:
 
 > Escreva também um teste para o model `Message` que confira que um recado sem `author` ou sem `content` é recusado.
+{: .pedido-ia }
 
 Rode o teste antes de confiar no código, com `bin/rails test`. Se ele passar, você tem uma conferência que se repete sozinha a cada mudança. E leia o teste também: ele é código como qualquer outro, e a IA pode escrever um teste que confere a coisa errada.

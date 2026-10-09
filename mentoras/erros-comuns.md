@@ -57,3 +57,7 @@ Os problemas que mais aparecem durante o projeto Mural de recados, e como resolv
 - **Compare com o código do guia,** linha por linha. A maioria dos erros é uma letra, um `end` ou um `@`.
 - **Volte para o último commit** se a confusão ficou grande. No painel **Source Control**, dá para descartar as mudanças de um arquivo e começar o passo de novo.
 - **Chame outra pessoa da mentoria.** Dois pares de olhos acham mais rápido, e a participante vê que pedir ajuda é normal, mesmo para quem já programa.
+
+## Notas dos projetos
+
+Para as confusões de cada capítulo, veja as [Notas dos projetos]({{ site.baseurl }}{% link mentoras/projetos/index.md %}).

@@ -57,6 +57,8 @@ Se alguém perguntar "não dava para usar só `text`, ou só `string`?": no SQLi
 - **O app pode mudar de banco de dados.** No MySQL, tudo `string` cortaria mensagens acima de 255 caracteres. E tudo `text` atrapalha os índices (usados para buscar rápido), que no MySQL não funcionam direto numa coluna `text`.
 - **É a convenção.** Quem chega num projeto Rails espera nomes e títulos como `string` e textos longos como `text`.
 
+E o espaço? Ao contrário do que muita gente pensa, `string` não economiza espaço. Nos três bancos, o que ocupa espaço é o texto guardado, e não o tipo: um nome de 3 letras ocupa o mesmo numa coluna `string` ou `text`. O `varchar(255)` do MySQL é só um limite, e não reserva 255 caracteres. No PostgreSQL, os dois são guardados exatamente do mesmo jeito. No MySQL, a diferença é *onde* o texto fica: textos longos de uma coluna `text` podem ser guardados fora da linha da tabela, o que pesa um pouco em algumas buscas. Quem reserva espaço fixo é outro tipo, o `char(n)`, que o Rails quase não usa.
+
 Se alguém perguntar "então a mensagem pode ter qualquer tamanho?": no banco de dados, sim. O limite de 280 caracteres é uma regra do mural de recados, e não do tipo da coluna: ela entra no model, com uma validação, no capítulo 07.
 
 Fonte: os tipos de cada banco estão no código do Active Record 8.1 (`NATIVE_DATABASE_TYPES` dos adaptadores do SQLite, PostgreSQL e MySQL).

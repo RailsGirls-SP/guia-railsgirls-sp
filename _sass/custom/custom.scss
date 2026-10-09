@@ -248,6 +248,33 @@ details.passo.passo-concluido > summary::after {
   color: #2f7d32;
 }
 
+// Exemplos de pedido para uma IA (ex.: extras/como-pedir-codigo-para-uma-ia.md).
+// Uso: um blockquote seguido de {: .pedido-ia }.
+blockquote.pedido-ia {
+  margin: 0.5rem 0 1.5rem;
+  padding: 0.75rem 1rem 0.85rem;
+  font-size: 1rem;
+  color: #2b2b2b;
+  background: #f5f2fd;
+  border-left: 4px solid #7253ed;
+  border-radius: 0 8px 8px 0;
+
+  &::before {
+    content: "💬 Pedido para a IA";
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #5e41d0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
 // Perguntas e respostas (Não existem perguntas bobas): uma por bloco.
 details.pergunta {
   margin: 0.5rem 0;
