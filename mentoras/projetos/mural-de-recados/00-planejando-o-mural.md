@@ -39,6 +39,9 @@ O ponto mais importante deste capítulo é o trecho do "nosso plano" que diz que
 
 ## Dívida técnica
 
+{: .atencao }
+Contexto só para a mentoria. **Não precisa levar para as participantes**: o termo "dívida técnica" não aparece no capítulo nem no glossário. Use só se a conversa chegar nisso.
+
 No "nosso plano", a gente decide aceitar por enquanto que qualquer pessoa apague o recado de outra. Se a conversa chegar nisso, é um bom momento para apresentar o termo **dívida técnica**: um atalho que a gente toma agora, sabendo que vai custar mais caro depois.
 
 **Use "dívida técnica", não "débito técnico".** O termo original, em inglês, é *technical debt*, e *debt* quer dizer dívida. A metáfora, criada por Ward Cunningham, é a de um empréstimo: você ganha tempo agora (pega o dinheiro emprestado), paga juros enquanto não resolve (cada mudança fica mais trabalhosa por causa do atalho) e um dia quita a dívida (refaz do jeito certo). "Débito" é outra coisa: em português, é um lançamento contábil ou uma cobrança na conta, como no cartão de débito. "Débito técnico" é uma tradução apressada que perde a ideia do empréstimo e dos juros.

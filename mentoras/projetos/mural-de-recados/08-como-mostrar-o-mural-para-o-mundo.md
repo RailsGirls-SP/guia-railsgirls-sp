@@ -36,6 +36,9 @@ Se alguém perguntar: os dois existem. Em inglês, *deploy* é o verbo ("to depl
 
 ## Decisões técnicas do capítulo
 
+{: .atencao }
+Contexto só para a mentoria. **Não precisa levar para as participantes**: o capítulo já explica o que elas precisam (por que o PostgreSQL e o que cada comando da receita faz). Aqui estão os motivos das escolhas de quem escreveu o guia, para responder perguntas ou para refazer o capítulo se o Render mudar.
+
 - **PostgreSQL em produção, SQLite em desenvolvimento.** No plano gratuito, o Render não tem disco permanente: um arquivo SQLite seria apagado a cada deploy ou reinício. O PostgreSQL gratuito dura 30 dias, o que basta para o workshop. O `database.yml` não muda: o `DATABASE_URL` substitui a configuração do banco principal em produção. Testado localmente com Rails 8.1.4 e PostgreSQL 17.
 - **O cache, a fila e o cable continuam em SQLite** em produção (as bases `cache`, `queue` e `cable` do Rails 8). Como o app não usa cache, jobs nem Turbo Streams, não tem problema se esses arquivos forem apagados.
 - **A receita no campo Build Command, e não num `bin/render-build.sh`.** A documentação do Render para Rails usa um arquivo `bin/render-build.sh`, mas não existe gerador para ele: seria criar o arquivo à mão e rodar o `chmod +x`, com o risco de um `Permission denied` no deploy. Com o campo, são menos passos. A desvantagem é que a receita fica no painel do Render, e não no repositório.
@@ -46,6 +49,9 @@ Se alguém perguntar: os dois existem. Em inglês, *deploy* é o verbo ("to depl
 - **Ruby 4.0 no Render.** O Render lê o `.ruby-version` do app e instala a versão sozinho. No teste, o log mostrou `Using Ruby version 4.0.6 via /opt/render/project/src/.ruby-version`, seguido de `Installing Ruby version 4.0.6...`.
 
 ## Segurança
+
+{: .atencao }
+Contexto só para a mentoria. **Não precisa levar para as participantes**: o capítulo não tem uma parte sobre segurança, só os cuidados práticos (a palavra-chave e os segredos, que ficam no Render). Esta tabela é um roteiro para a conversa, se ela surgir.
 
 O app no ar é público: qualquer pessoa com o endereço consegue abrir. Vale conversar sobre isso, sem assustar. O que o guia já cobre e o que fica de fora:
 

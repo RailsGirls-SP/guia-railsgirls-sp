@@ -91,6 +91,9 @@ Uma ressalva que costuma aparecer em conversas de quem já programa: na prática
 
 ## Por que não usamos `status: :see_other`
 
+{: .atencao }
+Contexto só para a mentoria. **Não precisa levar para as participantes**: o capítulo não fala do `:see_other` nem do status `303`. Use só se alguém comparar com o código de um scaffold ou de outro tutorial.
+
 O scaffold do Rails usa `redirect_to ..., status: :see_other` no `destroy`. Ele é necessário quando a requisição sai do navegador como `DELETE` de verdade, por exemplo num link com `data-turbo-method="delete"`. O `button_to` manda um `POST` com `_method=delete`, e o redirecionamento comum funciona. Por isso, o guia deixa o `status` de fora. Se a pessoa trocar o botão por um link, ele passa a ser necessário.
 
 ## Próximas notas

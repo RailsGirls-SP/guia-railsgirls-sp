@@ -81,6 +81,9 @@ O guia prefere a primeira forma porque a participante só **acrescenta** três l
 
 ## Por que a rota do gerador é diferente da do guia
 
+{: .atencao }
+Contexto só para a mentoria. **Não precisa levar para as participantes**: o passo 9 só mostra que as duas rotas levam ao mesmo lugar e que a do gerador cria um endereço repetido. Use só se alguém perguntar qual é a diferença entre as duas.
+
 No passo 9, a participante compara duas rotas que levam à mesma ação:
 
 ```ruby

@@ -38,6 +38,24 @@ Isso também vale para o capítulo 08: no plano gratuito do Render, o disco tamb
 
 ## `string` ou `text`?
 
+### O que dizer para as participantes
+
+Uma explicação curta, para quem perguntar ou errar o palpite do passo 1:
+
+- **`string` é um texto curto**, de uma linha, como um nome. É a `author` (autora).
+- **`text` é um texto longo**, que pode ter várias linhas, como uma mensagem. É o `content` (conteúdo) do recado.
+- **Dá para ver a diferença na tela:** no capítulo 04, a autora vai ser uma caixa de uma linha, e a mensagem, uma caixa maior.
+- **Se alguém perguntar "então tem limite de tamanho?":** não é o tipo que limita. A regra dos 280 caracteres do mural de recados vai ser escrita no capítulo 07.
+
+**Se perguntarem "por que existem os dois tipos?":** pense numa ficha de papel. O campo "Nome" tem uma linha curta, e o campo "Observações" tem um quadro grande, porque cada um foi pensado para um tamanho de texto. No app é igual: `string` para o que é curto (um nome, um título) e `text` para o que pode ser longo (uma mensagem). **E o desempenho, por baixo dos panos?** No SQLite e no PostgreSQL, que o guia usa, os dois tipos são guardados e lidos do mesmo jeito, então a escolha não deixa o app mais rápido nem mais lento. Em outros bancos de dados, existem pequenas diferenças, mas elas só aparecem em apps muito grandes, e não no mural de recados.
+
+O resto desta seção é para a mentoria.
+
+### Com mais detalhe (só para a mentoria)
+
+{: .atencao }
+Contexto só para a mentoria. **Não precisa levar para as participantes**: o capítulo só diz que `string` é texto curto e `text`, texto longo.
+
 Os dois guardam texto. A diferença está no tamanho esperado e em como cada banco de dados guarda:
 
 | | `string` | `text` |
@@ -57,11 +75,19 @@ Se alguém perguntar "não dava para usar só `text`, ou só `string`?": no SQLi
 - **O app pode mudar de banco de dados.** No MySQL, tudo `string` cortaria mensagens acima de 255 caracteres. E tudo `text` atrapalha os índices (usados para buscar rápido), que no MySQL não funcionam direto numa coluna `text`.
 - **É a convenção.** Quem chega num projeto Rails espera nomes e títulos como `string` e textos longos como `text`.
 
-E o espaço? Ao contrário do que muita gente pensa, `string` não economiza espaço. Nos três bancos, o que ocupa espaço é o texto guardado, e não o tipo: um nome de 3 letras ocupa o mesmo numa coluna `string` ou `text`. O `varchar(255)` do MySQL é só um limite, e não reserva 255 caracteres. No PostgreSQL, os dois são guardados exatamente do mesmo jeito. No MySQL, a diferença é *onde* o texto fica: textos longos de uma coluna `text` podem ser guardados fora da linha da tabela, o que pesa um pouco em algumas buscas. Quem reserva espaço fixo é outro tipo, o `char(n)`, que o Rails quase não usa.
+E o espaço e o desempenho? Ao contrário do que muita gente pensa, `string` não economiza espaço. Nos três bancos, o que ocupa espaço é o texto guardado, e não o tipo: um nome de 3 letras ocupa o mesmo numa coluna `string` ou `text`, e o `varchar(255)` do MySQL é só um limite, e não reserva 255 caracteres. Quem reserva espaço fixo é outro tipo, o `char(n)`, que o Rails quase não usa. Por banco de dados:
+
+- **SQLite:** nenhuma diferença. O `varchar` e o `text` têm a mesma afinidade (`TEXT`), e o SQLite ignora o número entre parênteses: `varchar(255)` não limita nada.
+- **PostgreSQL:** nenhuma diferença. A documentação diz que "não há diferença de desempenho" entre `character varying` e `text`, a não ser uma pequena checagem do tamanho quando há limite. Textos longos, nos dois tipos, são comprimidos sozinhos, e os muito longos ficam em tabelas de apoio (o *TOAST*) para não atrapalhar a leitura das outras colunas. Tudo isso é transparente para o app.
+- **MySQL (InnoDB):** é onde existem diferenças, e elas são práticas:
+  - **Índices:** numa coluna `text`, o índice exige um tamanho de prefixo (`index(content(100))`), e numa `varchar`, não.
+  - **Ordenação:** ao ordenar por uma coluna `text`, só os primeiros 1024 bytes são usados, por padrão (`max_sort_length`).
+  - **Tabelas temporárias:** uma consulta que devolve colunas `text` e usa uma tabela temporária vai para o disco, e não para a memória, e a documentação recomenda evitar o `SELECT *` por isso.
+  - **Onde o texto fica:** valores longos, de `varchar` **ou** de `text`, podem ir para fora da linha da tabela quando a linha fica grande; sobra na linha só um ponteiro de 20 bytes. O tipo não decide isso, e o tamanho do valor, sim.
 
 Se alguém perguntar "então a mensagem pode ter qualquer tamanho?": no banco de dados, sim. O limite de 280 caracteres é uma regra do mural de recados, e não do tipo da coluna: ela entra no model, com uma validação, no capítulo 07.
 
-Fonte: os tipos de cada banco estão no código do Active Record 8.1 (`NATIVE_DATABASE_TYPES` dos adaptadores do SQLite, PostgreSQL e MySQL).
+Fontes: os tipos de cada banco estão no código do Active Record 8.1 (`NATIVE_DATABASE_TYPES` dos adaptadores do SQLite, PostgreSQL e MySQL). O resto vem da documentação oficial (em inglês): [SQLite, tipos de dados](https://www.sqlite.org/datatype3.html), [PostgreSQL, tipos de caracteres](https://www.postgresql.org/docs/current/datatype-character.html), [MySQL, BLOB e TEXT](https://dev.mysql.com/doc/refman/8.4/en/blob.html) e [MySQL, formato de linha do InnoDB](https://dev.mysql.com/doc/refman/8.4/en/innodb-row-format.html).
 
 ## SQLite, MySQL e PostgreSQL
 
@@ -154,6 +180,9 @@ Seguir a convenção é o caminho mais curto: o Rails liga tudo sozinho e o cód
 
 ### UUID ou `id` numérico?
 
+{: .atencao }
+Contexto só para a mentoria. **Não precisa levar para as participantes**: o capítulo só diz que o `id` é um número que o Rails cria sozinho. Use só se alguém perguntar.
+
 Se alguém perguntar por que o Rails usa `1, 2, 3…` e quando faz sentido trocar por UUID (um código aleatório como `3f2b8c1e-…`), um overview:
 
 | | `id` numérico (padrão) | UUID |
@@ -202,6 +231,9 @@ O padrão não é exclusivo do Rails. O Eloquent, do Laravel (PHP), segue a mesm
 
 ## A analogia da planilha e da assistente
 
+{: .atencao }
+Contexto só para a mentoria. **Não precisa levar para as participantes**: a analogia aparece no capítulo, mas esta seção trata do limite dela (classe e objeto), que o capítulo não explica.
+
 O capítulo compara a migration com montar uma planilha e o model com uma assistente especialista que só cuida dessa planilha. É só uma comparação didática, para separar estrutura (migration) de dados (model). Não é uma descrição exata de como o Rails funciona.
 
 O ponto em que ela não funciona é a diferença entre **classe** e **objeto**: `Message`, com M maiúsculo, é a classe (a "assistente"), mas o que `Message.first` devolve é um objeto, um recado específico, uma linha da tabela. Para quem nunca programou, essa diferença dificilmente fica clara de primeira, e não é objetivo deste capítulo.
@@ -211,6 +243,9 @@ O ponto em que ela não funciona é a diferença entre **classe** e **objeto**: 
 - Se alguém perceber a diferença sem ajuda, ótimo: confirme e diga que esses nomes vão aparecer com mais calma depois.
 
 ## Por que `generate model`
+
+{: .atencao }
+Contexto só para a mentoria. **Não precisa levar para as participantes**: é a justificativa de como o guia foi escrito. A palavra *scaffold* só aparece para elas nas caixas sobre IA dos capítulos 03 a 05.
 
 O capítulo usa `bin/rails generate model`, e não `scaffold`, para a participante ver só o model e a migration, sem telas. O projeto não usa scaffold em nenhum capítulo (veja [Sem scaffold]({{ site.baseurl }}{% link mentoras/projetos/mural-de-recados/index.md %}#sem-scaffold)): rotas, controller e views são escritos à mão nos capítulos 03 a 05.
 

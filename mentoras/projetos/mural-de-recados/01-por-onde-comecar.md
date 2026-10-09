@@ -27,6 +27,9 @@ nav_order: 2
 
 ## Quem responde ao pedido: o Puma ou o Rails?
 
+{: .atencao }
+Contexto só para a mentoria. **Não precisa levar para as participantes**: o capítulo só fala em "o servidor". O nome Puma aparece para elas apenas no glossário e na lista de terminais do capítulo 02. Use só se alguém perguntar.
+
 O capítulo simplifica e diz que "o servidor" atende os pedidos. Se alguém perguntar quem responde, são dois programas trabalhando juntos:
 
 - **O Puma** é o servidor que liga quando você roda `bin/rails server`. Ele vem instalado em todo app Rails novo, mas é um programa separado. Ele recebe o pedido do navegador e devolve a página pronta, sem saber nada sobre recados.
@@ -46,9 +49,15 @@ Só aprofunde se a pergunta aparecer. Para quem está começando, "o servidor re
 
 ## O primeiro commit com "Stage All Changes"
 
+{: .atencao }
+Contexto só para a mentoria. **Não precisa levar para as participantes**: o passo 6 só diz que o **Stage All Changes** coloca todos os arquivos no commit. Use só se o grupo tiver curiosidade.
+
 No passo 6, o capítulo usa **Stage All Changes**, que coloca todos os arquivos alterados no commit de uma vez. É o jeito mais simples para começar, mas nem sempre é o ideal: num projeto real, às vezes vale escolher só alguns arquivos para cada commit. Se o grupo tiver curiosidade, é um bom assunto para conversar.
 
 ## O ❌ vermelho e os pull requests automáticos
+
+{: .atencao }
+Contexto só para a mentoria. **Não precisa levar para as participantes**: o capítulo não fala do ❌ nem dos pull requests. Use só se alguém perguntar, ao ver a página do repositório.
 
 Depois do Sync Changes (passos 6 e 7), a página do repositório no GitHub pode mostrar três coisas que a participante não fez:
 
@@ -61,6 +70,9 @@ Se a organização preferir que nada disso apareça, o `rails new . --skip-ci` n
 
 ## O botão "Make Public" da porta 3000
 
+{: .atencao }
+Contexto só para a mentoria. **Não precisa levar para as participantes**: o capítulo só pede o **Open in Browser**. Use só se alguém perguntar sobre o outro botão.
+
 No passo 5, o aviso da porta 3000 mostra dois botões: **Open in Browser** e **Make Public**. Só o primeiro é necessário. Se alguém perguntar sobre o segundo:
 
 - **O codespace em si nunca fica público.** Editor, arquivos e terminal são sempre só da dona da conta.
@@ -72,6 +84,9 @@ No passo 5, o aviso da porta 3000 mostra dois botões: **Open in Browser** e **M
 Oriente a deixar a porta **privada**. Se uma participante quiser mostrar o mural de recados para alguém na sala, pode deixar pública por alguns minutos e voltar para privada depois: na aba **Ports**, clique com o botão direito na porta 3000 e escolha **Port Visibility** → **Private**.
 
 ## Erro "Blocked hosts"
+
+{: .atencao }
+Para a mentoria resolver. O "Travou?" do capítulo manda a participante pedir ajuda a alguém da mentoria, ou vir para esta seção.
 
 Em modo de desenvolvimento, o Rails só aceita requisições de endereços conhecidos, e o endereço do codespace (`*.app.github.dev`) não está na lista. Para liberar, abra `config/environments/development.rb` e acrescente, antes do último `end`:
 
