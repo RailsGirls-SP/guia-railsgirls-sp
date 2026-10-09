@@ -32,6 +32,9 @@ Este capítulo é **opcional**. Foi testado num deploy de verdade em 2026-10-08,
 
 ## Deploy ou deployment?
 
+{: .atencao }
+Contexto só para a mentoria. **Não precisa levar para as participantes**: o capítulo e o glossário só usam "deploy", com a tradução "implantação". Use só se alguém perguntar a diferença.
+
 Se alguém perguntar: os dois existem. Em inglês, *deploy* é o verbo ("to deploy") e *deployment* é o substantivo formal. No português de quem programa, "deploy" virou substantivo também ("fazer o deploy", "o deploy falhou"), e *deployment* aparece mais em texto formal ou em nomes de ferramentas. O próprio Render usa **Deploy** nas telas (**Deploys**, **Manual Deploy**, **Deploy web service**). O guia usa só "deploy", com a tradução "implantação" no "O que aconteceu?" e no [glossário]({{ site.baseurl }}{% link glossario.md %}#deploy).
 
 ## Decisões técnicas do capítulo

@@ -51,6 +51,9 @@ Para quem está começando, uma tela de erro parece fracasso. Comemorar cada err
 
 ## Por que o passo 8 usa só `if`, sem `else`
 
+{: .atencao }
+Contexto só para a mentoria. **Não precisa levar para as participantes**: o passo 8 só mostra o `if` e explica que o convite aparece quando a lista está vazia. O `else` só entra se alguém perguntar.
+
 Quem já programa pode estranhar o passo 8: o convite aparece com um `if`, mas a lista de recados fica fora dele, sem `else`.
 
 ```erb
