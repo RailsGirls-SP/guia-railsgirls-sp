@@ -13,7 +13,7 @@ nav_order: 3
 
 - "Se a gente fechar o navegador, onde o recado fica?" Deixe a pessoa chegar por conta própria na ideia de um lugar que guarda informações.
 - "Como você anotaria vários recados numa planilha?" A planilha é a ponte para a ideia de tabela, linha e coluna.
-- "A autora e a mensagem são do mesmo tipo?" Leva à diferença entre `string` e `text`.
+- "A autora e a mensagem são do mesmo tipo?" Leva à diferença entre `string` e `text` (veja [`string` ou `text`?](#string-ou-text)).
 
 ## Confusões comuns
 
@@ -34,7 +34,32 @@ O banco de dados é o **SQLite**, que fica num único arquivo: `storage/developm
 
 Se alguém perguntar por que os recados sumiram num codespace novo, é isso: o código veio do GitHub, mas o banco começa vazio. Basta rodar `bin/rails db:migrate` para criar a tabela de novo e postar novos recados.
 
-Isso também vale para o capítulo 08: no plano gratuito do Render, o disco também não é permanente, e o SQLite perde os dados a cada deploy (decisão ainda pendente no capítulo).
+Isso também vale para o capítulo 08: no plano gratuito do Render, o disco também não é permanente, e o SQLite perde os dados a cada deploy. Por isso, o capítulo 08 usa um PostgreSQL no Render.
+
+## `string` ou `text`?
+
+Os dois guardam texto. A diferença está no tamanho esperado e em como cada banco de dados guarda:
+
+| | `string` | `text` |
+|---|---|---|
+| **Para quê** | Texto curto, de uma linha: nome, e-mail, título | Texto longo, que pode ter várias linhas: mensagem, descrição, comentário |
+| **No SQLite** (codespace) | `varchar`, mas o SQLite guarda os dois do mesmo jeito e não limita o tamanho | `text` |
+| **No PostgreSQL** (Render, capítulo 08) | `character varying`, sem limite de tamanho | `text`, também sem limite (por dentro, os dois funcionam igual) |
+| **No MySQL** | `varchar(255)`: no máximo 255 caracteres | `text`: até 64 KB (uns 65 mil caracteres sem acento) |
+| **No formulário** | Combina com `text_field` (uma linha) | Combina com `text_area` (caixa maior) |
+
+No mural de recados, `author` é `string` (um nome) e `content` é `text` (a mensagem). Nos bancos que o guia usa, a escolha quase não muda nada na prática: ela diz **a intenção** de quem planejou, e essa intenção reaparece no capítulo 04, com o `form.text_field :author` e o `form.text_area :content`. O scaffold do Rails também usa essa dica para escolher o campo do formulário.
+
+Se alguém perguntar "não dava para usar só `text`, ou só `string`?": no SQLite e no PostgreSQL, funcionaria. Mesmo assim, vale ter os dois:
+
+- **A intenção fica no código.** Quem lê `string` sabe que é um texto curto; quem lê `text`, que pode ser longo. É como escolher bem o nome de uma variável.
+- **O Rails e outras ferramentas usam essa dica**, como o scaffold, que escolhe a caixa de uma linha ou a caixa maior no formulário.
+- **O app pode mudar de banco de dados.** No MySQL, tudo `string` cortaria mensagens acima de 255 caracteres. E tudo `text` atrapalha os índices (usados para buscar rápido), que no MySQL não funcionam direto numa coluna `text`.
+- **É a convenção.** Quem chega num projeto Rails espera nomes e títulos como `string` e textos longos como `text`.
+
+Se alguém perguntar "então a mensagem pode ter qualquer tamanho?": no banco de dados, sim. O limite de 280 caracteres é uma regra do mural de recados, e não do tipo da coluna: ela entra no model, com uma validação, no capítulo 07.
+
+Fonte: os tipos de cada banco estão no código do Active Record 8.1 (`NATIVE_DATABASE_TYPES` dos adaptadores do SQLite, PostgreSQL e MySQL).
 
 ## SQLite, MySQL e PostgreSQL
 
@@ -53,7 +78,7 @@ No dia a dia do Rails, a diferença quase não aparece: o Active Record (a parte
 
 O SQLite não é só "banco de brinquedo": desde o Rails 8, ele também é uma opção recomendada para colocar apps em produção. Mesmo assim, PostgreSQL e MySQL continuam muito comuns em empresas.
 
-Esse assunto volta no capítulo 08: em alguns serviços de hospedagem, como o plano gratuito do Render, o disco não é permanente, e por isso pode ser preciso usar um PostgreSQL em produção (decisão ainda pendente).
+Esse assunto volta no capítulo 08: em alguns serviços de hospedagem, como o plano gratuito do Render, o disco não é permanente, e por isso o capítulo 08 usa um PostgreSQL em produção.
 
 ## Onde o Rails anota as migrations que já rodaram
 
