@@ -344,3 +344,10 @@ details.termo {
   max-width: 100%;
   height: 200px;
 }
+
+// Rótulo "Opcional": discreto, nas cores do guia.
+.label.label-opcional {
+  color: #73121b;
+  background-color: #fbf3f1;
+  border: 1px solid #e0dcd8;
+}

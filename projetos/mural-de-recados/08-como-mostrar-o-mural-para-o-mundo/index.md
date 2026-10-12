@@ -6,7 +6,7 @@ nav_order: 9
 has_children: true
 ---
 
-# 08. Como mostrar o mural de recados para o mundo? <span class="label label-blue">Opcional</span>
+# 08. Como mostrar o mural de recados para o mundo? <span class="label label-opcional">Opcional</span>
 
 Tempo: uns 40 minutos, contando a espera do primeiro deploy.
 {: .fs-5 }

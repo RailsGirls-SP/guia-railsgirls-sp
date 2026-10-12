@@ -131,7 +131,7 @@ A página de boas-vindas não foi apagada: ela nem está nos arquivos do seu app
 </details>
 
 <details class="passo" markdown="1">
-<summary>Quebre de propósito <span class="label label-blue">Opcional</span></summary>
+<summary>Quebre de propósito <span class="label label-opcional">Opcional</span></summary>
 
 Este teste precisa de pelo menos um recado no mural de recados. Como você apagou todos no passo 8, crie um pelo console (`bin/rails console`):
 

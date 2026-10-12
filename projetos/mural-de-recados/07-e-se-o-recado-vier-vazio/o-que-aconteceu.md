@@ -91,7 +91,7 @@ Daria, com o `@message.errors.full_messages`, mas o Rails monta essas frases jun
 </details>
 
 <details class="passo" markdown="1">
-<summary>Quebre de propósito <span class="label label-blue">Opcional</span></summary>
+<summary>Quebre de propósito <span class="label label-opcional">Opcional</span></summary>
 
 Na ação `create`, troque a linha `render :new, status: :unprocessable_entity` por `redirect_to new_message_path`. Salve, clique em **Novo recado**, escreva só o seu nome e clique em **Postar recado**.
 

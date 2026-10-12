@@ -105,7 +105,7 @@ Tem: o Rails permite separar um pedaço de view num arquivo próprio, chamado *p
 </details>
 
 <details class="passo" markdown="1">
-<summary>Quebre de propósito <span class="label label-blue">Opcional</span></summary>
+<summary>Quebre de propósito <span class="label label-opcional">Opcional</span></summary>
 
 Clique em **Editar** num recado. Na barra de endereço, troque o número do recado por `999` (ou outro número que não seja de nenhum recado), para o endereço terminar com `/messages/999/edit`, e aperte **Enter**.
 

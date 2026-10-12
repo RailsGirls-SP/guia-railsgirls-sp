@@ -113,7 +113,7 @@ Tudo que vem depois do `private` só pode ser usado pelo próprio controller. As
 </details>
 
 <details class="passo" markdown="1">
-<summary>Quebre de propósito <span class="label label-blue">Opcional</span></summary>
+<summary>Quebre de propósito <span class="label label-opcional">Opcional</span></summary>
 
 No controller, coloque um `#` na frente da linha `@message = Message.new`, para ela virar comentário. Salve e abra a página **Novo recado**.
 

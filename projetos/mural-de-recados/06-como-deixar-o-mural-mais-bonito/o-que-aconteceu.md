@@ -89,7 +89,7 @@ Vem. A linha do `<link>` busca os estilos do Bulma num site na internet, e é po
 </details>
 
 <details class="passo" markdown="1">
-<summary>Quebre de propósito <span class="label label-blue">Opcional</span></summary>
+<summary>Quebre de propósito <span class="label label-opcional">Opcional</span></summary>
 
 No `app/views/layouts/application.html.erb`, coloque `<!--` antes e `-->` depois da linha do Bulma, para ela virar um comentário:
 
