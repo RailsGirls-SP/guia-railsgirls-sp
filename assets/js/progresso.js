@@ -1,7 +1,8 @@
 // Progresso do "Mão na massa": a participante marca os passos que já fez.
 // As marcações ficam só no navegador (localStorage), uma lista por página.
+// O modo workshop usa a lista do mão na massa completo (window.progressoChave).
 (function () {
-  const CHAVE = "guia-rg:progresso:" + location.pathname;
+  const CHAVE = "guia-rg:progresso:" + (window.progressoChave || location.pathname);
 
   function ler() {
     try {
