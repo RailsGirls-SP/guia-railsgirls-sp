@@ -1,6 +1,6 @@
 ---
 title: Glossário
-nav_order: 5
+nav_order: 6
 ---
 
 # Glossário
@@ -123,6 +123,17 @@ Apesar do nome parecido, JavaScript não tem nada a ver com Java, que é outra l
 ## Ferramentas
 {: #grupo-ferramentas }
 
+<details class="termo" id="codespace" markdown="1">
+<summary>Codespace</summary>
+
+Um **codespace** (pronuncia-se mais ou menos *CÔUD-spêis*) é um computador na nuvem, ligado a um [repositório](#repositorio) do [GitHub](#github), que você usa pelo navegador. Ele já vem com um editor de código, um [terminal](#terminal) e as ferramentas do projeto instaladas.
+
+No workshop, o seu codespace já vem com o [Ruby](#ruby) e o [Rails](#rails), para você começar a programar sem instalar nada no seu computador. O serviço do GitHub que cria os codespaces se chama **GitHub Codespaces**.
+
+Um codespace parado por muito tempo é apagado pelo GitHub (o padrão é depois de 30 dias). Por isso, guarde sempre o seu progresso com um [commit](#commit) e mande para o GitHub. Para programar no seu próprio computador, veja [No seu computador]({{ site.baseurl }}{% link extras/no-seu-computador.md %}).
+
+</details>
+
 <details class="termo" id="terminal" markdown="1">
 <summary>Terminal</summary>
 
@@ -177,7 +188,7 @@ O **GitHub** (pronuncia-se mais ou menos *GUIT-râb*) é um site que guarda [rep
 
 Além de guardar o código, o GitHub tem várias ferramentas. Algumas que aparecem neste guia:
 
-- **Codespaces:** computadores na nuvem para programar pelo navegador, como o que você usa no workshop.
+- **[Codespaces](#codespace):** computadores na nuvem para programar pelo navegador, como o que você usa no workshop.
 - **Pull requests:** pedidos de mudança no código, que alguém revisa antes de aceitar.
 - **GitHub Pages:** publica sites a partir de um repositório. Este guia é publicado assim.
 

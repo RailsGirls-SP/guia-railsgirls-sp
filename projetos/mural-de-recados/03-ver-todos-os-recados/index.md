@@ -13,9 +13,7 @@ Tempo: uns 40 minutos.
 
 ## O desafio
 
-O recado da Ana está guardado no banco de dados, mas só dá para ver pelo console. Quem abre o app no navegador ainda vê a página de boas-vindas do Rails.
-
-O desafio agora é fazer o mural de recados aparecer: quem abrir o app tem que ver os recados que já foram postados.
+{% include mural-de-recados/03/desafio.md %}
 
 ## Pense antes de programar
 
