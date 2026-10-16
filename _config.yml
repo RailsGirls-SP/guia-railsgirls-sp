@@ -20,6 +20,7 @@ mermaid:
 
 # Boxes de destaque. Uso: uma linha com {: .dica } antes do parágrafo.
 # pensando: a forma de pensar de quem programa, além da técnica.
+# desafio: o desafio do capítulo numa frase, no fim de O desafio.
 callouts:
   dica:
     title: Dica
@@ -33,6 +34,9 @@ callouts:
   pensando:
     title: Pensando como quem programa
     color: blue
+  desafio:
+    title: Tarefa
+    color: red
 
 footer_content: >-
   Material de Rails Girls São Paulo, licenciado sob

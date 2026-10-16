@@ -9,11 +9,14 @@ search_exclude: true
 
 ## O desafio
 
-Você já tem um plano para o mural de recados, mas ele ainda está no papel. Como ele vira um site que você abre no navegador e usa de verdade?
+Hoje você vai criar um mural de recados: um site onde qualquer pessoa deixa um recado para todo mundo ver. Mas como sair do zero e chegar a um site que você abre no navegador e usa de verdade?
 
 Um site começa como **código**: arquivos com instruções escritas numa linguagem de programação, como o **[Ruby]({{ site.baseurl }}{% link glossario.md %}#ruby)**. O **[Rails]({{ site.baseurl }}{% link glossario.md %}#rails)** é um conjunto de ferramentas feito em Ruby, que já traz pronto o que quase todo site precisa.
 
 Para o código virar um site, ele precisa de um computador que entende Ruby. No workshop, a gente usa o **[codespace]({{ site.baseurl }}{% link glossario.md %}#codespace)**: um computador na nuvem, já preparado, que você usa pelo navegador.
+
+{: .desafio }
+Crie o app Mural de recados num codespace e abra ele no navegador.
 
 No fim deste capítulo, o seu app vai mostrar a página de boas-vindas do Rails:
 

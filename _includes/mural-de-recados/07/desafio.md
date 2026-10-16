@@ -3,4 +3,7 @@ Você já viu isso duas vezes: no console, em [Como guardar os recados?]({{ site
 ![Mural de recados com o botão Novo recado e quatro cartões amarelos: o primeiro está vazio, só com o travessão e os botões Editar e Apagar; os outros têm os recados da Carla, da Bia e da Ana]({{ '/assets/images/mural-de-recados/07/recado-vazio.png' | relative_url }})
 {: .ilustracao .ilustracao-larga }
 
-O Rails aceita porque ninguém disse a ele que isso é proibido. O desafio agora é decidir **o que é um recado válido** e fazer o app recusar o que não for, avisando a pessoa do que falta.
+O Rails aceita porque ninguém disse a ele que isso é proibido.
+
+{: .desafio }
+Decida **o que é um recado válido** e faça o app recusar o que não for, avisando a pessoa do que falta.
