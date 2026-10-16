@@ -408,6 +408,21 @@ details.termo {
     height: 100%;
     max-height: none;
     border-radius: 0;
+
+    // Com letra menor que 16px, o Safari do iPhone dá zoom no campo ao
+    // focar, e a parte direita do chat fica fora da tela.
+    input,
+    textarea {
+      font-size: 16px !important;
+    }
+  }
+}
+
+// No celular, a página atrás do chat aberto não rola.
+@media (max-width: 37.5rem) {
+  html.rubi-aberto,
+  html.rubi-aberto body {
+    overflow: hidden;
   }
 }
 
@@ -466,6 +481,7 @@ details.termo {
   flex: 1;
   padding: 1rem;
   overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .rubi-mensagem {
@@ -597,6 +613,7 @@ details.termo {
 
   textarea {
     flex: 1;
+    min-width: 0;
     padding: 0.5rem;
     border: 1px solid #5c5962;
     border-radius: 8px;

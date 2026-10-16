@@ -361,6 +361,7 @@
 
     function abrir() {
       ui.painel.hidden = false;
+      document.documentElement.classList.add("rubi-aberto");
       ui.botao.setAttribute("aria-expanded", "true");
       ui.botao.hidden = true;
       mostrarFormulario();
@@ -370,6 +371,7 @@
 
     function fecharPainel() {
       ui.painel.hidden = true;
+      document.documentElement.classList.remove("rubi-aberto");
       ui.botao.hidden = false;
       ui.botao.setAttribute("aria-expanded", "false");
       ui.botao.focus();
