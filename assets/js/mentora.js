@@ -1,9 +1,8 @@
 // @ts-check
 // Rubi, a tutora com IA do guia (projeto Mentora).
 //
-// Durante o beta, o botão só aparece para quem abrir o guia com ?rubi no
-// endereço (o navegador lembra depois; ?rubi=nao esquece). Mesmo com o
-// botão, perguntar exige o código do workshop.
+// O botão aparece para todo mundo, mas perguntar exige o código do
+// workshop.
 //
 // Tudo que vem do modelo é montado com elementos e textContent, nunca com
 // innerHTML. O token e a conversa ficam no sessionStorage: somem ao fechar
@@ -13,7 +12,6 @@
   const API = (script && script.dataset.api ? script.dataset.api : "").replace(/\/+$/, "");
   if (!API) return;
 
-  const CHAVE_BETA = "guia-rg:rubi";
   const CHAVE_TOKEN = "guia-rg:rubi:token";
   const CHAVE_CONVERSA = "guia-rg:rubi:conversa";
   // Quantas mensagens anteriores vão junto com a pergunta (a API usa as últimas).
@@ -42,13 +40,6 @@
     } catch (e) {
       // Sem armazenamento: vale só até recarregar a página.
     }
-  }
-
-  function betaLigado() {
-    const parametro = new URLSearchParams(location.search).get("rubi");
-    if (parametro === "nao") gravar(localStorage, CHAVE_BETA, null);
-    else if (parametro !== null) gravar(localStorage, CHAVE_BETA, "1");
-    return ler(localStorage, CHAVE_BETA) === "1";
   }
 
   /** @returns {Mensagem[]} */
@@ -248,7 +239,6 @@
   }
 
   function iniciar() {
-    if (!betaLigado()) return;
     const ui = montar();
     let ocupado = false;
 
