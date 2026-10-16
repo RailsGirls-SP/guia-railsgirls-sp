@@ -5,14 +5,15 @@
 // workshop.
 //
 // Tudo que vem do modelo é montado com elementos e textContent, nunca com
-// innerHTML. O token e a conversa ficam no sessionStorage: somem ao fechar
-// a aba.
+// innerHTML. A sessão e a conversa ficam no localStorage, valem em todas as
+// abas e são apagadas quando a sessão expira (no máximo 10 horas, ou no fim
+// do dia do código).
 (function () {
   const script = /** @type {HTMLScriptElement | null} */ (document.currentScript);
   const API = (script && script.dataset.api ? script.dataset.api : "").replace(/\/+$/, "");
   if (!API) return;
 
-  const CHAVE_TOKEN = "guia-rg:rubi:token";
+  const CHAVE_SESSAO = "guia-rg:rubi:sessao";
   const CHAVE_CONVERSA = "guia-rg:rubi:conversa";
   // Quantas mensagens anteriores vão junto com a pergunta (a API usa as últimas).
   const MENSAGENS_NO_HISTORICO = 6;
@@ -42,10 +43,35 @@
     }
   }
 
+  // Apaga a sessão e a conversa, por exemplo quando a sessão expira.
+  function esquecer() {
+    gravar(localStorage, CHAVE_SESSAO, null);
+    gravar(localStorage, CHAVE_CONVERSA, null);
+  }
+
+  // O token da sessão, ou null se não houver sessão ou se ela já expirou.
+  /** @returns {string | null} */
+  function lerToken() {
+    try {
+      const sessao = JSON.parse(ler(localStorage, CHAVE_SESSAO) || "null");
+      if (sessao && typeof sessao.token === "string" && sessao.expiresAt > Date.now()) return sessao.token;
+    } catch (e) {
+      // Sessão guardada com outro formato.
+    }
+    if (ler(localStorage, CHAVE_SESSAO) !== null) esquecer();
+    return null;
+  }
+
+  /** @param {string} token @param {number} expiresAt */
+  function gravarSessao(token, expiresAt) {
+    gravar(localStorage, CHAVE_SESSAO, JSON.stringify({ token, expiresAt }));
+  }
+
   /** @returns {Mensagem[]} */
   function lerConversa() {
+    if (!lerToken()) return [];
     try {
-      const conversa = JSON.parse(ler(sessionStorage, CHAVE_CONVERSA) || "[]");
+      const conversa = JSON.parse(ler(localStorage, CHAVE_CONVERSA) || "[]");
       return Array.isArray(conversa) ? conversa : [];
     } catch (e) {
       return [];
@@ -54,7 +80,7 @@
 
   /** @param {Mensagem[]} conversa */
   function gravarConversa(conversa) {
-    gravar(sessionStorage, CHAVE_CONVERSA, JSON.stringify(conversa.slice(-MENSAGENS_GUARDADAS)));
+    gravar(localStorage, CHAVE_CONVERSA, JSON.stringify(conversa.slice(-MENSAGENS_GUARDADAS)));
   }
 
   // --- Markdown simples, montado com elementos ---
@@ -186,10 +212,15 @@
     const titulo = el("h2", "rubi-titulo", "Rubi");
     titulo.id = "rubi-titulo";
     titulos.append(titulo, el("p", "rubi-subtitulo", "Assistente com IA do guia"));
+    const novaConversa = /** @type {HTMLButtonElement} */ (el("button", "rubi-nova-conversa", "Nova conversa"));
+    novaConversa.type = "button";
+    novaConversa.setAttribute("aria-label", "Começar uma nova conversa e apagar a atual");
     const fechar = /** @type {HTMLButtonElement} */ (el("button", "rubi-fechar", "×"));
     fechar.type = "button";
     fechar.setAttribute("aria-label", "Fechar o chat");
-    cabecalho.append(titulos, fechar);
+    const acoes = el("div", "rubi-acoes");
+    acoes.append(novaConversa, fechar);
+    cabecalho.append(titulos, acoes);
 
     const mensagens = el("div", "rubi-mensagens");
     mensagens.setAttribute("aria-live", "polite");
@@ -235,7 +266,20 @@
     painel.append(cabecalho, mensagens, formCodigo, formPergunta);
     document.body.append(botao, painel);
 
-    return { botao, painel, fechar, mensagens, formCodigo, campoCodigo, entrar, formPergunta, campoPergunta, enviar, restantes };
+    return {
+      botao,
+      painel,
+      novaConversa,
+      fechar,
+      mensagens,
+      formCodigo,
+      campoCodigo,
+      entrar,
+      formPergunta,
+      campoPergunta,
+      enviar,
+      restantes,
+    };
   }
 
   function iniciar() {
@@ -288,7 +332,7 @@
           try {
             await fetch(API + "/api/feedback", {
               method: "POST",
-              headers: { "Content-Type": "application/json", Authorization: "Bearer " + ler(sessionStorage, CHAVE_TOKEN) },
+              headers: { "Content-Type": "application/json", Authorization: "Bearer " + lerToken() },
               body: JSON.stringify({ page: pagina, rating: nota }),
             });
             grupo.append(el("span", "rubi-obrigado", "Valeu pela avaliação!"));
@@ -304,7 +348,7 @@
     }
 
     function mostrarFormulario() {
-      const temToken = Boolean(ler(sessionStorage, CHAVE_TOKEN));
+      const temToken = Boolean(lerToken());
       ui.formCodigo.hidden = temToken;
       ui.formPergunta.hidden = !temToken;
     }
@@ -360,8 +404,8 @@
           ui.campoCodigo.focus();
           return;
         }
-        const { token } = await resposta.json();
-        gravar(sessionStorage, CHAVE_TOKEN, token);
+        const { token, expiresAt } = await resposta.json();
+        gravarSessao(token, expiresAt);
         ui.campoCodigo.value = "";
         mostrarFormulario();
         mensagemDoSistema("Tudo certo! Pode perguntar.");
@@ -390,7 +434,7 @@
       try {
         const resposta = await fetch(API + "/api/chat", {
           method: "POST",
-          headers: { "Content-Type": "application/json", Authorization: "Bearer " + ler(sessionStorage, CHAVE_TOKEN) },
+          headers: { "Content-Type": "application/json", Authorization: "Bearer " + lerToken() },
           body: JSON.stringify({
             question: pergunta,
             page: location.pathname,
@@ -402,7 +446,7 @@
           carregando.remove();
           mensagemDoSistema(await erroDaApi(resposta), "rubi-erro");
           if (resposta.status === 401) {
-            gravar(sessionStorage, CHAVE_TOKEN, null);
+            esquecer();
             mostrarFormulario();
             ui.campoCodigo.focus();
           }
@@ -444,14 +488,37 @@
       }
     }
 
-    // Mostra a conversa desta aba, guardada entre as páginas do guia.
-    boasVindas();
-    for (const mensagem of lerConversa()) {
-      if (mensagem.role === "user") mensagemDaPessoa(mensagem.content);
-      else mensagemDaRubi(mensagem.content, false);
+    // Mostra a conversa guardada, a mesma em todas as abas do guia.
+    function desenharConversa() {
+      ui.mensagens.replaceChildren();
+      boasVindas();
+      for (const mensagem of lerConversa()) {
+        if (mensagem.role === "user") mensagemDaPessoa(mensagem.content);
+        else mensagemDaRubi(mensagem.content, false);
+      }
+      ui.mensagens.scrollTop = ui.mensagens.scrollHeight;
     }
 
+    function comecarNovaConversa() {
+      gravar(localStorage, CHAVE_CONVERSA, null);
+      desenharConversa();
+      ui.restantes.textContent = "";
+      (ui.formCodigo.hidden ? ui.campoPergunta : ui.campoCodigo).focus();
+    }
+
+    desenharConversa();
+
+    // Quando outra aba pergunta, entra com o código ou começa uma nova
+    // conversa, esta aba se atualiza.
+    window.addEventListener("storage", (evento) => {
+      if (evento.key !== CHAVE_SESSAO && evento.key !== CHAVE_CONVERSA && evento.key !== null) return;
+      if (ocupado) return;
+      desenharConversa();
+      mostrarFormulario();
+    });
+
     ui.botao.addEventListener("click", abrir);
+    ui.novaConversa.addEventListener("click", comecarNovaConversa);
     ui.fechar.addEventListener("click", fecharPainel);
     ui.painel.addEventListener("keydown", (evento) => {
       if (evento.key === "Escape") fecharPainel();

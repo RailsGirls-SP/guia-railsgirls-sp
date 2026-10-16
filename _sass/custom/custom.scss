@@ -432,6 +432,27 @@ details.termo {
   }
 }
 
+.rubi-acoes {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rubi-nova-conversa {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  background: none;
+  color: #fff;
+  font-size: 0.8rem;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+}
+
 .rubi-fechar {
   border: 0;
   background: none;
