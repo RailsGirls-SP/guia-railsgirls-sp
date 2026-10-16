@@ -351,3 +351,236 @@ details.termo {
   background-color: #fbf3f1;
   border: 1px solid #e0dcd8;
 }
+
+// Rubi, a tutora com IA (assets/js/mentora.js): botão fixo e painel do chat.
+.rubi-botao {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  border: 0;
+  border-radius: 40px;
+  background-color: #911802;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  &:hover {
+    background-color: #73121b;
+  }
+}
+
+.rubi-botao:focus-visible,
+.rubi-painel button:focus-visible,
+.rubi-painel input:focus-visible,
+.rubi-painel textarea:focus-visible {
+  outline: 3px solid #e8a33d;
+  outline-offset: 2px;
+}
+
+.rubi-painel {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  width: 24rem;
+  max-width: calc(100vw - 2rem);
+  height: 36rem;
+  max-height: calc(100vh - 2rem);
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+
+  &[hidden] {
+    display: none;
+  }
+
+  // No celular, o chat ocupa a tela toda.
+  @media (max-width: 37.5rem) {
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    border-radius: 0;
+  }
+}
+
+.rubi-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background-color: #73121b;
+  color: #fff;
+
+  .rubi-titulo {
+    margin: 0;
+    color: #fff;
+    font-size: 1.25rem;
+  }
+
+  .rubi-subtitulo {
+    margin: 0;
+    font-size: 0.8rem;
+    opacity: 0.9;
+  }
+}
+
+.rubi-fechar {
+  border: 0;
+  background: none;
+  color: #fff;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.rubi-mensagens {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.rubi-mensagem {
+  margin: 0 0 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+
+  p,
+  ul,
+  ol,
+  pre,
+  blockquote {
+    margin: 0 0 0.5rem;
+  }
+
+  > :last-child,
+  .rubi-conteudo > :last-child {
+    margin-bottom: 0;
+  }
+
+  pre {
+    padding: 0.5rem;
+    border-radius: 8px;
+    background-color: #f5f6fa;
+    overflow-x: auto;
+  }
+}
+
+.rubi-sistema {
+  background-color: #fff0f0;
+}
+
+.rubi-pessoa {
+  margin-left: 2rem;
+  background-color: #f5f6fa;
+  white-space: pre-wrap;
+}
+
+.rubi-resposta {
+  margin-right: 1rem;
+  border: 1px solid #eeebee;
+}
+
+.rubi-carregando {
+  color: #5c5962;
+  font-style: italic;
+}
+
+.rubi-erro {
+  border-left: 4px solid #911802;
+  background-color: #fff0f0;
+}
+
+.rubi-avaliacao {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.rubi-nota {
+  padding: 0.125rem 0.5rem;
+  border: 1px solid #eeebee;
+  border-radius: 40px;
+  background: #fff;
+  cursor: pointer;
+
+  &[aria-pressed="true"] {
+    border-color: #911802;
+    background-color: #fff0f0;
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.rubi-obrigado {
+  margin-left: 0.5rem;
+  color: #5c5962;
+  font-size: 0.8rem;
+}
+
+.rubi-form-codigo,
+.rubi-form-pergunta {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #eeebee;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.rubi-form-codigo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    font-weight: 600;
+  }
+
+  input {
+    padding: 0.5rem;
+    border: 1px solid #5c5962;
+    border-radius: 8px;
+  }
+}
+
+.rubi-ajuda,
+.rubi-aviso,
+.rubi-restantes {
+  margin: 0;
+  color: #5c5962;
+  font-size: 0.75rem;
+}
+
+.rubi-restantes:empty {
+  display: none;
+}
+
+.rubi-linha {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  textarea {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #5c5962;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 0.9rem;
+    resize: none;
+  }
+}
