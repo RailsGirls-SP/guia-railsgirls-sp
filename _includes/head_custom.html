@@ -51,3 +51,7 @@
 {% if page.url contains '/mao-na-massa' or page.url contains '/modo-workshop/0' %}
 <script src="{{ '/assets/js/progresso.js' | relative_url }}" defer></script>
 {% endif %}
+{% if site.mentora.enabled %}
+{% comment %}Rubi, a tutora com IA (assets/js/mentora.js). A URL da API vai no data-api.{% endcomment %}
+<script src="{{ '/assets/js/mentora.js' | relative_url }}" data-api="{{ site.mentora.api_url }}" defer></script>
+{% endif %}

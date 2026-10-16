@@ -7,6 +7,13 @@ search_enabled: true
 lang: pt-BR
 color_scheme: railsgirls
 
+# Rubi, a tutora com IA (assets/js/mentora.js), ligada ao backend Mentora.
+# enabled: false não carrega nada. Com enabled: true, o botão aparece para
+# todo mundo, mas perguntar exige o código do workshop.
+mentora:
+  enabled: true
+  api_url: https://mentora-railsgirls-api.elaine-n-watanabe.workers.dev
+
 # Diagramas em blocos ```mermaid, desenhados no navegador.
 mermaid:
   version: "12.1.0"
