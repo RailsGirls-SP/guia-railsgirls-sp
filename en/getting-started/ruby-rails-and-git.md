@@ -1,6 +1,6 @@
 ---
 title: Ruby, Rails and Git
-parent: Start here
+parent: Getting started
 nav_order: 2
 translation_of: comece-aqui/ruby-rails-e-git.md
 translated_from: a9b56a5

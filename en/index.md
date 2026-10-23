@@ -34,7 +34,7 @@ The menu on the side has six parts:
 | Part | What you'll find there |
 |---|---|
 | [Why learn to program?]({{ site.baseurl }}{% link why-learn-to-program.md %}) | Why learn to program when AI already writes code, and what is still the programmer's job. |
-| [Start here]({{ site.baseurl }}{% link start-here/index.md %}) | What you need to get started: a GitHub account and GitHub Codespaces, with nothing to install. It also covers the basics of Ruby, Rails and Git and how to use AI to learn. |
+| [Getting started]({{ site.baseurl }}{% link getting-started/index.md %}) | What you need to get started: a GitHub account and GitHub Codespaces, with nothing to install. It also covers the basics of Ruby, Rails and Git and how to use AI to learn. |
 | [Projects]({{ site.baseurl }}{% link projects/index.md %}) | The workshop project, the [Message Board]({{ site.baseurl }}{% link projects/message-board/index.md %}), chapter by chapter. |
 | [Glossary]({{ site.baseurl }}{% link glossary.md %}) | The meaning of every term in the guide, to look up whenever a new word shows up. |
 | [Mentoring guide]({{ site.baseurl }}{% link mentors/index.md %}) | Everything for people who are going to mentor. |
@@ -44,8 +44,8 @@ Looking for a topic? The search, at the top of the page, finds anything in the g
 
 ## Where to start
 
-1. Create your GitHub account, if you don't have one yet: [Creating a GitHub account]({{ site.baseurl }}{% link start-here/github-account.md %}). You can do it on the workshop day itself.
-2. If you like, read the basics of [Ruby, Rails and Git]({{ site.baseurl }}{% link start-here/ruby-rails-and-git.md %}). It takes about 10 minutes.
+1. Create your GitHub account, if you don't have one yet: [Creating a GitHub account]({{ site.baseurl }}{% link getting-started/github-account.md %}). You can do it on the workshop day itself.
+2. If you like, read the basics of [Ruby, Rails and Git]({{ site.baseurl }}{% link getting-started/ruby-rails-and-git.md %}). It takes about 10 minutes.
 3. Grab a pen and paper and start the project with the [Message Board]({{ site.baseurl }}{% link projects/message-board/index.md %}). 🚀
 
 You don't need to read the rest of the guide first. It's there for you to look things up: the project explains each thing at the moment it comes up.

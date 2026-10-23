@@ -1,6 +1,6 @@
 ---
 title: Setup
-parent: Start here
+parent: Getting started
 nav_order: 1
 has_children: true
 translation_of: comece-aqui/instalacao.md
@@ -22,9 +22,9 @@ At the workshop, the project runs on **GitHub Codespaces**, and you don't instal
 - **Git**, which saves your progress;
 - a **code editor**, the program where you write and change the app's files.
 
-Want to know more about each one? See [Ruby, Rails and Git]({{ site.baseurl }}{% link start-here/ruby-rails-and-git.md %}).
+Want to know more about each one? See [Ruby, Rails and Git]({{ site.baseurl }}{% link getting-started/ruby-rails-and-git.md %}).
 
-All you need is a GitHub account. If you don't have one yet, see [Creating a GitHub account]({{ site.baseurl }}{% link start-here/github-account.md %}).
+All you need is a GitHub account. If you don't have one yet, see [Creating a GitHub account]({{ site.baseurl }}{% link getting-started/github-account.md %}).
 
 The rest happens in the project itself: in the chapter [Where do we start?]({{ site.baseurl }}{% link projects/message-board/01-where-to-start/index.md %}), you create your repository from a template prepared by Rails Girls SP and open the codespace, with everything already installed.
 

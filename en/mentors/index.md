@@ -30,7 +30,7 @@ If you witness or hear about a situation that may violate the code, find someone
 - **Use the guide's words.** The commands written out in full (`bin/rails server`, not `rails s`) and the technical terms (model, controller, migration). See [Commands written out in full]({{ site.baseurl }}{% link mentors/projects/message-board/index.md %}#commands-written-out-in-full).
 - **Follow the guide, even if you'd do it differently.** The guide avoids, on purpose, the scaffold, automated tests and other common everyday paths. The notes for each chapter explain why. If you have a suggestion, write it down and send it to the organizing team afterwards.
 - **Respect each person's pace.** Nobody needs to finish every chapter. Whoever stops halfway still leaves with an app that works.
-- **AI as a tutor, not as the author.** If the person wants to use an AI, encourage asking for explanations, and not for ready-made code. See [Using AI as a tutor]({{ site.baseurl }}{% link start-here/ai-as-a-tutor.md %}).
+- **AI as a tutor, not as the author.** If the person wants to use an AI, encourage asking for explanations, and not for ready-made code. See [Using AI as a tutor]({{ site.baseurl }}{% link getting-started/ai-as-a-tutor.md %}).
 
 ## Group formats
 

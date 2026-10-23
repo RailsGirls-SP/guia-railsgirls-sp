@@ -353,7 +353,7 @@ On the free plan, the app "goes to sleep" after about 15 minutes without anyone 
 <details class="pergunta" markdown="1">
 <summary>The deploy failed and I didn't understand the message</summary>
 
-Read the last lines of the deploy messages: the error is usually there, like in the terminal. Copy the message and ask someone on the mentoring team for help. 💜 You can also ask an AI to explain the message, like in [Using AI as a tutor]({{ site.baseurl }}{% link start-here/ai-as-a-tutor.md %}).
+Read the last lines of the deploy messages: the error is usually there, like in the terminal. Copy the message and ask someone on the mentoring team for help. 💜 You can also ask an AI to explain the message, like in [Using AI as a tutor]({{ site.baseurl }}{% link getting-started/ai-as-a-tutor.md %}).
 
 </details>
 

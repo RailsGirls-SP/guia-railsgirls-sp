@@ -1,5 +1,5 @@
 {% comment %}translation_of: _includes/mural-de-recados/01/mao-na-massa.md translated_from: 1e3f998 {% endcomment %}
-You'll need a GitHub account. If you don't have one yet, see [Creating a GitHub account]({{ site.baseurl }}{% link start-here/github-account.md %}).
+You'll need a GitHub account. If you don't have one yet, see [Creating a GitHub account]({{ site.baseurl }}{% link getting-started/github-account.md %}).
 
 Stuck on a step? See [Stuck?](#stuck), at the end of the page.
 

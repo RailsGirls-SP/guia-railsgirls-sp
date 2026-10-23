@@ -115,4 +115,4 @@ Some tips:
 - **Replies or several boards first.** Both teach relationships between tables, which are the basis of almost every real app, and don't depend on anything beyond what the project already has.
 - **User accounts are the biggest step.** They involve security and sessions and change several parts of the app at once. It's worth doing it calmly, preferably after one of the ideas above.
 - **Commit before each idea.** If the change goes wrong, they can go back to the message board that worked.
-- **AI as a tutor.** For bigger ideas, it's tempting to ask an AI for everything. Encourage the same use as in the guide: asking in small stages, with the plan, and checking each piece. See [Using AI as a tutor]({{ site.baseurl }}{% link start-here/ai-as-a-tutor.md %}).
+- **AI as a tutor.** For bigger ideas, it's tempting to ask an AI for everything. Encourage the same use as in the guide: asking in small stages, with the plan, and checking each piece. See [Using AI as a tutor]({{ site.baseurl }}{% link getting-started/ai-as-a-tutor.md %}).

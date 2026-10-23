@@ -1,6 +1,6 @@
 ---
 title: Using AI as a tutor
-parent: Start here
+parent: Getting started
 nav_order: 5
 translation_of: comece-aqui/ia-como-tutora.md
 translated_from: 80ff4f1

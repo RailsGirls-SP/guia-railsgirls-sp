@@ -1,7 +1,7 @@
 ---
 title: Creating a GitHub account
 parent: Setup
-grand_parent: Start here
+grand_parent: Getting started
 nav_order: 1
 translation_of: comece-aqui/conta-no-github.md
 translated_from: 2c255dc

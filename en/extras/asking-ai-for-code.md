@@ -10,7 +10,7 @@ translated_from: d273cf2
 
 Asking an AI for code seems simple: you just write what you want. But the way you ask changes a lot about what comes back. This page shows two things to watch for that make a difference, with examples from the [Message Board]({{ site.baseurl }}{% link projects/message-board/index.md %}) project. It makes more sense after the project, when you already know the pieces of a Rails app.
 
-Want to use AI to **learn**, asking for explanations instead of ready-made code? See [Using AI as a tutor]({{ site.baseurl }}{% link start-here/ai-as-a-tutor.md %}).
+Want to use AI to **learn**, asking for explanations instead of ready-made code? See [Using AI as a tutor]({{ site.baseurl }}{% link getting-started/ai-as-a-tutor.md %}).
 
 ## Asking in small stages
 

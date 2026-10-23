@@ -18,12 +18,12 @@ Ao mudar uma página em português, atualize a tradução e o `translated_from`.
 | `index.md` | `index.md` |
 | `por-que-aprender-a-programar.md` | `why-learn-to-program.md` |
 | `glossario.md` | `glossary.md` |
-| `comece-aqui/` | `start-here/` |
-| `comece-aqui/instalacao.md` | `start-here/setup.md` |
-| `comece-aqui/conta-no-github.md` | `start-here/github-account.md` |
-| `comece-aqui/ruby-rails-e-git.md` | `start-here/ruby-rails-and-git.md` |
-| `comece-aqui/ia-como-tutora.md` | `start-here/ai-as-a-tutor.md` |
-| `comece-aqui/termos-em-ingles.md` | `start-here/technical-terms.md` |
+| `comece-aqui/` | `getting-started/` |
+| `comece-aqui/instalacao.md` | `getting-started/setup.md` |
+| `comece-aqui/conta-no-github.md` | `getting-started/github-account.md` |
+| `comece-aqui/ruby-rails-e-git.md` | `getting-started/ruby-rails-and-git.md` |
+| `comece-aqui/ia-como-tutora.md` | `getting-started/ai-as-a-tutor.md` |
+| `comece-aqui/termos-em-ingles.md` | `getting-started/technical-terms.md` |
 | `modo-workshop/` | `workshop-mode/` |
 | `projetos/` | `projects/` |
 | `projetos/mural-de-recados/` | `projects/message-board/` |
@@ -80,7 +80,7 @@ O modo workshop usa os mesmos nomes dos capítulos (`workshop-mode/03-see-all-th
 | Não esqueça | Remember |
 | E se fosse com IA? | What if you used AI? |
 | Modo workshop | Workshop mode |
-| Comece aqui | Start here |
+| Comece aqui | Getting started |
 | Desafios extras | Extra challenges |
 | Guia para mentoria | Mentoring guide |
 | equipe de mentoria / mentora | mentoring team / mentor |

@@ -1,6 +1,6 @@
 ---
 title: Why learn the technical terms?
-parent: Start here
+parent: Getting started
 nav_order: 6
 translation_of: comece-aqui/termos-em-ingles.md
 translated_from: 52a4d4b

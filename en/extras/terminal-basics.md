@@ -99,4 +99,4 @@ Some commands keep running until you tell them to stop, like `bin/rails server`.
 
 - **Read before pressing Enter.** A mistyped command usually just shows an error message, without breaking anything. Even so, check what you typed.
 - **Be very careful with commands from outside the guide.** Before pasting a command from a website, an AI or a message, understand at least what it does: some of them delete files. If in doubt, ask someone during the workshop.
-- **Read the messages.** When a command goes wrong, the terminal's answer usually says why. See how to ask for help understanding a message in [Using AI as a tutor]({{ site.baseurl }}{% link start-here/ai-as-a-tutor.md %}).
+- **Read the messages.** When a command goes wrong, the terminal's answer usually says why. See how to ask for help understanding a message in [Using AI as a tutor]({{ site.baseurl }}{% link getting-started/ai-as-a-tutor.md %}).
