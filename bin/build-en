@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Gera o guia em inglês (guide.railsgirls.com.br) em _site-en/.
+# Junta assets, _sass e _includes do português com a pasta en/; o que existir
+# em en/ tem prioridade (por exemplo, um print do app em inglês).
+# Uso: bin/build-en            (gera o site em _site-en/)
+#      bin/build-en serve      (para ver localmente em http://localhost:4000)
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+rm -rf _build-en
+mkdir _build-en
+cp -R assets _sass _includes _build-en/
+cp -R en/. _build-en/
+
+comando="${1:-build}"
+bundle exec jekyll "$comando" --source _build-en --destination _site-en

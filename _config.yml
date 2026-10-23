@@ -50,6 +50,9 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  # Guia em inglês, gerado à parte pelo bin/build-en.
+  - en
+  - bin
 
 # Silencia avisos do Sass vindos do tema ao rodar localmente.
 sass:

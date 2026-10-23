@@ -3,3 +3,5 @@ _site/
 .sass-cache/
 vendor/
 Gemfile.lock
+_build-en/
+_site-en/

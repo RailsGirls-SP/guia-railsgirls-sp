@@ -1,0 +1,55 @@
+title: Rails Girls São Paulo
+description: Rails Girls São Paulo workshop guide
+remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-remote-theme
+search_enabled: true
+lang: en
+color_scheme: railsgirls
+
+# Guia em inglês (guide.railsgirls.com.br). Gerado pelo bin/build-en, que junta
+# assets, _sass e _includes do português com o que estiver nesta pasta.
+
+# Rubi, a tutora com IA, desligada no inglês até os textos do mentora.js e as
+# respostas da API estarem em inglês.
+mentora:
+  enabled: false
+  api_url: https://mentora-railsgirls-api.elaine-n-watanabe.workers.dev
+
+# Diagramas em blocos ```mermaid, desenhados no navegador.
+mermaid:
+  version: "12.1.0"
+
+# Boxes de destaque, com os mesmos nomes do português. Uso: {: .dica }
+callouts:
+  dica:
+    title: Tip
+    color: green
+  atencao:
+    title: Heads up
+    color: red
+  ia:
+    title: What if you used AI?
+    color: purple
+  pensando:
+    title: Thinking like a programmer
+    color: blue
+  desafio:
+    title: Task
+    color: red
+
+footer_content: >-
+  Material by Rails Girls São Paulo, licensed under
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.
+  Free to use with attribution; commercial use is not allowed.
+
+# Silencia avisos do Sass vindos do tema ao rodar localmente.
+sass:
+  quiet_deps: true
+  silence_deprecations: [import]
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
