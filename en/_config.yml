@@ -16,6 +16,14 @@ mentora:
   enabled: false
   api_url: https://mentora-railsgirls-api.elaine-n-watanabe.workers.dev
 
+# Caminhos usados pelo _includes/head_custom.html para ligar o modo workshop
+# ao progresso do mão na massa completo do mesmo capítulo.
+caminhos:
+  modo_workshop: /workshop-mode/
+  projeto: /projects/message-board/
+  mao_na_massa: /hands-on
+  mao_na_massa_html: /hands-on.html
+
 # Diagramas em blocos ```mermaid, desenhados no navegador.
 mermaid:
   version: "12.1.0"
