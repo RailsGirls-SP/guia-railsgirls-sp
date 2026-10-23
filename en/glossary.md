@@ -194,7 +194,7 @@ Besides storing code, GitHub has several tools. Some that show up in this guide:
 - **Pull requests:** requests to change the code, which someone reviews before accepting.
 - **GitHub Pages:** publishes websites from a repository. This guide is published that way.
 
-GitHub uses [Git](#git) under the hood, but the two aren't the same thing: Git is the program that keeps the history; GitHub is the website where that history is stored and shared. To create your account, see [Creating a GitHub account]({{ site.baseurl }}{% link start-here/github-account.md %}).
+GitHub uses [Git](#git) under the hood, but the two aren't the same thing: Git is the program that keeps the history; GitHub is the website where that history is stored and shared. To create your account, see [Creating a GitHub account]({{ site.baseurl }}{% link getting-started/github-account.md %}).
 
 </details>
 

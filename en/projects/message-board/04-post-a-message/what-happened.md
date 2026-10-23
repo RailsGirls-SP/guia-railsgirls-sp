@@ -145,7 +145,7 @@ If you want to use an AI, use it as a tutor: ask it to explain, and do each step
 > What's the difference between a GET request and a POST request? Explain it with an everyday example, without giving me code.
 {: .pedido-ia }
 
-See how to start the conversation in [Using AI as a tutor]({{ site.baseurl }}{% link start-here/ai-as-a-tutor.md %}).
+See how to start the conversation in [Using AI as a tutor]({{ site.baseurl }}{% link getting-started/ai-as-a-tutor.md %}).
 
 <details class="pergunta" markdown="1">
 <summary>What if I asked the AI for the code? <span class="label label-purple">Going further</span></summary>

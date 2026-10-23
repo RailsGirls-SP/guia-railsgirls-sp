@@ -12,7 +12,7 @@ translated_from: f922f7d
 To program on your own computer, you install **Ruby**, **Rails**, **Git** and a **code editor**. The official Rails guide, [Install Ruby on Rails](https://guides.rubyonrails.org/install_ruby_on_rails.html), is the basis for these steps.
 
 {: .atencao }
-Installing on your own computer can take a while and cause errors that depend on each machine. At the workshop, use [Codespaces]({{ site.baseurl }}{% link start-here/setup.md %}).
+Installing on your own computer can take a while and cause errors that depend on each machine. At the workshop, use [Codespaces]({{ site.baseurl }}{% link getting-started/setup.md %}).
 
 ## A version manager for Ruby
 

@@ -102,7 +102,7 @@ Instead of the Rails page, an error page shows up: there's nobody on the other s
 
 No. Everything here is done with clicks and a few commands (`ruby -v`, `rails -v`, `rails new .` and `bin/rails server`). An AI wouldn't make anything faster and could even get in the way: suggest commands for another system, create files you didn't ask for or skip exactly the steps that show how the app works.
 
-The codespace has an AI chat panel on the right. If you want to use it, treat the AI as a tutor, not as someone who does it for you (see how to start the conversation in [Using AI as a tutor]({{ site.baseurl }}{% link start-here/ai-as-a-tutor.md %})):
+The codespace has an AI chat panel on the right. If you want to use it, treat the AI as a tutor, not as someone who does it for you (see how to start the conversation in [Using AI as a tutor]({{ site.baseurl }}{% link getting-started/ai-as-a-tutor.md %})):
 
 - **Ask for explanations.** For example: "What does the `rails new .` command do?" or "What does this error message mean?".
 - **Ask it to guide you,** one step at a time, and do each step yourself.

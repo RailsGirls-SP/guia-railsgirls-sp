@@ -172,7 +172,7 @@ Put the `=` back (so it's `<%= message.content %>`), save and reload: the text s
 
 No. There are three small files, and Rails's own errors show the way.
 
-Where an AI can help, if you want: explaining an error message you didn't understand. Paste the message and ask for an explanation, without asking for the ready-made fix. See how in [Using AI as a tutor]({{ site.baseurl }}{% link start-here/ai-as-a-tutor.md %}).
+Where an AI can help, if you want: explaining an error message you didn't understand. Paste the message and ask for an explanation, without asking for the ready-made fix. See how in [Using AI as a tutor]({{ site.baseurl }}{% link getting-started/ai-as-a-tutor.md %}).
 
 Careful: if you ask an AI to "make the list of messages", it often suggests the *scaffold*, a generator that creates the model, controller, views and routes all at once. In this project, we only use small generators, like `generate controller`, and review each piece, to see how they connect.
 

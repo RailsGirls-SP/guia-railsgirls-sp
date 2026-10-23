@@ -52,6 +52,6 @@ After the workshop, see examples of requests, from the vaguest to the most preci
 Illustration: [unDraw](https://undraw.co/)
 {: .fs-2 .text-center }
 
-AI can be a great tutor: it explains an error message, answers a question at any time, shows another way of doing something. See how in [Using AI as a tutor]({{ site.baseurl }}{% link start-here/ai-as-a-tutor.md %}).
+AI can be a great tutor: it explains an error message, answers a question at any time, shows another way of doing something. See how in [Using AI as a tutor]({{ site.baseurl }}{% link getting-started/ai-as-a-tutor.md %}).
 
 What the guide stands for is that you **understand** what you're building. If you understand it, you can use AI to go faster, without losing control of your own project. In several chapters, the section **Do I need AI for this chapter?** shows what it would be like to ask an AI for that stage and what to check in the result.

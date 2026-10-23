@@ -20,7 +20,7 @@ New projects will show up here, each one a little more advanced than the last.
 
 ## Where to start
 
-If this is your first time, start with the [Message Board]({{ site.baseurl }}{% link projects/message-board/index.md %}). It doesn't require any programming knowledge, and it introduces, one chapter at a time, the pieces that almost every Rails app has. Before that, check that you already have what you need in [Start here]({{ site.baseurl }}{% link start-here/index.md %}).
+If this is your first time, start with the [Message Board]({{ site.baseurl }}{% link projects/message-board/index.md %}). It doesn't require any programming knowledge, and it introduces, one chapter at a time, the pieces that almost every Rails app has. Before that, check that you already have what you need in [Getting started]({{ site.baseurl }}{% link getting-started/index.md %}).
 
 ## How projects grow
 

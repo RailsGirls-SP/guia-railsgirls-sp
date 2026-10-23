@@ -53,12 +53,12 @@ You don't need to finish everything today. Everyone goes at a different pace, an
 
 ## Before you start
 
-- **A GitHub account.** If you don't have one yet, see [Creating a GitHub account]({{ site.baseurl }}{% link start-here/github-account.md %}).
+- **A GitHub account.** If you don't have one yet, see [Creating a GitHub account]({{ site.baseurl }}{% link getting-started/github-account.md %}).
 - **A browser**, like Chrome, Firefox or Edge. The project runs on **GitHub Codespaces**, a computer in the cloud that already comes with everything installed. Want to use your own computer? That's in the Extras, for after the workshop: see [Installing on your computer]({{ site.baseurl }}{% link extras/on-your-computer.md %}).
 - **Pen and paper**, for "Think before you code".
 
 New terms have a link to the [glossary]({{ site.baseurl }}{% link glossary.md %}), with an explanation of each one. You don't need to memorize anything.
 
-## Start here
+## Get started
 
 Grab your pen and paper and start with [00. Planning the app]({{ site.baseurl }}{% link projects/message-board/00-planning-the-app.md %}). 🚀

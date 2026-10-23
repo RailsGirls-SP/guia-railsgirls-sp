@@ -123,7 +123,7 @@ If you want to use an AI, use it as a tutor: ask it to explain, and do each step
 > Why do the rules for a message live in the model, and not in the form? Explain it without giving me code.
 {: .pedido-ia }
 
-See how to start the conversation in [Using AI as a tutor]({{ site.baseurl }}{% link start-here/ai-as-a-tutor.md %}).
+See how to start the conversation in [Using AI as a tutor]({{ site.baseurl }}{% link getting-started/ai-as-a-tutor.md %}).
 
 <details class="pergunta" markdown="1">
 <summary>What if I asked the AI for the code? <span class="label label-purple">Going further</span></summary>

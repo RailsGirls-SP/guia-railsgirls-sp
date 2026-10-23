@@ -31,4 +31,4 @@ This time, there are no hints: just the problem. Use what you learned in the cha
 - Looking up only some of the messages in the database, with a condition.
 - Planning and solving a problem on your own, from start to finish.
 
-If you get stuck, ask someone on the mentoring team for help or read [Using AI as a tutor]({{ site.baseurl }}{% link start-here/ai-as-a-tutor.md %}) and ask for an explanation, not the ready-made answer. A word that helps when searching the Rails documentation: `where`.
+If you get stuck, ask someone on the mentoring team for help or read [Using AI as a tutor]({{ site.baseurl }}{% link getting-started/ai-as-a-tutor.md %}) and ask for an explanation, not the ready-made answer. A word that helps when searching the Rails documentation: `where`.

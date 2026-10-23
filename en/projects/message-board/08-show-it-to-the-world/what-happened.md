@@ -113,7 +113,7 @@ It works on Render's free plan: the only cost is registering the domain. Render 
 
 No. The steps are clicks on Render and two small changes to the code.
 
-Where an AI can help: understanding an error message from the deploy. Copy the last lines of the messages and ask for an explanation, like in [Using AI as a tutor]({{ site.baseurl }}{% link start-here/ai-as-a-tutor.md %}).
+Where an AI can help: understanding an error message from the deploy. Copy the last lines of the messages and ask for an explanation, like in [Using AI as a tutor]({{ site.baseurl }}{% link getting-started/ai-as-a-tutor.md %}).
 
 {: .atencao }
 Never paste the `DATABASE_URL` or the contents of `config/master.key` into an AI, or anywhere else. Before pasting an error message, check that it doesn't contain either of them.
