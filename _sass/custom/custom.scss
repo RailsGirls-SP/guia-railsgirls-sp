@@ -248,6 +248,10 @@ details.passo.passo-concluido > summary::after {
   color: #2f7d32;
 }
 
+html:lang(en) details.passo.passo-concluido > summary::after {
+  content: " ✓" / " (done)";
+}
+
 // Exemplos de pedido para uma IA (ex.: extras/como-pedir-codigo-para-uma-ia.md).
 // Uso: um blockquote seguido de {: .pedido-ia }.
 blockquote.pedido-ia {
@@ -268,6 +272,10 @@ blockquote.pedido-ia {
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #5e41d0;
+  }
+
+  html:lang(en) &::before {
+    content: "💬 Prompt for the AI";
   }
 
   p {

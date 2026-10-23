@@ -1,8 +1,31 @@
 // Progresso do "Mão na massa": a participante marca os passos que já fez.
 // As marcações ficam só no navegador (localStorage), uma lista por página.
 // O modo workshop usa a lista do mão na massa completo (window.progressoChave).
+// Os textos seguem o idioma da página (<html lang>): português ou inglês.
 (function () {
   const CHAVE = "guia-rg:progresso:" + (window.progressoChave || location.pathname);
+
+  const TEXTOS = {
+    pt: {
+      recomecar: "Recomeçar",
+      aviso: "Marque cada passo quando terminar. As marcações ficam só neste navegador.",
+      todos: function (total) { return "Você concluiu todos os " + total + " passos desta página! 🎉"; },
+      alguns: function (feitos, total) { return feitos + " de " + total + " passos concluídos"; },
+      marcar: "Concluí este passo",
+      terminou: "Terminou?",
+      confirmar: "Desmarcar todos os passos desta página?"
+    },
+    en: {
+      recomecar: "Start over",
+      aviso: "Check each step when you finish it. Your checks are saved only in this browser.",
+      todos: function (total) { return "You finished all " + total + " steps on this page! 🎉"; },
+      alguns: function (feitos, total) { return feitos + " of " + total + " steps done"; },
+      marcar: "I finished this step",
+      terminou: "Done?",
+      confirmar: "Uncheck all the steps on this page?"
+    }
+  };
+  const T = document.documentElement.lang.startsWith("en") ? TEXTOS.en : TEXTOS.pt;
 
   function ler() {
     try {
@@ -39,11 +62,13 @@
     painel.className = "progresso";
     painel.innerHTML =
       '<p class="progresso-contador" aria-live="polite"></p>' +
-      '<button type="button" class="progresso-recomecar">Recomeçar</button>' +
-      '<p class="progresso-aviso">Marque cada passo quando terminar. As marcações ficam só neste navegador.</p>';
+      '<button type="button" class="progresso-recomecar"></button>' +
+      '<p class="progresso-aviso"></p>';
     titulo.insertAdjacentElement("afterend", painel);
     const contador = painel.querySelector(".progresso-contador");
     const recomecar = painel.querySelector(".progresso-recomecar");
+    recomecar.textContent = T.recomecar;
+    painel.querySelector(".progresso-aviso").textContent = T.aviso;
 
     function atualizar() {
       let feitos = 0;
@@ -55,8 +80,8 @@
       });
       contador.textContent =
         feitos === passos.length
-          ? "Você concluiu todos os " + passos.length + " passos desta página! 🎉"
-          : feitos + " de " + passos.length + " passos concluídos";
+          ? T.todos(passos.length)
+          : T.alguns(feitos, passos.length);
       // Sem nenhum passo marcado, não há o que recomeçar.
       recomecar.disabled = feitos === 0;
     }
@@ -65,9 +90,10 @@
     passos.forEach(function (passo, i) {
       const rotulo = document.createElement("label");
       rotulo.className = "progresso-marcar";
-      rotulo.innerHTML = '<input type="checkbox"> Concluí este passo';
+      rotulo.innerHTML = '<input type="checkbox"> ';
+      rotulo.appendChild(document.createTextNode(T.marcar));
       const terminou = Array.from(passo.querySelectorAll(":scope > p")).find(function (p) {
-        return p.textContent.trim().startsWith("Terminou?");
+        return p.textContent.trim().startsWith(T.terminou);
       });
       if (terminou) {
         passo.insertBefore(rotulo, terminou);
@@ -97,7 +123,7 @@
     });
 
     recomecar.addEventListener("click", function () {
-      if (!window.confirm("Desmarcar todos os passos desta página?")) return;
+      if (!window.confirm(T.confirmar)) return;
       concluidos = [];
       salvar(concluidos);
       atualizar();

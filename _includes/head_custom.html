@@ -43,12 +43,13 @@
     }
   })();
 </script>
-{% if page.url contains '/modo-workshop/0' %}
+{% assign workshop_0 = site.caminhos.modo_workshop | append: '0' %}
+{% if page.url contains workshop_0 %}
 {% comment %}O modo workshop guarda o progresso junto com o mão na massa completo do mesmo capítulo.{% endcomment %}
-{% assign chave_progresso = page.url | replace: '/modo-workshop/', '/projetos/mural-de-recados/' | replace: '.html', '/mao-na-massa.html' | relative_url %}
+{% assign chave_progresso = page.url | replace: site.caminhos.modo_workshop, site.caminhos.projeto | replace: '.html', site.caminhos.mao_na_massa_html | relative_url %}
 <script>window.progressoChave = {{ chave_progresso | jsonify }};</script>
 {% endif %}
-{% if page.url contains '/mao-na-massa' or page.url contains '/modo-workshop/0' %}
+{% if page.url contains site.caminhos.mao_na_massa or page.url contains workshop_0 %}
 <script src="{{ '/assets/js/progresso.js' | relative_url }}" defer></script>
 {% endif %}
 {% if site.mentora.enabled %}
